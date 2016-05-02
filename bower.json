@@ -9,7 +9,6 @@
 	"license": "MIT",
 	"private": true,
 	"dependencies": {
-		"handlebars": "4.0.5",
 		"jquery": "2.2.3"
 	},
 	"ignore": [
