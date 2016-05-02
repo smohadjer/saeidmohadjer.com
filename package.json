@@ -1,0 +1,13 @@
+{
+	"name": "boilerplate",
+	"version": "0.0.1",
+	"description": "Boilerplate for Web projects",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/smohadjer/boilerplate"
+	},
+    "license": "MIT",
+	"devDependencies": {
+		"gulp-sass": "2.1.1"
+	}
+}
