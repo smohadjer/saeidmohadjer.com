@@ -1,0 +1,22 @@
+{
+	"name": "boilerplate",
+	"homepage": "https://github.com/smohadjer/boilerplate",
+	"authors": [
+		"Saeid Mohadjer <saeid@fastmail.fm>"
+	],
+	"description": "boilerplate for web projects",
+	"main": "index.html",
+	"license": "MIT",
+	"private": true,
+	"dependencies": {
+		"handlebars": "4.0.5",
+		"jquery": "2.2.3"
+	},
+	"ignore": [
+		"**/.*",
+		"node_modules",
+		"bower_components",
+		"test",
+		"tests"
+	]
+}
