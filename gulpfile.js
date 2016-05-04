@@ -1,5 +1,6 @@
-var gulp = require('gulp');
-var sass = require('gulp-sass');
+var gulp = require('gulp'),
+	sass = require('gulp-sass'),
+	connect = require('gulp-connect');
 
 // Rerun the task when a file changes
 gulp.task('watch', function() {
@@ -13,5 +14,12 @@ gulp.task('sass', function () {
 	return stream;
 });
 
+gulp.task('connect', function() {
+  connect.server({
+	  port: 8080,
+	  root: 'app'
+  });
+});
+
 // serve development templates
-gulp.task('serve', ['sass', 'watch']);
+gulp.task('serve', ['connect', 'sass', 'watch']);
