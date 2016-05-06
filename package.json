@@ -10,6 +10,7 @@
   "devDependencies": {
     "gulp-connect": "^4.0.0",
     "gulp-sass": "2.1.1",
-    "opn": "3.0.2"    
+    "gulp-sourcemaps": "^2.0.0-alpha",
+    "opn": "3.0.2"
   }
 }

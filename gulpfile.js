@@ -1,4 +1,5 @@
 var gulp = require('gulp'),
+	sourcemaps = require('gulp-sourcemaps');
 	sass = require('gulp-sass'),
 	opn = require('opn'),
 	connect = require('gulp-connect');
@@ -10,7 +11,9 @@ gulp.task('watch', function() {
 
 gulp.task('sass', function () {
 	var stream = gulp.src('app/resources/css/styles.scss')
+		.pipe(sourcemaps.init())
 		.pipe(sass().on('error', sass.logError))
+		.pipe(sourcemaps.write('./maps'))
 		.pipe(gulp.dest('app/resources/css'));
 	return stream;
 });
