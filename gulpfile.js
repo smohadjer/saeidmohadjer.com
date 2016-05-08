@@ -1,17 +1,26 @@
 var gulp = require('gulp'),
-	//for sass support
+	//sass support
 	sourcemaps = require('gulp-sourcemaps'),
 	sass = require('gulp-sass'),
 
-	//for local server
+	//local server
 	opn = require('opn'),
 	connect = require('gulp-connect'),
 
-	//for precompiling handlebars templates
+	//precompiling handlebars templates
 	handlebars = require('gulp-handlebars'),
 	wrap = require('gulp-wrap'),
 	declare = require('gulp-declare'),
-	concat = require('gulp-concat');
+	concat = require('gulp-concat'),
+
+	//build
+	//copy = require('gulp-copy'),
+	del = require('del'),
+	useref = require('gulp-useref'),
+	gulpif = require('gulp-if'),
+	uglify = require('gulp-uglify'),
+	cssnano = require('gulp-cssnano'),
+	runSequence = require('run-sequence');
 
 gulp.task('sass', function () {
 	var stream = gulp.src('app/resources/css/styles.scss')
@@ -52,4 +61,31 @@ gulp.task('open', ['connect'], function () {
 	return opn( 'http://localhost:8080' );
 });
 
+gulp.task('clean', function () {
+	return del([
+		'./dist/**/*'
+	]);
+});
+
+gulp.task('copy:css', function() {
+	var stream = gulp.src('app/resources/css/styles.css')
+		.pipe(gulp.dest('dist/resources/css'));
+	return stream;
+});
+
+gulp.task('useref', function() {
+	var stream = gulp.src('app/*.html')
+		//.pipe(debug({title: 'unicorn:'}))
+		.pipe(useref())
+		.pipe(gulpif('*.js', uglify()))
+		.pipe(gulpif('*.css', cssnano()))
+		.pipe(gulp.dest('dist'));
+
+	return stream;
+});
+
 gulp.task('serve', ['open', 'templates', 'sass', 'watch']);
+
+gulp.task('build', function(callback) {
+	runSequence('clean', 'useref', callback);
+});
