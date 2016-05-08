@@ -22,15 +22,6 @@ var gulp = require('gulp'),
 	cssnano = require('gulp-cssnano'),
 	runSequence = require('run-sequence');
 
-gulp.task('sass', function () {
-	var stream = gulp.src('app/resources/css/styles.scss')
-		.pipe(sourcemaps.init())
-		.pipe(sass().on('error', sass.logError))
-		.pipe(sourcemaps.write('./maps'))
-		.pipe(gulp.dest('app/resources/css'));
-	return stream;
-});
-
 gulp.task('templates', function() {
 	gulp.src('app/resources/templates/*.hbs')
 		.pipe(handlebars({
@@ -45,9 +36,13 @@ gulp.task('templates', function() {
 		.pipe(gulp.dest('app/resources/templates/'));
 });
 
-gulp.task('watch', function() {
-	gulp.watch('app/resources/css/*', ['sass']);
-	gulp.watch('app/resources/templates/*.hbs', ['templates']);
+gulp.task('sass', function () {
+	var stream = gulp.src('app/resources/css/styles.scss')
+		.pipe(sourcemaps.init())
+		.pipe(sass().on('error', sass.logError))
+		.pipe(sourcemaps.write('./maps'))
+		.pipe(gulp.dest('app/resources/css'));
+	return stream;
 });
 
 gulp.task('connect', function() {
@@ -57,20 +52,24 @@ gulp.task('connect', function() {
 	});
 });
 
-gulp.task('open', ['connect'], function () {
+gulp.task('open', function () {
 	return opn( 'http://localhost:8080' );
 });
 
+gulp.task('watch', function() {
+	gulp.watch('app/resources/css/*', ['sass']);
+	gulp.watch('app/resources/templates/*.hbs', ['templates']);
+});
+
+gulp.task('serve', function(callback) {
+	runSequence(['templates', 'sass'], 'connect', 'open', 'watch', callback);
+});
+
+/**************** build tasks *****************/
 gulp.task('clean', function () {
 	return del([
 		'./dist/**/*'
 	]);
-});
-
-gulp.task('copy:css', function() {
-	var stream = gulp.src('app/resources/css/styles.css')
-		.pipe(gulp.dest('dist/resources/css'));
-	return stream;
 });
 
 gulp.task('useref', function() {
@@ -84,8 +83,13 @@ gulp.task('useref', function() {
 	return stream;
 });
 
-gulp.task('serve', ['open', 'templates', 'sass', 'watch']);
+gulp.task('connect:build', function() {
+	connect.server({
+		port: 8080,
+		root: 'dist'
+	});
+});
 
 gulp.task('build', function(callback) {
-	runSequence('clean', 'useref', callback);
+	runSequence('clean', 'useref', 'connect:build', 'open', callback);
 });
