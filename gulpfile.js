@@ -72,6 +72,12 @@ gulp.task('clean', function () {
 	]);
 });
 
+gulp.task('copy', function() {
+	var stream = gulp.src('app/_assets/**/*')
+		.pipe(gulp.dest('dist/_assets'));
+	return stream;
+});
+
 gulp.task('useref', function() {
 	var stream = gulp.src('app/*.html')
 		//.pipe(debug({title: 'unicorn:'}))
@@ -91,5 +97,5 @@ gulp.task('connect:build', function() {
 });
 
 gulp.task('build', function(callback) {
-	runSequence('clean', 'useref', 'connect:build', 'open', callback);
+	runSequence('clean', ['copy', 'useref'], 'connect:build', 'open', callback);
 });
