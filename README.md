@@ -1,7 +1,8 @@
 # boilerplate
-A boilerplate for Web projects
- * Local server
- * Support for Sass
+A lightweight boilerplate for Web projects
+ * Launches a local server at localhost:8080
+ * Supports Sass
+ * CSS and JavaScript minification during build
  * Precompiling of Handlebars templates
  * Support for jQuery via bower
- * Uses jQuery plugin boilerplate
+ * Contains a boilerplate for jQuery plugins
