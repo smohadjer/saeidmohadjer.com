@@ -1,5 +1,5 @@
 # boilerplate
-A lightweight boilerplate for Web projects
+A lightweight boilerplate for responsive Websites
  * Launches a local server at localhost:8080
  * Supports Sass
  * CSS and JavaScript minification during build
