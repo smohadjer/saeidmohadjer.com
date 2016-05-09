@@ -13,8 +13,13 @@ var gulp = require('gulp'),
 	declare = require('gulp-declare'),
 	concat = require('gulp-concat'),
 
+	//linting
+	htmlhint = require("gulp-htmlhint"),
+	jshint = require('gulp-jshint'),
+	stylish = require('jshint-stylish'),
+	csslint = require('gulp-csslint'),
+
 	//build
-	//copy = require('gulp-copy'),
 	del = require('del'),
 	useref = require('gulp-useref'),
 	gulpif = require('gulp-if'),
@@ -41,8 +46,31 @@ gulp.task('sass', function () {
 		.pipe(sourcemaps.init())
 		.pipe(sass().on('error', sass.logError))
 		.pipe(sourcemaps.write('./maps'))
+		//.pipe(cssHint())
 		.pipe(gulp.dest('app/resources/css'));
+
 	return stream;
+});
+
+gulp.task('htmlHint', function() {
+	var stream = gulp.src('app/*.html')
+		.pipe(htmlhint())
+		.pipe(htmlhint.failReporter());
+	return stream;
+});
+
+gulp.task('cssHint', function() {
+	return gulp.src('app/resources/css/styles.css')
+		.pipe(csslint())
+		.pipe(csslint.reporter())
+		.pipe(csslint.reporter('fail'));		
+});
+
+gulp.task('jsHint', function() {
+	return gulp.src('app/resources/js/*.js')
+		.pipe(jshint())
+		.pipe(jshint.reporter(stylish))
+		.pipe(jshint.reporter('fail'));
 });
 
 gulp.task('connect', function() {
@@ -57,12 +85,19 @@ gulp.task('open', function () {
 });
 
 gulp.task('watch', function() {
-	gulp.watch('app/resources/css/*', ['sass']);
+	gulp.watch('app/resources/css/*.scss', ['sass']);
 	gulp.watch('app/resources/templates/*.hbs', ['templates']);
+	gulp.watch('app/resources/js/*.js', ['jsHint']);
+	gulp.watch('app/*.html', ['htmlHint']);
 });
 
 gulp.task('serve', function(callback) {
-	runSequence(['templates', 'sass'], 'connect', 'open', 'watch', callback);
+	runSequence(
+		['templates', 'sass', 'htmlHint', 'jsHint'],
+		'cssHint',
+		'connect',
+		'open',
+		'watch', callback);
 });
 
 /**************** build tasks *****************/
