@@ -59,11 +59,11 @@ gulp.task('htmlHint', function() {
 	return stream;
 });
 
-gulp.task('cssHint', function() {
+gulp.task('cssLint', ['sass'], function() {
 	return gulp.src('app/resources/css/styles.css')
 		.pipe(csslint())
 		.pipe(csslint.reporter())
-		.pipe(csslint.reporter('fail'));		
+		.pipe(csslint.reporter('fail'));
 });
 
 gulp.task('jsHint', function() {
@@ -86,6 +86,7 @@ gulp.task('open', function () {
 
 gulp.task('watch', function() {
 	gulp.watch('app/resources/css/*.scss', ['sass']);
+	gulp.watch('app/resources/css/styles.css', ['cssLint']);
 	gulp.watch('app/resources/templates/*.hbs', ['templates']);
 	gulp.watch('app/resources/js/*.js', ['jsHint']);
 	gulp.watch('app/*.html', ['htmlHint']);
@@ -93,8 +94,7 @@ gulp.task('watch', function() {
 
 gulp.task('serve', function(callback) {
 	runSequence(
-		['templates', 'sass', 'htmlHint', 'jsHint'],
-		'cssHint',
+		['templates', 'sass', 'cssLint', 'htmlHint', 'jsHint'],
 		'connect',
 		'open',
 		'watch', callback);
