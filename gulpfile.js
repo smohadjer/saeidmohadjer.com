@@ -75,7 +75,7 @@ gulp.task('jsHint', function() {
 
 gulp.task('connect', function() {
 	connect.server({
-		port: 8080,
+		port: 9000,
 		root: 'app'
 	});
 });
@@ -92,9 +92,12 @@ gulp.task('watch', function() {
 	gulp.watch('app/*.html', ['htmlHint']);
 });
 
-gulp.task('serve', function(callback) {
+gulp.task('build:dev', ['templates', 'sass', 'cssLint', 'htmlHint', 'jsHint'], function() {
+
+});
+
+gulp.task('serve', ['build:dev'], function(callback) {
 	runSequence(
-		['templates', 'sass', 'cssLint', 'htmlHint', 'jsHint'],
 		'connect',
 		'open',
 		'watch', callback);
@@ -115,12 +118,10 @@ gulp.task('copy', function() {
 
 gulp.task('useref', function() {
 	var stream = gulp.src('app/*.html')
-		//.pipe(debug({title: 'unicorn:'}))
 		.pipe(useref())
 		.pipe(gulpif('*.js', uglify()))
 		.pipe(gulpif('*.css', cssnano()))
 		.pipe(gulp.dest('dist'));
-
 	return stream;
 });
 
@@ -132,5 +133,9 @@ gulp.task('connect:build', function() {
 });
 
 gulp.task('build', function(callback) {
-	runSequence('clean', ['copy', 'useref'], 'connect:build', 'open', callback);
+	runSequence(
+		['clean', 'build:dev'],
+		['copy', 'useref'],
+		'connect:build',
+		'open', callback);
 });
