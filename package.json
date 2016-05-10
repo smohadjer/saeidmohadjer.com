@@ -1,10 +1,10 @@
 {
-  "name": "boilerplate",
+  "name": "my.website",
   "version": "0.0.1",
-  "description": "Boilerplate for Web projects",
+  "description": "My Website",
   "repository": {
     "type": "git",
-    "url": "https://github.com/smohadjer/boilerplate"
+    "url": "https://github.com/smohadjer/myWebsite"
   },
   "license": "MIT",
   "devDependencies": {

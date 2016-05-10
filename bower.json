@@ -1,16 +1,16 @@
 {
-	"name": "boilerplate",
+	"name": "my.website",
 	"homepage": "https://github.com/smohadjer/boilerplate",
 	"authors": [
 		"Saeid Mohadjer <saeid@fastmail.fm>"
 	],
-	"description": "boilerplate for web projects",
+	"description": "My Website",
 	"main": "index.html",
 	"license": "MIT",
-	"private": true,
+	"private": false,
 	"dependencies": {
-		"jquery": "2.2.3",
-		"handlebars": "4.0.5"
+		"grid": "smohadjer/grid#3cedab5",
+		"helper": "smohadjer/helpers"
 	},
 	"ignore": [
 		"**/.*",
