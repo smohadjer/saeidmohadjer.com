@@ -1,0 +1,165 @@
+html {
+	background: $gray;
+	font-size: 1em;
+	font-family: arial, verdana, snas-serif;
+	color: $black;
+
+	@media only screen and (min-width: 600px) {
+		font-size: 1.25em;
+		line-height: 1.25em;
+	}
+}
+
+body {
+	background: $white;
+	margin: 0;
+}
+
+main {
+	padding-top: 2em;
+	margin: 0 5% 3%;
+
+	@media only screen and (min-width: 600px) {
+		& > section {
+			margin: 0 0 2.5em;
+
+			&:first-of-type {
+				margin-bottom: 1.5em;
+			}
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+section {
+	margin: 0 0 1.5em;
+}
+
+h1 {
+	font-size: 1.6em;
+	line-height: 1.5em;
+	margin: 0;
+	text-align: center;
+}
+
+h2 {
+	font-size: 1.3em;
+	line-height: 1.3em;
+	margin: 0;
+
+	h1 + & {
+		margin: 0 0 1.2em;
+		letter-spacing: 0.15em;
+		text-align: center;
+	}
+}
+
+h3 {
+	border-bottom: solid 1px #666;
+	margin-bottom: 0.4em;
+	padding-bottom: 0.1em;
+}
+
+h4 {
+	margin-bottom: 0;
+	font-size: 1em;
+	line-height: 1.4em;
+	margin-top: 0;
+}
+
+p {
+	font-size: 1em;
+	line-height: 1.4em;
+	margin: 1em 0;
+
+	h4 + & {
+		margin-top: 0.2em;
+	}
+}
+
+sup {
+	color: #666;
+	font-size: 0.7em;
+}
+
+ul {
+	padding-left: 0;
+	margin-top: 10px;
+	margin-bottom: 1em;
+
+	& li  {
+		font-size: 1em;
+		line-height: 1.3em;
+		margin-bottom: 0.4em;
+		margin-left: 1em;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		p {
+			margin-bottom: 0;
+		}
+	}
+}
+
+a {
+	color: $red;
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+dt {
+	font-weight: bold;
+
+	dd + & {
+		margin-top: 10px;
+	}
+}
+
+footer {
+	font-size: 0.8em;
+	line-height: 1.5em;
+	background: $gray;
+	padding: 1.5em 5% 1em;
+	color: #666;
+
+	address {
+		margin-bottom: 1em;
+		font-style: normal;
+	}
+
+	p a {
+		vertical-align: middle;
+		margin-left: 5px;
+		margin-right: 5px;
+	}
+
+	p a:first-child {
+		margin-left: 0;
+	}
+
+	@media (min-width: 600px) {
+		font-size: 0.8em;
+		line-height: 1.6em;
+
+		address {
+			float: left;
+		}
+
+		p {
+			float: right;
+		}
+
+		p a:last-child {
+			margin-right: 0;
+			margin-left: 5px;
+		}
+	}
+}
