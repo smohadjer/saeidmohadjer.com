@@ -107,8 +107,12 @@ ul {
 }
 
 a {
-	color: $red;
+	color: $blue;
 	text-decoration: none;
+
+	&:visited {
+		color: $purple;
+	}
 
 	&:hover {
 		text-decoration: underline;
