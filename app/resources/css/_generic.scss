@@ -52,7 +52,6 @@ h2 {
 
 	h1 + & {
 		margin: 0 0 1.2em;
-		letter-spacing: 0.15em;
 		text-align: center;
 	}
 }
@@ -107,8 +106,12 @@ ul {
 }
 
 a {
-	color: $red;
+	color: $blue;
 	text-decoration: none;
+
+	&:visited {
+		color: $purple;
+	}
 
 	&:hover {
 		text-decoration: underline;

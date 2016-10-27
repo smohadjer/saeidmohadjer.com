@@ -7,6 +7,6 @@ if ( isset($_REQUEST['email']) ) {
 	$subject = 'form submission via email';
 
 	mail("saeid@fastmail.fm", $subject, $email_message, "From:" . $email, "-f info@saeidmohadjer.com");
-	echo "Thank you for using our mail form" . $email;
+	echo "Thank you for using our mail form!";
 }
 ?>
