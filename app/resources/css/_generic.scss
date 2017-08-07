@@ -1,5 +1,4 @@
 html {
-	background: $gray;
 	font-size: 1em;
 	font-family: arial, verdana, snas-serif;
 	color: $black;
@@ -123,46 +122,5 @@ dt {
 
 	dd + & {
 		margin-top: 10px;
-	}
-}
-
-footer {
-	font-size: 0.8em;
-	line-height: 1.5em;
-	background: $gray;
-	padding: 1.5em 5% 1em;
-	color: #666;
-
-	address {
-		margin-bottom: 1em;
-		font-style: normal;
-	}
-
-	p a {
-		vertical-align: middle;
-		margin-left: 5px;
-		margin-right: 5px;
-	}
-
-	p a:first-child {
-		margin-left: 0;
-	}
-
-	@media (min-width: 600px) {
-		font-size: 0.8em;
-		line-height: 1.6em;
-
-		address {
-			float: left;
-		}
-
-		p {
-			float: right;
-		}
-
-		p a:last-child {
-			margin-right: 0;
-			margin-left: 5px;
-		}
 	}
 }

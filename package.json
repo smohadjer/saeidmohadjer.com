@@ -19,7 +19,7 @@
     "gulp-htmlhint": "^0.3.1",
     "gulp-if": "^2.0.0",
     "gulp-jshint": "^2.0.0",
-    "gulp-sass": "2.1.1",
+    "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.0.0-alpha",
     "gulp-uglify": "^1.5.1",
     "gulp-useref": "^3.0.5",

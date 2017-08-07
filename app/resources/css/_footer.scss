@@ -1,0 +1,38 @@
+footer {
+	font-size: 0.9em;
+	line-height: 1.5em;
+	padding: 1.5em 0 0;
+	color: #777;
+	margin: 0 5% 1em;
+	border-top: solid 1px #ccc;
+
+	@media (min-width: 600px) {
+		font-size: 0.8em;
+		line-height: 1.6em;
+	}
+
+	address {
+		margin-bottom: 1em;
+		font-style: normal;
+
+		@media (min-width: 600px) {
+			float: left;
+		}
+	}
+
+	aside {
+		@media (min-width: 600px) {
+			float: right;
+		}
+
+		a {
+			vertical-align: middle;
+			margin-right: 5px;
+
+			&:last-child {
+				margin-right: 0;
+				margin-left: 5px;
+			}
+		}
+	}
+}
