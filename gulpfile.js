@@ -43,7 +43,7 @@ gulp.task('templates', function() {
 });
 
 gulp.task('sass', function () {
-	var stream = gulp.src('app/resources/css/styles.scss')
+	var stream = gulp.src('app/resources/scss/styles.scss')
 		.pipe(sourcemaps.init())
 		.pipe(sass().on('error', sass.logError))
 		.pipe(sourcemaps.write('./maps'))
