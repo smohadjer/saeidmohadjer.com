@@ -25,6 +25,7 @@ var gulp = require('gulp'),
 	gulpif = require('gulp-if'),
 	uglify = require('gulp-uglify'),
 	cssnano = require('gulp-cssnano'),
+	npmDist = require('gulp-npm-dist');
 	runSequence = require('run-sequence');
 
 gulp.task('templates', function() {
@@ -92,7 +93,15 @@ gulp.task('watch', function() {
 	gulp.watch('app/*.html', ['htmlHint']);
 });
 
-gulp.task('build:dev', ['templates', 'sass', 'cssLint', 'htmlHint', 'jsHint'], function() {
+// Copy package.json dependencies to ./app/resources/vendors/
+gulp.task('copy:libs', function() {
+  gulp.src(npmDist({
+		"copyUnminified": true
+  }), {base:'./node_modules'})
+    .pipe(gulp.dest('./app/resources/vendors'));
+});
+
+gulp.task('build:dev', ['templates', 'copy:libs', 'sass', 'cssLint', 'htmlHint', 'jsHint'], function() {
 
 });
 

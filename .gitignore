@@ -1,5 +1,5 @@
 /.tmp
-app/resources/bower_components
+app/resources/vendors
 app/resources/css/**/*.css
 app/resources/css/**/*.map
 app/resources/templates/templates.js
