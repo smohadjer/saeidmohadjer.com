@@ -1,8 +1,4 @@
 /.tmp
-app/resources/vendors
-app/resources/css/**/*.css
-app/resources/css/**/*.map
-app/resources/templates/templates.js
 /dist
 /node_modules
 /npm-debug.log

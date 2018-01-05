@@ -48,7 +48,7 @@ gulp.task('sass', function () {
 		.pipe(sass().on('error', sass.logError))
 		.pipe(sourcemaps.write('./maps'))
 		//.pipe(cssHint())
-		.pipe(gulp.dest('app/resources/css'));
+		.pipe(gulp.dest('.tmp/resources/css'));
 
 	return stream;
 });
@@ -77,7 +77,7 @@ gulp.task('jsHint', function() {
 gulp.task('connect', function() {
 	connect.server({
 		port: 9000,
-		root: 'app'
+		root: ['.tmp', 'app']
 	});
 });
 
@@ -93,12 +93,12 @@ gulp.task('watch', function() {
 	gulp.watch('app/*.html', ['htmlHint']);
 });
 
-// Copy package.json dependencies to ./app/resources/vendors/
+// copy package.json dependencies to .tmp
 gulp.task('copy:libs', function() {
   gulp.src(npmDist({
 		"copyUnminified": true
   }), {base:'./node_modules'})
-    .pipe(gulp.dest('./app/resources/vendors'));
+    .pipe(gulp.dest('.tmp/resources/vendor'));
 });
 
 gulp.task('build:dev', ['templates', 'copy:libs', 'sass', 'cssLint', 'htmlHint', 'jsHint'], function() {
@@ -125,8 +125,14 @@ gulp.task('copy', function() {
 	return stream;
 });
 
-gulp.task('useref', function() {
+gulp.task('copy:html', function() {
 	var stream = gulp.src('app/*.html')
+		.pipe(gulp.dest('.tmp'));
+	return stream;
+});
+
+gulp.task('useref', function() {
+	var stream = gulp.src('.tmp/*.html')
 		.pipe(useref())
 		.pipe(gulpif('*.js', uglify()))
 		.pipe(gulpif('*.css', cssnano()))
@@ -148,7 +154,8 @@ gulp.task('open:build', function () {
 gulp.task('build', function(callback) {
 	runSequence(
 		['clean', 'build:dev'],
-		['copy', 'useref'],
+		['copy', 'copy:html'],
+		['useref'],
 		'connect:build',
 		'open:build', callback);
 });
