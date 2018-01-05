@@ -1,7 +1,0 @@
-User-Agent: *
-Disallow: /resume.html
-Disallow: /yoga/
-
-
-User-Agent: W3C-checklink
-Disallow:
