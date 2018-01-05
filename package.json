@@ -23,7 +23,7 @@
     "gulp-npm-dist": "^0.1.6",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.0.0-alpha",
-    "gulp-uglify": "^1.5.1",
+    "gulp-uglify": "^3.0.0",
     "gulp-useref": "^3.0.5",
     "gulp-wrap": "0.11.0",
     "handlebars": "4.0.5",
