@@ -4,7 +4,7 @@
 	"description": "Website for Saeid Mohadjer",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/smohadjer/myWebsite"
+		"url": "https://github.com/smohadjer/saeidmohadjer.com"
 	},
 	"license": "MIT",
 	"devDependencies": {
@@ -30,6 +30,7 @@
 		"jshint": "^2.9.2",
 		"jshint-stylish": "2.1.0",
 		"opn": "3.0.2",
+		"require-dir": "^0.3.2",
 		"run-sequence": "^1.1.5"
 	},
 	"dependencies": {
