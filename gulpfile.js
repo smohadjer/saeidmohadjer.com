@@ -11,15 +11,18 @@ gulp.task('build:dev', ['templates', 'copy:libs', 'sass', 'cssLint', 'htmlHint',
 
 gulp.task('build', function(callback) {
 	runSequence(
-		['clean', 'build:dev'],
+		['clean'],
+		['build:dev'],
 		['copy', 'copy:html'],
 		['useref'],
 		'connect:build',
 		'open:build', callback);
 });
 
-gulp.task('serve', ['build:dev'], function(callback) {
+gulp.task('serve', function(callback) {
 	runSequence(
+		['clean'],
+		['build:dev'],
 		'connect',
 		'open',
 		'watch', callback);

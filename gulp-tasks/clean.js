@@ -3,6 +3,7 @@ var gulp = require('gulp'),
 
 gulp.task('clean', function () {
 	return del([
-		'./dist/**/*'
+		'./dist/**/*',
+		'./.tmp/**/*'
 	]);
 });
