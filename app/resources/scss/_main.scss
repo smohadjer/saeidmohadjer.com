@@ -39,6 +39,8 @@ section.work h3 {
 .new {
 	h3 {
 		border-bottom: none;
+		font-size: 1.5em;
+		line-height: 1.3em;
 	}
 
 	padding-bottom: 15px;
@@ -48,4 +50,32 @@ section.work h3 {
 @keyframes fadein {
 	from { opacity: 0; transform: scale(0.5); }
 	to   { opacity: 1; transform: scale(1);  }
+}
+
+.columns {
+	box-sizing: border-box;
+
+	&__left {
+		@media (min-width: 768px) {
+			float: left;
+			width: 60%;
+			padding-right: 5%;
+		}
+
+		h3 {
+			margin-top: 0;
+		}
+	}
+
+	&__right {
+		@media (min-width: 768px) {
+			float: left;
+			width: 40%;
+		}
+
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
 }
