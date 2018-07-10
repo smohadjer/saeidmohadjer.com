@@ -1,0 +1,22 @@
+.blog {
+	article {
+		border-bottom: solid 1px $gray;
+
+		+ article {
+			margin-top: 2em;
+		}
+
+		h3 {
+			border: none;
+		}
+
+		time {
+			font-size: smaller;
+
+			+ p {
+				margin-top: 1em;
+			}
+		}
+	}
+
+}
