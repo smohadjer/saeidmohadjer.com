@@ -24,21 +24,17 @@ main {
 
 	@media only screen and (min-width: 600px) {
 		& > section {
-			margin: 0 0 2.5em;
+			//margin: 0;
 
 			&:first-of-type {
-				margin-bottom: 1.5em;
+				//margin-bottom: 1.5em;
 			}
 
 			&:last-child {
-				margin-bottom: 0;
+				//margin-bottom: 0;
 			}
 		}
 	}
-}
-
-section {
-	margin: 0 0 1.5em;
 }
 
 h1 {
@@ -47,14 +43,15 @@ h1 {
 	margin: 0;
 	text-align: center;
 	font-family: 'Open Sans', arial, verdana, snas-serif;
-	font-weight: 900;
+	font-weight: 400;
 }
 
 h2 {
-	font-size: 1.1em;
-	line-height: 1.1em;
+	font-size: 1.2em;
+	line-height: 1.2em;
 	margin: 0;
 	font-family: 'Open Sans', arial, verdana, snas-serif;
+	font-weight: 400;
 
 	h1 + & {
 		margin: 0 0 1.2em;
@@ -64,7 +61,7 @@ h2 {
 
 h3 {
 	border-bottom: solid 1px #666;
-	margin-bottom: 0.4em;
+	margin-bottom: 0;
 	padding-bottom: 0.1em;
 	font-family: 'Open Sans', arial, verdana, snas-serif;
 }

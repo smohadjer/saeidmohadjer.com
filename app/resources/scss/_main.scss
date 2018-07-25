@@ -7,16 +7,23 @@
 .intro {
 	margin: 40px 0;
 	background: $gray;
-	padding: 20px;
+	padding: 25px;
+	font-size: 1.2em;
+	line-height: 1.5em;
 }
 
-section.work h3 {
-	border: none;
+section.work {
+	margin-top: 20px;
+	
+	h3 {
+		border: none;
+	}
 }
 
 .flex-container {
 	display: flex;
 	flex-wrap: wrap;
+	margin-top: 10px;
 
 	.grid__cell {
 		display: flex;
