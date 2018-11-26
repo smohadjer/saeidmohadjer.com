@@ -1,0 +1,38 @@
+.tips {
+	.tags {
+		text-align: center;
+
+		a {
+			background : #ccc;
+			padding: 5px 10px;
+			margin: 10px 5px;
+
+		}
+
+	}
+	section {
+		padding-bottom: 20px;
+		border-bottom: solid 1px #ccc;
+		margin-bottom: 20px;
+
+		&:last-of-type {
+			border-bottom: 0;
+			margin-bottom: 0;
+		}
+
+		h2 + p {
+			margin-top: 10px;
+		}
+	}
+
+
+
+	pre {
+		padding: 10px;
+		background: #eff0f1;
+		font-family: monospace;
+		font-size: 14px;
+		line-height: 16px;
+		font-weight: normal;
+	}
+}
