@@ -7,12 +7,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="format-detection" content="telephone=no" />
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
-
-		<!-- build:css resources/css/styles.min.css -->
-		<link rel="stylesheet" href="resources/vendor/helpers/dist/helper.css" />
-		<link rel="stylesheet" href="resources/vendor/grid/dist/grid.css" />
-		<link rel="stylesheet" href="resources/css/styles.css">
-		<!-- endbuild -->
+		<?php include('include/styles.html'); ?>
 	</head>
 	<body>
 		<main>

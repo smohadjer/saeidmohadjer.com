@@ -3,10 +3,10 @@ var gulp = require('gulp'),
 	sass = require('gulp-sass');
 
 gulp.task('sass', function () {
-	var stream = gulp.src('app/resources/scss/styles.scss')
+	var stream = gulp.src('app/resources/css/*.scss')
 		.pipe(sourcemaps.init())
 		.pipe(sass().on('error', sass.logError))
-		.pipe(sourcemaps.write('./maps'))
+		.pipe(sourcemaps.write('/maps'))
 		//.pipe(cssHint())
 		.pipe(gulp.dest('.tmp/resources/css'));
 

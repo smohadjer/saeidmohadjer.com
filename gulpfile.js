@@ -5,25 +5,24 @@ var gulp = require('gulp'),
 // Require all tasks.
 requireDir('./gulp-tasks', { recurse: true });
 
-gulp.task('build:dev', ['templates', 'copy:libs', 'sass', 'cssLint', 'htmlHint', 'jsHint'], function() {
-
+gulp.task('build:dev', function(callback) {
+	runSequence(
+		'clean:tmp',
+		['copy:libs','copy:fonts:tmp'],
+		['hbs', 'sass', 'jsHint'],
+		'transpile',
+		['cssLint'],
+		callback);
 });
 
-gulp.task('build', function(callback) {
+gulp.task('serve', ['build:dev'], function(callback) {
 	runSequence(
-		['clean'],
-		['build:dev'],
-		['copy', 'copy:html'],
-		['useref'],
-		'connect:build',
-		'open:build', callback);
-});
-
-gulp.task('serve', function(callback) {
-	runSequence(
-		['clean'],
-		['build:dev'],
-		'connect',
-		'open',
 		'watch', callback);
+});
+
+gulp.task('build', ['clean:dist', 'build:dev'], function(callback) {
+	runSequence(
+		['copy:assets', 'copy:root', 'copy:content', 'copy:img', 'copy:fonts', 'copy:appleIcon'],
+		'useref',
+		callback);
 });

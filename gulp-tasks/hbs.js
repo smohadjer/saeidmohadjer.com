@@ -4,16 +4,20 @@ var gulp = require('gulp'),
 	declare = require('gulp-declare'),
 	concat = require('gulp-concat');
 
-gulp.task('templates', function() {
-	gulp.src('app/resources/templates/*.hbs')
+var fs = require('fs');
+var json = JSON.parse(fs.readFileSync('./project.json'));
+
+//precompile handlebars templates
+gulp.task('hbs', function() {
+	gulp.src('app/resources/hbs/*.hbs')
 		.pipe(handlebars({
 			handlebars: require('handlebars')
 		}))
 		.pipe(wrap('Handlebars.template(<%= contents %>)'))
 		.pipe(declare({
-			namespace: 'MyApp.templates',
+			namespace: json.handlebars.namespace,
 			noRedeclare: true, // Avoid duplicate declarations
 		}))
-		.pipe(concat('templates.js'))
-		.pipe(gulp.dest('app/resources/templates/'));
+		.pipe(concat('handlebars.templates.js'))
+		.pipe(gulp.dest('.tmp/resources/js/'));
 });

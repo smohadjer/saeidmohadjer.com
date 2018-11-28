@@ -8,33 +8,35 @@
 	},
 	"license": "MIT",
 	"devDependencies": {
+		"babel-core": "^6.26.3",
+		"babel-preset-env": "^1.7.0",
 		"del": "2.2.0",
-		"gulp": "^3.9.1",
+		"gulp": "3.9.1",
+		"gulp-babel": "^7.0.1",
 		"gulp-concat": "2.6.0",
 		"gulp-connect": "^4.0.0",
-		"gulp-copy": "0.0.2",
 		"gulp-csslint": "^0.3.0",
 		"gulp-cssnano": "^2.1.0",
+		"gulp-debug": "^4.0.0",
 		"gulp-declare": "0.3.0",
-		"gulp-handlebars": "^5.0.0",
-		"gulp-htmlhint": "^0.3.1",
+		"gulp-handlebars": "5.0.2",
 		"gulp-if": "^2.0.0",
 		"gulp-jshint": "^2.0.0",
-		"gulp-npm-dist": "^0.1.6",
-		"gulp-sass": "^3.1.0",
-		"gulp-sourcemaps": "^2.6.3",
-		"gulp-uglify": "^3.0.0",
-		"gulp-useref": "^3.0.5",
+		"gulp-npm-dist": "1.0.1",
+		"gulp-sass": "3.1.0",
+		"gulp-sourcemaps": "^2.0.0-alpha",
+		"gulp-uglify": "3.0.0",
+		"gulp-useref": "3.1.5",
 		"gulp-wrap": "0.11.0",
-		"handlebars": "4.0.5",
 		"jshint": "^2.9.2",
 		"jshint-stylish": "2.1.0",
-		"opn": "3.0.2",
 		"require-dir": "^0.3.2",
-		"run-sequence": "^1.1.5"
+		"run-sequence": "2.2.1"
 	},
 	"dependencies": {
 		"grid": "git+https://github.com/smohadjer/grid.git",
-		"helpers": "git+https://github.com/smohadjer/helpers.git"
+		"helpers": "git+https://github.com/smohadjer/helpers.git",
+		"hamburgers": "0.9.3",
+		"handlebars": "4.0.11"
 	}
 }
