@@ -103,7 +103,7 @@ define('TMP_DIR', '/var/www/vhosts/saeidmohadjer.com/httpdocs/tmp/spgd-'.md5(REM
  * It's useful NOT to clean up in order to only fetch changes on the next
  * deployment.
  */
-define('CLEAN_UP', true);
+define('CLEAN_UP', false);
 
 /**
  * Output the version of the deployed code.
