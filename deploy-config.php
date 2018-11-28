@@ -46,7 +46,7 @@ define('BRANCH', 'master');
  * @var string Full path including the trailing slash
  */
 //define('TARGET_DIR', '/is/htdocs/wp11222902_WNLKFK0OHC/www/live/solmazmohadjer.com/');
-define('TARGET_DIR', '/var/www/vhosts/saeidmohadjer.com/app/');
+define('TARGET_DIR', '/var/www/vhosts/saeidmohadjer.com/');
 
 
 /**
