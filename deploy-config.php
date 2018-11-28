@@ -83,7 +83,8 @@ define('EXCLUDE', serialize(array(
 	'app/include',
 	'app/*.php',
 	'app/*.png',
-	'app/*.md'
+	'app/*.md',
+	'yarn.lock'
 )));
 
 /**
