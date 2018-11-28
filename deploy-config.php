@@ -46,7 +46,7 @@ define('BRANCH', 'master');
  * @var string Full path including the trailing slash
  */
 //define('TARGET_DIR', '/is/htdocs/wp11222902_WNLKFK0OHC/www/live/solmazmohadjer.com/');
-define('TARGET_DIR', '/var/www/vhosts/saeidmohadjer.com/httpdocs');
+define('TARGET_DIR', '/var/www/vhosts/saeidmohadjer.com/app/');
 
 
 /**
@@ -96,7 +96,7 @@ define('EXCLUDE', serialize(array(
  * @var string Full path including the trailing slash
  */
 //define('TMP_DIR', '/is/htdocs/wp11222902_WNLKFK0OHC/www/live/tmp/spgd-'.md5(REMOTE_REPOSITORY).'/');
-define('TMP_DIR', '/var/www/vhosts/saeidmohadjer.com/httpdocs/tmp/spgd-'.md5(REMOTE_REPOSITORY).'/');
+define('TMP_DIR', '/var/www/vhosts/saeidmohadjer.com/app/tmp/spgd-'.md5(REMOTE_REPOSITORY).'/');
 
 /**
  * Whether to remove the TMP_DIR after the deployment.
