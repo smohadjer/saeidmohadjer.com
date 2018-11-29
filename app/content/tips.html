@@ -1,3 +1,18 @@
+<section>
+    <h2>Using array.filter() when array contains objects</h2>
+    <p>When using array.filter() or other array methods on arrays containing objects, new array returned is NOT a deep clone of original array. If you plan to make changes to new array that should not affect the original array use jQuery's $.extend() with true parameter to deep clone the new array.</p>
+    <pre>
+//data is an array of objects [{name: 'Germany', isocode: 'de'}, {name: 'France', isocode: 'fr'}, ...]
+getCountryData: function(data, isocode) {
+    var self = this;
+	var companies = data.companies.filter(function(item) {
+		return item.isocode.toLowerCase() === isocode;
+	});
+	var temp = $.extend(true, [], companies); // we must deep copy array since it contains objects
+	return temp;
+}</pre>
+</section>
+
 <section id="handlebars">
     <h2>Handlebars </h2>
     <p>To access an array item by index</p>
