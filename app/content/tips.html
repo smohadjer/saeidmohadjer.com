@@ -52,6 +52,9 @@ return true;
 myString.charAt(0); //returns first letter of string
 myString.toUpperCase();
 myString.toLowerCase();
+myString = originalString.replace(‘hello’, ‘world’); //replacing something that occurs only once
+myString = oldString.replace(/,/g, '-‘); //replacing all occurrences of comma with a dash using regex
+myString = oldString.split(‘,’).join(‘-‘); //replacing all occurrences of comma with a dash without using regex
 </pre>
 </section>
 
