@@ -1,19 +1,12 @@
 .tips {
-	.tags {
+	h2 {
 		text-align: center;
-
-		a {
-			background : #ccc;
-			padding: 5px 10px;
-			margin: 10px 5px;
-
-		}
-
+		text-transform: uppercase;
+		margin-bottom: 30px;
 	}
+
 	section {
-		padding-bottom: 20px;
-		border-bottom: solid 1px #ccc;
-		margin-bottom: 20px;
+		margin-bottom: 40px;
 
 		&:last-of-type {
 			border-bottom: 0;
@@ -25,14 +18,14 @@
 		}
 	}
 
-
-
 	pre {
 		padding: 10px;
+		margin: 0;
 		background: #eff0f1;
 		font-family: monospace;
 		font-size: 14px;
-		line-height: 16px;
+		line-height: 18px;
 		font-weight: normal;
+		overflow-x: auto;
 	}
 }
