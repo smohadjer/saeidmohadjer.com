@@ -4,7 +4,7 @@
     <pre>
 //data is an array of objects [{name: 'Germany', isocode: 'de'}, {name: 'France', isocode: 'fr'}, ...]
 getCountryData: function(data, isocode) {
-    var self = this;
+	var self = this;
 	var companies = data.companies.filter(function(item) {
 		return item.isocode.toLowerCase() === isocode;
 	});
