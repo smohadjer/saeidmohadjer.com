@@ -2,37 +2,36 @@
 	<article class="tips">
 		<section id="jquery">
 			<h3>Finding out whether an element is empty or not</h3>
-			<p>Do not use jQuery's <code>$(element).is(':empty')</code> to detect whether an element is empty or 
-				not, as even if your element contains white space or comment it wouldn't be considered 
-				empty by .is(':empty'). Instead use:
-				<pre>$(element).children().length</pre>
-			</p>
+			<p>Do not use jQuery's <code>$(element).is(':empty')</code> to detect whether an element is empty or not, because if your element contains white space or HTML comments it wouldn't be considered empty. Instead use:</p>
+			<pre>if ($(element).children().length > 0) {
+	console.log('Element is not empty');
+}</pre>
 		</section>
-		
+
 		<section>
 			<h3>Use reverse looping to remove items from an array</h3>
 			<pre>
 var myArr = [1, 2, 2, 3, 4];
 var i = myArr.length;
 while (i--) {
-    if (myArr[i] === 2) { 
+    if (myArr[i] === 2) {
         myArr.splice(i, 1);
-    } 
+    }
 }
 // myArr will be [1, 3, 4]
 
 // A normal for loop will fail to remove all items equal to 2 from array!
 for (var i=0; i < myArr.length; i++) {
-    if (myArr[i] === 2) { 
+    if (myArr[i] === 2) {
         myArr.splice(i, 1);
-    } 
+    }
 }
 // myArr will be [1, 2, 3, 4]
 </pre>
 		</section>
 		<section>
-			<h3>Using array.filter() when array contains objects</h3>
-			<p>When using array.filter() or other array methods on arrays containing objects, new array returned is NOT a deep clone of original array. If you plan to make changes to new array that should not affect the original array use jQuery's $.extend() with true parameter to deep clone the new array.</p>
+			<h3>Copy arrays containing objects by value rather than by reference</h3>
+			<p>When using array.filter() or other array methods on arrays containing objects, new array returned is NOT a deep clone of original array. If you plan to make changes to new array that should not affect the original array use jQuery's <code>$.extend(true, [], myArray)</code> to deep clone your array.</p>
 	<pre>
 //data is an array of objects [{name: 'Germany', isocode: 'de'}, {name: 'France', isocode: 'fr'}, ...]
 getCountryData: function(data, isocode) {
@@ -45,11 +44,23 @@ getCountryData: function(data, isocode) {
 }</pre>
 		</section>
 
-		<section id="handlebars">
-			<h3>Handlebars </h3>
-			<p>To access an array item by index</p>
-			<pre>{{units.[0].location}}</pre>
+		<section>
+			<h3>Removing duplicate items from an array</h3>
+			<p><a href="https://stackoverflow.com/a/39886008/884177">https://stackoverflow.com/a/39886008/884177</a></p>
+<pre>//remove duplicate coordinates
+var myArr = [{lat: 23, lng:31}, {lat:12, lng:21}, {lat:23, lng:31}, {lat:23, lng:31}];
+var occurances = [];
+var uniqueLocations = myArr.filter(function(item) {
+	if (occurances.indexOf(item.lat + item.lng) !== -1) {
+		return false;
+	}
+	occurances.push(item.lat + item.lng);
+	return true;
+});</pre>
+		</section>
 
+		<section id="handlebars">
+			<h3>Iterating objects in Handlebars</h3>
 			<p>It is possible to iterate objects in handlebars templates. In below example countries is an object of key:value pairs where key is letter of alphabet and value is an array of countries whose name starts with that letter. @key returns key and “this” returns value for that key. It’s possible to use “../“ to access parent properties.</p>
 	<pre>&lt;dl&gt;
 	{{#each countries}}
@@ -69,50 +80,23 @@ Handlebars.registerHelper('toUpperCase', function(str) {
 });</pre>
 		</section>
 
-		<section id="json">
-			<h3>Useing .fail() with getJSON:</h3>
-			<pre>$.getJSON(json, successCallback).fail(errorCallback);</pre>
-		</section>
-
 		<section>
-			<h3>Removing duplicate items from an array</h3>
-			<p><a href="https://stackoverflow.com/a/39886008/884177">https://stackoverflow.com/a/39886008/884177</a></p>
-<pre>//remove duplicate coordinates
-var myArr = [{lat: 23, lng:31}, {lat:12, lng:21}, {lat:23, lng:31}, {lat:23, lng:31}];
-var occurances = [];
-var uniqueLocations = myArr.filter(function(item) {
-	if (occurances.indexOf(item.lat + item.lng) !== -1) {
-		return false;
-	}
-	occurances.push(item.lat + item.lng);
-	return true;
-});</pre>
-		</section>
-		<section>
-			<h3>JavaScript: Array</h3>
-			<p>Detecting whether array has an item or not:</p>
-			<pre>myArray.indexOf(arrayItem); //if not found it returns -1</pre>
-
-			<p>Filtering array</p>
-			<pre>myArray.filter(function(arrayItem) { return condition; }); // returns a new array with array items that pass the condition</pre>
-		</section>
-
-		<section>
-			<h3>JavaScript: String</h3>
+			<h3>Useful one-liners!</h3>
 <pre>
+myArray.indexOf(arrayItem); //retruns -1 if item is not found in array
+myArray.filter(function(arrayItem) { return condition; }); // returns new array with array items that pass the condition
+
 myString.charAt(0); //returns first letter of string
 myString.toUpperCase();
 myString.toLowerCase();
 myString = originalString.replace(‘hello’, ‘world’); //replacing something that occurs only once
 myString = oldString.replace(/,/g, '-‘); //replacing all occurrences of comma with a dash using regex
 myString = oldString.split(‘,’).join(‘-‘); //replacing all occurrences of comma with a dash without using regex
-</pre>
-		</section>
 
-		<section>
-			<h3>JavaScript: Object</h3>
-			<p>Use delete to remove a property from an object:</p>
-			<pre>delete myObject[propertyName];</pre>
+delete myObject[propertyName]; //to remove a property from an object
+
+{{units.[0].location}} // To access an array item by index in Handlebars template
+</pre>
 		</section>
 
 	</article>
