@@ -1,5 +1,14 @@
 <main>
 	<article class="tips">
+		<section id="jquery">
+			<h3>Finding out whether an element is empty or not</h3>
+			<p>Do not used jQuery's <code>$(element).is(':empty')</code> to detect whether an element is empty or not since even if your elements
+				continas white space or comments it's not considered empty this way. Instead use:
+				<pre>$(element).children().length</pre>
+			</p>
+			<pre>$(element).is(':empty')</pre>
+		</section>
+		
 		<section>
 			<h3>Use reverse looping to remove items from an array</h3>
 			<pre>
@@ -104,12 +113,6 @@ myString = oldString.split(‘,’).join(‘-‘); //replacing all occurrences o
 			<h3>JavaScript: Object</h3>
 			<p>Use delete to remove a property from an object:</p>
 			<pre>delete myObject[propertyName];</pre>
-		</section>
-
-		<section id="jquery">
-			<h3>jQuery</h3>
-			<p>To find out if an element is empty or not:</p>
-			<pre>$(element).is(':empty')</pre>
 		</section>
 
 	</article>
