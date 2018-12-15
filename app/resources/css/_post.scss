@@ -1,5 +1,12 @@
 .post {
 	line-height: 1.4em;
+	font-size: 0.9em;
+
+	+ .post {
+		margin-top: 40px;
+		border-top: solid 1px #ccc;
+		padding-top: 20px;
+	}
 
 	.centered {
 		text-align: center;
