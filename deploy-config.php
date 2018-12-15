@@ -78,7 +78,6 @@ define('EXCLUDE', serialize(array(
 	'.jshintrc',
 	'gulpfile.js',
 	'/*.json',
-	'/*.php',
 	'app/resources',
 	'app/include',
 	'app/*.php',
