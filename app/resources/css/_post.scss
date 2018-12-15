@@ -1,4 +1,6 @@
-.tips {
+.post {
+	line-height: 1.5em;
+
 	h2 {
 		text-align: center;
 		text-transform: uppercase;
@@ -13,6 +15,15 @@
 
 	p {
 		margin-top: 15px;
+	}
+
+	li, p {
+		line-height: inherit;
+	}
+
+	li + li {
+		margin-top: 0.5em;
+		margin-bottom: 0;
 	}
 
 	section {
