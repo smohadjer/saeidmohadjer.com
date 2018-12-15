@@ -14,7 +14,7 @@
 		"gulp": "3.9.1",
 		"gulp-babel": "^7.0.1",
 		"gulp-concat": "2.6.0",
-		"gulp-connect": "^4.0.0",
+		"gulp-connect": "5.5.0",
 		"gulp-csslint": "^0.3.0",
 		"gulp-cssnano": "^2.1.0",
 		"gulp-debug": "^4.0.0",
