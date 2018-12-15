@@ -1,0 +1,17 @@
+.home {
+	> article {
+		border-bottom: solid 1px $gray;
+
+		+ article {
+			margin-top: 2em;
+		}
+
+		h3 {
+			border: none;
+		}
+
+		p {
+			max-width: 1024px;
+		}		
+	}
+}

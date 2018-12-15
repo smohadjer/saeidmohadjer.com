@@ -1,5 +1,13 @@
 .post {
-	line-height: 1.5em;
+	line-height: 1.4em;
+
+	.centered {
+		text-align: center;
+	}
+
+	h1 + section {
+		margin-top: 30px;
+	}
 
 	h2 {
 		text-align: center;
@@ -11,6 +19,10 @@
 		margin: 0;
 		padding: 0;
 		border: 0;
+
+		+ p {
+			margin-top: 5px;
+		}
 	}
 
 	p {

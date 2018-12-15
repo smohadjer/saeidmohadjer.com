@@ -4,7 +4,7 @@ header {
 	font-family: 'Open Sans', arial, verdana, snas-serif;
 	border-bottom: solid 1px #ddd;
 
-	h1 {
+	h2 {
 		font-size: 1.3em;
 		line-height: 1.6em;
 		margin: 0;
@@ -12,14 +12,15 @@ header {
 		font-weight: 400;
 	}
 
-	h2 {
+	h3 {
 		font-size: 0.9em;
 		line-height: 1em;
 		margin: 0;
 		font-family: 'Open Sans', arial, verdana, snas-serif;
 		font-weight: 400;
+		border: 0;
 
-		h1 + & {
+		h2 + & {
 			margin: 0 0 1.2em;
 			text-align: center;
 		}
