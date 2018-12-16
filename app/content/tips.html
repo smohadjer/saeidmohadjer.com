@@ -31,8 +31,11 @@ for (var i=0; i < myArr.length; i++) {
 </pre>
 		</section>
 		<section>
-			<h3>Copy arrays containing objects by value rather than by reference</h3>
-			<p>When using array.filter() or other array methods on arrays containing objects, new array returned is NOT a deep clone of original array. If you plan to make changes to new array that should not affect the original array use jQuery's <code>$.extend(true, [], myArray)</code> to deep clone your array.</p>
+			<h3>Copying arrays of objects by value rather than by reference</h3>
+			<p>If an array contains no objects, making a clone is as simple as: <code>var clonedArray = myArray.slice(0);</code>, 
+				but this will create a shallow clone meaning that changing object in one array would affect the other array. 
+				 If you wish to make changes to new array that should not affect the original array 
+				(for example by using array.filter() method) use jQuery's <code>$.extend(true, [], myArray)</code> to deep clone your array before making changes to it.</p>
 	<pre>
 //data is an array of objects [{name: 'Germany', isocode: 'de'}, {name: 'France', isocode: 'fr'}, ...]
 getCountryData: function(data, isocode) {
