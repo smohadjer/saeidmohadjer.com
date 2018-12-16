@@ -46,6 +46,8 @@ getCountryData: function(data, isocode) {
 	var temp = $.extend(true, [], companies); // we must deep copy array since it contains objects
 	return temp;
 }</pre>
+			<p>If your array has a valid json construct, you can create a deep clone using JSON methods:</p>
+			<pre>var clonedArray = JSON.parse(JSON.stringify(oldArray));</pre>
 		</section>
 
 		<section>
