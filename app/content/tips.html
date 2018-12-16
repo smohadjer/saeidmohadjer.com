@@ -38,7 +38,7 @@ for (var i=0; i < myArr.length; i++) {
 				(for example by using array.filter() method) and your array objects do not contain functions, you can 
 				create a deep clone using JSON methods:</p>
 			<pre>var clonedArray = JSON.parse(JSON.stringify(oldArray));</pre>	
-			<p>Or you can use jQuery's <code>$.extend(true, [], myArray)</code> to deep clone your array before making changes to it.</p>
+			<p>Or you can use jQuery <code>var clonedArray = $.extend(true, [], oldArray);</code> to deep clone your array before making changes to it.</p>
 	<pre>
 //data is an array of objects [{name: 'Germany', isocode: 'de'}, {name: 'France', isocode: 'fr'}, ...]
 getCountryData: function(data, isocode) {
