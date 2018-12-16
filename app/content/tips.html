@@ -35,7 +35,10 @@ for (var i=0; i < myArr.length; i++) {
 			<p>If an array contains no objects, making a clone is as simple as: <code>var clonedArray = myArray.slice(0);</code>, 
 				but this will create a shallow clone meaning that changing object in one array would affect the other array. 
 				 If you wish to make changes to new array that should not affect the original array 
-				(for example by using array.filter() method) use jQuery's <code>$.extend(true, [], myArray)</code> to deep clone your array before making changes to it.</p>
+				(for example by using array.filter() method) and your array objects do not contain functions, you can 
+				create a deep clone using JSON methods:</p>
+			<pre>var clonedArray = JSON.parse(JSON.stringify(oldArray));</pre>	
+			<p>Or you can use jQuery's <code>$.extend(true, [], myArray)</code> to deep clone your array before making changes to it.</p>
 	<pre>
 //data is an array of objects [{name: 'Germany', isocode: 'de'}, {name: 'France', isocode: 'fr'}, ...]
 getCountryData: function(data, isocode) {
@@ -46,8 +49,6 @@ getCountryData: function(data, isocode) {
 	var temp = $.extend(true, [], companies); // we must deep copy array since it contains objects
 	return temp;
 }</pre>
-			<p>If your array has a valid json construct, you can create a deep clone using JSON methods:</p>
-			<pre>var clonedArray = JSON.parse(JSON.stringify(oldArray));</pre>
 		</section>
 
 		<section>
