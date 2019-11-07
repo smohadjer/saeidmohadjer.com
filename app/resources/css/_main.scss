@@ -5,16 +5,16 @@
 }
 
 .intro {
-	margin: 40px 0;
-	background: $gray;
-	padding: 25px;
-	font-size: 1.2em;
-	line-height: 1.5em;
+	margin: 0 0 40px;
+	font-size: 1em;
+	line-height: 1.4em;
+	padding-bottom: 1.4em;
+	border-bottom: solid 1px $gray;
 }
 
 section.work {
 	margin-top: 20px;
-	
+
 	h3 {
 		border: none;
 	}
