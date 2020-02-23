@@ -37,6 +37,6 @@
 		"grid": "git+https://github.com/smohadjer/grid.git",
 		"helpers": "git+https://github.com/smohadjer/helpers.git",
 		"hamburgers": "0.9.3",
-		"handlebars": "4.0.11"
+		"handlebars": "4.3.0"
 	}
 }
