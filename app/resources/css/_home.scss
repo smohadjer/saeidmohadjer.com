@@ -36,5 +36,15 @@
 		}
 	}
 
+	dd {
+		margin-left: 0;
+		font-size: smaller;
+	}
+
+	dd + dt {
+		margin-top: 1em;
+	}
+
+
 
 }
