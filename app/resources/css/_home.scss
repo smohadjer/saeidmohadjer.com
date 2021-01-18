@@ -1,4 +1,19 @@
 .home {
+	> section {
+		border-bottom: solid 1px $gray;
+		padding-bottom: 30px;
+		margin-bottom: 30px;
+
+		&:last-child {
+			border: 0;
+			padding-bottom: 0;
+		}
+
+		h3 + p {
+			margin-top: 20px;
+		}
+	}
+
 	> article {
 		border-bottom: solid 1px $gray;
 

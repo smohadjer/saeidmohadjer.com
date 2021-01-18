@@ -1,24 +1,21 @@
 header {
 	margin: 20px 5% 0;
-	text-align: center;
 	font-family: 'Open Sans', arial, verdana, snas-serif;
+	display: flex;
+	justify-content: space-between;
 
 	h2 {
-		font-size: 1.3em;
-		line-height: 1.8em;
-		margin: 0;
-		font-family: 'Open Sans', arial, verdana, snas-serif;
-		font-weight: 400;
+		font-size: 1.25em;
+		line-height: 1.6em;
+		font-weight: 600;
 	}
 
 	h3 {
-		font-size: 0.9em;
+		font-size: .85em;
 		line-height: 1.2em;
-		letter-spacing: 0.1em;
-		margin: 0;
-		font-family: 'Open Sans', arial, verdana, snas-serif;
-		font-weight: bold;
-		border: 0;
+		font-weight: normal;
+		color: #777;
+		letter-spacing: 0.05em;
 
 		h2 + & {
 			margin: 0 0 1.2em;
@@ -27,11 +24,7 @@ header {
 	}
 
 	nav {
-		display: block;
-		text-align: center;
-		background: $gray;
-		padding: 0.5em 0;
-		margin: 1em 0;
+		font-size: .9em;
 
 		ul {
 			margin: 0;
@@ -41,6 +34,14 @@ header {
 			display: inline-block;
 			list-style: none;
 			margin: 0 1em 0 0;
+		}
+
+		li:last-child {
+			margin-right: 0;
+		}
+
+		li.github {
+			background: url(../img/GitHub-Mark-64px.png) no-repeat;
 		}
 	}
 }

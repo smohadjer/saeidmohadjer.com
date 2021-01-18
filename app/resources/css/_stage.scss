@@ -1,0 +1,38 @@
+.stage {
+    margin: 2em 0;
+
+    .grid {
+        display: flex;
+        margin-top: 1em;
+        flex-wrap: wrap;
+    }
+
+    .item {
+        flex-basis: 100%;
+        margin-bottom: 20px;
+
+        @media (min-width: 600px) and (max-width: 1023px) {
+            flex-basis: calc(50% - 10px);
+
+            &:nth-child(even) {
+                margin-left: 20px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            flex-basis: calc(33.33% - 12px);  /* 18px * 2/3 = 12px */
+            margin-right: 18px;
+            margin-bottom: 40px;
+
+            &:nth-child(3n) {
+                margin-right: 0;
+            }
+        }
+    }
+
+    .item img {
+        width: 100%;
+        box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.25);
+        margin-bottom: 0.5em;
+    }
+}

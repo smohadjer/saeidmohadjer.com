@@ -14,8 +14,8 @@
 		<!-- endbuild -->
 	</head>
 	<body>
-		<?php include('includes/header.html'); ?>
-		<?php include('content/lists.html'); ?>
-		<?php include('includes/footer.html'); ?>
+		<?php include('content/html/header.html'); ?>
+		<?php include('content/html/lists.html'); ?>
+		<?php include('content/html/footer.html'); ?>
 	</body>
 </html>
