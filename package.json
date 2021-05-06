@@ -22,7 +22,7 @@
 		"@babel/preset-env": "^7.6.2",
 		"concat": "^1.0.3",
 		"fs-extra": "^8.1.0",
-		"handlebars": "^4.7.6",
+		"handlebars": "^4.7.7",
 		"node-sass": "^4.14.1",
 		"rimraf": "latest",
 		"rollup": "^1.25.1",
