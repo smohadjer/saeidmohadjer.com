@@ -1,0 +1,9 @@
+"resume": {
+  "skills": {
+    "languages": ["HTML/CSS", "JavaScript", "TypeScript", "Node.js", "PHP"],
+    "Databases": ["MariaDB", "DynamoDB"],
+    "Web Frameworks": ["React", "Gatsby", "JQuery"],
+    "AWS": [],
+    "Tools": ["Git", "NPM"]
+  ]
+}
