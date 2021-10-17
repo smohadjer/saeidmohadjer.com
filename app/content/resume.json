@@ -1,14 +1,15 @@
 "resume": {
   "info": {
-    "name": "Saeid Mohadjer",
-    "title" "Full-stack Developer"
+    "Name": "Saeid Mohadjer",
+    "Title" "Full-stack Developer"
   },
-  "skills": {
-    "languages": ["HTML/CSS", "JavaScript", "TypeScript", "Node.js", "PHP"],
-    "Databases": ["MariaDB", "DynamoDB"],
-    "Web Frameworks": ["React", "Gatsby", "JQuery"],
-    "AWS": [],
-    "Tools": ["Git", "NPM"],
+  "Technology": {
+    "languages": ["HTML5", "CSS", "JavaScript", "TypeScript", "Node.js", "GraphQL (basic)", "PHP"],
+    "Databases": ["MariaDB", "DynamoDB (basic)"],
+    "Web Frameworks": ["React (basic)", "Gatsby (basic)", "JQuery"],
+    "AWS": ["SAM", "Lambda"],
+    "CMS": ["Contentful", "Storyblok", "Magnolia", "AEM"],
+    "Tools": ["Git", "NPM", "Docker (basic)"],
     "Editors": ["Visual Studio Code", "Notepad++", "Atom"],
     "Operating System": ["Mac OS", "Windows"]
   }
