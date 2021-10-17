@@ -2,7 +2,7 @@
   "info": {
     "name": "Saeid Mohadjer",
     "title" "Full-stack Developer"
-  }
+  },
   "skills": {
     "languages": ["HTML/CSS", "JavaScript", "TypeScript", "Node.js", "PHP"],
     "Databases": ["MariaDB", "DynamoDB"],
