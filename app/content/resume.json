@@ -11,6 +11,6 @@
     "CMS": ["Contentful", "Storyblok", "Magnolia", "AEM"],
     "Tools": ["Git", "NPM", "Docker (basic)"],
     "Editors": ["Visual Studio Code", "Notepad++", "Atom"],
-    "Operating System": ["Mac OS", "Windows"]
+    "Operating System": ["macOS", "Windows"]
   }
 }
