@@ -1,13 +1,23 @@
-$(document).ready(function() {
-	//example of calling a jQuery plugin
-	$('body').defaultPluginName();
+//import Navigation from './modules/nav.js';
 
-	//example of using a handlebars template
-	Handlebars.registerPartial('myPartial', MyApp.templates.myPartial);
-	var template = MyApp.templates.helloWorld;
-	var html = template({
-		'title': 'Hello World',
-		'subtitle': 'Supports Sass and Handlebars!'
-	});
-	$('body').append(html);
+//Helper classes to HTML for styling of nojs version
+const html = document.querySelector('html');
+html.classList.remove('no-js');
+html.classList.add('js');
+
+//taken from http://youmightnotneedjquery.com/
+function ready(fn) {
+	'use strict';
+
+	if (document.attachEvent ? document.readyState === 'complete' : document.readyState !== 'loading') {
+		fn();
+	} else {
+		document.addEventListener('DOMContentLoaded', fn);
+	}
+}
+
+ready(function() {
+	'use strict';
+
+	console.log('DOM is ready!');
 });

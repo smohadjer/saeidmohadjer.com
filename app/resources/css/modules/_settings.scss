@@ -1,0 +1,19 @@
+//colors
+$red: #ac0000;
+$gray: #e5e5e5;
+$black: #333;
+$white: #fff;
+$blue: #3278dc;
+$purple: #9650C8;
+
+@font-face {
+  font-family: "OpenSans";
+  src: url("../fonts/OpenSans-Regular.ttf") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "OpenSans";
+  src: url("../fonts/OpenSans-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+}

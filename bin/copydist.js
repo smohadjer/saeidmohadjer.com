@@ -1,27 +1,27 @@
 var fs = require("fs-extra");
 var concat = require("concat");
 
-fs.mkdir('dist/resources/css', { recursive: true }, (err) => {
+fs.mkdirSync('dist/resources/css', { recursive: true }, (err) => {
 	if (err) throw err;
 });
 
-fs.mkdir('dist/resources/js', { recursive: true }, (err) => {
+fs.mkdirSync('dist/resources/js', { recursive: true }, (err) => {
 	if (err) throw err;
 });
 
-concat('.tmp/resources/css', 'dist/resources/css/styles.min.css');
-concat('.tmp/resources/js', 'dist/resources/js/bundle.js');
+concat('public/resources/css', 'dist/resources/css/styles.min.css');
 
 copyFile('app/apple-touch-icon.png', 'dist/apple-touch-icon.png');
-copyFile('app/.htaccess', 'dist/.htaccess');
 
-copyFolder('app/assets', 'dist/assets');
-copyFolder('app/includes', 'dist/includes');
-copyFolder('app/content', 'dist/content');
+copyFolder('public/assets', 'dist/assets');
+copyFolder('public/resources/img', 'dist/resources/img');
+copyFolder('public/resources/fonts', 'dist/resources/fonts');
 
 function copyFile(source, destination) {
 	fs.pathExists(source, (err, exists) => {
-		console.log(err) // => null
+    if (err) {
+      console.log(err, source) // => null
+    }
 
 		if (exists) {
 			fs.copy(source, destination, function (err) {

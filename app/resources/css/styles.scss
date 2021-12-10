@@ -1,9 +1,9 @@
 @charset "UTF-8";
-@import "settings";
-@import "generic";
-@import "header";
-@import "main";
-@import "stage";
-@import "home";
-@import "post";
-@import "footer"
+@import "modules/settings";
+@import "modules/generic";
+@import "modules/header";
+@import "modules/main";
+@import "modules/stage";
+@import "modules/home";
+@import "modules/post";
+@import "modules/footer"
