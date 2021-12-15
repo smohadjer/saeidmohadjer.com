@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const handlebars = require('handlebars');
+const partials = require('./partials.js');
 const files = fs.readdirSync('./app');
 const targetFiles = files.filter(function(file) {
 	return path.extname(file).toLowerCase() === '.hbs';
@@ -26,34 +27,16 @@ const compileFile = function(pathToFile) {
   if (!fs.existsSync(dir)){
       fs.mkdirSync(dir);
   }
-  fs.writeFile('public/' + filename + '.html', html, function(err) {
+  const target = dir + '/' + filename + '.html';
+  fs.writeFile(target, html, function(err) {
     if(err) {
       return console.log(err);
     }
-    console.log('public/' + filename + ' was saved');
+    console.log(target + ' was saved');
   });
 };
 
-handlebars.registerPartial(
-  'header',
-  fs.readFileSync('app/content/header.html', 'utf8')
-);
-handlebars.registerPartial(
-  'footer',
-  fs.readFileSync('app/content/footer.html', 'utf8')
-);
-handlebars.registerPartial(
-  'meta',
-  fs.readFileSync('app/content/meta.html', 'utf8')
-);
-handlebars.registerPartial(
-  'styles',
-  fs.readFileSync('app/includes/styles.html', 'utf8')
-);
-handlebars.registerPartial(
-  'scripts',
-  fs.readFileSync('app/includes/scripts.html', 'utf8')
-);
+partials.registerPartials();
 
 targetFiles.forEach(function(file) {
   compileFile('app/' + file);

@@ -27,7 +27,7 @@
 		"fs-extra": "^8.1.0",
 		"handlebars": "^4.7.7",
 		"rimraf": "latest",
-    "rollup": "^2.48.0",
+		"rollup": "^2.48.0",
 		"sass": "^1.43.4",
 		"useref": "^1.4.3"
 	},

@@ -9,6 +9,10 @@ fs.mkdirSync('dist/resources/js', { recursive: true }, (err) => {
 	if (err) throw err;
 });
 
+concat([
+  'public/resources/js/handlebars.runtime.js',
+  'public/resources/js/handlebars.templates.js'], 
+  'dist/resources/js/bundle.js');
 concat('public/resources/css', 'dist/resources/css/styles.min.css');
 
 copyFile('app/apple-touch-icon.png', 'dist/apple-touch-icon.png');
