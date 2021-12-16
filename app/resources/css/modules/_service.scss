@@ -59,6 +59,7 @@
     h3 {
       order: 3;
       margin-top: 0.75em;
+      border: 0;
 
       a {
         color: #facd52;
@@ -104,14 +105,17 @@
       padding: 40px;
       font-size: 1.9em;
     }
-
-    p {
-      max-width: 60ch;
-    }
   }
 
   h3 {
     margin-top: 1em;
+    border-bottom: solid 1px #aaa;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+  }
+
+  p {
+    max-width: 100ch;
   }
 
 }
