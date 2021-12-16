@@ -4,9 +4,51 @@
   }
 
   .stage {
-    background: #eee;
-    padding: 2em;
     line-height: 2em;
+    /*background: #333;
+    color: #fff;*/
+    font-family: "OpenSans", arial, verdana, snas-serif;
+    display: flex;
+    justify-content: space-between;
+
+    > div {
+      align-self: center;
+      position: relative;
+    }
+
+    > div.stage__text {
+      padding-right: 20px;
+    }
+
+    h1 {
+      font-size: 2em;
+      line-height: 1.2;
+    }
+
+    h2 {
+      font-weight: normal;
+      margin-top: 15px;
+    }
+
+    h2 {
+      background: #4abaf7;
+      color: white;
+      display: inline-block;
+      padding: 5px 20px;
+      border-radius: 20px;
+      font-size: 26px;
+    }
+
+    a {
+      color: #facd52;
+      color: #2ca4e6;
+    }
+
+    #phone {
+      position: absolute;
+      bottom: 0;
+    }
+
   }
 
   .lead {
