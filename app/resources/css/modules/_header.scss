@@ -8,14 +8,22 @@ header {
 		font-size: 1.25em;
 		line-height: 1.6em;
 		font-weight: 600;
+
+		@media (min-width: 1024px) {
+			font-size: 32px;
+		}
 	}
 
 	h3 {
-		font-size: .85em;
+		font-size: 0.9em;
 		line-height: 1.2em;
 		font-weight: normal;
-		color: #777;
-		letter-spacing: 0.05em;
+		color: #555;
+		letter-spacing: 0.025em;
+
+		@media (min-width: 1024px) {
+			font-size: 22px;
+		}
 
 		h2 + & {
 			margin: 0 0 1.2em;
