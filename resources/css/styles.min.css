@@ -700,20 +700,28 @@ section.work h3 {
 }
 .service .stage .stage__image {
   margin: 2em 0;
+  text-align: right;
 }
 @media (min-width: 1024px) {
   .service .stage .stage__image {
     width: 50%;
+    margin: 0;
   }
 }
 .service .stage .stage__image #macbook {
-  width: 100%;
+  width: 70%;
 }
 .service .stage .stage__image #phone {
   width: 15%;
-  left: 10px;
   position: absolute;
-  bottom: 0;
+  bottom: 5px;
+  left: 15px;
+}
+@media (min-width: 1024px) {
+  .service .stage .stage__image #phone {
+    bottom: 15px;
+    left: 50px;
+  }
 }
 .service .lead {
   font-size: 1.7em;
