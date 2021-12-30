@@ -3,6 +3,7 @@
     font-family: "OpenSans", arial, verdana, snas-serif;
     overflow: auto;
     margin-top: 3em;
+    overflow: visible;
 
     @media (min-width: 1024px) {
       display: flex;
@@ -82,19 +83,55 @@
         margin: 0;
       }
 
+      @keyframes slideinImac {
+        from {
+          left: 150px;
+        }
+      
+        to {
+          left: 0;
+        }
+      }
+
       #macbook {
         width: 70%;
+        position: relative;
+        animation-duration: 1.5s;
+        animation-name: slideinImac;
+      }
+
+      @keyframes slideinPhone {
+        from {
+          bottom: 100px;
+        }
+      
+        to {
+          bottom: 5px;
+        }
+      }
+
+      @keyframes slideinPhoneDesktop {
+        from {
+          bottom: 100px;
+        }
+      
+        to {
+          bottom: 15px;
+        }
       }
   
       #phone {
         width: 15%;
         position: absolute;
-        bottom: 5px;
         left: 15px;
+        bottom: 5px;
+        animation-duration: 1s;
+        animation-name: slideinPhone;
 
         @media (min-width: 1024px) {
           bottom: 15px;
           left: 50px;
+          animation-name: slideinPhoneDesktop;
         }
       }
     }
