@@ -254,7 +254,7 @@ main {
   margin: 30px 5% 3%;
 }
 
-h1 {
+h1, h3 {
   margin-bottom: 0;
 }
 
@@ -700,7 +700,7 @@ section.work h3 {
   margin-right: 8px;
 }
 .service .stage .stage__image {
-  margin: 2em 0;
+  margin: 0 0 2em;
   text-align: right;
 }
 @media (min-width: 1024px) {
@@ -772,7 +772,6 @@ section.work h3 {
   margin-top: 1em;
   border-bottom: solid 1px #aaa;
   padding-bottom: 5px;
-  margin-bottom: 15px;
 }
 .service p {
   max-width: 100ch;
