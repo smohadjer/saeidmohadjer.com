@@ -632,6 +632,7 @@ section.work h3 {
   font-family: "OpenSans", arial, verdana, snas-serif;
   overflow: auto;
   margin-top: 3em;
+  overflow: visible;
 }
 @media (min-width: 1024px) {
   .service .stage {
@@ -708,19 +709,49 @@ section.work h3 {
     margin: 0;
   }
 }
+@keyframes slideinImac {
+  from {
+    left: 150px;
+  }
+  to {
+    left: 0;
+  }
+}
 .service .stage .stage__image #macbook {
   width: 70%;
+  position: relative;
+  animation-duration: 1.5s;
+  animation-name: slideinImac;
+}
+@keyframes slideinPhone {
+  from {
+    bottom: 100px;
+  }
+  to {
+    bottom: 5px;
+  }
+}
+@keyframes slideinPhoneDesktop {
+  from {
+    bottom: 100px;
+  }
+  to {
+    bottom: 15px;
+  }
 }
 .service .stage .stage__image #phone {
   width: 15%;
   position: absolute;
-  bottom: 5px;
   left: 15px;
+  bottom: 5px;
+  animation-duration: 1s;
+  animation-name: slideinPhone;
 }
 @media (min-width: 1024px) {
   .service .stage .stage__image #phone {
     bottom: 15px;
     left: 50px;
+    animation-name: slideinPhoneDesktop;
   }
 }
 .service .lead {
