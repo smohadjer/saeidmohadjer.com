@@ -339,7 +339,7 @@ header h2 {
 }
 @media (min-width: 1024px) {
   header h2 {
-    font-size: 32px;
+    font-size: 30px;
   }
 }
 header h3 {
@@ -355,10 +355,10 @@ header h3 span {
 }
 @media (min-width: 1024px) {
   header h3 {
-    font-size: 20px;
+    font-size: 18px;
   }
   header h3 span {
-    font-size: 26px;
+    font-size: 22px;
   }
 }
 h2 + header h3 {
@@ -772,6 +772,9 @@ section.work h3 {
   margin-top: 1em;
   border-bottom: solid 1px #aaa;
   padding-bottom: 5px;
+}
+.service h2 + ul li {
+  margin-bottom: 1em;
 }
 .service p {
   max-width: 100ch;
