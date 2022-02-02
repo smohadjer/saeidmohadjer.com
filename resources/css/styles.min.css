@@ -218,6 +218,11 @@ article, aside, main, details, figcaption, figure, footer, header, hgroup, menu,
   src: url("../fonts/OpenSans-SemiBold.ttf") format("truetype");
   font-weight: 600;
 }
+@font-face {
+  font-family: "OpenSans";
+  src: url("../fonts/OpenSans-Bold.ttf") format("truetype");
+  font-weight: bold;
+}
 html {
   font-size: 1em;
   font-family: arial, verdana, snas-serif;
@@ -668,23 +673,6 @@ section.work h3 {
     font-size: 2.2em;
   }
 }
-.service .stage h2 {
-  background: #4abaf7;
-  color: white;
-  padding: 5px 15px;
-  border-radius: 20px;
-  font-size: 18px;
-  font-weight: normal;
-  order: 1;
-  align-self: flex-end;
-  margin-bottom: 5px;
-}
-@media (min-width: 1024px) {
-  .service .stage h2 {
-    font-size: 24px;
-    padding: 8px 15px;
-  }
-}
 .service .stage h3 {
   order: 3;
   margin-top: 0.75em;
@@ -768,9 +756,21 @@ section.work h3 {
     font-size: 1.9em;
   }
 }
+.service h2 {
+  font-family: "OpenSans", arial, verdana, snas-serif;
+  font-size: 1.4em;
+  line-height: 1.2;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+@media (min-width: 1024px) {
+  .service h2 {
+    font-size: 1.8em;
+  }
+}
 .service h3 {
   margin-top: 1em;
-  border-bottom: solid 1px #2ca4e6;
+  border-bottom: solid 2px #2ca4e6;
   padding-bottom: 5px;
   margin-bottom: 5px;
 }
@@ -785,6 +785,11 @@ section.work h3 {
 }
 .service p {
   max-width: 100ch;
+}
+.service a.external {
+  background: url(../img/external.svg) no-repeat left center;
+  background-size: 20px;
+  padding-left: 28px;
 }
 
 .resume {
@@ -803,6 +808,8 @@ footer {
   color: #666;
   margin: 3em 5% 1em;
   border-top: solid 1px #e5e5e5;
+}
+footer address, footer p {
   font-size: 0.8em;
 }
 footer address {
@@ -810,13 +817,19 @@ footer address {
   font-style: normal;
 }
 @media (min-width: 600px) {
-  footer address {
-    float: left;
+  footer {
+    display: flex;
+    justify-content: space-between;
   }
 }
 @media (min-width: 600px) {
   footer aside {
-    float: right;
+    width: 50%;
+  }
+}
+@media (min-width: 1024px) {
+  footer aside {
+    width: 25%;
   }
 }
 footer aside a {
@@ -826,4 +839,7 @@ footer aside a {
 footer aside a:last-child {
   margin-right: 0;
   margin-left: 5px;
+}
+footer aside p + p {
+  margin-top: 1em;
 }
