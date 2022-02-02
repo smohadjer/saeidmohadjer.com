@@ -40,23 +40,6 @@
       }
     }
 
-    h2 {
-      background: #4abaf7;
-      color: white;
-      padding: 5px 15px;
-      border-radius: 20px;
-      font-size: 18px;
-      font-weight: normal;
-      order: 1;
-      align-self:flex-end;
-      margin-bottom: 5px;
-
-      @media (min-width: 1024px) {
-        font-size: 24px;
-        padding: 8px 15px;
-      }
-    }
-
     h3 {
       order: 3;
       margin-top: 0.75em;
@@ -151,9 +134,21 @@
     }
   }
 
+  h2 {
+    font-family: "OpenSans", arial, verdana, snas-serif;
+    font-size: 1.4em;
+    line-height: 1.2;
+    font-weight: 500;
+    text-transform: uppercase;
+
+    @media (min-width: 1024px) {
+      font-size: 1.8em;
+    }
+  }
+
   h3 {
     margin-top: 1em;
-    border-bottom: solid 1px $blue;
+    border-bottom: solid 2px $blue;
     padding-bottom: 5px;
     margin-bottom: 5px;
   }
@@ -174,4 +169,9 @@
     max-width: 100ch;
   }
 
+  a.external {
+    background: url(../img/external.svg) no-repeat left center;
+    background-size: 20px;
+    padding-left: 28px;
+  }
 }

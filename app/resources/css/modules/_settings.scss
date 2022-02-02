@@ -17,3 +17,9 @@ $purple: #9650C8;
   src: url("../fonts/OpenSans-SemiBold.ttf") format("truetype");
   font-weight: 600;
 }
+
+@font-face {
+  font-family: "OpenSans";
+  src: url("../fonts/OpenSans-Bold.ttf") format("truetype");
+  font-weight: bold;
+}

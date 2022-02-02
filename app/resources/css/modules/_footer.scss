@@ -3,20 +3,28 @@ footer {
 	color: #666;
 	margin: 3em 5% 1em;
 	border-top: solid 1px $gray;
-	font-size: 0.8em;
+
+	address, p {
+		font-size: 0.8em;
+	}
 
 	address {
 		margin-bottom: 1em;
 		font-style: normal;
+	}
 
-		@media (min-width: 600px) {
-			float: left;
-		}
+	@media (min-width: 600px) {
+		display: flex;
+		justify-content: space-between ;
 	}
 
 	aside {
 		@media (min-width: 600px) {
-			float: right;
+			width: 50%;
+		}
+
+		@media (min-width: 1024px) {
+			width: 25%;
 		}
 
 		a {
@@ -27,6 +35,10 @@ footer {
 				margin-right: 0;
 				margin-left: 5px;
 			}
+		}
+
+		p + p {
+			margin-top: 1em;
 		}
 	}
 }
