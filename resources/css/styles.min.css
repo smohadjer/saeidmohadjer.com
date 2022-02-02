@@ -667,6 +667,7 @@ section.work h3 {
   font-size: 1.9em;
   line-height: 1.2;
   order: 2;
+  font-weight: 600;
 }
 @media (min-width: 1024px) {
   .service .stage h1 {
