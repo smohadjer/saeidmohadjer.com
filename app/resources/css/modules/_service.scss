@@ -37,14 +37,31 @@
       font-weight: 600;
 
       @media (min-width: 1024px) {
-        font-size: 2.2em;
+        font-size: 2.6em;
+        text-align: right;
+      }
+    }
+    
+    h2 {
+      order: 2;
+      text-transform: none;
+      margin-top: 0.5em;
+
+      @media (min-width: 1024px) {
+        text-align: right;
+        font-size: 1.5em;
       }
     }
 
     h3 {
-      order: 3;
+      order: 1;
       margin-top: 0.75em;
       border: 0;
+      font-weight: 500;
+      
+      @media (min-width: 1024px) {
+        text-align: right;
+      }
 
       a {
         color: #facd52;
