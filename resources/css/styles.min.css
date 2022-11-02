@@ -309,7 +309,7 @@ ul li p {
 }
 
 a {
-  color: #2ca4e6;
+  color: #036da8;
   text-decoration: none;
 }
 a:hover {
@@ -354,7 +354,7 @@ header h3 {
   color: #666;
 }
 header h3 span {
-  color: #2ca4e6;
+  color: #036da8;
   font-size: 20px;
   line-height: 16px;
 }
@@ -789,7 +789,7 @@ section.work h3 {
 }
 .service h3 {
   margin-top: 1em;
-  border-bottom: solid 2px #2ca4e6;
+  border-bottom: solid 1px #333;
   padding-bottom: 5px;
   margin-bottom: 5px;
 }
