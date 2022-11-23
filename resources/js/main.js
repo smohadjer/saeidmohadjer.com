@@ -2,11 +2,13 @@
 	'use strict';
 
 	//import Navigation from './modules/nav.js';
+
 	//Helper classes to HTML for styling of nojs version
 	var html = document.querySelector('html');
 	html.classList.remove('no-js');
-	html.classList.add('js'); //taken from http://youmightnotneedjquery.com/
+	html.classList.add('js');
 
+	//taken from http://youmightnotneedjquery.com/
 	function ready(fn) {
 
 	  if (document.attachEvent ? document.readyState === 'complete' : document.readyState !== 'loading') {
@@ -15,7 +17,6 @@
 	    document.addEventListener('DOMContentLoaded', fn);
 	  }
 	}
-
 	ready(function () {
 
 	  console.log('DOM is ready!');

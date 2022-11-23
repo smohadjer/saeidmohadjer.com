@@ -499,8 +499,7 @@ section.work h3 {
 }
 @media (min-width: 1024px) {
   .stage .item {
-    flex-basis: calc(33.33% - 12px);
-    /* 18px * 2/3 = 12px */
+    flex-basis: calc(33.33% - 12px); /* 18px * 2/3 = 12px */
     margin-right: 18px;
     margin-bottom: 40px;
   }
