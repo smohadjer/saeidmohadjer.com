@@ -11,6 +11,7 @@
   &__content {
     @media (min-width: 768px) {
       background-color: #ddd;
+      background: radial-gradient(ellipse at center, rgba(0,0,0,0.05) 0%,rgba(0,0,0,0.15) 100%);
       aspect-ratio: 3/2;
       width: 50%;
       padding: 3rem;
@@ -39,33 +40,15 @@
     }
   }
 
-  .slider {
+  .swiper {
+    width: 100%;
+    overflow: visible;
+    overflow-x: hidden;
+    padding-bottom: 40px;
+
     @media (min-width: 768px) {
       width: 50%;
       order: 2;
-    }
-
-    aspect-ratio: 3/2;
-
-    img {
-      display: block;
-    }
-
-    &__console {
-      margin: 0.5rem;
-      text-align: center;
-
-      span {
-        display: inline-block;
-        padding: 4px;
-        background: $gray;
-        border-radius: 50%;
-        margin: 0 0.2rem;
-
-        &.active {
-          background: $blue;
-        }
-      }
     }
   }
 }
