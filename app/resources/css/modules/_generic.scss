@@ -1,6 +1,6 @@
 html {
 	font-size: 1em;
-	font-family: arial, verdana, snas-serif;
+	font-family: 'OpenSans', arial, verdana, snas-serif;
 	color: $black;
 
 	@media only screen and (min-width: 600px) {
@@ -24,12 +24,16 @@ body {
 	}
 }
 
-figure {
-	margin: 0;
+main {
+	margin: 1em;
 }
 
-main {
-	margin: 0 5% 3%;
+article {
+	margin: 1em;
+}
+
+figure {
+	margin: 0;
 }
 
 h1, h3 {
@@ -113,4 +117,8 @@ time {
 	+ p {
 		margin-top: 1em;
 	}
+}
+
+.responsive {
+	width: 100%;
 }
