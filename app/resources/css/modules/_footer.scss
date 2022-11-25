@@ -1,25 +1,29 @@
 footer {
-	padding: 1em;
+	padding: 1rem 0 0;
 	color: #666;
-	margin: 3em 0 1em;
+	margin: 3rem 1rem 1rem;
 	border-top: solid 1px $gray;
 
-	address, p {
-		font-size: 0.8em;
-	}
-
-	address {
-		margin-bottom: 1em;
-		font-style: normal;
-	}
-
-	@media (min-width: 600px) {
+	@media (min-width: 768px) {
 		display: flex;
 		justify-content: space-between ;
 	}
 
+	address, p {
+		font-size: 0.8rem;
+	}
+
+	address {
+		margin-bottom: 1rem;
+		font-style: normal;
+
+		@media (min-width: 768px) {
+			margin-bottom: 0;
+		}
+	}
+
 	> div {
-		@media (min-width: 600px) {
+		@media (min-width: 768px) {
 			width: 50%;
 		}
 
