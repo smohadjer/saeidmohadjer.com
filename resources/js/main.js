@@ -1,5 +1,9 @@
-(function () {
+(function (Swiper) {
 	'use strict';
+
+	function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+
+	var Swiper__default = /*#__PURE__*/_interopDefaultLegacy(Swiper);
 
 	//import Navigation from './modules/nav.js';
 
@@ -20,6 +24,17 @@
 	ready(function () {
 
 	  console.log('DOM is ready!');
+	  new Swiper__default["default"]('.swiper', {
+	    // Optional parameters
+	    loop: true,
+	    // If we need pagination
+	    pagination: {
+	      el: '.swiper-pagination',
+	      clickable: true
+	    },
+	    // Navigation arrows
+	    navigation: false
+	  });
 	});
 
-})();
+})(Swiper);

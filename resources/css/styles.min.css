@@ -225,10 +225,10 @@ article, aside, main, details, figcaption, figure, footer, header, hgroup, menu,
 }
 html {
   font-size: 1em;
-  font-family: arial, verdana, snas-serif;
+  font-family: "OpenSans", arial, verdana, snas-serif;
   color: #333;
 }
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 768px) {
   html {
     font-size: 1.2em;
     line-height: 1.4;
@@ -244,29 +244,52 @@ body {
   background: #fff;
   margin: 0;
 }
-@media only screen and (min-width: 1440px) {
+@media (min-width: 1440px) {
   body {
     width: 1400px;
     margin: 0 auto;
   }
 }
 
-figure {
-  margin: 0;
-}
-
 main {
-  margin: 0 5% 3%;
+  margin: 1em 0;
+}
+@media (min-width: 768px) {
+  main {
+    margin: 1em;
+  }
+}
+@media (min-width: 1440px) {
+  main {
+    margin: 1em 0;
+  }
 }
 
-h1, h3 {
-  margin-bottom: 0;
+article {
+  margin: 1em;
+}
+@media (min-width: 768px) {
+  article {
+    margin: 0;
+  }
+}
+article section + section {
+  margin-top: 2rem;
+}
+
+h1, h2, h3, h4, p, li {
+  max-width: 80ch;
+}
+
+h2 {
+  font-size: 1.8rem;
+  line-height: 1.2;
+  font-weight: 500;
 }
 
 h3 {
-  margin-bottom: 0;
   padding-bottom: 0.1em;
-  font-family: "OpenSans", arial, verdana, snas-serif;
+  margin-top: 1rem;
 }
 
 h4 {
@@ -274,7 +297,6 @@ h4 {
   font-size: 1em;
   line-height: 1.4em;
   margin-top: 0;
-  font-family: "OpenSans", arial, verdana, snas-serif;
 }
 
 p {
@@ -298,7 +320,7 @@ ul {
 ul li {
   font-size: 1em;
   line-height: 1.3em;
-  margin-bottom: 0.4em;
+  margin-top: 1rem;
   margin-left: 1em;
 }
 ul li:last-child {
@@ -331,515 +353,67 @@ time + p {
   margin-top: 1em;
 }
 
+.responsive {
+  width: 100%;
+}
+
 header {
-  margin: 20px 5% 0;
-  font-family: "OpenSans", arial, verdana, snas-serif;
-  display: flex;
-  justify-content: space-between;
-}
-header h2 {
-  font-size: 24px;
-  line-height: 1.6em;
-  font-weight: 600;
-}
-@media (min-width: 1024px) {
-  header h2 {
-    font-size: 30px;
-  }
-}
-header h3 {
-  font-size: 16px;
-  line-height: 1.2em;
-  font-weight: normal;
-  color: #666;
-}
-header h3 span {
-  color: #036da8;
-  font-size: 20px;
-  line-height: 16px;
-}
-@media (min-width: 1024px) {
-  header h3 {
-    font-size: 18px;
-  }
-  header h3 span {
-    font-size: 22px;
-  }
-}
-h2 + header h3 {
-  margin: 0 0 1.2em;
-  text-align: center;
-}
-header nav {
-  font-size: 0.9em;
-}
-header nav ul {
-  margin: 0;
-}
-header nav li {
+  margin: 1rem;
   display: inline-block;
-  list-style: none;
-  margin: 0 1em 0 0;
-}
-header nav li:last-child {
-  margin-right: 0;
-}
-header nav li.github {
-  background: url(../img/GitHub-Mark-64px.png) no-repeat;
-}
-
-.footnote {
-  font-size: 0.75em;
-  color: #666;
-  font-weight: normal;
-}
-
-.intro {
-  margin: 0 0 40px;
-  font-size: 1em;
-  line-height: 1.4em;
-  padding-bottom: 1.4em;
-  border-bottom: solid 1px #e5e5e5;
-}
-
-section.work {
-  margin-top: 20px;
-}
-section.work h3 {
-  border: none;
-}
-
-.flex-container {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 10px;
-}
-.flex-container .grid__cell {
-  display: flex;
-  flex-flow: column;
-  padding: 15px;
-  background: #e5e5e5;
-  margin-bottom: 20px;
-  animation: fadein 0.5s ease-out;
-}
-@media screen and (min-width: 768px) {
-  .flex-container .grid__cell {
-    margin-bottom: 30px;
-  }
-  .flex-container .grid__cell h3 + p {
-    font-size: 0.9em;
-    line-height: 1.3em;
-    margin-top: 5px;
-  }
-}
-
-.new {
-  padding-bottom: 15px;
-  border-bottom: solid 1px #ccc;
-}
-.new h3 {
-  border-bottom: none;
-  font-size: 1.5em;
-  line-height: 1.3em;
-}
-
-@keyframes fadein {
-  from {
-    opacity: 0;
-    transform: scale(0.5);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-.columns {
-  box-sizing: border-box;
-}
-@media (min-width: 768px) {
-  .columns__left {
-    float: left;
-    width: 60%;
-    padding-right: 5%;
-  }
-}
-.columns__left h3 {
-  margin-top: 0;
-}
-@media (min-width: 768px) {
-  .columns__right {
-    float: left;
-    width: 40%;
-  }
-}
-.columns__right img {
-  width: 100%;
-  height: auto;
-}
-
-.stage {
-  margin: 2em 0;
-}
-.stage .grid {
-  display: flex;
-  margin-top: 1em;
-  flex-wrap: wrap;
-}
-.stage .item {
-  flex-basis: 100%;
-  margin-bottom: 20px;
-}
-@media (min-width: 600px) and (max-width: 1023px) {
-  .stage .item {
-    flex-basis: calc(50% - 10px);
-  }
-  .stage .item:nth-child(even) {
-    margin-left: 20px;
-  }
-}
-@media (min-width: 1024px) {
-  .stage .item {
-    flex-basis: calc(33.33% - 12px); /* 18px * 2/3 = 12px */
-    margin-right: 18px;
-    margin-bottom: 40px;
-  }
-  .stage .item:nth-child(3n) {
-    margin-right: 0;
-  }
-}
-.stage .item img {
-  width: 100%;
-  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
-  margin-bottom: 0.5em;
-}
-
-.home > section {
-  border-bottom: solid 1px #e5e5e5;
-  padding-bottom: 30px;
-  margin-bottom: 30px;
-}
-.home > section:last-child {
-  border: 0;
-  padding-bottom: 0;
-}
-.home > section h3 + p {
-  margin-top: 20px;
-}
-.home > article {
-  border-bottom: solid 1px #e5e5e5;
-}
-.home > article + article {
-  margin-top: 2em;
-}
-.home > article h3 {
-  border: none;
-}
-.home > article p {
-  max-width: 1024px;
-}
-.home > article .col2 {
-  display: flex;
-  margin: 2em 0;
-  justify-content: space-between;
-}
-.home > article .col2 > * {
-  width: 45%;
-  margin-right: 5%;
-}
-.home > article .col2--center {
-  align-items: center;
-}
-.home > article .col2 p {
-  margin-bottom: 0;
-  margin-top: 0.5em;
-}
-.home > article .screenshot {
-  max-width: 360px;
-}
-.home > article .screenshot img {
-  width: 100%;
-}
-.home dd {
-  margin-left: 0;
-  font-size: smaller;
-}
-.home dd + dt {
-  margin-top: 1em;
-}
-
-.post {
-  line-height: 1.4em;
-  font-size: 0.9em;
-}
-.post + .post {
-  margin-top: 40px;
-  border-top: solid 1px #ccc;
-  padding-top: 20px;
-}
-.post .centered {
-  text-align: center;
-}
-.post h1 + section {
-  margin-top: 30px;
-}
-.post h2 {
-  text-align: center;
-  text-transform: uppercase;
-  margin-bottom: 30px;
-}
-.post h3 {
-  margin: 0;
-  padding: 0;
-  border: 0;
-}
-.post h3 + p {
-  margin-top: 5px;
-}
-.post p {
-  margin-top: 15px;
-}
-.post li, .post p {
-  line-height: inherit;
-}
-.post li + li {
-  margin-top: 0.5em;
-  margin-bottom: 0;
-}
-.post section {
-  border-bottom: solid 1px #ccc;
-  padding-bottom: 20px;
-}
-.post section + section {
-  margin-top: 20px;
-}
-.post section:last-of-type {
-  border-bottom: 0;
-}
-.post code {
-  background: #eff0f1;
-  border-radius: 5px;
-  padding: 5px;
-}
-.post pre {
-  padding: 10px;
-  margin: 10px 0 0;
-  background: #eff0f1;
-  font-family: monospace;
-  font-size: 14px;
-  line-height: 18px;
-  font-weight: normal;
-  overflow-x: auto;
-  border-radius: 5px;
-}
-
-.service .stage {
-  font-family: "OpenSans", arial, verdana, snas-serif;
-  overflow: auto;
-  margin-top: 3em;
-  overflow: visible;
-}
-@media (min-width: 1024px) {
-  .service .stage {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 0;
-  }
-}
-.service .stage > div {
-  align-self: center;
-  position: relative;
-}
-.service .stage .stage__text {
-  margin-bottom: 20px;
-  display: flex;
-  flex-direction: column;
-}
-@media (min-width: 1024px) {
-  .service .stage .stage__text {
-    padding-right: 3%;
-    margin-bottom: 0;
-    text-align: left;
-    width: 40%;
-  }
-}
-.service .stage h1 {
-  font-size: 1.9em;
-  line-height: 1.2;
-  order: 2;
-  font-weight: 600;
-}
-@media (min-width: 1024px) {
-  .service .stage h1 {
-    font-size: 2.6em;
-    text-align: right;
-  }
-}
-.service .stage h2 {
-  order: 2;
-  text-transform: none;
-  margin-top: 0.5em;
-}
-@media (min-width: 1024px) {
-  .service .stage h2 {
-    text-align: right;
-    font-size: 1.5em;
-  }
-}
-.service .stage h3 {
-  order: 1;
-  margin-top: 0.75em;
-  border: 0;
-  font-weight: 500;
-}
-@media (min-width: 1024px) {
-  .service .stage h3 {
-    text-align: right;
-  }
-}
-.service .stage h3 a {
-  color: #036da8;
-}
-.service .stage h3 a img {
-  vertical-align: -1px;
-  width: 18px;
-  margin-right: 8px;
-}
-.service .stage .stage__image {
-  margin: 0 0 2em;
   text-align: right;
 }
-@media (min-width: 1024px) {
-  .service .stage .stage__image {
-    width: 50%;
-    margin: 0;
+@media (min-width: 1440px) {
+  header {
+    margin-left: 0;
   }
 }
-@keyframes slideinImac {
-  from {
-    left: 150px;
-  }
-  to {
-    left: 0;
-  }
+header h1 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  display: inherit;
 }
-.service .stage .stage__image #macbook {
-  width: 70%;
-  position: relative;
-  animation-duration: 1.5s;
-  animation-name: slideinImac;
-}
-@keyframes slideinPhone {
-  from {
-    bottom: 100px;
-  }
-  to {
-    bottom: 5px;
+@media (min-width: 768px) {
+  header h1 {
+    font-size: 2rem;
   }
 }
-@keyframes slideinPhoneDesktop {
-  from {
-    bottom: 100px;
+header h2 {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #666;
+}
+@media (min-width: 768px) {
+  header h2 {
+    margin-top: -0.2rem;
+    font-size: 1rem;
   }
-  to {
-    bottom: 15px;
-  }
-}
-.service .stage .stage__image #phone {
-  width: 15%;
-  position: absolute;
-  left: 15px;
-  bottom: 5px;
-  animation-duration: 1s;
-  animation-name: slideinPhone;
-}
-@media (min-width: 1024px) {
-  .service .stage .stage__image #phone {
-    bottom: 15px;
-    left: 50px;
-    animation-name: slideinPhoneDesktop;
-  }
-}
-.service .lead {
-  font-size: 1.7em;
-  line-height: 1.3;
-  background: #333;
-  color: white;
-  padding: 20px 30px;
-  margin-bottom: 50px;
-}
-@media (min-width: 1024px) {
-  .service .lead {
-    padding: 40px;
-    font-size: 1.9em;
-  }
-}
-.service h2 {
-  font-family: "OpenSans", arial, verdana, snas-serif;
-  font-size: 1.4em;
-  line-height: 1.2;
-  font-weight: 500;
-  text-transform: uppercase;
-}
-@media (min-width: 1024px) {
-  .service h2 {
-    font-size: 1.8em;
-  }
-}
-.service h3 {
-  margin-top: 1em;
-  border-bottom: solid 1px #333;
-  padding-bottom: 5px;
-  margin-bottom: 5px;
-}
-.service h2 + h3 {
-  margin-top: 0.5em;
-}
-.service section + section {
-  margin-top: 2em;
-}
-.service h2 + ul li {
-  margin-bottom: 1em;
-}
-.service p {
-  max-width: 100ch;
-}
-.service a.external {
-  background: url(../img/external.svg) no-repeat left center;
-  background-size: 20px;
-  padding-left: 28px;
-}
-
-.resume {
-  margin-top: 50px;
-}
-.resume h1, .resume h1 + p {
-  text-align: center;
-}
-.resume h2 {
-  margin-top: 30px;
-  font-size: 24px;
 }
 
 footer {
-  padding: 0.9em 0 0;
+  padding: 1rem 0 0;
   color: #666;
-  margin: 3em 5% 1em;
-  border-top: solid 1px #e5e5e5;
+  margin: 3rem 1rem 1rem;
+  border-top: solid 1px #ddd;
 }
-footer address, footer p {
-  font-size: 0.8em;
-}
-footer address {
-  margin-bottom: 1em;
-  font-style: normal;
-}
-@media (min-width: 600px) {
+@media (min-width: 768px) {
   footer {
     display: flex;
     justify-content: space-between;
   }
 }
-@media (min-width: 600px) {
+footer address, footer p {
+  font-size: 0.8rem;
+}
+footer address {
+  margin-bottom: 1rem;
+  font-style: normal;
+}
+@media (min-width: 768px) {
+  footer address {
+    margin-bottom: 0;
+  }
+}
+@media (min-width: 768px) {
   footer > div {
     width: 50%;
   }
@@ -859,4 +433,60 @@ footer > div a:last-child {
 }
 footer > div p + p {
   margin-top: 1em;
+}
+
+.stage {
+  align-items: center;
+  overflow: hidden;
+}
+@media (min-width: 768px) {
+  .stage {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 2rem;
+  }
+}
+@media (min-width: 768px) {
+  .stage__content {
+    background-color: #ddd;
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.15) 100%);
+    aspect-ratio: 3/2;
+    width: 50%;
+    padding: 3rem;
+    border-right: solid 3px white;
+  }
+}
+.stage__content p {
+  font-size: 1.3rem;
+  line-height: 1.5;
+  margin: 1rem;
+  font-weight: 600;
+}
+@media (min-width: 768px) {
+  .stage__content p {
+    font-size: 0.8rem;
+    margin: 0;
+  }
+}
+@media (min-width: 1024px) {
+  .stage__content p {
+    font-size: 1.3rem;
+  }
+}
+@media (min-width: 1200px) {
+  .stage__content p {
+    font-size: 1.6rem;
+  }
+}
+.stage .swiper {
+  width: 100%;
+  overflow: visible;
+  overflow-x: hidden;
+  padding-bottom: 40px;
+}
+@media (min-width: 768px) {
+  .stage .swiper {
+    width: 50%;
+    order: 2;
+  }
 }
