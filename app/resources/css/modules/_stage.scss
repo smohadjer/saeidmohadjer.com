@@ -1,38 +1,53 @@
 .stage {
-    margin: 2em 0;
+  align-items: center;
+  overflow: hidden;
 
-    .grid {
-        display: flex;
-        margin-top: 1em;
-        flex-wrap: wrap;
+  @media (min-width: 768px) {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 2rem;
+  }
+
+  &__content {
+    @media (min-width: 768px) {
+      background-color: #ddd;
+      background: radial-gradient(ellipse at center, rgba(0,0,0,0.05) 0%,rgba(0,0,0,0.15) 100%);
+      aspect-ratio: 3/2;
+      width: 50%;
+      padding: 3rem;
+      border-right: solid 3px white;
     }
 
-    .item {
-        flex-basis: 100%;
-        margin-bottom: 20px;
-
-        @media (min-width: 600px) and (max-width: 1023px) {
-            flex-basis: calc(50% - 10px);
-
-            &:nth-child(even) {
-                margin-left: 20px;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            flex-basis: calc(33.33% - 12px);  /* 18px * 2/3 = 12px */
-            margin-right: 18px;
-            margin-bottom: 40px;
-
-            &:nth-child(3n) {
-                margin-right: 0;
-            }
-        }
+    p {
+      font-size: 1.3rem;
+      line-height: 1.5;
+      margin: 1rem;
+      font-weight: 600;
+  
+      @media (min-width: 768px) {
+        font-size: 0.8rem;
+        margin: 0;
+      }
+  
+      @media (min-width: 1024px) {
+        font-size: 1.3rem;
+      }
+  
+      @media (min-width: 1200px) {
+        font-size: 1.6rem;
+      }
     }
+  }
 
-    .item img {
-        width: 100%;
-        box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.25);
-        margin-bottom: 0.5em;
+  .swiper {
+    width: 100%;
+    overflow: visible;
+    overflow-x: hidden;
+    padding-bottom: 40px;
+
+    @media (min-width: 768px) {
+      width: 50%;
+      order: 2;
     }
+  }
 }
