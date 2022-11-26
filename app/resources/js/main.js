@@ -1,6 +1,4 @@
 //import Navigation from './modules/nav.js';
-import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.esm.browser.min.js'
-
 
 //Helper classes to HTML for styling of nojs version
 const html = document.querySelector('html');
