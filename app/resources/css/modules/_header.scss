@@ -8,23 +8,23 @@ header {
 	}
 
 	h1 {
-		font-size: 1.8rem;
+		font-size: 1.6rem;
 		font-weight: 600;
 		display: inherit;
 
 		@media (min-width: 768px) {
-			font-size: 2.6rem;
+			font-size: 2rem;
 		}
 	}
 	
 	h2 {
-		font-size: 1rem;
+		font-size: 0.8rem;
 		font-weight: 400;
 		color: #666;
 
 		@media (min-width: 768px) {
-			margin-top: -0.25rem;
-			font-size: 1.2rem;
+			margin-top: -0.2rem;
+			font-size: 1rem;
 		}
 	}
 
