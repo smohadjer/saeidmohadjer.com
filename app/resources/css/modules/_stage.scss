@@ -1,7 +1,11 @@
 .stage {
   align-items: center;
   overflow: hidden;
-  margin: 2rem 0;
+  margin: 2rem 1rem;
+
+  @media (min-width: 1024px) {
+    margin: 2rem 0;
+  }
 
   .swiper {
     width: 100%;
@@ -10,8 +14,6 @@
     padding-bottom: 40px;
 
     &-slide__content {
-      padding: 0 1rem;
-
       td {
         padding-right: 1.5rem;
         vertical-align: top;
