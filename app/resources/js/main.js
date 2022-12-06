@@ -24,7 +24,11 @@ ready(function() {
 	const swiper = new Swiper('.swiper', {
 		// Optional parameters
 		loop: true,
-	
+		speed: 750,
+		autoplay: {
+			delay: 3000,
+			disableOnInteraction: true,
+		},
 		// If we need pagination
 		pagination: {
 			el: '.swiper-pagination',

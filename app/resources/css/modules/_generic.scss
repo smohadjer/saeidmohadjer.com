@@ -3,7 +3,7 @@ html {
 	font-family: 'OpenSans', arial, verdana, snas-serif;
 	color: $black;
 
-	@media only screen and (min-width: 768px) {
+	@media only screen and (min-width: 1024px) {
 		font-size: 1.2em;
 		line-height: 1.4;
 	}
@@ -27,7 +27,7 @@ body {
 main {
 	margin: 1em 0;
 
-	@media (min-width: 768px) {
+	@media (min-width: 1024px) {
 		margin: 1em;
 	}
 
@@ -40,7 +40,7 @@ main {
 article {
 	margin: 1em;
 
-	@media (min-width: 768px) {
+	@media (min-width: 1024px) {
 		margin: 0;
 	}
 

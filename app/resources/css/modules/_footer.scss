@@ -4,7 +4,7 @@ footer {
 	margin: 3rem 1rem 1rem;
 	border-top: solid 1px $gray;
 
-	@media (min-width: 768px) {
+	@media (min-width: 1024px) {
 		display: flex;
 		justify-content: space-between ;
 	}
@@ -17,13 +17,13 @@ footer {
 		margin-bottom: 1rem;
 		font-style: normal;
 
-		@media (min-width: 768px) {
+		@media (min-width: 1024px) {
 			margin-bottom: 0;
 		}
 	}
 
 	> div {
-		@media (min-width: 768px) {
+		@media (min-width: 1024px) {
 			width: 50%;
 		}
 
