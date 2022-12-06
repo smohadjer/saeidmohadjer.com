@@ -228,7 +228,7 @@ html {
   font-family: "OpenSans", arial, verdana, snas-serif;
   color: #333;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1024px) {
   html {
     font-size: 1.2em;
     line-height: 1.4;
@@ -254,7 +254,7 @@ body {
 main {
   margin: 1em 0;
 }
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   main {
     margin: 1em;
   }
@@ -268,7 +268,7 @@ main {
 article {
   margin: 1em;
 }
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   article {
     margin: 0;
   }
@@ -359,7 +359,8 @@ time + p {
 
 header {
   margin: 1rem;
-  display: inline-block;
+  display: flex;
+  justify-content: space-between;
   text-align: right;
 }
 @media (min-width: 1440px) {
@@ -367,25 +368,27 @@ header {
     margin-left: 0;
   }
 }
+header .lang > * {
+  margin-left: 0.5rem;
+}
 header h1 {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: 600;
   display: inherit;
 }
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   header h1 {
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
 }
 header h2 {
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 400;
   color: #666;
 }
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   header h2 {
     margin-top: -0.2rem;
-    font-size: 1rem;
   }
 }
 
@@ -395,7 +398,7 @@ footer {
   margin: 3rem 1rem 1rem;
   border-top: solid 1px #ddd;
 }
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   footer {
     display: flex;
     justify-content: space-between;
@@ -408,12 +411,12 @@ footer address {
   margin-bottom: 1rem;
   font-style: normal;
 }
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   footer address {
     margin-bottom: 0;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   footer > div {
     width: 50%;
   }
@@ -438,45 +441,7 @@ footer > div p + p {
 .stage {
   align-items: center;
   overflow: hidden;
-}
-@media (min-width: 768px) {
-  .stage {
-    display: flex;
-    align-items: flex-start;
-    margin-top: 2rem;
-  }
-}
-@media (min-width: 768px) {
-  .stage__content {
-    background-color: #ddd;
-    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.15) 100%);
-    aspect-ratio: 3/2;
-    width: 50%;
-    padding: 3rem;
-    border-right: solid 3px white;
-  }
-}
-.stage__content p {
-  font-size: 1.3rem;
-  line-height: 1.5;
-  margin: 1rem;
-  font-weight: 600;
-}
-@media (min-width: 768px) {
-  .stage__content p {
-    font-size: 0.8rem;
-    margin: 0;
-  }
-}
-@media (min-width: 1024px) {
-  .stage__content p {
-    font-size: 1.3rem;
-  }
-}
-@media (min-width: 1200px) {
-  .stage__content p {
-    font-size: 1.6rem;
-  }
+  margin: 2rem 0;
 }
 .stage .swiper {
   width: 100%;
@@ -484,9 +449,51 @@ footer > div p + p {
   overflow-x: hidden;
   padding-bottom: 40px;
 }
-@media (min-width: 768px) {
+.stage .swiper-slide__content {
+  padding: 0 1rem;
+}
+.stage .swiper-slide__content td {
+  padding-right: 1.5rem;
+  vertical-align: top;
+}
+.stage .swiper-slide__content td:first-child {
+  font-weight: 600;
+}
+@media (min-width: 1024px) {
   .stage .swiper {
-    width: 50%;
-    order: 2;
+    order: 1;
+    margin: 0;
   }
+  .stage .swiper-slide {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .stage .swiper-slide img {
+    width: 50%;
+    height: auto;
+    /* to fix blurry downscaled images in Chrome */
+  }
+  .stage .swiper-slide__content {
+    width: 40%;
+    font-size: 1.1rem;
+    line-height: 1.3;
+    padding: 0;
+  }
+}
+
+article h2 {
+  display: inline-block;
+  min-width: 450px;
+  background-color: #333;
+  color: #fff;
+  padding: 0.35rem 15rem 0.35rem 1rem;
+  font-size: 1.4rem;
+  margin-left: -1rem;
+  clip-path: polygon(0px 0px, 50% 0, calc(50% - 30px) 100%, 0 100%);
+  text-transform: uppercase;
+}
+article li {
+  list-style: none;
+  margin-left: 0;
 }
