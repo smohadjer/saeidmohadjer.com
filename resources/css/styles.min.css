@@ -300,8 +300,7 @@ h4 {
 }
 
 p {
-  font-size: 0.9em;
-  line-height: 1.4em;
+  line-height: 1.5em;
 }
 h4 + p {
   margin-top: 0.2em;
@@ -441,16 +440,18 @@ footer > div p + p {
 .stage {
   align-items: center;
   overflow: hidden;
-  margin: 2rem 0;
+  margin: 2rem 1rem;
+}
+@media (min-width: 1024px) {
+  .stage {
+    margin: 2rem 0;
+  }
 }
 .stage .swiper {
   width: 100%;
   overflow: visible;
   overflow-x: hidden;
   padding-bottom: 40px;
-}
-.stage .swiper-slide__content {
-  padding: 0 1rem;
 }
 .stage .swiper-slide__content td {
   padding-right: 1.5rem;
@@ -483,15 +484,19 @@ footer > div p + p {
 }
 
 article h2 {
-  display: inline-block;
-  min-width: 450px;
   background-color: #333;
   color: #fff;
-  padding: 0.35rem 15rem 0.35rem 1rem;
+  padding: 0.35rem 1rem 0.35rem;
   font-size: 1.4rem;
   margin-left: -1rem;
   clip-path: polygon(0px 0px, 50% 0, calc(50% - 30px) 100%, 0 100%);
   text-transform: uppercase;
+}
+@media (min-width: 1024px) {
+  article h2 {
+    min-width: 450px;
+    display: inline-block;
+  }
 }
 article li {
   list-style: none;
