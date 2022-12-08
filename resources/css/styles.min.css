@@ -481,6 +481,11 @@ footer > div p + p {
     line-height: 1.3;
     padding: 0;
   }
+  .stage .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    margin: 0 8px !important;
+  }
 }
 
 article h2 {
