@@ -224,13 +224,13 @@ article, aside, main, details, figcaption, figure, footer, header, hgroup, menu,
   font-weight: bold;
 }
 html {
-  font-size: 1em;
+  font-size: 1rem;
   font-family: "OpenSans", arial, verdana, snas-serif;
   color: #333;
 }
 @media only screen and (min-width: 1024px) {
   html {
-    font-size: 1.2em;
+    font-size: 1.2rem;
     line-height: 1.4;
   }
 }
@@ -277,6 +277,12 @@ article section + section {
   margin-top: 2rem;
 }
 
+h1 {
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 1.4;
+}
+
 h1, h2, h3, h4, p, li {
   max-width: 80ch;
 }
@@ -290,6 +296,7 @@ h2 {
 h3 {
   padding-bottom: 0.1em;
   margin-top: 1rem;
+  font-weight: 600;
 }
 
 h4 {
@@ -302,7 +309,7 @@ h4 {
 p {
   line-height: 1.5em;
 }
-h4 + p {
+h3 + p {
   margin-top: 0.2em;
 }
 
@@ -311,21 +318,21 @@ sup {
   font-size: 0.7em;
 }
 
-ul {
+ul, ol {
   padding-left: 0;
   margin-top: 10px;
   margin-bottom: 1em;
 }
-ul li {
+ul li, ol li {
   font-size: 1em;
   line-height: 1.3em;
   margin-top: 1rem;
   margin-left: 1em;
 }
-ul li:last-child {
+ul li:last-child, ol li:last-child {
   margin-bottom: 0;
 }
-ul li p {
+ul li p, ol li p {
   margin-bottom: 0;
 }
 
@@ -358,53 +365,46 @@ time + p {
 
 header {
   margin: 1rem;
-  display: flex;
-  justify-content: space-between;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+header > div {
+  display: inline-block;
   text-align: right;
+}
+@media (min-width: 1024px) {
+  header {
+    font-size: 1.6rem;
+  }
 }
 @media (min-width: 1440px) {
   header {
     margin-left: 0;
   }
 }
-header .lang > * {
-  margin-left: 0.5rem;
-}
-header h1 {
-  font-size: 1.4rem;
-  font-weight: 600;
-  display: inherit;
-}
-@media (min-width: 1024px) {
-  header h1 {
-    font-size: 1.6rem;
-  }
-}
-header h2 {
+header span {
   font-size: 1rem;
   font-weight: 400;
   color: #666;
+  display: block;
 }
 @media (min-width: 1024px) {
-  header h2 {
+  header span {
     margin-top: -0.2rem;
   }
 }
 
 footer {
   padding: 1rem 0 0;
-  color: #666;
   margin: 3rem 1rem 1rem;
-  border-top: solid 1px #ddd;
+  border-top: solid 1px #999;
+  font-size: smaller;
 }
 @media (min-width: 1024px) {
   footer {
     display: flex;
     justify-content: space-between;
   }
-}
-footer address, footer p {
-  font-size: 0.8rem;
 }
 footer address {
   margin-bottom: 1rem;
@@ -488,12 +488,18 @@ footer > div p + p {
   }
 }
 
+article .lead {
+  font-size: 1.4rem;
+  margin: 0.5rem 0;
+}
 article h2 {
   background-color: #333;
   color: #fff;
-  padding: 0.35rem 1rem 0.35rem;
+  padding: 0.5rem 1rem;
   font-size: 1.4rem;
+  line-height: 1;
   margin-left: -1rem;
+  margin-top: 2rem;
   clip-path: polygon(0px 0px, 50% 0, calc(50% - 30px) 100%, 0 100%);
   text-transform: uppercase;
 }
@@ -503,7 +509,7 @@ article h2 {
     display: inline-block;
   }
 }
-article li {
+article ul li {
   list-style: none;
   margin-left: 0;
 }
