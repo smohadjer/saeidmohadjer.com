@@ -1,16 +1,12 @@
 footer {
 	padding: 1rem 0 0;
-	color: #666;
 	margin: 3rem 1rem 1rem;
-	border-top: solid 1px $gray;
+	border-top: solid 1px #999;
+	font-size: smaller;
 
 	@media (min-width: 1024px) {
 		display: flex;
 		justify-content: space-between ;
-	}
-
-	address, p {
-		font-size: 0.8rem;
 	}
 
 	address {

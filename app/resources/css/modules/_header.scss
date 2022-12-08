@@ -1,31 +1,26 @@
 header {
 	margin: 1rem;
-	display: flex;
-	justify-content: space-between;
-	text-align: right;
+	font-size: 1.4rem;
+	font-weight: 600;
+
+	> div {
+		display: inline-block;
+		text-align: right;
+	}
+
+	@media (min-width: 1024px) {
+		font-size: 1.6rem;
+	}
 
 	@media (min-width: 1440px) {
 		margin-left: 0;
 	}
 
-	.lang > * {
-		margin-left: 0.5rem;
-	}
-
-	h1 {
-		font-size: 1.4rem;
-		font-weight: 600;
-		display: inherit;
-
-		@media (min-width: 1024px) {
-			font-size: 1.6rem;
-		}
-	}
-	
-	h2 {
+	span {
 		font-size: 1rem;
 		font-weight: 400;
 		color: #666;
+		display: block;
 
 		@media (min-width: 1024px) {
 			margin-top: -0.2rem;
