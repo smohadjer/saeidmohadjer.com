@@ -1,11 +1,11 @@
 html {
-	font-size: 1rem;
+	font-size: 18px;
+	line-height: 1.5;
 	font-family: 'OpenSans', arial, verdana, snas-serif;
 	color: $black;
 
 	@media only screen and (min-width: 1024px) {
-		font-size: 1.2rem;
-		line-height: 1.4;
+		font-size: 22px;
 	}
 }
 
@@ -44,46 +44,45 @@ article {
 		margin: 0;
 	}
 
-	section + section {
-		margin-top: 2rem;
+	section {
+		margin-top: 1.5rem;
 	}
 }
 
 h1 {
 	font-weight: 600;
-	font-size: 2rem;
-	line-height: 1.4;
+	font-size: 1.4rem;
+
+	@media (min-width: 1024px) {
+		font-size: 1.6rem;
+	}
 }
 
 h1, h2, h3, h4, p, li {
   max-width: 80ch;
 }
 
+p.lead,
 h2 {
-	font-size: 1.8rem;
-	line-height: 1.2;
+	font-size: 1.3rem;
+	line-height: 1.5;
+	@media (min-width: 1024px) {
+		font-size: 1.2rem;
+	}
+}
+
+h2 {
 	font-weight: 500;
 }
 
 h3 {
 	padding-bottom: 0.1em;
 	margin-top: 1rem;
-	font-weight: 600;
-}
-
-h4 {
-	margin-bottom: 0;
-	font-size: 1em;
-	line-height: 1.4em;
-	margin-top: 0;
+	font-size: inherit;
 }
 
 p {
 	line-height: 1.5em;
-
-	h3 + & {
-		margin-top: 0.2em;
-	}
 }
 
 sup {
@@ -97,8 +96,6 @@ ul, ol {
 	margin-bottom: 1em;
 
 	li  {
-		font-size: 1em;
-		line-height: 1.3em;
 		margin-top: 1rem;
 		margin-left: 1em;
 
@@ -125,12 +122,20 @@ a {
 	}
 }
 
+dl {
+	margin-top: 1rem;
+}
+
 dt {
 	font-weight: bold;
 
-	dd + & {
-		margin-top: 10px;
+	&:not(first-child) {
+		margin-top: 1rem;
 	}
+}
+
+dd {
+	margin-left: 0;
 }
 
 time {
