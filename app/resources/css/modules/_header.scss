@@ -1,6 +1,6 @@
 header {
 	margin: 1rem;
-	font-size: 1.4rem;
+	font-size: 1.3rem;
 	font-weight: 600;
 
 	> div {
@@ -18,9 +18,10 @@ header {
 
 	span {
 		font-size: 1rem;
-		font-weight: 400;
+		font-weight: normal;
 		color: #666;
 		display: block;
+		margin-top: -0.1rem;
 
 		@media (min-width: 1024px) {
 			margin-top: -0.2rem;

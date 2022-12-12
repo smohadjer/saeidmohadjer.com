@@ -1,7 +1,7 @@
 .stage {
   align-items: center;
   overflow: hidden;
-  margin: 2rem 1rem;
+  margin: 1rem;
 
   @media (min-width: 1024px) {
     margin: 2rem 0;
@@ -11,10 +11,15 @@
     width: 100%;
     overflow: visible;
     overflow-x: hidden;
-    padding-bottom: 40px;
+    padding-bottom: 50px;
+
+    @media (min-width: 1024px) {
+      padding-bottom: 60px;
+    }
 
     &-slide__content {
       margin-top: 1rem;
+      font-size: 0.9rem;
 
       @media (min-width: 1024px) {
         width: 40%;
@@ -24,20 +29,22 @@
         margin-top: 0;
       }
 
-      td {
-        padding-right: 1.5rem;
-        vertical-align: top;
+      table {
+        border-spacing: 0;
 
-        &:first-child {
-          font-weight: 600;
+        td {
+          vertical-align: top;
+          line-height: 1.4;
+  
+          &:first-child {
+            padding-right: 1.5rem;
+            font-weight: 600;
+          }
         }
       }
     }
 
     @media (min-width: 1024px) {
-      order: 1;
-      margin: 0;
-
       &-slide {
         display: flex;
         justify-content: space-between;
