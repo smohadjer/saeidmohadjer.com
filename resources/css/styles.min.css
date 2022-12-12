@@ -293,13 +293,11 @@ h1, h2, h3, h4, p, li {
   max-width: 80ch;
 }
 
-p.lead,
 h2 {
   font-size: 1.2rem;
   line-height: 1.5;
 }
 @media (min-width: 1024px) {
-  p.lead,
   h2 {
     font-size: 1.2rem;
   }
@@ -377,7 +375,7 @@ time + p {
 
 header {
   margin: 1rem;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 600;
 }
 header > div {
@@ -396,9 +394,10 @@ header > div {
 }
 header span {
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: normal;
   color: #666;
   display: block;
+  margin-top: -0.1rem;
 }
 @media (min-width: 1024px) {
   header span {
@@ -452,7 +451,7 @@ footer > div p + p {
 .stage {
   align-items: center;
   overflow: hidden;
-  margin: 2rem 1rem;
+  margin: 1rem;
 }
 @media (min-width: 1024px) {
   .stage {
@@ -463,10 +462,16 @@ footer > div p + p {
   width: 100%;
   overflow: visible;
   overflow-x: hidden;
-  padding-bottom: 40px;
+  padding-bottom: 50px;
+}
+@media (min-width: 1024px) {
+  .stage .swiper {
+    padding-bottom: 60px;
+  }
 }
 .stage .swiper-slide__content {
   margin-top: 1rem;
+  font-size: 0.9rem;
 }
 @media (min-width: 1024px) {
   .stage .swiper-slide__content {
@@ -477,18 +482,18 @@ footer > div p + p {
     margin-top: 0;
   }
 }
-.stage .swiper-slide__content td {
-  padding-right: 1.5rem;
-  vertical-align: top;
+.stage .swiper-slide__content table {
+  border-spacing: 0;
 }
-.stage .swiper-slide__content td:first-child {
+.stage .swiper-slide__content table td {
+  vertical-align: top;
+  line-height: 1.4;
+}
+.stage .swiper-slide__content table td:first-child {
+  padding-right: 1.5rem;
   font-weight: 600;
 }
 @media (min-width: 1024px) {
-  .stage .swiper {
-    order: 1;
-    margin: 0;
-  }
   .stage .swiper-slide {
     display: flex;
     justify-content: space-between;
@@ -524,4 +529,10 @@ article h2 {
 article ul li {
   list-style: none;
   margin-left: 0;
+}
+@media (min-width: 1024px) {
+  article p.lead {
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
 }
