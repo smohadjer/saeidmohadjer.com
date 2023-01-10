@@ -490,6 +490,11 @@ footer > div p + p {
   padding-right: 1.5rem;
   font-weight: 600;
 }
+.stage .swiper-pagination-bullet {
+  width: 18px;
+  height: 18px;
+  margin: 0 12px !important;
+}
 @media (min-width: 1024px) {
   .stage .swiper-slide {
     display: flex;
@@ -500,11 +505,6 @@ footer > div p + p {
     width: 50%;
     height: auto;
     /* to fix blurry downscaled images in Chrome */
-  }
-  .stage .swiper-pagination-bullet {
-    width: 12px;
-    height: 12px;
-    margin: 0 8px !important;
   }
 }
 
