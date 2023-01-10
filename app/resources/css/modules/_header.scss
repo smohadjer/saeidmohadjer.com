@@ -1,12 +1,7 @@
 header {
-	margin: 1rem;
+	margin: 0.75rem 1rem 0.5rem;
 	font-size: 1.3rem;
 	font-weight: 600;
-
-	> div {
-		display: inline-block;
-		text-align: right;
-	}
 
 	@media (min-width: 1024px) {
 		font-size: 1.6rem;
@@ -16,15 +11,16 @@ header {
 		margin-left: 0;
 	}
 
-	span {
+	h1 {
 		font-size: 1rem;
-		font-weight: normal;
-		color: #666;
+		font-weight: 400;
 		display: block;
 		margin-top: -0.1rem;
+		letter-spacing: 0.02rem;
 
 		@media (min-width: 1024px) {
-			margin-top: -0.2rem;
+			margin-top: -0.3rem;
+			font-size: 1.1rem;
 		}
 	}
 
