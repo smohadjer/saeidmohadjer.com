@@ -44,6 +44,12 @@
       }
     }
 
+    &-pagination-bullet {
+      width: 18px;
+      height: 18px;
+      margin: 0 12px !important;
+    }
+
     @media (min-width: 1024px) {
       &-slide {
         display: flex;
@@ -57,12 +63,6 @@
             /* to fix blurry downscaled images in Chrome */
           //image-rendering: -webkit-optimize-contrast;
         }
-      }
-
-      &-pagination-bullet {
-        width: 12px;
-        height: 12px;
-        margin: 0 8px !important;
       }
     }
   }
