@@ -491,9 +491,9 @@ footer > div p + p {
   font-weight: 600;
 }
 .stage .swiper-pagination-bullet {
-  width: 18px;
-  height: 18px;
-  margin: 0 12px !important;
+  width: 10px;
+  height: 10px;
+  margin: 0 10px !important;
 }
 @media (min-width: 1024px) {
   .stage .swiper-slide {
