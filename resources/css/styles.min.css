@@ -429,24 +429,22 @@ footer address {
 }
 @media (min-width: 1024px) {
   footer > div {
-    width: 50%;
+    width: 40%;
   }
-}
-@media (min-width: 1024px) {
-  footer > div {
-    width: 33%;
-  }
-}
-footer > div a {
-  vertical-align: middle;
-  margin-right: 5px;
-}
-footer > div a:last-child {
-  margin-right: 0;
-  margin-left: 5px;
 }
 footer > div p + p {
   margin-top: 1em;
+}
+footer > div ul {
+  list-style: none;
+  padding: 0;
+}
+footer > div ul li {
+  display: inline-block;
+  margin: 0 15px 0 0;
+}
+footer > div ul li:last-child {
+  margin-right: 0;
 }
 
 .stage {
