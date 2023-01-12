@@ -1,0 +1,23 @@
+html {
+	-webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape while allowing user zoom in iOS */
+}
+
+/* for older IEs including ie11 */
+article, aside, main, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+.clearfix:before,
+.clearfix:after {
+	content: " ";
+	display: table;
+}
+.clearfix:after {
+  clear: both;
+}
