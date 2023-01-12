@@ -20,25 +20,25 @@ footer {
 
 	> div {
 		@media (min-width: 1024px) {
-			width: 50%;
-		}
-
-		@media (min-width: 1024px) {
-			width: 33%;
-		}
-
-		a {
-			vertical-align: middle;
-			margin-right: 5px;
-
-			&:last-child {
-				margin-right: 0;
-				margin-left: 5px;
-			}
+			width: 40%;
 		}
 
 		p + p {
 			margin-top: 1em;
+		}
+
+		ul {
+			list-style: none;
+			padding: 0;
+
+			li {
+				display: inline-block;
+				margin: 0 15px 0 0;
+
+				&:last-child {
+					margin-right: 0;
+				}
+			}
 		}
 	}
 }
