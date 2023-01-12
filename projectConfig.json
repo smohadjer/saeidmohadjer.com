@@ -1,7 +1,6 @@
 {
 	"dependencies": {
 		"css": [
-			"node_modules/grid/dist/grid.css",
 			"node_modules/helpers/dist/helper.css"
 		],
 		"js": [

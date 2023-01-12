@@ -15,17 +15,15 @@
 		"sass": "node node_modules/build/bin/sassTocss",
 		"hbs": "node node_modules/build/bin/hbs.js",
 		"watch": "node node_modules/build/bin/watch-content.js & node node_modules/build/bin/watch-css.js & node node_modules/build/bin/watch-js.js & node node_modules/build/bin/watch-img.js & node node_modules/build/bin/watch-content.js",
-		"useref": "node node_modules/build/bin/useref.js",
 		"serve": "npm run compile && npm run copy && npm run sass && npm run hbs",
 		"start": "npm run serve && npm run watch",
-		"build": "npm run serve && rollup -c && npm run copyDist && npm run useref"
+		"build": "npm run serve && rollup -c && npm run copyDist"
 	},
 	"devDependencies": {
-		"build": "git://github.com/smohadjer/build.git#0.0.8",
+		"build": "git://github.com/smohadjer/build.git#0.1.5",
 		"handlebars": "^4.7.7"
 	},
 	"dependencies": {
-		"grid": "git+https://github.com/smohadjer/grid.git",
 		"helpers": "git+https://github.com/smohadjer/helpers.git"
 	},
 	"engines": {
