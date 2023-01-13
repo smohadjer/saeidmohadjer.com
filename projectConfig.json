@@ -9,12 +9,10 @@
 	},
 	"pages": [
 		{
-			"layout": "app/content/en/layout.hbs",
 			"source": "app/content/en",
 			"target": "public/en"
 		},
 		{
-			"layout": "app/content/de/layout.hbs",
 			"source": "app/content/de",
 			"target": "public"
 		}
