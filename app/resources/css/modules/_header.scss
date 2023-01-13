@@ -2,6 +2,12 @@ header {
 	margin: 0.75rem 1rem 0.5rem;
 	font-size: 1.3rem;
 	font-weight: 600;
+	display: flex;
+	justify-content: space-between;
+
+	a {
+		font-size: smaller;
+	}
 
 	@media (min-width: 1024px) {
 		font-size: 1.6rem;
