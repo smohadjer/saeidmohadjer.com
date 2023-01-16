@@ -15,6 +15,10 @@
 		{
 			"source": "app/content/de",
 			"target": "public"
+		},
+		{
+			"source": "app/content/resume",
+			"target": "public"
 		}
 	]
 }
