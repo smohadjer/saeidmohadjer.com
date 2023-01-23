@@ -134,10 +134,9 @@ ul li p, ol li p {
 
 a {
   color: #036da8;
-  text-decoration: none;
 }
-a:hover {
-  text-decoration: underline;
+a:visited {
+  color: #9650C8;
 }
 
 dl {
