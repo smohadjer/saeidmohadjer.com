@@ -15,8 +15,9 @@
 		"sass": "node node_modules/build/bin/sassTocss",
 		"hbs": "node node_modules/build/bin/hbs.js",
 		"watch": "node node_modules/build/bin/watch-content.js & node node_modules/build/bin/watch-css.js & node node_modules/build/bin/watch-js.js & node node_modules/build/bin/watch-img.js & node node_modules/build/bin/watch-content.js",
+		"server": "node node_modules/build/bin/server.js",
 		"serve": "npm run compile && npm run copy && npm run sass && npm run hbs",
-		"start": "npm run serve && node node_modules/build/bin/server.js && npm run watch",
+		"start": "npm run serve && npm run watch & npm run server",
 		"build": "npm run serve && rollup -c && npm run copyDist"
 	},
 	"devDependencies": {
