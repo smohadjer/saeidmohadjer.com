@@ -13,6 +13,10 @@
 			"target": "public/en"
 		},
 		{
+			"source": "app/content/fa",
+			"target": "public/fa"
+		},
+		{
 			"source": "app/content/de",
 			"target": "public"
 		},
