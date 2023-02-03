@@ -182,6 +182,43 @@ header a {
     font-size: 20px;
   }
 }
+header .langs {
+  text-align: right;
+  position: relative;
+  z-index: 10;
+}
+header .langs__button {
+  border: none;
+  background: url(../img/globe2.svg) no-repeat;
+  background-size: 30px;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  cursor: pointer;
+}
+header .langs ul {
+  position: absolute;
+  right: 0;
+  top: 25px;
+}
+@media (min-width: 1024px) {
+  header .langs ul {
+    top: 30px;
+  }
+}
+header .langs ul.hidden {
+  display: none;
+}
+header .langs ul li {
+  margin: 0;
+  list-style: none;
+  line-height: 1.2;
+}
+@media (min-width: 1024px) {
+  header .langs ul li {
+    line-height: 1;
+  }
+}
 @media (min-width: 1024px) {
   header {
     font-size: 1.6rem;
@@ -355,9 +392,16 @@ article ul li {
   src: url("../fonts/parastoo/Parastoo-Bold.ttf") format("truetype");
   font-weight: bold;
 }
-[dir=rtl] {
+.lang-fa {
   font-family: parastoo, arial, verdana, sans-serif;
 }
+
+[dir=rtl] .langs ul {
+  left: 0;
+  right: auto;
+  text-align: left;
+}
+
 [dir=rtl] .stage .swiper-slide__content table td:first-child {
   padding-left: 1.5rem;
   padding-right: 0;
