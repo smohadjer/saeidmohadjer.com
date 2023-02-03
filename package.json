@@ -21,7 +21,7 @@
 		"build": "npm run serve && rollup -c && npm run copyDist"
 	},
 	"devDependencies": {
-		"build": "git://github.com/smohadjer/build.git#0.1.12",
+		"build": "git://github.com/smohadjer/build.git#0.1.14",
 		"handlebars": "^4.7.7",
 		"express": "^4.16.2"
 	},

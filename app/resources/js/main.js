@@ -21,6 +21,12 @@ ready(function() {
 
 	console.log('DOM is ready!');
 
+	const langs = document.querySelector('.langs');
+	langs.addEventListener('click', (e) => {
+		console.log(e.target);
+		e.target.nextElementSibling.classList.toggle('hidden');
+	});
+
 	const swiper = new Swiper('.swiper', {
 		// Optional parameters
 		loop: true,

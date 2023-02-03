@@ -10,9 +10,19 @@
   font-weight: bold;
 }
 
-[dir=rtl] {
+.lang-fa {
   font-family: parastoo, arial, verdana, sans-serif;
+}
 
+[dir=rtl] {
+  .langs ul {
+    left: 0;
+    right: auto;
+    text-align: left;
+  }
+}
+
+[dir=rtl] {
   .stage .swiper-slide__content table td:first-child {
     padding-left: 1.5rem;
     padding-right: 0;
