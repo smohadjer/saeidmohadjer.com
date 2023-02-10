@@ -21,7 +21,11 @@
 			"target": "public"
 		},
 		{
-			"source": "app/content/resume",
+			"source": "app/content/blog",
+			"target": "public"
+		},
+		{
+			"source": "app/content",
 			"target": "public"
 		}
 	]

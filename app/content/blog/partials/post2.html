@@ -1,0 +1,16 @@
+<article class="post">
+  <h1>CSS tips and best practices</h1>
+  <time datetime="2018-12-06">December 6, 2018</time>
+  <ul>
+    <li>Comment any rule that its purpose is not obvious.</li>
+    <li>Use <code>content: none;</code> to hide pseudo elements (::before, ::after) rather than <code>display: none;</code>.</li>
+    <li>Avoid "!important". If you have to use it, add comment to explain why.</li>
+    <li>Avoid negative margins. If you have to use them, add comment to explain why.</li>
+    <li>To target the first x children of an element, use <code>:nth-child(-n + x)</code>.</li>
+    <li>To remove hover underline from a::before set a::before's display to <a href="http://stackoverflow.com/questions/8820286/how-to-remove-only-underline-from-abefore" rel="nofollow">inline-block</a>.</li>
+    <li>Do not use css to hide elements and instead use HTML5 attribute "hidden".</li>
+    <li>Use <code>-webkit-overflow-scrolling: touch;</code> to apply momenutum-based scrolling to an element on touch devices. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-overflow-scrolling" rel="nofollow">Read more</a></li>
+    <li>Check browser support before using new css properties.</li>
+    <li>All css rules for a component should be name spaced to avoid affecting elements outside that component.</li>
+  </ul>
+</article>
