@@ -8,8 +8,8 @@
   <p>Another advantage of using GitHub Actions with Vercel is that you can uninstall Vercel application from GitHub as Vercel no longer needs access to 
     your GitHub repository. You simply need to create a token on Vercel and store it along with ID of your Vercel project in a secret in your Github 
     repository at https://github.com/your-username/your-repository/settings/secrets/actions</p>
-  <p>Below is a workflow example from my project that triggers a deployment to Vercel only when schedule.json is changed:
-    <pre>
+  <p>Below is a workflow example from my project that triggers a deployment to Vercel only when schedule.json is changed:</p>
+    <pre><code>
     name: Vercel Production Deployment
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
@@ -32,6 +32,5 @@ jobs:
       - name: Build Project Artifacts
         run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
       - name: Deploy Project Artifacts to Vercel
-        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
-    </pre>
+        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}</code></pre>
 </article>
