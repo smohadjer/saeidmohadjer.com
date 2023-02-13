@@ -1,0 +1,19 @@
+<article class="post">
+  <h1>Responsive images that do not scale up beyond their intrinsic size</h1>
+  <div class="tags">
+    <span>CSS</span>
+    <span>Responsive</span>
+  </div>
+  <time datetime="2023-02-13">2023-02-13</time>
+  <p>Usually all you need to make an image resize based on size of screen is to add one simple CSS rule:</p>
+  <pre>
+    img {
+      width: 100%;
+    }</pre>
+  <p>However if the screen resolution is higher than width of your image, this would result in a blurred image as there is simply not enough data in image to render it at higher resolutions. In such cases it might be more desirable to keep the image responsive, but not allow it to get larger than it's actual size. This can be achieved by the following CSS rule:</p>
+  <pre>
+    img {
+      width: auto;
+      max-width: 100%;
+    }</pre>
+</article>
