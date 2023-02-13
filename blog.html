@@ -53,6 +53,10 @@
                 padding-bottom: 3em;
             }
 
+            .post h1 {
+                margin: 0;
+            }
+
             .post .responsive {
                 width: 100%;
             }
@@ -60,6 +64,28 @@
             .post ul {
                 margin-left: 17px;
                 padding-left: 0;
+            }
+
+            .post .tags {
+                margin: 5px 0;
+            }
+
+            .post .tags span {
+                padding: 5px 15px;
+                background: #888;
+                border-radius: 15px;
+                font-size: smaller;
+                color: white;
+            }
+
+            .post time {
+                display: inline-block;
+                font-size: smaller;
+                font-style: italic;
+            }
+
+            .post time::before {
+                content: "Published on "
             }
 
             .post pre {
@@ -90,8 +116,31 @@
         </header>
         <main>
         	<article class="post">
-        	  <h1>Deploy to Vercel only when a specific file or folder in repository is changed</h1>
+        	  <time datetime="2023-02-13">2023-02-13</time>
+        	  <h1>Responsive images that do not scale up beyond their intrinsic size</h1>
+        	  <div class="tags">
+        	    <span>CSS</span>
+        	    <span>Responsive</span>
+        	  </div>
+        	  <p>Usually all you need to make an image resize based on size of screen is to add one simple CSS rule:</p>
+        	  <pre>
+        	    img {
+        	      width: 100%;
+        	    }</pre>
+        	  <p>However if the screen resolution is higher than width of your image, this would result in a blurred image as there is simply not enough data in image to render it at higher resolutions. In such cases it might be more desirable to keep the image responsive, but not allow it to get larger than it's actual size. This can be achieved by the following CSS rule:</p>
+        	  <pre>
+        	    img {
+        	      width: auto;
+        	      max-width: 100%;
+        	    }</pre>
+        	</article>
+        	<article class="post">
         	  <time datetime="2023-02-11">2023-02-11</time>
+        	  <h1>Deploy to Vercel only when a specific file or folder in repository is changed</h1>
+        	  <div class="tags">
+        	    <span>Vercel</span>
+        	    <span>Github Actions</span>
+        	  </div>
         	  <p>When you install Vercel application on GitHub and give it access to your repository, GitHub will trigger a deployment on Vercel every time there is
         	    a new commit in your main branch, however if your API on Vercel only needs to be updated when a certain file or folder is changed, these
         	    deployments are unnecessary. You can avoid unnecessary deployments to Vercel using GitHub Actions as described here:
@@ -101,8 +150,11 @@
         	  <p><img class="responsive" src="/assets/blog-vercel.png" alt="vercel secrets on GitHub"></p>
         	</article>
         	<article class="post">
-        	  <h1>Disabling preview deployments in Vercel</h1>
         	  <time datetime="2023-02-10">2023-02-10</time>
+        	  <h1>Disabling preview deployments in Vercel</h1>
+        	  <div class="tags">
+        	    <span>Vercel</span>
+        	  </div>
         	  <p>If you don't want Vercel to do preview deployments for other branches of your repository you can disable preview deployments by going to your project's settings &gt; git &gt; Ignored Build Step and add the following command: </p>
         	  <p><pre>if [ "$VERCEL_ENV" == "production" ]; then exit 1; else exit 0; fi</pre></p>
         	  <p>This is probably the easiest way. Another way would be to add a vercel.json to all branches and set "deploymentEnabled" to false for any branches that should not trigger deployment, like below:
