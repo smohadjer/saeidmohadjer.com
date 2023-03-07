@@ -32,7 +32,15 @@ cd ..
         &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot; /&gt;
     &lt;/head&gt;
     &lt;body&gt;
-        &lt;h1&gt;Hello World&lt;/h1&gt;
+        &lt;p id=&quot;test&quot;&gt;&lt;/p&gt;
+        &lt;script&gt;
+          fetch('api/index.js')
+          .then((response) =&gt; response.text())
+          .then((text) =&gt; {
+            console.log(text);
+            document.getElementById('test').innerHTML = text;
+          });
+        &lt;/script&gt;
     &lt;/body&gt;
 &lt;/html&gt;
 </code></pre></li>
@@ -45,8 +53,8 @@ export default function handler(req, res) {
 }
 </code></pre></li>
 <li>In cli/terminal run: <pre>vercel dev</pre> and select default answers to all questions. Vercel cli will create the test project under your 
-existing Vercel account and start a local server at: http://localhost:3000/ where you can see your index.html and your api can be reached at: http://localhost:3000/api/</li>
-<li>In cli/terminal run: <pre>vercel deploy</pre> to deploy your test project to production and make it publicly available on web.</li>
+existing Vercel account and start a local server at: http://localhost:3000/ where you can see your index.html and your api can be reached at: http://localhost:3000/api/. If everything is working properly, you should see a "Hello World" message in your browser.</li>
+<li>In cli/terminal run: <pre>vercel deploy</pre> This will deploy your project to server and make it available on the web. The URL will be available in your project on vercel.com under "Deployment" tab.</li>
 		</ol>
 	</article>	
 	
