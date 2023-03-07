@@ -1,5 +1,50 @@
 <main>
 	<article class="post">
+		<time datetime="2023-03-07">2023-03-07</time>
+		<h1>Vercel Hello World Example</h1>
+		<div class="tags">
+			<span>Vercel</span>
+			<span>Node.js</span>
+		</div>
+<pre>
+mkdir test
+cd test
+mkdir public api
+cd api
+touch index.js
+cd ..
+cd public
+touch index.html
+cd ..
+</pre>
+		<p>Open index.html in your editor and paste the following snippet in it:<br />
+<pre>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Hello World</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    </head>
+    <body>
+        <h1>Hello World</h1>
+    </body>
+</html>
+</pre></p>
+		<p>Open index.js in your editor and paste the following snippet in it:<br />
+<pre>
+export default function handler(req, res) {
+    res.setHeader('Content-Type', 'text/plain')
+    res.write('Hello World')
+    res.end()
+}
+</pre></p>
+<p>In ycli/terminal run <pre>vercel dev</pre> and select default answer for all questions. Vercel cli will create the test project under your 
+existing Vercel account and start a local server at: http://localhost:3000/ where you can see your index.html and your api can be invoked at: http://localhost:3000/api/</p>
+<p>In cli/terminal run <pre>vercel deploy</pre> to deploy your test project to production and make it publicly available on web.</p>
+</article>	
+	
+	<article class="post">
 		<time datetime="2023-02-25">2023-02-25</time>
 		<h1>How to download files directly from GitHub public repositories</h1>
 		<div class="tags">
