@@ -8,7 +8,8 @@
 		</div>
 		<p>In this example you will create a static HTML page that calls an api (Node.js serverless function) which responds by returning 
 			the word "Hello 
-			World" and displaying it in the browser. You can see a deployed version at: <a href="https://test-saeid-fastmailfm.vercel.app/">https://test-saeid-fastmailfm.vercel.app/</a></p>
+			World" and displaying it in the browser. You can see a deployed version at: 
+			<a href="https://test-pi-tawny.vercel.app/">https://test-pi-tawny.vercel.app/</a></p>
 		<p>We will deploy and host both the HTML page and the Node.js api on Vercel using Vercel's cli, so you should register for a free account at 
 			<a href="https://vercel.com">vercel.com</a> if you don't already have one 
 			and install vercel's command line via:
@@ -60,7 +61,9 @@ export default function handler(req, res) {
 </code></pre></li>
 <li>In cli/terminal run: <pre>vercel dev</pre> and select default answers to all questions. Vercel cli will create the test project under your 
 existing Vercel account and start a local server at: http://localhost:3000/ where you can see your index.html and your api can be reached at: http://localhost:3000/api/. If everything is working properly, you should see a "Hello World" message in your browser.</li>
-<li>In cli/terminal run: <pre>vercel deploy</pre> This will deploy your project to server and make it available on the web. The URL will be available in your project on vercel.com under "Deployment" tab.</li>
+<li>To deploy your project to server for preview purposes run in terminal: <pre>vercel deploy</pre> And if you are happy with result and want to 
+	deploy it to production run: <pre>vercel --prod</pre>
+	The preview and production URLs are available in your project on vercel.com under "Deployment" tab.</li>
 		</ol>
 	</article>	
 	
