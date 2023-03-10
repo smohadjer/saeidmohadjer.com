@@ -22,7 +22,7 @@
 		},
 		{
 			"source": "app/content/blog",
-			"target": "public"
+			"target": "public/blog"
 		},
 		{
 			"source": "app/content",
