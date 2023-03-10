@@ -1,0 +1,196 @@
+<!doctype html>
+<html class="no-js" lang="en">
+	<head>
+    <meta charset="utf-8">
+    <title>Web Design from Freiburg | Saeid Mohadjer</title>
+    <meta name="description" content="Web Designer from Freiburg">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+        <style>
+            header {
+                border-bottom: solid 1px #999;
+                margin-bottom: 2em;
+                padding-bottom: 1em;
+            }
+
+            header h2 + h3 {
+                margin-top: 0;
+                font-weight: 500;
+            }
+
+            * {
+                margin-bottom: 0;
+            }
+
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 1rem;
+                max-width: 80ch;
+                margin: 1rem;
+                line-height: 1.3;
+            }
+
+            @media (min-width: 1024px) {
+                body {
+                    font-size: 1.2rem;
+                }
+            }
+
+            @media (min-width: 100ch) {
+                body {
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+            }
+
+            .post {
+                border-bottom: solid 1px #999;
+                margin-bottom: 3em;
+                padding-bottom: 3em;
+            }
+
+            .post h1 {
+                margin: 0;
+            }
+
+            .post .responsive {
+                width: 100%;
+            }
+
+            .post ul {
+                margin-left: 17px;
+                padding-left: 0;
+            }
+	    
+	    .post ol {
+	        padding-left: 0;
+    		list-style: inside decimal;
+    	    }
+	    
+	    .post ol li + li {
+	        margin-top: 1em;
+	    }
+
+            .post .tags {
+                margin: 5px 0;
+            }
+
+            .post .tags span {
+                padding: 5px 15px;
+                background: #888;
+                border-radius: 15px;
+                font-size: smaller;
+                color: white;
+            }
+
+            .post time {
+                display: inline-block;
+                font-size: smaller;
+                font-style: italic;
+            }
+
+            .post time::before {
+                content: "Published on "
+            }
+
+            .post pre {
+                background: #f4f4f4;
+                border: 1px solid #ddd;
+                border-left: 3px solid #f36d33;
+                color: #666;
+                page-break-inside: avoid;
+                font-family: monospace;
+                font-size: 15px;
+                line-height: 1.6;
+                margin-bottom: 1.6em;
+                max-width: 100%;
+                overflow: auto;
+                padding: 1em 1.5em;
+                display: block;
+                word-wrap: break-word;
+            }
+
+        </style>
+	</head>
+	<body>
+        <header>
+        	<div>
+        		<h2>Saeid Mohadjer</h2>
+        		<h3>Full-Stack Developer</h3>
+        	</div>
+        </header>
+        <main>
+          <article class="post">
+        		<time datetime="2023-03-07">2023-03-07</time>
+        		<h1>Vercel Hello World Example</h1>
+        		<div class="tags">
+        			<span>Vercel</span>
+        			<span>Node.js</span>
+        		</div>
+        		<p>In this example you will create a static HTML page that calls an api (Node.js serverless function) which responds by returning 
+        			the word "Hello 
+        			World" and displaying it in the browser. You can see a deployed version at: 
+        			<a href="https://test-pi-tawny.vercel.app/">https://test-pi-tawny.vercel.app/</a></p>
+        		<p>We will deploy and host both the HTML page and the Node.js api on Vercel using Vercel's cli, so you should register for a free account at 
+        			<a href="https://vercel.com">vercel.com</a> if you don't already have one 
+        			and install vercel's command line via:
+        <pre><code>
+        npm install -g pnpm
+        pnpm i -g vercel
+        </code></pre></p>
+        		<ol>
+        			<li>Run the following in terminal to create file and folder structure for "test" project:<br />
+        <pre><code>
+        mkdir test
+        cd test
+        mkdir public api
+        cd api
+        touch index.js
+        cd ../public
+        touch index.html
+        cd ..
+        </code></pre></li>
+        		<li>Open index.html in your editor and paste the following snippet there:<br />
+        <pre><code>
+        &lt;!DOCTYPE html&gt;
+        &lt;html lang=&quot;en&quot;&gt;
+            &lt;head&gt;
+                &lt;meta charset=&quot;utf-8&quot; /&gt;
+                &lt;title&gt;Hello World&lt;/title&gt;
+                &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot; /&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+                &lt;p id=&quot;test&quot;&gt;&lt;/p&gt;
+                &lt;script&gt;
+                  fetch('api/index.js')
+                  .then((response) =&gt; response.text())
+                  .then((text) =&gt; {
+                    console.log(text);
+                    document.getElementById('test').innerHTML = text;
+                  });
+                &lt;/script&gt;
+            &lt;/body&gt;
+        &lt;/html&gt;
+        </code></pre></li>
+        		<li>Open index.js in your editor and paste the following snippet there:<br />
+        <pre><code>
+        export default function handler(req, res) {
+            res.setHeader('Content-Type', 'text/plain')
+            res.write('Hello World')
+            res.end()
+        }
+        </code></pre></li>
+        <li>In cli/terminal run: <pre>vercel dev</pre> and select default answers to all questions. Vercel cli will create the test project under your 
+        existing Vercel account and start a local server at: http://localhost:3000/ where you can see your index.html and your api can be reached at: http://localhost:3000/api/. If everything is working properly, you should see a "Hello World" message in your browser.</li>
+        <li>To deploy your project to server for preview purposes run in terminal: <pre>vercel deploy</pre> And if you are happy with result and want to 
+        	deploy it to production run: <pre>vercel --prod</pre>
+        	The preview and production URLs are available in your project on vercel.com under "Deployment" tab.</li>
+        		</ol>
+        	</article>
+        </main>
+	</body>
+</html>
