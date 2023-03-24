@@ -128,102 +128,102 @@
         		<h3>Full-Stack Developer</h3>
         	</div>
         </header>
-        <main>
-        	<article class="post">
-        		<time datetime="2023-03-24">2023-03-24</time>
-        		<h1>Closing an open port via Mac's terminal</h1>
-        		<div class="tags">
-        			<span>Mac</span>
-        		</div>
-        		<p>Use below command in terminal to get a list of all open ports:</p>
-        		<p><code><pre>netstat -an | grep LISTEN</pre></code></p>
-        		<p>Find the process ID (PID) of the port you wish to close. You may need to use sudo. <pre>lsof -i :PortNumber</pre></p>
-        		<p>Then use the following command to kill the process listening on your port. You may need to use sudo with kill -9 parameter.</p>
-        		<p><pre>kill PID</pre></p>
-        	</article>
-        	
-        	<article class="post">
-        		<time datetime="2023-03-07">2023-03-07</time>
-        		<h1>Deploying a static HTML page and a serverless function (Node.js) live via Vercel</h1>
-        		<div class="tags">
-        			<span>Vercel</span>
-        			<span>Node.js</span>
-        		</div>
-        		<p>In this example you will create a static HTML page that calls an api (Node.js serverless function) which responds by returning
-        			the word "Hello
-        			World" and displaying it in the browser. You can see a deployed version at:
-        			<a href="https://test-pi-tawny.vercel.app/">https://test-pi-tawny.vercel.app/</a></p>
-        		<p><a href="/blog/deploy-html-with-serverless-api-to-vercel.html">Read more</a></p>
-        	</article>
-        
-        	<article class="post">
-        		<time datetime="2023-02-25">2023-02-25</time>
-        		<h1>How to download files directly from GitHub public repositories</h1>
-        		<div class="tags">
-        			<span>Github</span>
-        		</div>
-        		<p>GitHub URL:<br>
-        		<a href="https://github.com/smohadjer/s3/blob/master/test.jpg">https://github.com/smohadjer/s3/blob/master/test.jpg</a></p>
-        		<p>GitHub download URL:<br>
-        		<a href="https://raw.githubusercontent.com/smohadjer/s3/master/test.jpg">https://raw.githubusercontent.com/smohadjer/s3/master/test.jpg</a>
-        		</p>
-        	</article>
-        
-        	<article class="post">
-        	  <time datetime="2023-02-13">2023-02-13</time>
-        	  <h1>Responsive images that do not scale up beyond their intrinsic size</h1>
-        	  <div class="tags">
-        	    <span>CSS</span>
-        	    <span>Responsive</span>
-        	  </div>
-        	  <p>Usually all you need to make an image resize based on size of screen is to add one simple CSS rule:</p>
-        	  <pre><code>img {
-        	  width: 100%;
-        	}</code></pre>
-        	  <p>However if the screen resolution is higher than width of your image, this would result in a blurred image as there is simply not enough data in image to render it at higher resolutions. In such cases it might be more desirable to keep the image responsive, but not allow it to get larger than it's actual size. This can be achieved by the following CSS rule:</p>
-        	  <pre><code>img {
-        	  width: auto;
-        	  max-width: 100%;
-        	}</code></pre>
-        	</article>
-        	<article class="post">
-        	  <time datetime="2023-02-11">2023-02-11</time>
-        	  <h1>Deploy to Vercel only when a specific file or folder in repository is changed</h1>
-        	  <div class="tags">
-        	    <span>Vercel</span>
-        	    <span>Github Actions</span>
-        	  </div>
-        	  <p>When you install Vercel application on GitHub and give it access to your repository, GitHub will trigger a deployment on Vercel every time there is
-        	    a new commit in your main branch, however if your API on Vercel only needs to be updated when a certain file or folder is changed, these
-        	    deployments are unnecessary. You can avoid unnecessary deployments to Vercel using GitHub Actions as described here:
-        	    <a href="https://vercel.com/guides/how-can-i-use-github-actions-with-vercel">https://vercel.com/guides/how-can-i-use-github-actions-with-vercel</a>.</p>
-        	  <p>Another advantage of using GitHub Actions with Vercel is that you can uninstall Vercel application from GitHub as Vercel no longer needs access to
-        	    your GitHub repository. You simply need to create a token on Vercel and store it along with your Vercel Org and Project IDs (found in .vercel/project.json in root of your project) in secrets on Github at https://github.com/your-username/your-repository/settings/secrets/actions</p>
-        	  <p><img class="responsive" src="/assets/blog-vercel.png" alt="vercel secrets on GitHub"></p>
-        	</article>
-        	<article class="post">
-        	  <time datetime="2023-02-10">2023-02-10</time>
-        	  <h1>Disabling preview deployments in Vercel</h1>
-        	  <div class="tags">
-        	    <span>Vercel</span>
-        	  </div>
-        	  <p>If you don't want Vercel to do preview deployments for other branches of your repository you can disable preview deployments by going to your project's settings &gt; git &gt; Ignored Build Step and add the following command: </p>
-        	  <p><pre>if [ "$VERCEL_ENV" == "production" ]; then exit 1; else exit 0; fi</pre></p>
-        	  <p>This is probably the easiest way. Another way would be to add a vercel.json to all branches and set "deploymentEnabled" to false for any branches that should not trigger deployment, like below:
-        	<pre>
-        	{
-        	  "git": {
-        	    "deploymentEnabled": {
-        	      "gh-pages": false
-        	    }
-        	  }
-        	}</pre></p>
-        	 <p>More info:</p>
-        	 <ul>
-        	  <li><a href="https://vercel.com/docs/concepts/projects/project-configuration/git-configuration#git.deploymentenabled">https://vercel.com/docs/concepts/projects/project-configuration/git-configuration#git.deploymentenabled</a></li>
-        	  <li><a href="https://stackoverflow.com/questions/68232548/how-can-i-stop-vercel-preview-deployments-from-appearing-on-pull-requests">https://stackoverflow.com/questions/68232548/how-can-i-stop-vercel-preview-deployments-from-appearing-on-pull-requests</a></li>
-        	 </ul>
-        	</article>
-        </main>
+<main>
+	<article class="post">
+		<time datetime="2023-03-24">2023-03-24</time>
+		<h1>Closing an open port via Mac's terminal</h1>
+		<div class="tags">
+			<span>Mac</span>
+		</div>
+		<p>Use below command in terminal to get a list of all open ports:</p>
+		<p><code><pre>netstat -an | grep LISTEN</pre></code></p>
+		<p>Find the process ID (PID) of the port you wish to close. You may need to use sudo. <pre>lsof -i :PortNumber</pre></p>
+		<p>Then use the following command to kill the process listening on your port. You may need to use sudo with kill -9 parameter.</p>
+		<p><pre>kill PID</pre></p>
+	</article>
+
+	<article class="post">
+		<time datetime="2023-03-07">2023-03-07</time>
+		<h1>Deploying a static HTML page and a serverless function (Node.js) live via Vercel</h1>
+		<div class="tags">
+			<span>Vercel</span>
+			<span>Node.js</span>
+		</div>
+		<p>In this example you will create a static HTML page that calls an api (Node.js serverless function) which responds by returning
+			the word "Hello
+			World" and displaying it in the browser. You can see a deployed version at:
+			<a href="https://test-pi-tawny.vercel.app/">https://test-pi-tawny.vercel.app/</a></p>
+		<p><a href="/blog/deploy-html-with-serverless-api-to-vercel.html">Read more</a></p>
+	</article>
+
+	<article class="post">
+		<time datetime="2023-02-25">2023-02-25</time>
+		<h1>How to download files directly from GitHub public repositories</h1>
+		<div class="tags">
+			<span>Github</span>
+		</div>
+		<p>GitHub URL:<br>
+		<a href="https://github.com/smohadjer/s3/blob/master/test.jpg">https://github.com/smohadjer/s3/blob/master/test.jpg</a></p>
+		<p>GitHub download URL:<br>
+		<a href="https://raw.githubusercontent.com/smohadjer/s3/master/test.jpg">https://raw.githubusercontent.com/smohadjer/s3/master/test.jpg</a>
+		</p>
+	</article>
+
+<article class="post">
+  <time datetime="2023-02-13">2023-02-13</time>
+  <h1>Responsive images that do not scale up beyond their intrinsic size</h1>
+  <div class="tags">
+    <span>CSS</span>
+    <span>Responsive</span>
+  </div>
+  <p>Usually all you need to make an image resize based on size of screen is to add one simple CSS rule:</p>
+<pre><code>img {
+  width: 100%;
+}</code></pre>
+  <p>However if the screen resolution is higher than width of your image, this would result in a blurred image as there is simply not enough data in image to render it at higher resolutions. In such cases it might be more desirable to keep the image responsive, but not allow it to get larger than it's actual size. This can be achieved by the following CSS rule:</p>
+<pre><code>img {
+  width: auto;
+  max-width: 100%;
+}</code></pre>
+</article>
+<article class="post">
+  <time datetime="2023-02-11">2023-02-11</time>
+  <h1>Deploy to Vercel only when a specific file or folder in repository is changed</h1>
+  <div class="tags">
+    <span>Vercel</span>
+    <span>Github Actions</span>
+  </div>
+  <p>When you install Vercel application on GitHub and give it access to your repository, GitHub will trigger a deployment on Vercel every time there is
+    a new commit in your main branch, however if your API on Vercel only needs to be updated when a certain file or folder is changed, these
+    deployments are unnecessary. You can avoid unnecessary deployments to Vercel using GitHub Actions as described here:
+    <a href="https://vercel.com/guides/how-can-i-use-github-actions-with-vercel">https://vercel.com/guides/how-can-i-use-github-actions-with-vercel</a>.</p>
+  <p>Another advantage of using GitHub Actions with Vercel is that you can uninstall Vercel application from GitHub as Vercel no longer needs access to
+    your GitHub repository. You simply need to create a token on Vercel and store it along with your Vercel Org and Project IDs (found in .vercel/project.json in root of your project) in secrets on Github at https://github.com/your-username/your-repository/settings/secrets/actions</p>
+  <p><img class="responsive" src="/assets/blog-vercel.png" alt="vercel secrets on GitHub"></p>
+</article>
+<article class="post">
+  <time datetime="2023-02-10">2023-02-10</time>
+  <h1>Disabling preview deployments in Vercel</h1>
+  <div class="tags">
+    <span>Vercel</span>
+  </div>
+  <p>If you don't want Vercel to do preview deployments for other branches of your repository you can disable preview deployments by going to your project's settings &gt; git &gt; Ignored Build Step and add the following command: </p>
+  <p><pre>if [ "$VERCEL_ENV" == "production" ]; then exit 1; else exit 0; fi</pre></p>
+  <p>This is probably the easiest way. Another way would be to add a vercel.json to all branches and set "deploymentEnabled" to false for any branches that should not trigger deployment, like below:
+<pre>
+{
+  "git": {
+    "deploymentEnabled": {
+      "gh-pages": false
+    }
+  }
+}</pre></p>
+ <p>More info:</p>
+ <ul>
+  <li><a href="https://vercel.com/docs/concepts/projects/project-configuration/git-configuration#git.deploymentenabled">https://vercel.com/docs/concepts/projects/project-configuration/git-configuration#git.deploymentenabled</a></li>
+  <li><a href="https://stackoverflow.com/questions/68232548/how-can-i-stop-vercel-preview-deployments-from-appearing-on-pull-requests">https://stackoverflow.com/questions/68232548/how-can-i-stop-vercel-preview-deployments-from-appearing-on-pull-requests</a></li>
+ </ul>
+</article>
+</main>
 	</body>
 </html>
