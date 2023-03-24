@@ -11,8 +11,8 @@
 	<p><code><pre>lsof -i :3000
 COMMAND   PID USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
 node    49835   sm   22u  IPv6 0xc947e947a81c2535      0t0  TCP *:hbci (LISTEN)</pre></code></p>
-	<p>Then use the PID to kill the process listening on your port:</p>
-	<p><pre>sudo kill -9 PID</pre></p>
+	<p>Then use the following command to kill the process listening on your port. If it doesn't work use <pre>sudo kill -9 PID</pre> instead.</p>
+	<p><pre>sudo kill PID</pre></p>
 		
 	</article>
 	
