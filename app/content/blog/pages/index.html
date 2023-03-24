@@ -1,5 +1,22 @@
 <main>
 	<article class="post">
+		<time datetime="2023-03-24">2023-03-24</time>
+		<h1>Closing an open port via Mac's terminal</h1>
+		<div class="tags">
+			<span>Mac</span>
+		</div>
+		<p>Using following command in terminal you cana get a list of all open ports:</p>
+		<p><code><pre>netstat -an | grep LISTEN</pre></code></p>
+		<p>To get the process ID (PID) of port you wish to close, use <pre>lsof -i :PORT-NUMBER</pre>. You may need to use sudo.</p>
+	<p><code><pre>lsof -i :3000
+COMMAND   PID USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
+node    49835   sm   22u  IPv6 0xc947e947a81c2535      0t0  TCP *:hbci (LISTEN)</pre></code></p>
+	<p>Then use the PID to kill the process listening on your port:</p>
+	<p><pre>sudo kill -9 PID</pre></p>
+		
+	</article>
+	
+	<article class="post">
 		<time datetime="2023-03-07">2023-03-07</time>
 		<h1>Deploying a static HTML page and a serverless function (Node.js) live via Vercel</h1>
 		<div class="tags">
