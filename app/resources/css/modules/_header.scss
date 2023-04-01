@@ -1,80 +1,47 @@
-header {
-	margin: 0.75rem 1rem 0.5rem;
-	font-size: 1.3rem;
-	font-weight: 600;
+.header {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
+  margin: 10px 15px 10px;
+  flex-wrap: wrap;
+  font-family: Quicksand, arial, verdana, sans-serif;
 
-	a {
-    font-weight: normal;
-		font-size: 18px;
-
-		@media (min-width: 768px) {
-			font-size: 20px;
-		}
-	}
-
-	.langs {
-		text-align: right;
-		position: relative;
-		z-index: 10;
-
-		&__button {
-			border: none;
-			background: url(../img/globe2.svg) no-repeat;
-			background-size: 30px;
-			width: 30px;
-			height: 30px;
-			display: inline-block;
-			cursor: pointer;
-		}
-
-		ul {
-			position: absolute;
-			right: 0;
-			top: 25px;
-
-			@media (min-width: 1024px) {
-				top: 30px;
-			}
-
-			&.hidden {
-				display: none;
-			}
-
-			li {
-				margin: 0;
-				list-style: none;
-				line-height: 1.2;
-
-				@media (min-width: 1024px) {
-					line-height: 1;
-				}
-			}
-		}
-	}
+  @media (min-width: 768px) {
+    align-items: flex-start;
+  }
 
 	@media (min-width: 1024px) {
-		font-size: 1.6rem;
+    margin: 15px 20px 30px;
 	}
 
-	@media (min-width: 1440px) {
-		margin-left: 0;
-	}
+  @media (min-width: 1320px) {
+    margin-left: 0;
+    margin-right: 0;
+  }
 
-	h1 {
-		font-size: 1rem;
-		font-weight: 400;
-		display: block;
-		margin-top: -0.1rem;
-		letter-spacing: 0.02rem;
+	.logo {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 1.4;
 
-		@media (min-width: 1024px) {
-			margin-top: -0.3rem;
-			font-size: 1.1rem;
+    span {
+      font-weight: 500;
+      font-size: 14px;
+      display: block;
+			margin-top: -0.2em;
+    }
+
+    @media (min-width: 1024px) {
+      font-size: 1.6em;
+
+      span {
+        font-size: 20px;
+      }
+
+    }
+
+		&:hover {
+			text-decoration: none;
 		}
 	}
-
 }
-
-

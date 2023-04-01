@@ -2,6 +2,7 @@
   align-items: center;
   overflow: hidden;
   margin: 1rem;
+  background: #ddd;
 
   @media (min-width: 1024px) {
     margin: 1rem 0 2rem;
@@ -44,6 +45,12 @@
       }
     }
 
+    .swiper-pagination {
+      background: white;
+      bottom: 0;
+      padding-top: 1em;
+    }
+
     &-pagination-bullet {
       width: 12px;
       height: 12px;
@@ -54,14 +61,21 @@
       &-slide {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: end;
 
         img {
           //height: calc(100vh - 200px);
-          width: 50%;
+          margin-left: 1em;
+          width: 45%;
           height: auto;
             /* to fix blurry downscaled images in Chrome */
           //image-rendering: -webkit-optimize-contrast;
+          padding-bottom: 0;
+        }
+
+        img.rudnitzki {
+          transform: translateY(1.5em);
+          width: calc(45% - 40px);
         }
       }
     }
