@@ -1,4 +1,55 @@
 @font-face {
+  font-family: "Quicksand";
+  src: url("../fonts/Quicksand-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Quicksand";
+  src: url("../fonts/Quicksand-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Quicksand";
+  src: url("../fonts/Quicksand-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-display: swap;
+}
+@font-face {
+  font-family: "OpenSans";
+  src: url("../fonts/OpenSans-Regular.ttf") format("truetype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "OpenSans";
+  src: url("../fonts/OpenSans-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "OpenSans";
+  src: url("../fonts/OpenSans-Bold.ttf") format("truetype");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Quicksand";
+  src: url("../fonts/Quicksand-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Quicksand";
+  src: url("../fonts/Quicksand-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Quicksand";
+  src: url("../fonts/Quicksand-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-display: swap;
+}
+@font-face {
   font-family: "OpenSans";
   src: url("../fonts/OpenSans-Regular.ttf") format("truetype");
   font-weight: normal;
@@ -16,231 +67,186 @@
 html {
   font-size: 18px;
   line-height: 1.5;
-  font-family: "OpenSans", arial, verdana, sans-serif;
+  font-family: "OpenSans", arial, verdana, snas-serif;
   color: #333;
+  scroll-behavior: smooth; /* so that links to hash targets scroll with animation */
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 @media only screen and (min-width: 1024px) {
   html {
-    font-size: 22px;
+    font-size: 20px;
+    /* to stop pages jumping horizontally when scrollbar appears or disappears */
+    overflow-y: scroll;
   }
-}
-
-* {
-  margin-top: 0;
-  margin-bottom: 0;
 }
 
 body {
-  background: #fff;
-  margin: 0;
+  margin: 0 auto;
+  overflow-wrap: break-word; /* so that inline elements such as long words do not cause horizontal scrolling. */
 }
-@media (min-width: 1440px) {
+@media (min-width: 1320px) {
   body {
-    width: 1400px;
-    margin: 0 auto;
+    max-width: 1280px;
   }
 }
 
-main {
-  margin: 1em 0;
+a {
+  color: #036da8;
 }
-@media (min-width: 1024px) {
-  main {
-    margin: 1em;
-  }
-}
-@media (min-width: 1440px) {
-  main {
-    margin: 1em 0;
-  }
+a.external {
+  background: url(../img/external.svg) no-repeat left center;
+  background-size: 16px;
+  padding-left: 20px;
 }
 
-article {
-  margin: 1em;
-}
-@media (min-width: 1024px) {
-  article {
-    margin: 0;
-  }
-}
-article section {
-  margin-top: 1.5rem;
-}
-
-h1 {
+b, strong {
   font-weight: 600;
-  font-size: 1.4rem;
-  line-height: 1.4;
 }
-@media (min-width: 1024px) {
-  h1 {
-    font-size: 1.6rem;
-    line-height: 1.6;
-  }
+
+h1, h2, h3, h4, p, ul, ol {
+  margin-bottom: 0;
 }
 
 h1, h2, h3, h4, p, li {
   max-width: 80ch;
 }
 
-h2 {
-  font-size: 1.2rem;
-  line-height: 1.3;
-}
-@media (min-width: 1024px) {
-  h2 {
-    font-size: 1.2rem;
-    line-height: 1.5;
-  }
-}
-
-h2 {
+h1, h2, h3, h4 {
   font-weight: 500;
 }
 
+h1 {
+  font-size: 2.5rem;
+  line-height: 1.3;
+}
+
+h2 {
+  font-size: 2rem;
+  line-height: 1.35;
+}
+
 h3 {
-  padding-bottom: 0.1em;
-  margin-top: 1rem;
+  font-size: 1.5rem;
+  line-height: 1.4;
+}
+
+h4 {
   font-size: inherit;
+  line-height: inherit;
+  font-weight: 600;
 }
 
-p {
-  line-height: 1.5em;
-}
-h2 + p {
-  margin-top: 0.5rem;
+h1 + p,
+h2 + p,
+h3 + p {
+  margin-top: 0;
 }
 
-sup {
-  color: #666;
-  font-size: 0.7em;
+figure {
+  margin: 0;
+}
+
+h4 + img,
+h4 + figure {
+  margin-top: 0.5em;
 }
 
 ul, ol {
-  padding-left: 0;
-  margin-top: 10px;
-  margin-bottom: 1em;
+  padding-left: 1em;
+  margin-top: 0;
 }
-ul li, ol li {
-  margin-top: 1rem;
-  margin-left: 1em;
-}
-ul li:last-child, ol li:last-child {
-  margin-bottom: 0;
-}
-ul li p, ol li p {
-  margin-bottom: 0;
+ul li + li, ol li + li {
+  margin-top: 0.5em;
 }
 
-a {
-  color: #036da8;
-}
-a:visited {
-  color: #9650C8;
+ol {
+  padding-left: 1.15em;
 }
 
 dl {
+  margin-top: 0;
+}
+dl dt {
+  font-weight: 500;
+}
+dl dt:not(:first-child) {
   margin-top: 1rem;
 }
-
-dt {
-  font-weight: bold;
-}
-dt:not(first-child) {
-  margin-top: 1rem;
-}
-
-dd {
+dl dd {
   margin-left: 0;
 }
 
-time {
-  font-size: smaller;
-  color: #999;
-}
-time + p {
-  margin-top: 1em;
-}
-
-.responsive {
+img.responsive {
   width: 100%;
+  height: auto;
+  /* to fix blurry downscaled images in Chrome */
+  image-rendering: -webkit-optimize-contrast;
+}
+img.responsive--below-intrinsic-width {
+  width: auto;
+  max-width: 100%;
 }
 
-header {
-  margin: 0.75rem 1rem 0.5rem;
-  font-size: 1.3rem;
-  font-weight: 600;
+img.object-fit-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+main > article {
+  padding: 0 15px;
+}
+@media (min-width: 1320px) {
+  main > article {
+    padding: 0;
+  }
+}
+
+.header {
   display: flex;
   justify-content: space-between;
-}
-header a {
-  font-weight: normal;
-  font-size: 18px;
+  align-items: center;
+  margin: 10px 15px 10px;
+  flex-wrap: wrap;
+  font-family: Quicksand, arial, verdana, sans-serif;
 }
 @media (min-width: 768px) {
-  header a {
+  .header {
+    align-items: flex-start;
+  }
+}
+@media (min-width: 1024px) {
+  .header {
+    margin: 15px 20px 30px;
+  }
+}
+@media (min-width: 1320px) {
+  .header {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+.header .logo {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 1.4;
+}
+.header .logo span {
+  font-weight: 500;
+  font-size: 14px;
+  display: block;
+  margin-top: -0.2em;
+}
+@media (min-width: 1024px) {
+  .header .logo {
+    font-size: 1.6em;
+  }
+  .header .logo span {
     font-size: 20px;
   }
 }
-header .langs {
-  text-align: right;
-  position: relative;
-  z-index: 10;
-}
-header .langs__button {
-  border: none;
-  background: url(../img/globe2.svg) no-repeat;
-  background-size: 30px;
-  width: 30px;
-  height: 30px;
-  display: inline-block;
-  cursor: pointer;
-}
-header .langs ul {
-  position: absolute;
-  right: 0;
-  top: 25px;
-}
-@media (min-width: 1024px) {
-  header .langs ul {
-    top: 30px;
-  }
-}
-header .langs ul.hidden {
-  display: none;
-}
-header .langs ul li {
-  margin: 0;
-  list-style: none;
-  line-height: 1.2;
-}
-@media (min-width: 1024px) {
-  header .langs ul li {
-    line-height: 1;
-  }
-}
-@media (min-width: 1024px) {
-  header {
-    font-size: 1.6rem;
-  }
-}
-@media (min-width: 1440px) {
-  header {
-    margin-left: 0;
-  }
-}
-header h1 {
-  font-size: 1rem;
-  font-weight: 400;
-  display: block;
-  margin-top: -0.1rem;
-  letter-spacing: 0.02rem;
-}
-@media (min-width: 1024px) {
-  header h1 {
-    margin-top: -0.3rem;
-    font-size: 1.1rem;
-  }
+.header .logo:hover {
+  text-decoration: none;
 }
 
 footer {
@@ -288,6 +294,7 @@ footer > div ul li:last-child {
   align-items: center;
   overflow: hidden;
   margin: 1rem;
+  background: #ddd;
 }
 @media (min-width: 1024px) {
   .stage {
@@ -329,6 +336,11 @@ footer > div ul li:last-child {
   padding-right: 1.5rem;
   font-weight: 600;
 }
+.stage .swiper .swiper-pagination {
+  background: white;
+  bottom: 0;
+  padding-top: 1em;
+}
 .stage .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
@@ -338,12 +350,18 @@ footer > div ul li:last-child {
   .stage .swiper-slide {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: end;
   }
   .stage .swiper-slide img {
-    width: 50%;
+    margin-left: 1em;
+    width: 45%;
     height: auto;
     /* to fix blurry downscaled images in Chrome */
+    padding-bottom: 0;
+  }
+  .stage .swiper-slide img.rudnitzki {
+    transform: translateY(1.5em);
+    width: calc(45% - 40px);
   }
 }
 
