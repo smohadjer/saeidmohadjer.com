@@ -164,10 +164,11 @@ ol {
 }
 
 dl {
-  margin-top: 0;
+  margin-top: 2em;
 }
 dl dt {
   font-weight: 500;
+  font-size: 1.5rem;
 }
 dl dt:not(:first-child) {
   margin-top: 1rem;
@@ -293,8 +294,10 @@ footer > div ul li:last-child {
 .stage {
   align-items: center;
   overflow: hidden;
-  margin: 1rem;
-  background: #ddd;
+  margin: 1rem 0;
+  padding: 1em;
+  background: rgb(187, 187, 187);
+  background: linear-gradient(45deg, rgb(187, 187, 187) 0%, rgb(238, 238, 238) 100%);
 }
 @media (min-width: 1024px) {
   .stage {
@@ -337,9 +340,13 @@ footer > div ul li:last-child {
   font-weight: 600;
 }
 .stage .swiper .swiper-pagination {
-  background: white;
   bottom: 0;
   padding-top: 1em;
+}
+@media (min-width: 1024px) {
+  .stage .swiper .swiper-pagination {
+    background: white;
+  }
 }
 .stage .swiper-pagination-bullet {
   width: 12px;
@@ -359,21 +366,18 @@ footer > div ul li:last-child {
     /* to fix blurry downscaled images in Chrome */
     padding-bottom: 0;
   }
-  .stage .swiper-slide img.rudnitzki {
-    transform: translateY(1.5em);
+  .stage .swiper-slide--slaven img {
+    margin-bottom: 30px;
+  }
+  .stage .swiper-slide--slaven .swiper-slide__content {
+    margin-bottom: 30px;
+  }
+  .stage .swiper-slide--rudnitzki img {
     width: calc(45% - 40px);
+    margin-top: 30px;
   }
 }
 
-article > h2 {
-  font-weight: 600;
-}
-@media (min-width: 1024px) {
-  article > h2 {
-    font-size: 1.5rem;
-    line-height: 2;
-  }
-}
 @media (min-width: 1024px) {
   article p.lead {
     font-size: 1.2rem;
@@ -381,6 +385,7 @@ article > h2 {
   }
 }
 article section h2 {
+  font-size: 1.5rem;
   background-color: #333;
   color: #fff;
   padding: 0.5rem 1rem;
