@@ -1,13 +1,4 @@
 article {
-  > h2 {
-    font-weight: 600;
-
-    @media (min-width: 1024px) {
-      font-size: 1.5rem;
-      line-height: 2;
-    }
-  }
-
   p.lead {
     @media (min-width: 1024px) {
       font-size: 1.2rem;
@@ -16,6 +7,7 @@ article {
   }
 
   section h2 {
+    font-size: 1.5rem;
     background-color: #333;
     color: #fff;
     padding: 0.5rem 1rem;
