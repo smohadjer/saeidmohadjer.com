@@ -302,6 +302,7 @@ footer > div ul li:last-child {
 @media (min-width: 1024px) {
   .stage {
     margin: 1rem 0 2rem;
+    padding: 0;
   }
 }
 .stage .swiper {
