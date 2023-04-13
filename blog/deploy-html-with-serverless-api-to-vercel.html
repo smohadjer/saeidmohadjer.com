@@ -1,94 +1,168 @@
 <!doctype html>
-<html class="blog no-js" lang="en">
+<html class="no-js" lang="de">
 	<head>
     <meta charset="utf-8">
-    <title>Web Design from Freiburg | Saeid Mohadjer</title>
-    <meta name="description" content="Web Designer from Freiburg">
+    <title>Webdesign aus Freiburg | Saeid Mohadjer</title>
+    <meta name="description" content="Webdesigner aus Freiburg">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="/resources/css/helper.css">
+    <link rel="stylesheet" href="/resources/css/hamburgers.css">
+    <link rel="stylesheet" href="/resources/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="/resources/css/styles.css">
+    
+    
+    
 	</head>
 	<body>
-        <header class="header">
-        	<div class="logo">
-        		Saeid Mohadjer
-        		<span>Fullstack Entwickler</span>
-        	</div>
-        </header>
-        
-<main>
-  <article class="post">
-		<time datetime="2023-03-07">2023-03-07</time>
-		<h1>Deploying a static HTML page and a serverless function (Node.js) live via Vercel</h1>
-		<div class="tags">
-			<span>Vercel</span>
-			<span>Node.js</span>
+	<header class="header">
+		<div class="logo">
+			Saeid Mohadjer
+			<span>Fullstack Entwickler</span>
 		</div>
-		<p>In this example you will create a static HTML page that calls an api (Node.js serverless function) which responds by returning
-			the word "Hello
-			World" and displaying it in the browser. You can see a deployed version at:
-			<a href="https://test-pi-tawny.vercel.app/">https://test-pi-tawny.vercel.app/</a></p>
-		<p>We will deploy and host both the HTML page and the Node.js api on Vercel using Vercel's cli, so you should register for a free account at
-			<a href="https://vercel.com">vercel.com</a> if you don't already have one
-			and install vercel's command line via:
-<pre><code>
-npm install -g pnpm
-pnpm i -g vercel
-</code></pre></p>
-		<ol>
-			<li>Run the following in terminal to create file and folder structure for "test" project:<br />
-<pre><code>
-mkdir test
-cd test
-mkdir public api
-cd api
-touch index.js
-cd ../public
-touch index.html
-cd ..
-</code></pre></li>
-		<li>Open index.html in your editor and paste the following snippet there:<br />
-<pre><code>
-&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-    &lt;head&gt;
-        &lt;meta charset=&quot;utf-8&quot; /&gt;
-        &lt;title&gt;Hello World&lt;/title&gt;
-        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot; /&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-        &lt;p id=&quot;test&quot;&gt;&lt;/p&gt;
-        &lt;script&gt;
-          fetch('api/index.js')
-          .then((response) =&gt; response.text())
-          .then((text) =&gt; {
-            console.log(text);
-            document.getElementById('test').innerHTML = text;
-          });
-        &lt;/script&gt;
-    &lt;/body&gt;
-&lt;/html&gt;
-</code></pre></li>
-		<li>Open index.js in your editor and paste the following snippet there:<br />
-<pre><code>
-export default function handler(req, res) {
-    res.setHeader('Content-Type', 'text/plain')
-    res.write('Hello World')
-    res.end()
-}
-</code></pre></li>
-<li>In cli/terminal run: <pre>vercel dev</pre> and select default answers to all questions. Vercel cli will create the test project under your
-existing Vercel account and start a local server at: http://localhost:3000/ where you can see your index.html and your api can be reached at: http://localhost:3000/api/. If everything is working properly, you should see a "Hello World" message in your browser.</li>
-<li>To deploy your project to server for preview purposes run in terminal: <pre>vercel deploy</pre> And if you are happy with result and want to
-	deploy it to production run: <pre>vercel --prod</pre>
-	The preview and production URLs are available in your project on vercel.com under "Deployment" tab.</li>
-		</ol>
-	<p><a href="/blog/">Back to Blog</a></p>
-	</article>
-</main>
+		<!--
+			<div class="langs">
+			<button class="langs__button"></button>
+			<ul class="hidden">
+				<li><a href="/en/">English</a></li>
+				<li><a href="/">Deutsch</a></li>
+				<li><a class="lang-fa" href="/fa/">فارسی</a></li>
+			</ul>
+		</div>
+	-->
+	  <!-- for mobile navigation -->
+	  <button aria-label="Menu" class="hamburger hamburger--spin" type="button">
+			<span class="hamburger-box">
+					<span class="hamburger-inner"></span>
+			</span>
+			<!--<span class="hamburger-label">Menu</span>-->
+		</button>
+		<nav data-set-max-height="true">
+				<ul>
+				  <li><a href="/index.html">Home</a></li>
+				  <li><a href="/blog/">Blog</a></li>
+				</ul>
+		</nav>
+	</header>
+	
+    <main>
+      <article class="post">
+    		<time datetime="2023-03-07">2023-03-07</time>
+    		<h1>Deploying a static HTML page and a serverless function (Node.js) live via Vercel</h1>
+    		<div class="tags">
+    			<span>Vercel</span>
+    			<span>Node.js</span>
+    		</div>
+    		<p>In this example you will create a static HTML page that calls an api (Node.js serverless function) which responds by returning
+    			the word "Hello
+    			World" and displaying it in the browser. You can see a deployed version at:
+    			<a href="https://test-pi-tawny.vercel.app/">https://test-pi-tawny.vercel.app/</a></p>
+    		<p>We will deploy and host both the HTML page and the Node.js api on Vercel using Vercel's cli, so you should register for a free account at
+    			<a href="https://vercel.com">vercel.com</a> if you don't already have one
+    			and install vercel's command line via:
+    <pre><code>
+    npm install -g pnpm
+    pnpm i -g vercel
+    </code></pre></p>
+    		<ol>
+    			<li>Run the following in terminal to create file and folder structure for "test" project:<br />
+    <pre><code>
+    mkdir test
+    cd test
+    mkdir public api
+    cd api
+    touch index.js
+    cd ../public
+    touch index.html
+    cd ..
+    </code></pre></li>
+    		<li>Open index.html in your editor and paste the following snippet there:<br />
+    <pre><code>
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang=&quot;en&quot;&gt;
+        &lt;head&gt;
+            &lt;meta charset=&quot;utf-8&quot; /&gt;
+            &lt;title&gt;Hello World&lt;/title&gt;
+            &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot; /&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+            &lt;p id=&quot;test&quot;&gt;&lt;/p&gt;
+            &lt;script&gt;
+              fetch('api/index.js')
+              .then((response) =&gt; response.text())
+              .then((text) =&gt; {
+                console.log(text);
+                document.getElementById('test').innerHTML = text;
+              });
+            &lt;/script&gt;
+        &lt;/body&gt;
+    &lt;/html&gt;
+    </code></pre></li>
+    		<li>Open index.js in your editor and paste the following snippet there:<br />
+    <pre><code>
+    export default function handler(req, res) {
+        res.setHeader('Content-Type', 'text/plain')
+        res.write('Hello World')
+        res.end()
+    }
+    </code></pre></li>
+    <li>In cli/terminal run: <pre>vercel dev</pre> and select default answers to all questions. Vercel cli will create the test project under your
+    existing Vercel account and start a local server at: http://localhost:3000/ where you can see your index.html and your api can be reached at: http://localhost:3000/api/. If everything is working properly, you should see a "Hello World" message in your browser.</li>
+    <li>To deploy your project to server for preview purposes run in terminal: <pre>vercel deploy</pre> And if you are happy with result and want to
+    	deploy it to production run: <pre>vercel --prod</pre>
+    	The preview and production URLs are available in your project on vercel.com under "Deployment" tab.</li>
+    		</ol>
+    	<p><a href="/blog/">Back to Blog</a></p>
+    	</article>
+    </main>
+    <footer>
+    	<address>
+    		Saeid Mohadjer<br />
+    		Denzlingerstr. 20<br />
+    		79108 Freiburg<br />
+    		Deutschland<br /><br />
+    		Telefon: +49 761 4296 3565<br />
+    		Handy: +49 176 8826 9966<br />
+    		<a href="mailto:info@saeidmohadjer.com?subject=Feedback%20von%20der%20Website">info@saeidmohadjer.com</a><br /><br />
+    
+    		Steuernummer: 06169/58063<br />
+    		USt-IdNr: DE287169201
+    	</address>
+    	<div>
+    		<p>Diese Website verwendet weder Cookies noch sammelt sie personenbezogene Daten. Es wird jedoch auf GitHub gehostet, also lesen Sie bitte deren <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement">Datenschutzerklärung</a>, um zu verstehen, welche Daten von ihnen gesammelt werden. Alle Seiten werden aus einem öffentlichen <a href="https://github.com/smohadjer/saeidmohadjer.com">Repository</a> über ein minimales <a href="https://github.com/smohadjer/build">Build-Tool</a> generiert, dass ich mit Node.js und ohne Abhängigkeit von Task-Runners geschrieben habe. Seiten werden mithilfe von GitHub-Aktionen automatisch auf GitHub Pages bereitgestellt.</p>
+    		<p>Zuletzt aktualisiert am 7. Februar 2023</p>
+    	</div>
+    </footer>
+    <script>
+      var myApp = {};
+    </script>
+    <script src="/resources/js/lib/handlebars.runtime.min.js"></script>
+    <script src="/resources/js/lib/handlebars.templates.js"></script>
+    <script src="/resources/js/lib/swiper-bundle.min.js"></script>
+    <script type="module" src="/resources/js/bundle.js"></script>
+    
+    <script type="module">
+      const swiperElm = document.querySelector('.swiper');
+      if (swiperElm) {
+        const swiper = new Swiper('.swiper', {
+          loop: true,
+    		  speed: 750,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true
+          },
+          navigation: false
+        });
+        console.log('swiper is ready');
+      }
+    
+      document.addEventListener('domReady', () => {
+        console.log()
+      });
+    </script>
 	</body>
 </html>

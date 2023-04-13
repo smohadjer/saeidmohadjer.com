@@ -239,7 +239,7 @@ main > article {
 }
 .header .logo span {
   font-weight: 500;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   display: block;
   margin-top: -0.1em;
 }
@@ -253,6 +253,176 @@ main > article {
 }
 .header .logo:hover {
   text-decoration: none;
+}
+
+nav {
+  font-weight: bold;
+}
+nav a {
+  text-decoration: none;
+}
+nav a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 767px) {
+  nav {
+    flex: 0 0 100%;
+    margin-top: 10px;
+  }
+  .js nav {
+    overflow: hidden;
+    transition: max-height 0.5s;
+    margin-bottom: 0;
+  }
+}
+@media (min-width: 768px) {
+  nav {
+    font-size: 1.1rem;
+  }
+  .js nav {
+    max-height: none !important;
+  }
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 10px;
+}
+@media (min-width: 768px) {
+  nav ul {
+    margin-bottom: 0;
+  }
+}
+nav ul li {
+  line-height: 2.4;
+  border-bottom: solid 1px #ccc;
+  margin-top: 0;
+}
+@media (min-width: 768px) {
+  nav ul li {
+    line-height: 1.5;
+    border: 0;
+    display: inline;
+    margin-left: 20px;
+  }
+  nav ul li:first-child {
+    margin-left: 0;
+  }
+}
+nav ul li.has-list::before {
+  content: "";
+  background: url(../img/down.svg) no-repeat;
+  background-size: 16px;
+  background-position: center;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  vertical-align: -2px;
+  margin-right: 5px;
+  transition: all 0.25s;
+  transform: rotate(0deg);
+}
+nav ul li.has-list.expanded::before {
+  transform: rotate(-180deg);
+}
+@media (min-width: 768px) {
+  nav ul li.has-list {
+    position: relative;
+  }
+  nav ul li.has-list::before {
+    transform: rotate(0deg);
+    background-size: 20px;
+    width: 20px;
+    height: 20px;
+  }
+}
+nav ul li.has-list > a {
+  display: inline-block;
+}
+nav ul li.has-list.expanded ul {
+  display: block;
+}
+@media (min-width: 768px) {
+  nav ul li.has-list.expanded ul {
+    box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.15);
+    display: inline-block;
+    position: absolute;
+    z-index: 10;
+    left: 0;
+    top: 35px;
+    background: rgba(255, 255, 255, 0.9);
+    min-width: 200px;
+    padding: 0.5rem 1rem;
+  }
+}
+@media (min-width: 768px) {
+  nav ul li.has-list.expanded:last-child ul {
+    right: 0;
+    left: auto;
+  }
+}
+nav ul li:last-child {
+  border: none;
+}
+nav ul li ul {
+  display: none;
+  margin-bottom: 0;
+}
+nav ul li ul li {
+  padding-left: 21px;
+  font-size: inherit;
+}
+@media (min-width: 768px) {
+  nav ul li ul li {
+    padding-left: 0;
+    margin-left: 0;
+    margin-bottom: 0.5rem;
+    display: block;
+    font-size: 1rem;
+    line-height: 1.3;
+  }
+}
+nav ul li a {
+  display: block;
+}
+@media (min-width: 768px) {
+  nav ul li a {
+    display: inline;
+  }
+}
+
+header .hamburger {
+  vertical-align: middle;
+  padding: 0;
+  touch-action: manipulation; /* to avoid zooming on iphone when double clicking menu button */
+}
+.no-js header .hamburger {
+  display: none;
+}
+header .hamburger:focus {
+  outline: none;
+}
+header .hamburger:hover {
+  opacity: 1;
+}
+@media (min-width: 768px) {
+  header .hamburger {
+    display: none;
+  }
+}
+header .hamburger .hamburger-inner, header .hamburger .hamburger-inner::before, header .hamburger .hamburger-inner::after {
+  border-radius: 0;
+}
+header .hamburger .hamburger-box {
+  width: 30px;
+}
+header .hamburger .hamburger-inner,
+header .hamburger .hamburger-inner::before,
+header .hamburger .hamburger-inner::after {
+  width: 30px;
+  height: 3px;
+  background-color: black;
 }
 
 footer {
@@ -451,53 +621,69 @@ article section h2 {
   list-style: arabic-indic;
 }
 
-.blog .post {
+.post {
   border-bottom: solid 1px #ccc;
   padding: 0 0 1.5em;
-  margin: 0 20px 3em;
+  margin: 0 15px 3em;
 }
-.blog .post:last-child {
+@media (min-width: 1024px) {
+  .post {
+    margin: 0 20px 3em;
+  }
+}
+
+.post:last-child {
   border: 0;
   padding-bottom: 0;
 }
-.blog .post h1 {
+
+.post h1 {
   margin: 0;
   font-size: 1.5rem;
   color: black;
 }
-.blog .post .responsive {
+
+.post .responsive {
   width: 100%;
 }
-.blog .post ul {
+
+.post ul {
   margin-left: 17px;
   padding-left: 0;
 }
-.blog .post ol {
+
+.post ol {
   padding-left: 0;
   list-style: inside decimal;
 }
-.blog .post ol li + li {
+
+.post ol li + li {
   margin-top: 1em;
 }
-.blog .post .tags {
+
+.post .tags {
   margin: 5px 0;
 }
-.blog .post .tags span {
+
+.post .tags span {
   padding: 5px 15px;
   background: #888;
   border-radius: 15px;
   font-size: smaller;
   color: white;
 }
-.blog .post time {
+
+.post time {
   display: inline-block;
   font-size: smaller;
   font-style: italic;
 }
-.blog .post time::before {
+
+.post time::before {
   content: "Published on ";
 }
-.blog .post pre {
+
+.post pre {
   max-width: 80ch;
   background: #f4f4f4;
   border: 1px solid #ddd;
