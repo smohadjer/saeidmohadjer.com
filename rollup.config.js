@@ -5,7 +5,7 @@ import babel from '@rollup/plugin-babel';
 export default {
 	input: 'public/resources/js/main.js',
 	output: {
-		file: 'dist/resources/js/main.js',
+		file: 'public/resources/js/bundle.js',
 		format: 'iife'
 	},
 	plugins: [

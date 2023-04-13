@@ -1,4 +1,4 @@
-//import Navigation from './modules/nav.js';
+import SiteNav from './modules/nav.js';
 
 //Helper classes to HTML for styling of nojs version
 const html = document.querySelector('html');
@@ -9,7 +9,7 @@ html.classList.add('js');
 function ready(fn) {
 	'use strict';
 
-	if (document.attachEvent ? document.readyState === 'complete' : document.readyState !== 'loading') {
+	if (document.readyState !== 'loading') {
 		fn();
 	} else {
 		document.addEventListener('DOMContentLoaded', fn);
@@ -21,6 +21,23 @@ ready(function() {
 
 	console.log('DOM is ready!');
 
+	//initialize site navigation
+	const navigation = new SiteNav({
+		element: document.querySelector('header > nav')
+	});
+
+	//hamburger button
+	const hamburger = document.querySelector('button.hamburger');
+	if (hamburger) {
+		hamburger.addEventListener('click', function() {
+			hamburger.classList.toggle('is-active');
+			if (navigation.nav) {
+				navigation.nav.classList.toggle('is-visible');
+			}
+		});
+	}
+
+	/*
 	const langs = document.querySelector('.langs');
 	if (langs) {
 		langs.addEventListener('click', (e) => {
@@ -28,23 +45,6 @@ ready(function() {
 			e.target.nextElementSibling.classList.toggle('hidden');
 		});
 	}
-
-	const swiper = new Swiper('.swiper', {
-		// Optional parameters
-		loop: true,
-		speed: 750,
-		/*
-		autoplay: {
-			delay: 3000,
-			disableOnInteraction: true,
-		},
-		*/
-		pagination: {
-			el: '.swiper-pagination',
-			clickable: true
-		},
-		// Navigation arrows
-		navigation: false
-	});
+	*/
 });
 

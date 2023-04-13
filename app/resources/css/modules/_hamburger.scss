@@ -1,0 +1,37 @@
+header .hamburger {
+	vertical-align: middle;
+	padding: 0;
+	touch-action: manipulation; /* to avoid zooming on iphone when double clicking menu button */
+
+	.no-js & {
+		display: none;
+	}
+
+	&:focus {
+		outline: none;
+	}
+
+	&:hover {
+		opacity: 1;
+	}
+
+	@media (min-width: 768px) {
+		display: none;
+	}
+
+	.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+		border-radius: 0;
+	}
+
+  .hamburger-box {
+    width: 30px;
+  }
+
+  .hamburger-inner,
+  .hamburger-inner::before,
+  .hamburger-inner::after {
+    width: 30px;
+		height: 3px;
+		background-color: black;
+  }
+}

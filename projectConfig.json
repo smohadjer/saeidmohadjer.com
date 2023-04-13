@@ -1,10 +1,13 @@
 {
 	"dependencies": {
 		"css": [
-			"node_modules/helpers/dist/helper.css"
+			"node_modules/hamburgers/dist/hamburgers.css",
+			"node_modules/helpers/dist/helper.css",
+			"node_modules/swiper/swiper-bundle.min.css"
 		],
 		"js": [
-			"node_modules/handlebars/dist/handlebars.runtime.js"
+			"node_modules/handlebars/dist/handlebars.runtime.min.js",
+			"node_modules/swiper/swiper-bundle.min.js"
 		]
 	},
 	"pages": [
@@ -19,10 +22,6 @@
 		{
 			"source": "app/content/de",
 			"target": "public"
-		},
-		{
-			"source": "app/content/blog",
-			"target": "public/blog"
 		},
 		{
 			"source": "app/content",
