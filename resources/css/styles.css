@@ -157,7 +157,7 @@ h4 + figure {
 }
 
 ul, ol {
-  padding-left: 0;
+  padding-left: 1em;
   margin-top: 0;
 }
 ul li + li, ol li + li {
@@ -411,10 +411,6 @@ article section h2 {
     min-width: 450px;
     display: inline-block;
   }
-}
-article ul li {
-  list-style: none;
-  margin-left: 0;
 }
 
 @font-face {
