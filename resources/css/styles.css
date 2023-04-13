@@ -460,10 +460,27 @@ footer > div ul {
 }
 footer > div ul li {
   display: inline-block;
-  margin: 0 15px 0 0;
+  margin-right: 15px;
+}
+footer > div ul li.html5 {
+  background: url(../img/html5-color.svg) left center no-repeat;
+}
+footer > div ul li.css3 {
+  background: url(../img/css3-color.svg) left center no-repeat;
+}
+footer > div ul li.a11y {
+  background: url(../img/a11y.svg) left center no-repeat;
+}
+footer > div ul li.performance {
+  background: url(../img/performance.svg) left center no-repeat;
 }
 footer > div ul li:last-child {
   margin-right: 0;
+}
+footer > div ul.tools li {
+  background-size: 20px;
+  padding-left: 24px;
+  display: block;
 }
 
 .stage {
