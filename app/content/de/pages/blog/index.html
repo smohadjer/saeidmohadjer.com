@@ -8,10 +8,8 @@
 		<p>Did you know that a HTML anchor element can be treated as a Location object? This means similar to how you can use 
 		window.location to read or write different parts of a URL, you can do the same with an anchor element. For example if you 
 			have a link like in your markup like this:</p>
-		<pre><code>
-&lt;a id=“myLink" href=“https://mydomain/products.html#productName”&gt;test&lt;/a&gt;
-</code></pre>
-	      <p>You can get the value of hash in above link using this:</p>
+		<pre><code>&lt;a id=“myLink" href=“https://mydomain/products.html#productName”&gt;test&lt;/a&gt;</code></pre>
+	        <p>You can get the value of hash in above link using this:</p>
 <pre><code>
 const hash = document.getElementById(‘myLink’).hash.subsctring(1);
 // returns productName	 
