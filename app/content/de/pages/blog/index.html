@@ -1,5 +1,24 @@
 <main>
 	<article class="post">
+		<time datetime="2023-04-14">2023-04-14</time>
+		<h1>Fixing TypeScript error property does not exist on type EventTarget</h1>
+		<div class="tags">
+			<span>JavaScript</span>
+		</div>
+		<p>Did you know that a HTML anchor element can be treated as a Location object? This means similar to how you can use 
+		window.location to read or write different parts of a URL, you can do the same with an anchor element. For example if you 
+			have a link like in your markup like this:</p>
+		<pre><code>
+<a id=“myLink" href=“https://mydomain/products.html#productName”>test</a>
+</code></pre>
+	      <p>You can get the value of hash in above link using this:</p>
+<pre><code>
+const hash = document.getElementById(‘myLink’).hash.subsctring(1); // returns productName
+</code></pre>
+	      <p>You can use different properties of Location object on an anchor element and same as with window.location you 
+	      can both read and write these properties. For more info see: <a href="https://developer.mozilla.org/en-US/docs/Web/API/Location">https://developer.mozilla.org/en-US/docs/Web/API/Location</a></p>
+	</article>
+	<article class="post">
 		<time datetime="2023-04-13">2023-04-13</time>
 		<h1>Fixing TypeScript error property does not exist on type EventTarget</h1>
 		<div class="tags">
