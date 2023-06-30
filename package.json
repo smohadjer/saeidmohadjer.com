@@ -28,7 +28,7 @@
 	"dependencies": {
 		"hamburgers": "0.9.3",
 		"helpers": "git+https://github.com/smohadjer/helpers.git",
-		"swiper": "^9.2.0"
+		"swiper": "^9.4.1"
 	},
 	"engines": {
 		"node": ">=16.13.0"
