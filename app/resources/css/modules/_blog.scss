@@ -76,3 +76,17 @@ margin-top: 1em;
     word-wrap: break-word;
 }
 
+.post {
+    table {
+        font-size: smaller;
+    }
+    
+    td {
+        vertical-align: top;
+
+        &:first-child {
+            padding-right: 20px;
+        }
+    }
+}
+
