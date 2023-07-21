@@ -52,73 +52,68 @@
 	</header>
 	
     <main>
-      <article class="post">
-    		<time datetime="2023-03-07">2023-03-07</time>
-    		<h1>Deploying a static HTML page and a serverless function (Node.js) live via Vercel</h1>
-    		<div class="tags">
-    			<span>Vercel</span>
-    			<span>Node.js</span>
+    	<div class="stage">
+    		<!-- Slider main container -->
+    		<div class="swiper">
+    			<!-- Additional required wrapper -->
+    			<div class="swiper-wrapper">
+    				<!-- Slides -->
+    				<div class="swiper-slide swiper-slide--slaven">
+    					<img class="responsive" src="/assets/slaven9.webp" alt="Slaven Gluščević" />
+    					<div class="swiper-slide__content">
+    						<p><a href="https://slaven.de/">Website für Slaven Gluscevic</a></p>
+    						<p>Die Website nutzt GitHub und Vercel als Repository und Hosting-Plattform. Alle Backend-Funktionen werden über serverlose Node.js-Funktionen implementiert, die in eine MongoDB-Datenbank lesen und schreiben. Die Website ermöglicht es Benutzern, sich online für Tenniscamps und/oder Trainingskurse anzumelden. Die Daten werden über JavaScript als JSON aus der Datenbank abgerufen und mithilfe von Handlebars Template-Engine in HTML konvertiert.</p>
+    						<p>Jahr: 2023</p>
+    					</div>
+    				</div>
+    				<div class="swiper-slide swiper-slide--rudnitzki">
+    					<img class="responsive" src="/assets/rudnitzki3.webp" alt="Stephanie Rudnitzki - Praxis für Psychotherapie" />
+    					<div class="swiper-slide__content">
+    						<p><a href="https://praxis-rudnitzki.com/">Website für Stephanie Rudnitzki</a></p>
+    						<p>Die Website nutzt GitHub als Repository und Hosting-Plattform (GitHub Pages).</p>
+    						<p>Jahr: 2022</p>
+    					</div>
+    				</div>
+    				<!--
+    				<div class="swiper-slide">
+    					<img class="responsive" src="/assets/evelyne.webp" alt="Evelyne Severing" />
+    					<div class="swiper-slide__content">
+    						<table>
+    							<tr>
+    								<td>Projekt</td><td><a href="https://evelyne-severing.com/">Website für Evelyne Severing</a></td>
+    							</tr>
+    							<tr>
+    								<td>Jahr</td><td>2021</td>
+    							</tr>
+    						</table>
+    					</div>
+    				</div>
+    				-->
+    			</div>
+    			<!-- If we need pagination -->
+    			<div class="swiper-pagination"></div>
     		</div>
-    		<p>In this example you will create a static HTML page that calls an api (Node.js serverless function) which responds by returning
-    			the word "Hello
-    			World" and displaying it in the browser. You can see a deployed version at:
-    			<a href="https://test-pi-tawny.vercel.app/">https://test-pi-tawny.vercel.app/</a></p>
-    		<p>We will deploy and host both the HTML page and the Node.js api on Vercel using Vercel's cli, so you should register for a free account at
-    			<a href="https://vercel.com">vercel.com</a> if you don't already have one
-    			and install vercel's command line via:
-    <pre><code>
-    npm install -g pnpm
-    pnpm i -g vercel
-    </code></pre></p>
-    		<ol>
-    			<li>Run the following in terminal to create file and folder structure for "test" project:<br />
-    <pre><code>
-    mkdir test
-    cd test
-    mkdir public api
-    cd api
-    touch index.js
-    cd ../public
-    touch index.html
-    cd ..
-    </code></pre></li>
-    		<li>Open index.html in your editor and paste the following snippet there:<br />
-    <pre><code>
-    &lt;!DOCTYPE html&gt;
-    &lt;html lang=&quot;en&quot;&gt;
-        &lt;head&gt;
-            &lt;meta charset=&quot;utf-8&quot; /&gt;
-            &lt;title&gt;Hello World&lt;/title&gt;
-            &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot; /&gt;
-        &lt;/head&gt;
-        &lt;body&gt;
-            &lt;p id=&quot;test&quot;&gt;&lt;/p&gt;
-            &lt;script&gt;
-              fetch('api/index.js')
-              .then((response) =&gt; response.text())
-              .then((text) =&gt; {
-                console.log(text);
-                document.getElementById('test').innerHTML = text;
-              });
-            &lt;/script&gt;
-        &lt;/body&gt;
-    &lt;/html&gt;
-    </code></pre></li>
-    		<li>Open index.js in your editor and paste the following snippet there:<br />
-    <pre><code>
-    export default function handler(req, res) {
-        res.setHeader('Content-Type', 'text/plain')
-        res.write('Hello World')
-        res.end()
-    }
-    </code></pre></li>
-    <li>In cli/terminal run: <pre>vercel dev</pre> and select default answers to all questions. Vercel cli will create the test project under your
-    existing Vercel account and start a local server at: http://localhost:3000/ where you can see your index.html and your api can be reached at: http://localhost:3000/api/. If everything is working properly, you should see a "Hello World" message in your browser.</li>
-    <li>To deploy your project to server for preview purposes run in terminal: <pre>vercel deploy</pre> And if you are happy with result and want to
-    	deploy it to production run: <pre>vercel --prod</pre>
-    	The preview and production URLs are available in your project on vercel.com under "Deployment" tab.</li>
-    		</ol>
-    	<p><a href="/blog/">Back to Blog</a></p>
+    	</div>
+    	<article>
+    		<h1>Hello World,</h1>
+    		<p class="lead">ich bin ein Webdesigner/Web Entwickler aus Freiburg. Ich arbeite seit über 15 Jahre im Bereich Frontend und seit letzte Jahren auch im Bereich Fullstack Entwicklung. Ich kollaboriere mit Web Agenturen und Kunden aus ganzen Welt und freue mich neue Kunden kennenzulernen. Wenn du Hilfe mit deinem Projekt brauchst, kannst du mich gerne per Telefon, WhatsApp, oder E-Mail erreichen.</p>
+    
+    		<h2>Erfahrung</h2>
+    		<ul>
+    			<li>Design und Entwicklung von progressiv erweiterten, reaktionsschnellen Websites/Anwendungen unter Verwendung eines Mobile-First-Ansatzes</li>
+    			<li>Aufbau von Build-Systemen und CI/CD-Pipelines über Node- und NPM-Skripte und ohne Abhängigkeit von Task-Runnern wie Gulp oder Grunt</li>
+    			<li>Erfahrung mit REST-APIs und serverloser Programmierung (Jamstack)</li>
+    			<li>Überprüfung der Zugänglichkeit von Websites und Web-Apps (WCAG 2.1, Section 508)</li>
+    			<li>Erfahrung mit Headless CMS und statischer Website-Generierung</li>
+    		</ul>
+    		<h2>Programmierung</h2>
+    		<ul>
+    			<li>Frontend: HTML5, CSS3, Sass, JavaScript/TypeScript, JSON</li>
+    			<li>Backend: MERN (MongoDB, Express, React, Node.js), LAMP (PHP, Yii, Apache, MariaDB)</li>
+    			<li>Libraries/APIs: React, Handlebars.js, Moment.js, Google Maps</li>
+    			<li>CMS: Contentful (Headless), Magnolia</li>
+    			<li>Plattformen: Vercel (Serverless), AWS, GitHub</li>
+    		</ul>
     	</article>
     </main>
     <footer>
