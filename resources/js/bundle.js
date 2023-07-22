@@ -176,18 +176,21 @@
 
     console.log('DOM is ready!');
     //initialize site navigation
-    var navigation = new Navigation({
-      element: document.querySelector('header > nav')
-    });
-    //hamburger button
-    var hamburger = document.querySelector('button.hamburger');
-    if (hamburger) {
-      hamburger.addEventListener('click', function () {
-        hamburger.classList.toggle('is-active');
-        if (navigation.nav) {
-          navigation.nav.classList.toggle('is-visible');
-        }
+    var navElement = document.querySelector('header > nav');
+    if (navElement) {
+      var navigation = new Navigation({
+        element: document.querySelector('header > nav')
       });
+      //hamburger button
+      var hamburger = document.querySelector('button.hamburger');
+      if (hamburger) {
+        hamburger.addEventListener('click', function () {
+          hamburger.classList.toggle('is-active');
+          if (navigation.nav) {
+            navigation.nav.classList.toggle('is-visible');
+          }
+        });
+      }
     }
     /*
     const langs = document.querySelector('.langs');

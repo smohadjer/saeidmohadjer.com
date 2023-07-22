@@ -17,18 +17,21 @@ ready(function () {
     'use strict';
     console.log('DOM is ready!');
     //initialize site navigation
-    const navigation = new SiteNav({
-        element: document.querySelector('header > nav')
-    });
-    //hamburger button
-    const hamburger = document.querySelector('button.hamburger');
-    if (hamburger) {
-        hamburger.addEventListener('click', function () {
-            hamburger.classList.toggle('is-active');
-            if (navigation.nav) {
-                navigation.nav.classList.toggle('is-visible');
-            }
+    const navElement = document.querySelector('header > nav');
+    if (navElement) {
+        const navigation = new SiteNav({
+            element: document.querySelector('header > nav')
         });
+        //hamburger button
+        const hamburger = document.querySelector('button.hamburger');
+        if (hamburger) {
+            hamburger.addEventListener('click', function () {
+                hamburger.classList.toggle('is-active');
+                if (navigation.nav) {
+                    navigation.nav.classList.toggle('is-visible');
+                }
+            });
+        }
     }
     /*
     const langs = document.querySelector('.langs');
