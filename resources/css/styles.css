@@ -599,6 +599,10 @@ article section h2 {
     display: inline-block;
   }
 }
+article section ul {
+  list-style: none;
+  padding-left: 0;
+}
 
 @font-face {
   font-family: "parastoo";
