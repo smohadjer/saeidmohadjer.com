@@ -2,7 +2,7 @@
   <time datetime="2023-02-10">2023-02-10</time>
   <h1>Disabling preview deployments in Vercel</h1>
   <div class="tags">
-    <span>Vercel</span>
+    <span>vercel</span>
   </div>
   <p>If you don't want Vercel to do preview deployments for other branches of your repository you can disable preview deployments by going to your project's settings &gt; git &gt; Ignored Build Step and add the following command: </p>
   <p><pre>if [ "$VERCEL_ENV" == "production" ]; then exit 1; else exit 0; fi</pre></p>
