@@ -79,13 +79,20 @@ margin-top: 1em;
 .post {
     table {
         font-size: smaller;
+        border-spacing: 0;
     }
-    
+
+    tr:nth-child(odd) {
+        background: #eee;
+    }
+
     td {
         vertical-align: top;
+        padding: 5px;
 
         &:first-child {
             padding-right: 20px;
+            min-width: 160px;
         }
     }
 }

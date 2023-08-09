@@ -2,6 +2,9 @@
 	<article class="post">
 		<time datetime="2023-07-19">2023-07-19</time>
 		<h1>Open-Source Web Development Tools</h1>
+		<div class="tags">
+			<span>tools</span>
+		</div>
 		<table>
 			<tr>
 				<td><a href="https://esbuild.github.io/">esbuild</a></td>
@@ -21,12 +24,12 @@
 			</tr>
 		</table>
 	</article>
-	
+
 	<article class="post">
 		<time datetime="2023-04-21">2023-04-21</time>
 		<h1>JavaScript Best Practices</h1>
 		<div class="tags">
-			<span>JavaScript</span>
+			<span>javascript</span>
 		</div>
 		<ul>
 			<li>Don't block the main thread with long tasks <a href="https://web.dev/optimize-long-tasks/">https://web.dev/optimize-long-tasks/</a></li>
@@ -37,30 +40,30 @@
 			<li>Avoid negative conditions</li>
 		</ul>
 	</article>
-	
+
 	<article class="post">
 		<time datetime="2023-04-14">2023-04-14</time>
 		<h1>Using Location API on anchor elements</h1>
 		<div class="tags">
-			<span>JavaScript</span>
+			<span>javascript</span>
 		</div>
-		<p>Did you know that a HTML anchor element can be treated as a Location object? This means similar to how you can use 
-		window.location to read or write different parts of a URL, you can do the same with an anchor element. For example if you 
+		<p>Did you know that a HTML anchor element can be treated as a Location object? This means similar to how you can use
+		window.location to read or write different parts of a URL, you can do the same with an anchor element. For example if you
 			have a link like this:</p>
 		<pre><code>&lt;a id=“myLink" href=“https://mydomain/products.html#productName”&gt;test&lt;/a&gt;</code></pre>
 	        <p>You can get the value of hash in this way:</p>
 <pre><code>
 const hash = document.getElementById('myLink').hash.substring(1);
-// returns productName	 
+// returns productName
 </code></pre>
-	      <p>You can use different properties of Location object on an anchor element and same as with window.location you 
+	      <p>You can use different properties of Location object on an anchor element and same as with window.location you
 	      can both read and write these properties. For more info see: <a href="https://developer.mozilla.org/en-US/docs/Web/API/Location">https://developer.mozilla.org/en-US/docs/Web/API/Location</a></p>
 	</article>
 	<article class="post">
 		<time datetime="2023-04-13">2023-04-13</time>
 		<h1>Fixing TypeScript error property does not exist on type EventTarget</h1>
 		<div class="tags">
-			<span>TypeScript</span>
+			<span>typescript</span>
 		</div>
 		<p>When working with event listeners in TypeScript one often runs into error that a particular property does not exist on type EventTarget. While it's relatively easy to fix this error using type "any" or by typecasting the event target using "as", none of these solutions are optimal since they simply disable TypeScript's type checking, which is what we are using TypeScript for in the first place!</p>
 		<p>The better way to fix this error is to use JavaScript's <strong>instanceof</strong> operator which you can read about at: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/instanceof">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/instanceof</a>.</p>
@@ -86,7 +89,7 @@ document.querySelector('p').addEventListener('click', (event) => {
 		<time datetime="2023-03-24">2023-03-24</time>
 		<h1>Closing an open port via Mac's terminal</h1>
 		<div class="tags">
-			<span>Mac</span>
+			<span>mac</span>
 		</div>
 		<p>Use below command in terminal to get a list of all open ports:</p>
 		<p><code><pre>netstat -an | grep LISTEN</pre></code></p>
@@ -99,8 +102,8 @@ document.querySelector('p').addEventListener('click', (event) => {
 		<time datetime="2023-03-07">2023-03-07</time>
 		<h1>Deploying a static HTML page and a serverless function (Node.js) live via Vercel</h1>
 		<div class="tags">
-			<span>Vercel</span>
-			<span>Node.js</span>
+			<span>vercel</span>
+			<span>node.js</span>
 		</div>
 		<p>In this example you will create a static HTML page that calls an api (Node.js serverless function) which responds by returning
 			the word "Hello
@@ -113,7 +116,7 @@ document.querySelector('p').addEventListener('click', (event) => {
 		<time datetime="2023-02-25">2023-02-25</time>
 		<h1>How to download files directly from GitHub public repositories</h1>
 		<div class="tags">
-			<span>Github</span>
+			<span>github</span>
 		</div>
 		<p>GitHub URL:<br>
 		<a href="https://github.com/smohadjer/s3/blob/master/test.jpg">https://github.com/smohadjer/s3/blob/master/test.jpg</a></p>
