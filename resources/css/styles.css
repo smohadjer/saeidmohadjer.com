@@ -723,10 +723,16 @@ article section ul {
 
 .post table {
   font-size: smaller;
+  border-spacing: 0;
+}
+.post tr:nth-child(odd) {
+  background: #eee;
 }
 .post td {
   vertical-align: top;
+  padding: 5px;
 }
 .post td:first-child {
   padding-right: 20px;
+  min-width: 160px;
 }
