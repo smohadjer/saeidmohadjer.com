@@ -6,36 +6,32 @@
 		<span>npm</span>
 		<span>node.js</span>
 	</div>
-		<p>Today I wanted to refactor my frontend build which is a bunch of node scripts with two goals in mind, one to simplify the build by removing a lot of dependencies (babel, rollup, sass, typescript) and using esbuild bundler instead, and second to improve the perforamcne of build. Here is how my build's package.json looked like before the change:</p>
+		<p>Today I decided to refactor my frontend build which is a bunch of node.js scripts run as npm script. I had two goals in mind, one to simplify the build by replacing multiple dependencies (babel, rollup, sass, typescript) with one dependency (esbuild), and second to improve the perforamcne of my build, which took around 21s as measured using <code>time npm run build</code> command in mac terminal. I had following dependencies in my package.json before the change:</p>
 		<code><pre>
-
-			  "dependencies": {
 		"@babel/core": "^7.14.2",
 		"@babel/preset-env": "^7.15.8",
 		"@rollup/plugin-babel": "^5.3.0",
-    "@types/node": "^18.13.0",
+    		"@types/node": "^18.13.0",
 		"chokidar": "3.5.1",
 		"concat": "^1.0.3",
 		"fs-extra": "^8.1.0",
 		"handlebars": "^4.7.7",
 		"rollup": "^2.48.0",
 		"sass": "^1.43.4",
-    "typescript": "^4.9.5",
-    "express": "^4.16.2"
-	}
+    		"typescript": "^4.9.5",
+    		"express": "^4.16.2"
 		</pre></code>
-		<p>And here is how it should like after the change:</p>
+		<p>And my goal was to reduce these dependencies to this:</p>
 		<code><pre>
-			  "dependencies": {
-	"esbuild": "0.18.20"
-    "@types/node": "^18.13.0",
+		"esbuild": "0.18.20"
+    		"@types/node": "^18.13.0",
 		"chokidar": "3.5.1",
 		"concat": "^1.0.3",
 		"fs-extra": "^8.1.0",
 		"handlebars": "^4.7.7",
-    "express": "^4.16.2"
-	}
+    		"express": "^4.16.2"
 		</pre></code>
+		<p>Lorem ipsum ...</p>
 	</article>
 	
 	<article class="post">
