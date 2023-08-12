@@ -1,7 +1,7 @@
 <main>
 	<article class="post">
 	<time datetime="2023-08-10">2023-08-10</time>
-	<h1>Timing npm script</h1>
+	<h1>Things I learnt when switching from Rollup to Esbuild for bundling frontend resources</h1>
 	<div class="tags">
 		<span>npm</span>
 		<span>node.js</span>
@@ -11,25 +11,24 @@
 		"@babel/core": "^7.14.2",
 		"@babel/preset-env": "^7.15.8",
 		"@rollup/plugin-babel": "^5.3.0",
-    		"@types/node": "^18.13.0",
+		"@types/node": "^18.13.0",
 		"chokidar": "3.5.1",
 		"concat": "^1.0.3",
 		"fs-extra": "^8.1.0",
 		"handlebars": "^4.7.7",
 		"rollup": "^2.48.0",
 		"sass": "^1.43.4",
-    		"typescript": "^4.9.5",
-    		"express": "^4.16.2"
+		"typescript": "^4.9.5",
+		"express": "^4.16.2"
 		</pre></code>
 		<p>And my goal was to reduce these dependencies to this:</p>
 		<code><pre>
-		"esbuild": "0.18.20"
-    		"@types/node": "^18.13.0",
+		"esbuild": "0.18.20",
 		"chokidar": "3.5.1",
-		"concat": "^1.0.3",
 		"fs-extra": "^8.1.0",
 		"handlebars": "^4.7.7",
-    		"express": "^4.16.2"
+		"sass": "^1.43.4",
+		"express": "^4.16.2"
 		</pre></code>
 		<p>Lorem ipsum ...</p>
 	</article>
