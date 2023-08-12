@@ -1,36 +1,17 @@
 <main>
 	<article class="post">
 	<time datetime="2023-08-10">2023-08-10</time>
-	<h1>Things I learnt when switching from Rollup to Esbuild for bundling frontend resources</h1>
+	<h1>Switching from Rollup to Esbuild for bundling frontend resources</h1>
 	<div class="tags">
 		<span>npm</span>
 		<span>node.js</span>
 	</div>
-		<p>Today I decided to refactor my frontend build which is a bunch of node.js scripts run as npm script. I had two goals in mind, one to simplify the build by replacing multiple dependencies (babel, rollup, sass, typescript) with one dependency (esbuild), and second to improve the perforamcne of my build, which took around 21s as measured using <code>time npm run build</code> command in mac terminal. I had following dependencies in my package.json before the change:</p>
-		<code><pre>
-		"@babel/core": "^7.14.2",
-		"@babel/preset-env": "^7.15.8",
-		"@rollup/plugin-babel": "^5.3.0",
-		"@types/node": "^18.13.0",
-		"chokidar": "3.5.1",
-		"concat": "^1.0.3",
-		"fs-extra": "^8.1.0",
-		"handlebars": "^4.7.7",
-		"rollup": "^2.48.0",
-		"sass": "^1.43.4",
-		"typescript": "^4.9.5",
-		"express": "^4.16.2"
-		</pre></code>
-		<p>And my goal was to reduce these dependencies to this:</p>
-		<code><pre>
-		"esbuild": "0.18.20",
-		"chokidar": "3.5.1",
-		"fs-extra": "^8.1.0",
-		"handlebars": "^4.7.7",
-		"sass": "^1.43.4",
-		"express": "^4.16.2"
-		</pre></code>
-		<p>Lorem ipsum ...</p>
+		<p>I recently refactored my frontend build, switching from Rollup to Esbuild for bundling JavaScript and CSS. The change reduced the build time by over 100% (from 21s to 10s) and allowed me to get rid of half of dependencies in my package.json. Below are things I learnt during this change:</p>
+		<ul>
+			<li>Use <code>time command</code> in terminal to find out how much it takes for a command to finish, for example I used <code>time npm run build</code> to compare my build time before and after the change.</li>
+			<li>Understand what <code>&&</code> and <code>&</code> work when chaining npm scripts. If you need a command to run in background insert a <code>&</code> after the command and if you need a command run after an earlier command has finished then insert a <code>&&</code> after the former command, for example <code>npm run cmd1 && npm run cmd2 & npm run cmd3</code> means that cmd 2 runs in background, but only after cmd1 has finished execution and that cmd3 also runs after cmd1 has finished, but parallel to cmd2. Usually you would need to run scripts that watch for files changes or start a server to run in background, specially if you want another script to run after them.</li>
+			<li>Esbuild not only compiles TypeScript files to JavaScript while bundling and minifying them, it can also bundle CSS modules into one CSS file while at the same time inserting CSS background images into CSS as Data URLs and hence reuding number of requests on production server.</li>
+		</ul>
 	</article>
 	
 	<article class="post">
