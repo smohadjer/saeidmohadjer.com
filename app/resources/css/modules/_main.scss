@@ -21,6 +21,10 @@ article {
         min-width: 450px;
         display: inline-block;
       }
+
+      @media (min-width: 1320px) {
+        margin-left: 0;
+      }
     }
 
     ul {
