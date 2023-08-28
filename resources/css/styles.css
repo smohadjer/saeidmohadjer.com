@@ -594,6 +594,11 @@ article section h2 {
     display: inline-block;
   }
 }
+@media (min-width: 1320px) {
+  article section h2 {
+    margin-left: 0;
+  }
+}
 article section ul {
   list-style: none;
   padding-left: 0;
