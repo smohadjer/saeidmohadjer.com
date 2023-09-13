@@ -6,6 +6,11 @@
     @media (min-width: 1024px) {
         margin: 0 20px 3em;
     }
+
+    @media (min-width: 1320px) {
+        margin-left: 0;
+        margin-right: 0;
+    }
 }
 
 .post:last-child {
@@ -26,6 +31,7 @@
 .post ul {
     margin-left: 17px;
     padding-left: 0;
+    margin-top: 1em;
 }
 
 .post ol {
@@ -87,6 +93,7 @@ margin-top: 1em;
     table {
         font-size: smaller;
         border-spacing: 0;
+        margin-top: 1em;
     }
 
     tr:nth-child(odd) {

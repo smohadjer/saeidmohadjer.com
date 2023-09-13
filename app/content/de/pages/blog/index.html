@@ -6,14 +6,14 @@
 		<span>npm</span>
 		<span>node.js</span>
 	</div>
-		<p>I recently refactored my frontend build, switching from Rollup to Esbuild for bundling JavaScript and CSS. The change reduced the build time by over 100% (from 21s to 10s) and allowed me to get rid of half of dependencies in my package.json. Below are things I learnt during this change:</p>
+		<p>I recently refactored my frontend build, switching from Rollup to Esbuild for bundling JavaScript and CSS. The change reduced the build time to less than half (from 21s to 10s). Below are a few things I learnt during this change:</p>
 		<ul>
 			<li>Use <code>time command</code> in terminal to find out how much it takes for a command to finish, for example I used <code>time npm run build</code> to compare my build time before and after the change.</li>
 			<li>Understand what <code>&&</code> and <code>&</code> work when chaining npm scripts. If you need a command to run in background insert a <code>&</code> after the command and if you need a command run after an earlier command has finished then insert a <code>&&</code> after the former command, for example <code>npm run cmd1 && npm run cmd2 & npm run cmd3</code> means that cmd 2 runs in background, but only after cmd1 has finished execution and that cmd3 also runs after cmd1 has finished, but parallel to cmd2. Usually you would need to run scripts that watch for files changes or start a server to run in background, specially if you want another script to run after them.</li>
 			<li>Esbuild not only compiles TypeScript files to JavaScript while bundling and minifying them, it can also bundle CSS modules into one CSS file while at the same time inserting CSS background images into CSS as Data URLs and hence reuding number of requests on production server.</li>
 		</ul>
 	</article>
-	
+
 	<article class="post">
 		<time datetime="2023-07-19">2023-07-19</time>
 		<h1>Open-Source Web Development Tools</h1>
