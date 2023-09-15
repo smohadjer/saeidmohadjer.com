@@ -112,7 +112,7 @@ document.querySelector('p').addEventListener('click', (event) => {
 		</div>
 		<p>Use below command in terminal to get a list of all open ports:</p>
 		<p><code><pre>netstat -an | grep LISTEN</pre></code></p>
-		<p>Find the process ID (PID) of the port you wish to close. You may need to use sudo. <pre>lsof -i :PortNumber</pre></p>
+		<p>Find the process ID (PID) of the port you wish to close. You may need to use sudo. <pre>lsof -i :[portNumber]</pre></p>
 		<p>Then use the following command to kill the process listening on your port. You may need to use sudo with kill -9 parameter.</p>
 		<p><pre>kill PID</pre></p>
 	</article>
