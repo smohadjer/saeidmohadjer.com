@@ -1,0 +1,25 @@
+<main>
+	<article class="blog-admin">
+		<h1>Post to Blog</h1>
+		<form action="/api/post" method="POST">
+      <p>Fields marked with <strong>*</strong> are required.</p>
+      <div class="row row--two-columns" class="required">
+				<label for="title">Title</label>
+				<input required name="title">
+      </div>
+      <div class="row row--two-columns">
+				<label for="tag">Tag</label>
+				<input name="tag">
+      </div>
+      <div class="row row--two-columns" class="required">
+				<label for="content">Content</label>
+				<textarea required rows="10" cols="50" name="content"></textarea>
+      </div>
+			<div class="row row--two-columns" class="required">
+				<label for="slug">Slug:</label>
+				<input required name="slug" placeholder="my-new-blog-post.html" />
+			</div>
+			<button>Publish</button>
+		</form>
+	</article>
+</main>

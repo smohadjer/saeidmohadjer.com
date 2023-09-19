@@ -26,8 +26,11 @@
 		"build": "git://github.com/smohadjer/build.git#semver:^1.0.0"
 	},
 	"dependencies": {
+		"@octokit/rest": "^20.0.1",
+		"dotenv": "^16.0.3",
 		"hamburgers": "0.9.3",
 		"helpers": "git+https://github.com/smohadjer/helpers.git",
+		"js-base64": "^3.7.5",
 		"swiper": "^9.4.1"
 	},
 	"engines": {
