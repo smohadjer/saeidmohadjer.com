@@ -1,9 +1,9 @@
 <main>
-	<article class="blog-admin">
+	<article>
 		<h1>Post to Blog</h1>
 		<form action="/api/post" method="POST">
       <p>Fields marked with <strong>*</strong> are required.</p>
-      <div class="row row--two-columns" class="required">
+      <div class="row row--two-columns required">
 				<label for="title">Title</label>
 				<input required name="title">
       </div>
@@ -11,11 +11,11 @@
 				<label for="tag">Tag</label>
 				<input name="tag">
       </div>
-      <div class="row row--two-columns" class="required">
+      <div class="row row--two-columns required">
 				<label for="content">Content</label>
 				<textarea required rows="10" cols="50" name="content"></textarea>
       </div>
-			<div class="row row--two-columns" class="required">
+			<div class="row row--two-columns required">
 				<label for="slug">Slug:</label>
 				<input required name="slug" placeholder="my-new-blog-post.html" />
 			</div>
