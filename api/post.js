@@ -54,7 +54,7 @@ const updateOrCreateFile = async (filePath, content, sha) => {
 
 const getBlogPostContent = (req) => {
   const date = new Date(Date.now());
-  return `<article class="post">
+  return `<article data-filter-tag="${req.body.tag}" class="post">
     <time datetime="${date}">${date.toDateString()}</time>
     <h1>${req.body.title}</h1>
     <div class="tags">

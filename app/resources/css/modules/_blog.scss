@@ -13,6 +13,30 @@
     }
 }
 
+.filters {
+    margin: 0 15px 1.5em;
+
+    @media (min-width: 1024px) {
+        margin: 0 20px 1.5em;
+    }
+
+    @media (min-width: 1320px) {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+.filters select {
+    padding: 5px;
+    border: solid 1px #ccc;
+    font-size: 18px;
+    background: #eee;
+}
+
+.post.hidden {
+  display: none;
+}
+
 .post:last-child {
     border: 0;
     padding-bottom: 0;

@@ -7,6 +7,8 @@
 <script type="module" src="/resources/js/bundle.js"></script>
 
 <script type="module">
+  import FilterList from '/resources/js/lib/filterList.min.js';
+
   const swiperElm = document.querySelector('.swiper');
   if (swiperElm) {
     const swiper = new Swiper('.swiper', {
@@ -21,7 +23,25 @@
     console.log('swiper is ready');
   }
 
+  window.setTimeout(()=>{
+    initFilters();
+  }, 1000);
+
+  function initFilters() {
+    console.log(document.querySelectorAll('article[data-filter-tag]'));
+    const filterElement = document.querySelector('main[data-filter-names]');
+    if (filterElement) {
+      const myFilter = new FilterList({
+        element: filterElement,
+      });
+
+    }
+  }
+
+
+  /*
   document.addEventListener('domReady', () => {
-    console.log()
+    console.log('domReady');
   });
+  */AnalyserNode
 </script>

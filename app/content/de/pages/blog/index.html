@@ -1,4 +1,17 @@
-<main>
+<div class="filters">
+	<select name="tag" data-ignore="all">
+		<option value="all">Select a tag to filter blog posts...</option>
+		<option value="tennis">tennis</option>
+		<option value="javascript">javascript</option>
+		<option value="typescript">typescript</option>
+		<option value="github">github</option>
+		<option value="mac">mac</option>
+		<option value="node.js">node.js</option>
+		<option value="tools">tools</option>
+		<option value="css">css</option>
+	</select>
+</div>
+<main data-filter-names="tag">
 {{> de/partials/2023-09-21 }}
 	{{> de/partials/2023-08-10 }}
 	{{> de/partials/2023-07-19 }}

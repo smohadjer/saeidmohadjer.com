@@ -30,7 +30,8 @@
 		"dotenv": "^16.0.3",
 		"hamburgers": "0.9.3",
 		"helpers": "git+https://github.com/smohadjer/helpers.git",
-		"swiper": "^9.4.1"
+		"swiper": "^9.4.1",
+		"filterlist": "git://github.com/smohadjer/filterList.git#semver:^3.2.2"
 	},
 	"engines": {
 		"node": ">=18.15.0"

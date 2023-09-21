@@ -8,17 +8,22 @@
 				<input required name="title">
       </div>
       <div class="row row--two-columns">
-				<label for="tag">Tag</label>
-				<input name="tag">
+				<label for="tag">Tags</label>
+				<select name="tag">
+					<option value="tennis">tennis</option>
+					<option value="javascript">javascript</option>
+					<option value="typescript">typescript</option>
+					<option value="react">react</option>
+					<option value="mac">mac</option>
+					<option value="node.js">node.js</option>
+					<option value="tools">tools</option>
+					<option value="css">css</option>
+				</select>
       </div>
       <div class="row row--two-columns required">
 				<label for="content">Content</label>
 				<textarea required rows="10" cols="50" name="content"></textarea>
       </div>
-			<div class="row row--two-columns required">
-				<label for="slug">Slug:</label>
-				<input required name="slug" placeholder="my-new-blog-post.html" />
-			</div>
 			<button>Publish</button>
 		</form>
 	</article>

@@ -3,7 +3,8 @@ form {
 
   /* to avoid zooming on iPhone when input or textarea get the focus we need to set font-size at least to 16px */
   :is(input),
-  :is(textarea) {
+  :is(textarea),
+  :is(select) {
     font-size: 16px;
   }
 
@@ -59,7 +60,8 @@ form {
         vertical-align: top;
       }
 
-      :is(input) {
+      :is(input),
+      :is(select) {
         width: 100%;
         border: solid 1px #ccc;
         border-radius: 0;
