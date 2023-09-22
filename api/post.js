@@ -24,6 +24,7 @@ const getBlogPostSHA = async (pathToBlogPost) => {
 };
 
 const includePostInBlog = async (blogPostFileName) => {
+  console.log('adding new post to blog');
   const { data } = await octokit.request(`GET /repos/{owner}/{repo}/contents/{path}`, {
     owner: 'smohadjer',
     repo: 'saeidmohadjer.com',
@@ -33,7 +34,7 @@ const includePostInBlog = async (blogPostFileName) => {
   const buf = new Buffer.from(data.content, 'base64');
   const oldContent = buf.toString('ascii');
   const link = `{{> de/partials/${blogPostFileName.replace('.html', '')} }}`
-  const newContent = oldContent.replace('<main>', '<main>\n' + link);
+  const newContent = oldContent.replace('<!--insert here-->', '<!--insert here-->\n' + link);
   await updateOrCreateFile('app/content/de/pages/blog/index.html', newContent, data.sha);
 };
 
