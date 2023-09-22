@@ -54,7 +54,7 @@ const updateOrCreateFile = async (filePath, content, sha) => {
 };
 
 const getBlogPostContent = (req) => {
-  const markdown = marked.parse(req.body.content);
+  const html = marked.parse(req.body.content);
 
   const date = new Date(Date.now());
   return `<article data-filter-tag="${req.body.tag}" class="post">
@@ -64,7 +64,7 @@ const getBlogPostContent = (req) => {
       <span>${req.body.tag}</span>
     </div>
     <div class="content">
-      ${markdown}
+      ${html}
     </div>
   </article>`;
 };
