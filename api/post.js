@@ -1,5 +1,6 @@
 import { Octokit } from "@octokit/rest";
 import dotenv from 'dotenv';
+import { marked } from 'marked';
 
 dotenv.config();
 
@@ -53,6 +54,8 @@ const updateOrCreateFile = async (filePath, content, sha) => {
 };
 
 const getBlogPostContent = (req) => {
+  const markdown = marked.parse(req.body.content);
+
   const date = new Date(Date.now());
   return `<article data-filter-tag="${req.body.tag}" class="post">
     <time datetime="${date}">${date.toDateString()}</time>
@@ -61,7 +64,7 @@ const getBlogPostContent = (req) => {
       <span>${req.body.tag}</span>
     </div>
     <div class="content">
-      ${req.body.content}
+      ${markdown}
     </div>
   </article>`;
 };

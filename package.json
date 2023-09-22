@@ -28,10 +28,11 @@
 	"dependencies": {
 		"@octokit/rest": "^20.0.1",
 		"dotenv": "^16.0.3",
+		"filterlist": "git://github.com/smohadjer/filterList.git#semver:^3.2.2",
 		"hamburgers": "0.9.3",
 		"helpers": "git+https://github.com/smohadjer/helpers.git",
-		"swiper": "^9.4.1",
-		"filterlist": "git://github.com/smohadjer/filterList.git#semver:^3.2.2"
+		"marked": "^9.0.3",
+		"swiper": "^9.4.1"
 	},
 	"engines": {
 		"node": ">=18.15.0"

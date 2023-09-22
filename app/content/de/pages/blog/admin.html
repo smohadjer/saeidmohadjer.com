@@ -8,8 +8,10 @@
 				<input required name="title">
       </div>
       <div class="row row--two-columns">
-				<label for="tag">Tags</label>
-				<select name="tag">
+				<label for="tag">Tag</label>
+				<input list="tags" name="tag">
+				<span>Only one tag is allowed</span>
+				<datalist id="tags">
 					<option value="tennis">tennis</option>
 					<option value="javascript">javascript</option>
 					<option value="typescript">typescript</option>
@@ -18,11 +20,15 @@
 					<option value="node.js">node.js</option>
 					<option value="tools">tools</option>
 					<option value="css">css</option>
-				</select>
+				</datalist>
       </div>
+			<div class="row row--two-columns required">
+				<label for="slug">Slug</label>
+				<input name="slug" placeholder="my-first-post.html">
+			</div>
       <div class="row row--two-columns required">
 				<label for="content">Content</label>
-				<textarea required rows="10" cols="50" name="content"></textarea>
+				<textarea required rows="10" cols="50" name="content" placeholder="You can use Markdown"></textarea>
       </div>
 			<button>Publish</button>
 		</form>
