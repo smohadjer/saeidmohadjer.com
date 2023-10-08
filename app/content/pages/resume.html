@@ -1,16 +1,16 @@
 <article>
 	<header>
-		<p>This resume is available online at <a href="https://saeidmohadjer.com/resume">saeidmohadjer.com/resume</a></p>
+		<p class="pdf"><a href="/assets/resume.pdf">PDF Version</a></p>
 		<h1>Saeid Mohadjer</h1>
 		<h2>Frontend/Fullstack Developer</h2>
 		<p>Freiburg, Germany<br>
 		Email: <a href="mailto:info@saeidmohadjer.com">info@saeidmohadjer.com</a></p>
 	</header>
-	<p>Frontend/Fullstack Developer experienced in designing and building web applications and responsive websites</p>
+	<p>Frontend/Fullstack Developer experienced in designing and building Web Applications, APIs, and resilient Websites</p>
 
 	<h3 id="skills">Skills</h3>
 	<ul>
-		<li>Expertise in building restful APIs with payload validation (via Json Schema), authentication, and authorization</li>
+		<li>Expertise in building RESTful APIs with payload validation (via Json Schema), authentication, and authorization</li>
 		<li>Solid understanding of object oriented and functional programming paradigms</li>
 		<li>Experience in automated testing including unit and functional testing</li>
 		<li>Experience in setting up build systems and CI/CD pipelines</li>
@@ -20,12 +20,12 @@
 		<li>Skilled in Git, branching workflows, and conflict resolution</li>
 		<li>Experience in i18n and adding support for RTL languages</li>
 		<li>Experience in creating interactive animations in SVG</li>
-		<li>Experience in 3D Modeling and computer animation (Maya/3Ds Max)</li>
+		<li>Experience in fields of 3D modeling and computer animation</li>
 	</ul>
 
 	<h3 id="technology">Tech Stack</h3>
 	<ul>
-		<li><strong>Frontend</strong>: HTML5, CSS/SCSS, JavaScript, TypeScript, React, Next.js, XML, JSON, SVG</li>
+		<li><strong>Frontend</strong>: HTML5, CSS/Sass, JavaScript, TypeScript, React, Next.js, XML, JSON/JSON Schema, SVG</li>
 		<li><strong>Backend</strong>: Node.js, PHP, Yii</li>
 		<li><strong>Database</strong>: MongoDB, MariaDB</li>
 		<li><strong>Server</strong>: Express, Apache</li>
@@ -37,11 +37,10 @@
 		<li><strong>Libraries/APIs</strong>: Google Maps, YouTube, Moment.js</li>
 		<li><strong>OS</strong>: Mac, Windows, Linux</li>
 	</ul>
-
 	<h3 id="experience">Work Experience</h3>
 	<ul>
-		<li>2013-2023: Freelance Web Developer working on projects such as <a href="https://www.roche.com/">roche.com</a>, <a href="https://www.neoperl.com/">neoperl.com</a>, <a href="https://www.sto.com/">sto.com</a>, etc. During this period I grew from a Frontend Developer building mainly static HTML sites to a Fullstack Developer building component-based websites and single-page applications using latest technologies such as React, AWS SAM and Lambeda.</li>
-		<li>2019-2022: During this period I headed Frontend Development at <a href="https://www.recallinfolink.com/">Recall InfoLink</a>, a US-based market leader in recall industry. We launched a new version of their multi-lingual recall application and reporting system which was originally built in Flex years ago. In addition to working on UI, I was heavily invovled with integration of frontend with backend which was written in Python and PHP/Yii framework.</li>
+		<li>2013-2023: Freelance Web Developer working on projects such as <a href="https://www.roche.com/">roche.com</a>, <a href="https://www.neoperl.com/">neoperl.com</a>, <a href="https://www.sto.com/">sto.com</a>, etc. During this period I built UI/component libraries for multi-national websites as well as creating applications and APIs for customers in a wide range of industries from engineering to banking.</li>
+		<li>2019-2022: During this period I headed Frontend Development at <a href="https://www.recallinfolink.com/">Recall InfoLink</a>, a US-based market leader in recall industry. We launched a new version of their multi-lingual recall application and reporting system which had originally been built in Flex. In addition to working on UI, I was heavily invovled with integration of frontend with Python/PHP backend.</li>
 		<li>2011-2013: Frontend Developer at Virtual Identity AG, Freiburg, Germany</li>
 		<li>2008-2011: Freelance Frontend Developer, Vancouver, Canada<br>Webby Honoree for Museum of Vancouver Website, Webby Honoree for University of Toronto Augmented Reality</li>
 		<li>2007-2008: Senior Interactive Developer at B3 Communications Inc., Vancouver, Canada<br> Outstanding Achievement for Koloa Landing Website</li>
@@ -50,19 +49,19 @@
 
 	<h3 id="projects">Personal Projects</h3>
 	<ul>
-		<li><strong>Website for Tennis Trainer Slaven Gluscevic</strong><br>Designed and developed a Website for my club's tennis trainer to allow users register online for training courses and camps. The website features an admin section built as SPA that allows the trainer to view membership data, leave notes for students, update training time slots, and so on. Registration data is submitted to a serverless API (Node.js) which then validates and writes data to a MongoDB database. All static content and assets are stored on GitHub and auto-deployed to Vercel for live hosting. I wrote a frontend build that generates markup and compiles all resources for production as well as local testing.<br><a href="https://slaven.de">Visit Website</a>
+		<li><strong>Website for Slaven Gluscevic</strong><br>I designed and built a Website for a tennis trainer to allow online registration for his training courses and camps. The website features an admin section built as SPA that allows the trainer to view membership data, put notes for students, update training time slots, and so on. Registration data is submitted to a serverless API which then validates and writes data to a MongoDB database. All static content and assets are stored on GitHub and auto-deployed to Vercel for live hosting. I also wrote a frontend build that generates markup and compiles all resources for production as well as local testing.<br><a href="https://slaven.de">Visit Website</a>
 		</li>
 		<li>
-			<strong>Tournament Oraganizer App:</strong><br> A web app for storing and displaying results of tournaments such as ranking of players, result of each tournament, player's history, and so on. The UI is built without any frameworks using HTML, CSS, and JavaScript only. Data is stored and fetched from a MongoDB database using Vercel's serverless Functions written in Node.js. JavaScript fetches data from API and renders HTML by populating Handlebars templates with data. Basic authentication for admin page is implemented via a Vercel Edge middleware.<br><a href="https://poker.myendpoint.de/">Demo</a> | <a href="https://github.com/smohadjer/pokerrangliste">GitHub</a>
+			<strong>Tournament Oraganizer</strong><br> I built this web app to store and display results of tournaments. It allows setup and selection of seasons, players' ranking and history, and individual tournament results. App is built using MVC pattern where JavaScript fetches data from a MongoDB instance by calling a serverless API and then injects data into Handlebars templates to render different views. API is written in Node.js and built using Vercel's serverless functions. Basic authentication for admin is implemented via a Vercel edge middleware.<br><a href="https://poker.myendpoint.de/">Demo</a> | <a href="https://github.com/smohadjer/pokerrangliste">GitHub</a>
 		</li>
 	</ul>
 
 	<h3>References</h3>
 	<p><a href="/assets/vi.pdf">Letter of reference</a>, Virtual Identity AG (PDF in German)</p>
 
-	<h3>Citation</h3>
+	<!--<h3>Citation</h3>
 	<p><q>Es ist mir ein Anliegen Dir zu schreiben und mich bei Dir ganz herzlich zu bedanken. Die Internetseite sieht wunderschön aus, ich bin darüber sehr glücklich. Vielen lieben Dank Saeid, für Dein Engagement und auch für das problemlose Zustandekommen. Du warst ja immer in Kontakt mit mir und ich bin sehr froh darüber, dass alles so unkompliziert ablaufen konnte. Das Ergebnis begeistert mich sehr!</q><br>2022, Evelyne Severing, Psychotherapeutin | <a href="https://evelyne-severing.com/">evelyne-severing.com</a>
-	</p>
+	</p>-->
 
 
 	<h3>Languages</h3>
