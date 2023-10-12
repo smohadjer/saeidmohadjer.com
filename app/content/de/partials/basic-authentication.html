@@ -1,0 +1,11 @@
+<article data-filter-tag="authentication" class="post">
+    <time datetime="Thu Oct 12 2023 20:08:12 GMT+0000 (Coordinated Universal Time)">Thu Oct 12 2023</time>
+    <h1>Basic Authentication</h1>
+    <div class="tags">
+      <span>authentication</span>
+    </div>
+    <div class="content">
+      <p>The easiest way to password protect a resource on Web is to use <strong>Basic Authentication</strong> scheme. In this approach two HTTP headers <strong>authorisation</strong> and <strong>www-authenticate</strong> are used. When a request without authorization header is received by the server, it would return a response with 401 or unauthorized status and the header <strong>www-authenticate: basic</strong>. The user agent receiving such a response then provides user with a means for entering required credentials. Credential entered by the user is encoded in format of username:password and sent to the server as value of <strong>authorization</strong> header in the request. When server receives this request it checks whether the value matches with those stored on the server or not. If they do, it responds with the requested resource, otherwise it responds again with 401 status and the header “www-authenticate: basic”. </p>
+
+    </div>
+  </article>
