@@ -111,6 +111,10 @@ margin-top: 1em;
     padding: 1em;
     display: block;
     word-wrap: break-word;
+
+    code {
+        background: none;
+    }
 }
 
 .post {
