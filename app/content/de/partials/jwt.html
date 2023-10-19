@@ -31,7 +31,7 @@ export default (req, res, next) => {
 import jwt from 'jsonwebtoken';
 export default async (req, res) => {
   const {username, password} = req.body;
-  if (username === 'admin' && password === 'test') {
+  if (username === 'lorem' && password === 'ipsum') {
     const token = jwt.sign({
       username: username
     }, 'mySecret', {expiresIn: '1h'});
