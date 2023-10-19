@@ -15,16 +15,15 @@ export default (req, res, next) => {
   const authHeader = req.headers['authorization'];
   if (authHeader) {
     const token = authHeader.split(' ')[1];
-try {
-  const decoded = jwt.verify(token, 'mySecret');
-  next();
-} catch(err) {
-  res.status(401).json({&#39;error&#39;: 401, &#39;message&#39;: &#39;invalid token&#39;})
-}
+    try {
+      const decoded = jwt.verify(token, 'mySecret');
+      next();
+    } catch(err) {
+      res.status(401).json({&#39;error&#39;: 401, &#39;message&#39;: &#39;invalid token&#39;})
+    }
   } else {
     res.status(403).json({&#39;error&#39;: 403, &#39;message&#39;: &#39;authorization header not found&#39;});
   }
-}
-</code></pre>
+}</code></pre>
     </div>
   </article>
