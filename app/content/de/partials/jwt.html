@@ -7,8 +7,7 @@
     <div class="content">
       <p>To secure API endpoints we make sure that only requests which have an authorization header with valid bearer access token can invoke the endpoints. Requests that have no authorization header will return 403 Forbidden error and those with invalid token in header will return 401 Unauthorized error.
 This verification is done in a middleware function so that API code does not need to be touched for this purpose or know anything about authentication at all.</p>
-<p>When a user authenticates himself by posting credentials to the server, server will generate an access token such as a JWT and send it back to user in body of the response. The token then will be fetched and put in authorization header of requests to the API. </p>
-<p>The following code shows example of a Node.js express middleware that implements JWT verification of requests to API using npm jsonwebtoken package:</p>
+
 <pre><code>
 import jwt from 'jsonwebtoken';
 export default (req, res, next) => {
@@ -25,5 +24,8 @@ export default (req, res, next) => {
     res.status(403).json({&#39;error&#39;: 403, &#39;message&#39;: &#39;authorization header not found&#39;});
   }
 }</code></pre>
-    </div>
+
+<p>When a user authenticates himself by posting credentials to the server, server will generate an access token such as a JWT and send it back to user in body of the response. The token then will be fetched and put in authorization header of requests to the API. </p>
+<p>The following code shows example of a Node.js express middleware that implements JWT verification of requests to API using npm jsonwebtoken package:</p>
+</div>
   </article>
