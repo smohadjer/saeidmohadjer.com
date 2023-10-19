@@ -9,7 +9,8 @@
 This verification is done in a middleware function so that API code does not need to be touched for this purpose or know anything about authentication at all.</p>
 
 <p>The following code shows example of a Node.js express middleware that implements JWT verification of requests to API using npm jsonwebtoken package:</p>
-<pre><code>import jwt from 'jsonwebtoken';
+<pre><code>
+import jwt from 'jsonwebtoken';
 export default (req, res, next) => {
   const authHeader = req.headers['authorization'];
   if (authHeader) {
