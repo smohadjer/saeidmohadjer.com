@@ -26,6 +26,22 @@ export default (req, res, next) => {
   }
 }</code></pre>
 
-<p>When a user authenticates himself by posting credentials to the server, server will generate an access token such as a JWT and send it back to user in body of the response. The token then will be fetched and put in authorization header of requests to the API.</p>
+<p>When a user authenticates himself by posting credentials to the server, server will generate an access token such as a JWT and send it back to user in body of the response.</p>
+<pre><code>
+import jwt from 'jsonwebtoken';
+export default async (req, res) => {
+  const {username, password} = req.body;
+  if (username === 'admin' && password === 'test') {
+    const token = jwt.sign({
+      username: username
+    }, 'mySecret', {expiresIn: '1h'});
+    res.json({
+      "access_token": token
+    });
+  } else {
+    res.status(403).end();
+  }
+}</code></pre>
+<p>This token then will be fetched and put in authorization header of requests to the API.</p>
 </div>
   </article>
