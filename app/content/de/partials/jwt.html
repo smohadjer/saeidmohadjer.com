@@ -26,7 +26,7 @@ export default (req, res, next) => {
   }
 }</code></pre>
 
-<p>When a user authenticates himself by posting credentials to the server, server will generate an access token such as a JWT and send it back to user in body of the response.</p>
+<p>When a user authenticates himself by posting credentials to the server, server will generate an access token such as a JWT and send it back to user in body of the response:</p>
 <pre><code>
 import jwt from 'jsonwebtoken';
 export default async (req, res) => {
