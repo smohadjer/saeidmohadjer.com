@@ -6,10 +6,9 @@
     <span>authentication</span>
   </div>
 <div class="content">
-    <p>To secure API endpoints we make sure that only requests which have an authorization header with valid access token can invoke the endpoints. Requests that have no authorization header will return 403 Forbidden error and those with invalid token in header will return 401 Unauthorized error.
-This verification is done in a middleware function so that API code does not need to be touched for this purpose or know anything about authentication at all.</p>
+    <p>To secure REST API endpoints only requests with a valid access token in their authorization header should reach the endpoints. Requests without an authorization header should return 403 Forbidden error and those without a valid token should return 401 Unauthorized error. Such verification can be done in a middleware function so that API itself does not need to be touched or know anything about authentication at all.</p>
 
-<p>The following code shows example of a Node.js express middleware that implements JWT verification of requests to API using npm jsonwebtoken package:</p>
+<p>The following code shows example of a Node.js Express middleware that implements such verification using jsonwebtoken package from npm:</p>
 <pre><code>import jwt from 'jsonwebtoken';
 export default (req, res, next) => {
   const authHeader = req.headers['authorization'];
