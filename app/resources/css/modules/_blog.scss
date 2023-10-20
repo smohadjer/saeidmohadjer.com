@@ -92,7 +92,7 @@ margin-top: 1em;
 .post code {
     background: #f0f0f0;
     font-family: monospace;
-    padding: 0.25em 0;
+    padding: 0.25em;
     border-radius: 5px;
 }
 
@@ -112,6 +112,8 @@ margin-top: 1em;
 
     code {
         background: none;
+        padding-left: 0;
+        padding-right: 0;
     }
 }
 

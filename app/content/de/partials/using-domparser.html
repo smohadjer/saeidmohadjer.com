@@ -6,16 +6,15 @@
     </div>
     <div class="content">
       <p>If you have some markup as a string of text and want to add it to a HTML page via JavaScript, the old way was to use innerHTML property like this:</p>
-<pre><code>const myHtmlString = &#39;&lt;h1&gt;Hello World&lt;/h1&gt;&#39;;
+<pre><code class="lang-js">const myHtmlString = &#39;&lt;h1&gt;Hello World&lt;/h1&gt;&#39;;
 const myElement = document.querySelector(&#39;header&#39;);
 myElement.innerHTML = myHtmlString;
 </code></pre>
 <p>However this replaces the whole content of element with new HTML string which may not always be desirable. Often you just want to add the new HTML as a child to an element in your page. In such cases you can use DOMParser interface like this:</p>
-<pre><code>const myHtmlString = &#39;&lt;h1&gt;Hello World&lt;/h1&gt;&#39;;
+<pre><code class="lang-js">const myHtmlString = &#39;&lt;h1&gt;Hello World&lt;/h1&gt;&#39;;
 const myHtmlElement = new DOMParser().parseFromString(myHtmlString, &#39;text/html&#39;).body.firstChild;
 const myElement = document.querySelector(&#39;header&#39;);
 myElement.append(myHtmlElement);
 </code></pre>
-
     </div>
   </article>
