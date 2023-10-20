@@ -32,6 +32,7 @@
 		"hamburgers": "0.9.3",
 		"helpers": "git+https://github.com/smohadjer/helpers.git",
 		"marked": "^9.0.3",
+		"prismjs": "^1.29.0",
 		"swiper": "^9.4.1"
 	},
 	"engines": {

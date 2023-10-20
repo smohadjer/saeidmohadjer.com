@@ -9,40 +9,39 @@
     <p>To secure REST API endpoints only requests with a valid access token in their authorization header should reach the endpoints. Requests without an authorization header should return 403 Forbidden error and those without a valid token should return 401 Unauthorized error. Such verification can be done in a middleware function so that API itself does not need to be touched or know anything about authentication at all.</p>
 
 <p>The following code shows example of a Node.js Express middleware that implements such verification using jsonwebtoken package from npm:</p>
-<pre><code>import jwt from 'jsonwebtoken';
+<pre><code class="language-js">import jwt from 'jsonwebtoken';
 export default (req, res, next) => {
   const authHeader = req.headers['authorization'];
 
   if (authHeader) {
     const token = authHeader.split(' ')[1];
-
     try {
       const decoded = jwt.verify(token, 'mySecret');
       next();
     } catch(err) {
-      res.status(401).json({'error': 401, 'message': 'invalid token'})
+      res.sendStatus(401);
     }
   } else {
-    res.status(403).json({'error': 403, 'message': 'authorization header not found'});
+    res.sendStatus(403);
   }
 }
 </code></pre>
 <p>When a user authenticates himself by posting credentials to the server, server will generate an access token such as a JWT and send it back to user in body of the response.</p>
-<pre><code>import jwt from 'jsonwebtoken';
+<pre><code class="language-js">import jwt from 'jsonwebtoken';
 export default async (req, res) => {
   const {username, password} = req.body;
   if (username === 'lorem' && password === 'ipsum') {
     const token = jwt.sign({
       username: username
-    }, 'mySecret', {expiresIn: '1h'});
+    }, 'mySecret', {expiresIn: '8h'});
     res.json({
       "access_token": token
     });
   } else {
-    res.status(403).end();
+    res.sendStatus(403);
   }
 }
 </code></pre>
-<p>This token then will be fetched and put in authorization header of requests to the API.</p>
+<p>This token then will be fetched on client side and will be sent in authorization header of requests to the API.</p>
 </div>
 </article>

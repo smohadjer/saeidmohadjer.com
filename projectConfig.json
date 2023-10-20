@@ -3,12 +3,14 @@
 		"css": [
 			"node_modules/hamburgers/dist/hamburgers.css",
 			"node_modules/helpers/dist/helper.css",
-			"node_modules/swiper/swiper-bundle.min.css"
+			"node_modules/swiper/swiper-bundle.min.css",
+			"node_modules/prismjs/themes/prism.css"
 		],
 		"js": [
 			"node_modules/handlebars/dist/handlebars.runtime.min.js",
 			"node_modules/swiper/swiper-bundle.min.js",
-			"node_modules/filterlist/dist/filterList.min.js"
+			"node_modules/filterlist/dist/filterList.min.js",
+			"node_modules/prismjs/prism.js"
 		]
 	},
 	"pages": [
