@@ -1,47 +1,49 @@
-<article data-filter-tag="node.js" class="post">
+<article data-filter-tag="node.js authentication" class="post">
   <time datetime="Thu Oct 19 2023 19:08:54 GMT+0000 (Coordinated Universal Time)">Thu Oct 19 2023</time>
   <h1>Securing API endpoints with JWT tokens</h1>
   <div class="tags">
     <span>node.js</span>
+    <span>authentication</span>
   </div>
-  <div class="content">
+<div class="content">
     <p>To secure API endpoints we make sure that only requests which have an authorization header with valid access token can invoke the endpoints. Requests that have no authorization header will return 403 Forbidden error and those with invalid token in header will return 401 Unauthorized error.
 This verification is done in a middleware function so that API code does not need to be touched for this purpose or know anything about authentication at all.</p>
 
 <p>The following code shows example of a Node.js express middleware that implements JWT verification of requests to API using npm jsonwebtoken package:</p>
-<pre><code>
-import jwt from 'jsonwebtoken';
+<pre><code>import jwt from 'jsonwebtoken';
 export default (req, res, next) => {
-const authHeader = req.headers['authorization'];
-if (authHeader) {
-  const token = authHeader.split(' ')[1];
-  try {
-    const decoded = jwt.verify(token, 'mySecret');
-    next();
-  } catch(err) {
-    res.status(401).json({&#39;error&#39;: 401, &#39;message&#39;: &#39;invalid token&#39;})
-  }
-} else {
-  res.status(403).json({&#39;error&#39;: 403, &#39;message&#39;: &#39;authorization header not found&#39;});
-}
-}</code></pre>
+  const authHeader = req.headers['authorization'];
 
-<p>When a user authenticates himself by posting credentials to the server, server will generate an access token such as a JWT and send it back to user in body of the response.</p>
-<pre><code>
-import jwt from 'jsonwebtoken';
-export default async (req, res) => {
-const {username, password} = req.body;
-if (username === 'lorem' && password === 'ipsum') {
-  const token = jwt.sign({
-    username: username
-  }, 'mySecret', {expiresIn: '1h'});
-  res.json({
-    "access_token": token
-  });
-} else {
-  res.status(403).end();
+  if (authHeader) {
+    const token = authHeader.split(' ')[1];
+
+    try {
+      const decoded = jwt.verify(token, 'mySecret');
+      next();
+    } catch(err) {
+      res.status(401).json({'error': 401, 'message': 'invalid token'})
+    }
+  } else {
+    res.status(403).json({'error': 403, 'message': 'authorization header not found'});
+  }
 }
-}</code></pre>
+</code></pre>
+<p>When a user authenticates himself by posting credentials to the server, server will generate an access token such as a JWT and send it back to user in body of the response.</p>
+<pre><code>import jwt from 'jsonwebtoken';
+export default async (req, res) => {
+  const {username, password} = req.body;
+  if (username === 'lorem' && password === 'ipsum') {
+    const token = jwt.sign({
+      username: username
+    }, 'mySecret', {expiresIn: '1h'});
+    res.json({
+      "access_token": token
+    });
+  } else {
+    res.status(403).end();
+  }
+}
+</code></pre>
 <p>This token then will be fetched and put in authorization header of requests to the API.</p>
 </div>
 </article>
