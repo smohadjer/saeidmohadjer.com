@@ -1,38 +1,36 @@
-@import './settings';
-
 html {
-	font-size: 18px;
-	line-height: 1.5;
-	font-family: 'OpenSans', arial, verdana, snas-serif;
-	color: $black;
-	scroll-behavior:smooth; /* so that links to hash targets scroll with animation */
-  font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-
-	@media only screen and (min-width: 1024px) {
-		font-size: 20px;
-
+  font-size: 18px;
+  line-height: 1.5;
+  font-family: "OpenSans", arial, verdana, snas-serif;
+  color: #333;
+  scroll-behavior: smooth; /* so that links to hash targets scroll with animation */
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+@media only screen and (min-width: 1024px) {
+  html {
+    font-size: 20px;
     /* to stop pages jumping horizontally when scrollbar appears or disappears */
     overflow-y: scroll;
-	}
+  }
 }
 
 body {
-	margin: 0 auto;
+  margin: 0 auto;
   overflow-wrap: break-word; /* so that inline elements such as long words do not cause horizontal scrolling. */
-
-  @media (min-width: 1320px) {
+}
+@media (min-width: 1320px) {
+  body {
     max-width: 1280px;
   }
 }
 
 a {
-  color: $blue;
-
-  &.external {
-    background: url(../img/external.svg) no-repeat left center;
-    background-size: 16px;
-    padding-left: 20px;
-  }
+  color: #036da8;
+}
+a.external {
+  background: url(../../img/external.svg) no-repeat left center;
+  background-size: 16px;
+  padding-left: 20px;
 }
 
 b, strong {
@@ -90,10 +88,9 @@ h4 + figure {
 ul, ol {
   padding-left: 1em;
   margin-top: 0;
-
-  li + li {
-      margin-top: 0.5em;
-  }
+}
+ul li + li, ol li + li {
+  margin-top: 0.5em;
 }
 
 ol {
@@ -102,19 +99,16 @@ ol {
 
 dl {
   margin-top: 2em;
-
-  dt {
-    font-weight: 500;
-    font-size: 1.5rem;
-
-    &:not(:first-child) {
-      margin-top: 1rem;
-    }
-  }
-
-  dd {
-    margin-left: 0;
-  }
+}
+dl dt {
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+dl dt:not(:first-child) {
+  margin-top: 1rem;
+}
+dl dd {
+  margin-left: 0;
 }
 
 img.responsive {
@@ -122,11 +116,10 @@ img.responsive {
   height: auto;
   /* to fix blurry downscaled images in Chrome */
   image-rendering: -webkit-optimize-contrast;
-
-  &--below-intrinsic-width {
-    width: auto;
-    max-width: 100%;
-  }
+}
+img.responsive--below-intrinsic-width {
+  width: auto;
+  max-width: 100%;
 }
 
 img.object-fit-cover {
@@ -137,8 +130,9 @@ img.object-fit-cover {
 
 main > article {
   padding: 0 15px;
-
-  @media (min-width: 1320px) {
+}
+@media (min-width: 1320px) {
+  main > article {
     padding: 0;
   }
 }

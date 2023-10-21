@@ -1,0 +1,32 @@
+header .hamburger {
+  vertical-align: middle;
+  padding: 0;
+  touch-action: manipulation; /* to avoid zooming on iphone when double clicking menu button */
+}
+.no-js header .hamburger {
+  display: none;
+}
+header .hamburger:focus {
+  outline: none;
+}
+header .hamburger:hover {
+  opacity: 1;
+}
+@media (min-width: 768px) {
+  header .hamburger {
+    display: none;
+  }
+}
+header .hamburger .hamburger-inner, header .hamburger .hamburger-inner::before, header .hamburger .hamburger-inner::after {
+  border-radius: 0;
+}
+header .hamburger .hamburger-box {
+  width: 30px;
+}
+header .hamburger .hamburger-inner,
+header .hamburger .hamburger-inner::before,
+header .hamburger .hamburger-inner::after {
+  width: 30px;
+  height: 3px;
+  background-color: black;
+}

@@ -1,0 +1,57 @@
+footer {
+  padding: 1rem;
+  margin: 2rem 0 0;
+  font-size: 0.8rem;
+  background: #eee;
+}
+@media (min-width: 1024px) {
+  footer {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+footer address {
+  margin-bottom: 1rem;
+  font-style: normal;
+}
+@media (min-width: 1024px) {
+  footer address {
+    margin-bottom: 0;
+  }
+}
+@media (min-width: 1024px) {
+  footer > div {
+    width: 40%;
+  }
+}
+footer > div p + p {
+  margin-top: 1em;
+}
+footer > div ul {
+  list-style: none;
+  padding: 0;
+}
+footer > div ul li {
+  display: inline-block;
+  margin-right: 15px;
+}
+footer > div ul li.html5 {
+  background: url(../../img/html5-color.svg) left center no-repeat;
+}
+footer > div ul li.css3 {
+  background: url(../../img/css3-color.svg) left center no-repeat;
+}
+footer > div ul li.a11y {
+  background: url(../../img/a11y.svg) left center no-repeat;
+}
+footer > div ul li.performance {
+  background: url(../../img/performance.svg) left center no-repeat;
+}
+footer > div ul li:last-child {
+  margin-right: 0;
+}
+footer > div ul.tools li {
+  background-size: 20px;
+  padding-left: 24px;
+  display: block;
+}

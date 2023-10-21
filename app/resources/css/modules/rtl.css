@@ -1,0 +1,37 @@
+@font-face {
+  font-family: "parastoo";
+  src: url("../../fonts/parastoo/Parastoo.ttf") format("truetype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "parastoo";
+  src: url("../../fonts/parastoo/Parastoo-Bold.ttf") format("truetype");
+  font-weight: bold;
+}
+.lang-fa {
+  font-family: parastoo, arial, verdana, sans-serif;
+}
+
+[dir=rtl] .langs ul {
+  left: 0;
+  right: auto;
+  text-align: left;
+}
+
+[dir=rtl] .stage .swiper-slide__content table td:first-child {
+  padding-left: 1.5rem;
+  padding-right: 0;
+}
+[dir=rtl] article section h2 {
+  margin-right: -1rem;
+  margin-left: 0;
+  clip-path: polygon(25% 0, 100% 0, 100% 100%, calc(25% + 30px) 100%);
+  text-transform: normal;
+}
+[dir=rtl] ul, [dir=rtl] ol {
+  padding-right: 0;
+}
+[dir=rtl] ol {
+  /*list-style: persian;*/
+  list-style: arabic-indic;
+}

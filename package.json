@@ -11,19 +11,17 @@
 		"precompile": "node node_modules/build/bin/clean.js",
 		"compile": "node node_modules/build/bin/compile.js",
 		"copy": "node node_modules/build/bin/copy.js",
-		"sass": "node node_modules/build/bin/sassTocss",
 		"hbs": "node node_modules/build/bin/hbs.js",
-		"tsc": "tsc -p .",
 		"watch": "node node_modules/build/bin/watch.js",
 		"server": "node node_modules/build/bin/server.js",
-		"serve": "npm run compile && npm run copy && npm run tsc && npm run sass && npm run hbs && npm run bundle",
-		"bundle": "rollup -c",
-		"start": "npm run serve && npm run watch & tsc -w & npm run server -- public 5000",
-		"build": "npm run serve",
+		"bundle": "node node_modules/build/bin/bundle.js",
+		"serve": "npm run compile && npm run copy && npm run hbs",
+		"start": "npm run serve && npm run bundle -- watch & npm run watch & npm run server -- public 5000",
+		"build": "npm run serve && npm run bundle",
 		"start-prod": "npm run build && npm run server -- public 3001"
 	},
 	"devDependencies": {
-		"build": "git://github.com/smohadjer/build.git#semver:^1.0.0"
+		"build": "git://github.com/smohadjer/build.git#semver:^2.0.5"
 	},
 	"dependencies": {
 		"@octokit/rest": "^20.0.1",
