@@ -24,26 +24,17 @@
     console.log('swiper is ready');
   }
 
-  window.setTimeout(()=>{
-    initFilters();
-  }, 1000);
-
-  function initFilters() {
-    console.log(document.querySelectorAll('article[data-filter-tag]'));
-    const filterElement = document.querySelector('main[data-filter-names]');
-    if (filterElement) {
-      const myFilter = new FilterList({
-        element: filterElement,
-        urlIsUpdatable: true
-      });
-
-    }
+  const filterElement = document.querySelector('main[data-filter-names]');
+  if (filterElement) {
+    const myFilter = new FilterList({
+      element: filterElement,
+      urlIsUpdatable: true
+    });
   }
-
 
   /*
   document.addEventListener('domReady', () => {
     console.log('domReady');
   });
-  */AnalyserNode
+  */
 </script>
