@@ -96,6 +96,7 @@
   .post code {
     background: #f0f0f0;
     font-family: monospace;
+    font-size: 18px;
     padding: 0.25em;
     border-radius: 5px;
   }
