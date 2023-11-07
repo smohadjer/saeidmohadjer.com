@@ -15,10 +15,9 @@
     display: flex;
   }
 
-  @media (min-width: 1024px) {
-    div.flex > div {
-      width: 33%;
-    }
+  div.flex > div {
+    width: 30%;
+    padding-right: 3%;
   }
 
   div.flex h4 {
