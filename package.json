@@ -26,7 +26,7 @@
 	"dependencies": {
 		"@octokit/rest": "^20.0.1",
 		"dotenv": "^16.0.3",
-		"filterlist": "^3.3.0",
+		"filterlist": "^3.4.4",
 		"hamburgers": "0.9.3",
 		"helpers": "git+https://github.com/smohadjer/helpers.git",
 		"marked": "^9.0.3",

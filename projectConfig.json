@@ -9,7 +9,7 @@
 		"js": [
 			"node_modules/handlebars/dist/handlebars.runtime.min.js",
 			"node_modules/swiper/swiper-bundle.min.js",
-			"node_modules/filterlist/dist/filterList.min.js",
+			"node_modules/filterlist/dist/filterlist.min.js",
 			"node_modules/prismjs/prism.js"
 		]
 	},
