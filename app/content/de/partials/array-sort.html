@@ -1,0 +1,28 @@
+<article data-filter-tag="javascript" class="post">
+    <time datetime="Thu Nov 16 2023 08:41:38 GMT+0000 (Coordinated Universal Time)">Thu Nov 16 2023</time>
+    <h1>Sorting an array by using another array to define the sort order</h1>
+    <div class="tags">
+      <span>javascript</span>
+    </div>
+    <div class="content">
+      <p>Sometimes you need to display data that you receive from backend in a custom order in frontend. Following snippet shows how to order objects in an array that you receive from backend via an order defined in a second array. Note that to avoid mutation we use WEB API&#39;s structuredClone() method instead of using spread syntax (...). </p>
+<pre><code>const myArray = [
+  {name: &#39;firstname&#39;, value: &#39;Tom&#39;},
+  {name: &#39;age&#39;, value: 61},
+  {name: &#39;lastname&#39;, value: &#39;Cruise&#39;}
+];
+const mySortOrder = [&#39;firstname&#39;, &#39;lastname&#39;, &#39;age&#39;];
+const sortArray = (myArray, mySortOrder) =&gt; {
+  myArray.sort((a, b) =&gt; {
+    const indexA = mySortOrder.indexOf(a.name);
+    const indexB = mySortOrder.indexOf(b.name);
+    return indexA - indexB;
+  });
+  return myArray;
+}
+const sortedArray = sortArray(structuredClone(myArray), mySortOrder);
+console.log(sortedArray);
+</code></pre>
+
+    </div>
+  </article>
