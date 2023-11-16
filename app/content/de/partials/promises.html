@@ -1,0 +1,48 @@
+<article data-filter-tag="javascript" class="post">
+    <time datetime="Thu Nov 16 2023 16:52:41 GMT+0000 (Coordinated Universal Time)">Thu Nov 16 2023</time>
+    <h1>How JavaScript Promises Saved us from Callback Hell</h1>
+    <div class="tags">
+      <span>javascript</span>
+    </div>
+    <div class="content">
+      <p>Before promises come to JavaScript we had to rely on callback functions if we needed something to be done after an async action. Let&#39;s say we have functions first and function second and we want them to run in sequence, however function first has some async actions happening inside it. This is how we used to run them before promises:</p>
+<pre><code class="language-javascript">function first(callback) {
+  console.log(&quot;first starting...&quot;);
+  
+  setTimeout(() =&gt; {
+    // do some stuff here
+    console.log(&quot;first ending...&quot;);
+    if (callback) {
+      callback();
+    }
+  }, 500);
+}
+
+function second() {
+  console.log(&quot;second starting...&quot;);
+}
+
+first(second);
+</code></pre>
+<p>Now with promises we can run these functions in sequence without resorting to callbacks:</p>
+<pre><code class="language-javascript">function first() {
+  console.log(&quot;first starting...&quot;);
+  
+  return promise = new Promise((resolve, reject) =&gt; {
+    setTimeout(() =&gt; {
+      console.log(&quot;first ending...&quot;);
+      resolve();
+    }, 500);
+  });
+}
+
+function second() {
+  console.log(&quot;second starting...&quot;);
+}
+
+first().then(second);
+</code></pre>
+<p>In other words, promises allow us to chain functions using their .then() method which is a cleaner syntax than using callback functions, specially when more functions need to run after one another.</p>
+
+    </div>
+  </article>
