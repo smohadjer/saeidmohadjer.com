@@ -16,7 +16,7 @@
 	"pages": [
 		{
 			"source": "app/content/en",
-			"target": "public/en"
+			"target": "public"
 		},
 		{
 			"source": "app/content/fa",
@@ -24,7 +24,7 @@
 		},
 		{
 			"source": "app/content/de",
-			"target": "public"
+			"target": "public/de"
 		},
 		{
 			"source": "app/content",

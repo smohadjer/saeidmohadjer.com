@@ -19,11 +19,7 @@ footer address {
     margin-bottom: 0;
   }
 }
-@media (min-width: 1024px) {
-  footer > div {
-    width: 40%;
-  }
-}
+
 footer > div p + p {
   margin-top: 1em;
 }

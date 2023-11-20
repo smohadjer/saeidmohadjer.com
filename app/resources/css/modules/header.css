@@ -4,7 +4,6 @@
   align-items: center;
   margin: 10px 15px 10px;
   flex-wrap: wrap;
-  font-family: Quicksand, arial, verdana, sans-serif;
 }
 @media (min-width: 768px) {
   .header {
@@ -16,14 +15,9 @@
     margin: 15px 20px 30px;
   }
 }
-@media (min-width: 1320px) {
-  .header {
-    margin-left: 0;
-    margin-right: 0;
-  }
-}
+
 .header .logo {
-  font-weight: bold;
+  font-weight: 500;
   font-size: 1.25rem;
   line-height: 1.4;
 }

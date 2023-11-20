@@ -1,40 +1,54 @@
 <script>
   var myApp = {};
 </script>
+<!--
 <script src="/resources/js/lib/handlebars.runtime.min.js"></script>
 <script src="/resources/js/lib/handlebars.templates.js"></script>
-<script src="/resources/js/lib/swiper-bundle.min.js"></script>
+-->
+
+{{#if (eq pageId 'service')}}
+  <script src="/resources/js/lib/swiper-bundle.min.js"></script>
+{{/if}}
+
+{{#if (eq pageId 'blog/index')}}
 <script src="/resources/js/lib/prism.js"></script>
+{{/if}}
+
 <script type="module" src="/resources/js/bundle.js"></script>
 
-<script type="module">
-  import FilterList from '/resources/js/lib/filterlist.min.js';
+{{#if (eq pageId 'blog/index')}}
+  <script type="module">
+    import FilterList from '/resources/js/lib/filterlist.min.js';
+    const filterElement = document.querySelector('main[data-filter-names]');
+    if (filterElement) {
+      const myFilter = new FilterList({
+        element: filterElement,
+        urlIsUpdatable: true
+      });
+    }
+  </script>
+{{/if}}
 
-  const swiperElm = document.querySelector('.swiper');
-  if (swiperElm) {
-    const swiper = new Swiper('.swiper', {
-      loop: true,
-		  speed: 750,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true
-      },
-      navigation: false
+{{#if (eq pageId 'service')}}
+  <script type="module">
+    const swiperElm = document.querySelector('.swiper');
+    if (swiperElm) {
+      const swiper = new Swiper('.swiper', {
+        loop: true,
+        speed: 750,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true
+        },
+        navigation: false
+      });
+      console.log('swiper is ready');
+    }
+
+    /*
+    document.addEventListener('domReady', () => {
+      console.log('domReady');
     });
-    console.log('swiper is ready');
-  }
-
-  const filterElement = document.querySelector('main[data-filter-names]');
-  if (filterElement) {
-    const myFilter = new FilterList({
-      element: filterElement,
-      urlIsUpdatable: true
-    });
-  }
-
-  /*
-  document.addEventListener('domReady', () => {
-    console.log('domReady');
-  });
-  */
-</script>
+    */
+  </script>
+{{/if}}

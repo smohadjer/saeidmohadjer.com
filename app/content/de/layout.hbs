@@ -1,3 +1,4 @@
+<!-- {{this.pageId}} -->
 <!doctype html>
 <html class="no-js" lang="de">
 <head>
@@ -5,7 +6,9 @@
 {{> de/partials/styles }}
 </head>
 <body>
-{{> de/partials/header pageId=this.pageId }}
+{{#unless (eq this.pageId 'index') }}
+  {{> de/partials/header pageId=this.pageId }}
+{{/unless}}
 {{> content }}
 {{> de/partials/footer }}
 {{> de/partials/scripts }}
