@@ -1,0 +1,7 @@
+<ul>
+  {{#unless (eq pageId 'index')}}<li><a href="/en">Home</a></li>{{/unless}}
+<!--
+  <li>{{#if (eq pageId 'service')}}<span>Service</span>{{else}}<a href="/en/service.html">Service</a>{{/if}}</li>
+-->
+  {{#unless (eq pageId 'blog/index')}}<li><a href="/en/blog">Blog</a></li>{{/unless}}
+</ul>
