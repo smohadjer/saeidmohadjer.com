@@ -17,8 +17,14 @@
 }
 
 #home .tags {
-  font-size: 24px;
+  font-size: 18px;
   margin-top: 0;
+}
+
+@media (min-width: 768px) {
+  #home .tags {
+    font-size: 24px;
+  }
 }
 
 #home .lead {
@@ -65,7 +71,7 @@
 .front,
 .back {
   backface-visibility: hidden; /* hide back of pane during swap */
-  background: white;
+  background: white; /* for iOS 12 or old browsers */
   top: 0;
   left: 0;
   width: 100%;
