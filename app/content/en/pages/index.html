@@ -1,9 +1,35 @@
 <main id="home">
-	<article>
-		<p>EN | <a href="/de">DE</a></p>
-		<h1><span>Saeid Mohadjer</span>
-			Fullstack Developer in Germany</h1>
-		<p class="tags">JavaScript, TypeScript, Node.js, React, MongoDB</p>
-		<p class="lead">Design and Development of Web Applications, Responsive Websites, and Rest APIs</p>
+	<article class="flip-container">
+		<p id="flip">
+			<a class="link" href="/">EN</a></p>
+			<div class="flipper">
+				<div class="front">
+					<h1><span>Saeid Mohadjer</span>
+						Full-Stack Entwickler in Deutschland</h1>
+					<p class="tags">JavaScript, TypeScript, Node.js, React, MongoDB</p>
+					<p class="lead">Design und Entwicklung von Webanwendungen, responsiven Websites und Rest-APIs</p>
+				</div>
+				<div class="back">
+					<h1><span>Saeid Mohadjer</span>
+						Fullstack Developer in Germany</h1>
+					<p class="tags">JavaScript, TypeScript, Node.js, React, MongoDB</p>
+					<p class="lead">Design and Development of Web Applications, Responsive Websites, and Rest APIs</p>
+				</div>
+			</div>
+
 	</article>
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+				let degree = 180;
+				const flipper = document.querySelector('.flipper');
+				const link = document.querySelector('#flip a');
+
+				link.addEventListener('click', (event) => {
+					  event.preventDefault();
+						flipper.style.transform = `rotateY(${degree}deg)`;
+						degree += 180;
+						link.textContent = link.textContent === 'EN' ? 'DE' : 'EN';
+				});
+		});
+</script>
 </main>

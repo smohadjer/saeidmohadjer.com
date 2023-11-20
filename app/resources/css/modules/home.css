@@ -2,7 +2,11 @@
 #home {
   min-height: 100vh;
   display: flex;
-  justify-content: center;
+  align-items: center;
+}
+
+#home #flip {
+  margin-bottom: 0.5em;
 }
 
 #home + footer {
@@ -34,7 +38,6 @@
 
 #home article {
   padding-bottom: 30px;
-  align-self: center;
   text-align: center;
   max-width: 70ch;
   font-family: BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -43,3 +46,35 @@
     text-decoration: none;
   }
 }
+
+
+			/* entire container, keeps perspective */
+			.flip-container {
+				perspective: 800px;
+        width: 100%;
+        margin: 0 auto;
+			}
+
+			.flipper {
+				transition: 1s;
+				transform-style: preserve-3d;
+				transform-origin: 50% 50%;
+				position: relative;
+				width: 100%;
+				height: 100%;
+			}
+
+			.front,
+			.back {
+				backface-visibility: hidden; /* hide back of pane during swap */
+
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+			}
+
+			.back {
+        position: absolute;
+				transform: rotateY(180deg); /* initially hidden pane */
+			}
