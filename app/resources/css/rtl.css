@@ -1,11 +1,11 @@
 @font-face {
   font-family: "parastoo";
-  src: url("../../fonts/parastoo/Parastoo.ttf") format("truetype");
+  src: url("../fonts/parastoo/Parastoo.ttf") format("truetype");
   font-weight: normal;
 }
 @font-face {
   font-family: "parastoo";
-  src: url("../../fonts/parastoo/Parastoo-Bold.ttf") format("truetype");
+  src: url("../fonts/parastoo/Parastoo-Bold.ttf") format("truetype");
   font-weight: bold;
 }
 .lang-fa {

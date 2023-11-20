@@ -4,7 +4,7 @@ html {
   font-family: "OpenSans", arial, verdana, snas-serif;
   color: #333;
   scroll-behavior: smooth; /* so that links to hash targets scroll with animation */
-  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 @media only screen and (min-width: 1024px) {
   html {
