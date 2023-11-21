@@ -61,7 +61,7 @@
 
 /* entire container, keeps perspective */
 .flip-container {
-  perspective: 600px;
+  perspective: 800px;
   width: 100%;
   margin: 0 auto;
 }
