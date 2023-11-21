@@ -10,7 +10,9 @@
 	    {{> en/partials/header pageId=this.pageId }}
     {{/unless}}
     {{> content }}
-    {{> en/partials/footer }}
-    {{> en/partials/scripts }}
+    {{#unless (eq this.pageId 'index') }}
+        {{> en/partials/footer }}
+        {{> en/partials/scripts }}
+    {{/unless}}
 	</body>
 </html>
