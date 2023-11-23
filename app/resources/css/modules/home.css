@@ -19,13 +19,17 @@
 }
 
 #home .tags {
-  font-size: 18px;
   margin-top: 0;
+  font-family: monospace;
+  font-size: 14px;
+  background: #ddd;
+  display: inline-block;
+  padding: 0.5em 1em;
 }
 
 @media (min-width: 768px) {
   #home .tags {
-    font-size: 20px;
+    font-size: 16px;
   }
 }
 
