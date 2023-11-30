@@ -9,7 +9,7 @@
     {{#unless (eq this.pageId 'index') }}
 	    {{> en/partials/header pageId=this.pageId }}
     {{/unless}}
-    {{> content }}
+{{> content }}
     {{#unless (eq this.pageId 'index') }}
         {{> en/partials/footer }}
         {{> en/partials/scripts }}
