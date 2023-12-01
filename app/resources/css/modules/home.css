@@ -39,7 +39,7 @@
 }
 
 .lead + p {
-  margin-top: 0.5em;
+  margin-top: 0.25em;
 }
 
 #home article h1 {
@@ -92,4 +92,12 @@
 .back {
   position: absolute;
   transform: rotateY(180deg); /* initially hidden pane */
+}
+
+.contact {
+  line-height: 1.8;
+
+  & span {
+    display: block;
+  }
 }
