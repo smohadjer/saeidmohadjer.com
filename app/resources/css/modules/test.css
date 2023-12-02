@@ -1,0 +1,153 @@
+
+@font-face {
+    font-family: "Noto";
+    src: url("../../fonts/NotoSansLinearA-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-display: swap;
+}
+
+@keyframes slidein {
+    from {
+        height: 0;
+    }
+    to {
+       height: 100%;
+    }
+}
+
+@keyframes slideup {
+    from {
+        top: 100%;
+    }
+    to {
+       top: 0
+    }
+}
+
+@keyframes slideLeft {
+    from {
+        margin-right: -350px;
+    }
+
+    to {
+        margin-right: 0px;
+    }
+}
+
+@keyframes slideRight {
+    from {
+        left: -440px;
+    }
+
+    to {
+        left: 0px;
+    }
+}
+
+#test {
+    & article {
+        height: 100vh;
+        display: flex;
+        padding: 0;
+        font-family: "Noto";
+        position: relative;
+    }
+
+    & .left,
+    & .right {
+        width: 50vw;
+        background: black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        box-sizing: border-box;
+        overflow: hidden;
+        transition-timing-function: cubic-bezier(0.020, 0.345, 0.025, 0.915); /* custom */
+
+    }
+
+    & .left {
+        color: white;
+        text-align: right;
+        padding-right: 2vw;
+        animation: slidein 1s;
+    }
+
+    & .right {
+        height: 100%;
+        background: #eee;
+        padding-left: 2vw;
+        position: relative;
+        animation: slideup 1s;
+    }
+
+    & h1 {
+        font-size: 24px;
+        font-family: inherit;
+        margin-top: -20vh;
+        animation: slideLeft 2s forwards;
+        transition-timing-function: cubic-bezier(0.020, 0.345, 0.025, 0.915); /* custom */
+        animation-fill-mode: both;
+        animation-delay: 0.65s;
+
+        @media (min-width: 1024px) {
+            font-size: 34px;
+        }
+    }
+
+    & h2 {
+        margin: 0;
+        font-size: 18px;
+        font-weight: normal;
+        font-family: inherit;
+        letter-spacing: 0.05em;
+        animation: slideLeft 2s forwards;
+        transition-timing-function: cubic-bezier(0.020, 0.345, 0.025, 0.915); /* custom */
+        animation-delay: 0.75s;
+        animation-fill-mode: both;
+
+        @media (min-width: 1024px) {
+            font-size: 24px;
+        }
+    }
+
+    & p {
+        margin: 0;
+        font-family: inherit;
+        font-size: 14px;
+        position: relative;
+        animation: slideRight 2s forwards;
+        transition-timing-function: cubic-bezier(0.020, 0.345, 0.025, 0.915); /* custom */
+        animation-fill-mode: both;
+        animation-delay: 0.75s;
+
+        @media (min-width: 1024px) {
+            font-size: 16px;
+        }
+
+        &:first-child {
+            margin-top: 20vh;
+        }
+
+        & strong {
+            font-weight: 500;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 16px;
+
+            @media (min-width: 1024px) {
+                font-size: 18px;
+            }
+        }
+
+        + p {
+            margin-top: 1em;
+            animation-delay: 0.85s;
+        }
+    }
+}
+
+footer {
+    margin: 0;
+    display: none;
+}
+

@@ -1,0 +1,35 @@
+<main id="home">
+	<article class="flip-container">
+		<p id="flip"><a class="link" href="/">EN</a></p>
+		<div class="flipper">
+			<div class="front">
+				<h1><span>Saeid Mohadjer</span>
+					Senior Full-Stack Entwickler</h1>
+				<p class="tags">HTML, CSS, JavaScript, TypeScript, Node.js, React</p>
+				<p class="lead">Design und Entwicklung von Webanwendungen, responsiven Websites und Rest-APIs</p>
+				<p class="contact"><a href="mailto:info@saeidmohadjer.com">info@saeidmohadjer.com</a><span>Fon: +49 176 8826 9966</span></p>
+			</div>
+			<div class="back">
+				<h1><span>Saeid Mohadjer</span>
+					Senior Fullstack Developer</h1>
+				<p class="tags">HTML, CSS, JavaScript, TypeScript, Node.js, React</p>
+				<p class="lead">Design and Development of Web Applications, Responsive Websites, and Rest APIs</p>
+				<p class="contact"><a href="mailto:info@saeidmohadjer.com">info@saeidmohadjer.com</a><span>Tel: +49 176 8826 9966</span></p>
+			</div>
+		</div>
+	</article>
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+				let degree = 180;
+				const flipper = document.querySelector('.flipper');
+				const link = document.querySelector('#flip a');
+
+				link.addEventListener('click', (event) => {
+					  event.preventDefault();
+						flipper.style.transform = `rotateY(${degree}deg)`;
+						degree += 180;
+						link.textContent = link.textContent === 'EN' ? 'DE' : 'EN';
+				});
+		});
+</script>
+</main>
