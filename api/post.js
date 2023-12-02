@@ -28,14 +28,14 @@ const includePostInBlog = async (blogPostFileName) => {
   const { data } = await octokit.request(`GET /repos/{owner}/{repo}/contents/{path}`, {
     owner: 'smohadjer',
     repo: 'saeidmohadjer.com',
-    path: 'app/content/de/pages/blog/index.html'
+    path: 'app/content/en/pages/blog/index.html'
   });
 
   const buf = new Buffer.from(data.content, 'base64');
   const oldContent = buf.toString('ascii');
-  const link = `{{> de/partials/${blogPostFileName.replace('.html', '')} }}`
+  const link = `{{> en/partials/${blogPostFileName.replace('.html', '')} }}`
   const newContent = oldContent.replace('<!--insert here-->', '<!--insert here-->\n' + link);
-  await updateOrCreateFile('app/content/de/pages/blog/index.html', newContent, data.sha);
+  await updateOrCreateFile('app/content/en/pages/blog/index.html', newContent, data.sha);
 };
 
 const updateOrCreateFile = async (filePath, content, sha) => {
@@ -71,7 +71,7 @@ const getBlogPostContent = (req) => {
 };
 
 export default async function handler(req, res) {
-  const blogPostPath = `app/content/de/partials/${req.body.slug}`;
+  const blogPostPath = `app/content/en/partials/${req.body.slug}`;
   const blogPostContent =  getBlogPostContent(req);
   const blogPostSHA = await getBlogPostSHA(blogPostPath);
 
