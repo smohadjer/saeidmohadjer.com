@@ -2,8 +2,8 @@
   text-decoration: none;
 }
 
-.blog .back-link {
-  margin-bottom: 2em;
+.blog .back {
+  font-size: smaller;
 }
 
 @media (min-width: 1024px) {

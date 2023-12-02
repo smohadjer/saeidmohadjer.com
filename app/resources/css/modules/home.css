@@ -63,41 +63,45 @@
   }
 }
 
-/* entire container, keeps perspective */
-.flip-container {
-  perspective: 800px;
-  width: 100%;
-  margin: 0 auto;
-}
+#home {
 
-.flipper {
-  transition: 1s;
-  transform-style: preserve-3d;
-  transform-origin: 50% 50%;
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.front,
-.back {
-  backface-visibility: hidden; /* hide back of pane during swap */
-  background: white; /* for iOS 12 or old browsers */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.back {
-  position: absolute;
-  transform: rotateY(180deg); /* initially hidden pane */
-}
-
-.contact {
-  line-height: 1.8;
-
-  & span {
-    display: block;
+  /* entire container, keeps perspective */
+  .flip-container {
+    perspective: 800px;
+    width: 100%;
+    margin: 0 auto;
   }
+
+  .flipper {
+    transition: 1s;
+    transform-style: preserve-3d;
+    transform-origin: 50% 50%;
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .front,
+  .back {
+    backface-visibility: hidden; /* hide back of pane during swap */
+    background: white; /* for iOS 12 or old browsers */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .back {
+    position: absolute;
+    transform: rotateY(180deg); /* initially hidden pane */
+  }
+
+  .contact {
+    line-height: 1.8;
+
+    & span {
+      display: block;
+    }
+  }
+
 }
