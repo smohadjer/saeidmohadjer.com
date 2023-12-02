@@ -93,7 +93,7 @@
 
 
         @media (min-width: 1024px) {
-            font-size: 34px;
+            font-size: 38px;
         }
     }
 
@@ -146,6 +146,10 @@
         + p {
             margin-top: 1em;
             animation-delay: 0.85s;
+
+            & a {
+                text-decoration: none;
+            }
         }
     }
 }
