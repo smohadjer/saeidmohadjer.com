@@ -26,11 +26,11 @@
 
 @keyframes slideLeft {
     from {
-        margin-right: -350px;
+        right: -350px;
     }
 
     to {
-        margin-right: 0px;
+        right: 0px;
     }
 }
 
@@ -82,13 +82,15 @@
     }
 
     & h1 {
-        font-size: 24px;
+        font-size: 22px;
         font-family: inherit;
         margin-top: -20vh;
         animation: slideLeft 2s forwards;
         transition-timing-function: cubic-bezier(0.020, 0.345, 0.025, 0.915); /* custom */
         animation-fill-mode: both;
         animation-delay: 0.65s;
+        position: relative;
+
 
         @media (min-width: 1024px) {
             font-size: 34px;
@@ -97,7 +99,7 @@
 
     & h2 {
         margin: 0;
-        font-size: 18px;
+        font-size: 16px;
         font-weight: normal;
         font-family: inherit;
         letter-spacing: 0.05em;
@@ -105,6 +107,8 @@
         transition-timing-function: cubic-bezier(0.020, 0.345, 0.025, 0.915); /* custom */
         animation-delay: 0.75s;
         animation-fill-mode: both;
+        position: relative;
+
 
         @media (min-width: 1024px) {
             font-size: 24px;
