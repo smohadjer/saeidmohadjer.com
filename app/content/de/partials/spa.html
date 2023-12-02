@@ -1,0 +1,56 @@
+<article data-filter-tag="javascript" class="post">
+    <time datetime="Sat Dec 02 2023 09:24:23 GMT+0000 (Coordinated Universal Time)">Sat Dec 02 2023</time>
+    <h1>Converting a MPA to SPA using only a few lines of JavaScript</h1>
+    <div class="tags">
+      <span>javascript</span>
+    </div>
+    <div class="content">
+      <p>If you want to build a SPA (single page application) from a MPA (multi page application) you don&#39;t always need a giant framework. What you need mainly is to set an event handler on your links to disable their default behaviour, then invoke the function that updates your page, and lastly push a new history to browser history to update the URL without refreshing the page. Below is example of a typescript function that does this:</p>
+<pre><code class="language-js">
+function enableSpaMode() {
+    document.querySelector(&#39;main&#39;)?.addEventListener(&#39;click&#39;, (e) =&gt; {
+        const link = e.target as HTMLAnchorElement;
+        if (link.nodeName === &#39;A&#39;) {
+            e.preventDefault();
+
+            const href = link.getAttribute(&#39;href&#39;)!;
+
+            // Do nothing when link to current page is clicked
+            if (link.search === window.location.search) {
+                return;
+            }
+
+            // update state using queries in link
+            const params = new URLSearchParams(link.search);
+            if (params.size &gt; 0) {
+                for (const [key, value] of params) {
+                    state[key] = value;
+                }
+            }
+
+            // invoke function that updates your page
+            render(state);
+
+            // update browser history and url
+            window.history.pushState(state, &#39;&#39;, href);
+        }
+    });
+
+    // add support for browser back button
+    window.addEventListener(&quot;popstate&quot;, function(e) {
+        render(e.state);
+    });
+}
+</code></pre>
+<p>Since when user lands on your app for the first time, browser automatically stores the history without a state, we need to replace that history after app has updated the state and rendered the page by calling history&#39;s replaceState method:</p>
+<pre><code>window.history.replaceState(state, &#39;&#39;, window.location.search);
+</code></pre>
+<p>You can see the complete script here:
+<a href="https://github.com/smohadjer/pokerrangliste/blob/master/public/ts/index.ts">https://github.com/smohadjer/pokerrangliste/blob/master/public/ts/index.ts</a></p>
+<p>And here is the example of a SPA that uses this script:
+<a href="https://tournaments.myendpoint.de/">https://tournaments.myendpoint.de/</a></p>
+<p>Public repo on GitHub at:
+<a href="https://github.com/smohadjer/pokerrangliste">https://github.com/smohadjer/pokerrangliste</a></p>
+
+    </div>
+  </article>
