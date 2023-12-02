@@ -19,7 +19,7 @@
 {{#if (eq pageId 'blog/index')}}
   <script type="module">
     import FilterList from '/resources/js/lib/filterlist.min.js';
-    const filterElement = document.querySelector('main[data-filter-names]');
+    const filterElement = document.querySelector('[data-filter-names]');
     if (filterElement) {
       const myFilter = new FilterList({
         element: filterElement,

@@ -6,9 +6,9 @@
     {{> en/partials/styles }}
 	</head>
 	<body>
-    {{#unless (eq this.pageId 'index') }}
+    {{#if (eq this.pageId 'service') }}
 	    {{> en/partials/header pageId=this.pageId }}
-    {{/unless}}
+    {{/if}}
 {{> content }}
     {{#unless (eq this.pageId 'index') }}
         {{> en/partials/footer }}

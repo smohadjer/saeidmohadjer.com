@@ -1,32 +1,38 @@
+.blog a {
+  text-decoration: none;
+}
+
+.blog .back-link {
+  margin-bottom: 2em;
+}
+
+@media (min-width: 1024px) {
+  main.blog {
+      margin: 2em auto 0;
+      max-width: 80ch;
+  }
+}
+
 .post {
     border-bottom: solid 1px #ccc;
     padding: 0 0 1.5em;
     margin: 0 15px 1em;
   }
+  .last {
+    border: 0;
+  }
   @media (min-width: 1024px) {
     .post {
-      margin: 0 20px 1em;
-    }
-  }
-  @media (min-width: 1320px) {
-    .post {
-      margin-left: 0;
-      margin-right: 0;
+      margin: 0 0 1em;
     }
   }
 
   .filters {
-    margin: 0 15px 1.5em;
+    margin: 0 15px 2em;
   }
   @media (min-width: 1024px) {
     .filters {
-      margin: 0 20px 1.5em;
-    }
-  }
-  @media (min-width: 1320px) {
-    .filters {
-      margin-left: 0;
-      margin-right: 0;
+      margin: 0 0 3em;
     }
   }
 
