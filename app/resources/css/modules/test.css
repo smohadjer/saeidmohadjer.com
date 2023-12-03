@@ -90,7 +90,7 @@ html, body {
     & h1 {
         font-size: 22px;
         font-family: inherit;
-        margin-top: -20vh;
+        margin-top: -30vh;
         animation: slideLeft 2s forwards;
         transition-timing-function: cubic-bezier(0.020, 0.345, 0.025, 0.915); /* custom */
         animation-fill-mode: both;
@@ -100,6 +100,7 @@ html, body {
 
         @media (min-width: 1024px) {
             font-size: 38px;
+            margin-top: -20vh;
         }
     }
 
@@ -130,14 +131,19 @@ html, body {
         transition-timing-function: cubic-bezier(0.020, 0.345, 0.025, 0.915); /* custom */
         animation-fill-mode: both;
         animation-delay: 0.75s;
+        &:first-child {
+            margin-top: -5vh;
+        }
 
         @media (min-width: 1024px) {
             font-size: 16px;
+
+            &:first-child {
+                margin-top: 20vh;
+            }
         }
 
-        &:first-child {
-            margin-top: 20vh;
-        }
+
 
         & strong {
             font-weight: 500;
