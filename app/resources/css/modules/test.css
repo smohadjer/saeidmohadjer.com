@@ -36,12 +36,18 @@
 
 @keyframes slideRight {
     from {
-        left: -440px;
+        left: -460px;
     }
 
     to {
         left: 0px;
     }
+}
+
+
+html, body {
+    height: 100%;
+    overflow: hidden;
 }
 
 #test {
