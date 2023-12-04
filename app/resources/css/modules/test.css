@@ -91,10 +91,16 @@ html.home, .home body {
 
         & .teaser {
             display: flex;
+            flex-direction: column;
+            gap: 0.25em;
             margin-top: 1.5em;
-            gap: 1em;
             justify-content: flex-end;
             animation: fadeIn 2s 2s both ease-out;
+
+            @media (min-width: 768px) {
+                flex-direction: row;
+                gap: 1em;
+            }
 
             & p {
                 margin-top: -3px;
