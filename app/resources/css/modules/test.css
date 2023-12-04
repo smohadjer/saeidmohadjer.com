@@ -6,6 +6,16 @@
     font-display: swap;
 }
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
 @keyframes slidein {
     from {
         height: 0;
@@ -45,7 +55,7 @@
 }
 
 
-html, body {
+html.home, .home body {
     height: 100%;
     overflow: hidden;
 }
@@ -78,6 +88,20 @@ html, body {
         animation: slidein 1s;
         transition-timing-function: cubic-bezier(0.020, 0.345, 0.025, 0.915); /* custom */
         animation-fill-mode: both;
+
+        & .teaser {
+            display: flex;
+            margin-top: 1.5em;
+            gap: 1em;
+            justify-content: flex-end;
+            animation: fadeIn 2s 2s both ease-out;
+
+            & p {
+                margin-top: -3px;
+                font-size: 18px;
+            }
+
+        }
     }
 
     & .right {
@@ -125,7 +149,7 @@ html, body {
         }
     }
 
-    & p {
+    & .right p {
         margin: 0;
         font-family: inherit;
         font-size: 14px;
@@ -169,7 +193,7 @@ html, body {
     }
 }
 
-footer {
+.home footer {
     margin: 0;
     display: none;
 }
