@@ -164,8 +164,10 @@ html.home, .home body {
         transition-timing-function: cubic-bezier(0.020, 0.345, 0.025, 0.915); /* custom */
         animation-fill-mode: both;
         animation-delay: 0.75s;
+
         &:first-child {
             margin-top: -5vh;
+            max-width: 40ch;
         }
 
         @media (min-width: 1024px) {
