@@ -107,6 +107,13 @@ html.home, .home body {
                 font-size: 18px;
             }
 
+            & .link {
+                width: 150px;
+                font-size: 16px;
+                color: white;
+                text-align: left;
+            }
+
         }
     }
 
