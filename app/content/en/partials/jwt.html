@@ -9,15 +9,15 @@
     <ul>
       <li>User authenticates himself to authorization server using a login form.</li>
       <li>Server verifies user's credentials and generates an access token. The token is sent to client either in body of the response or as a HttpOnly cookie in response header.</li>
-      </li>If token was sent via cookie, application running in browser now has access to API until token or cookie expires. If application uses JavaScript's Fetch API to access API endpoints, then <code>"credentails": "same-origin"</code> should be set in all fetch requests, otherwise there is no need for application to do anything in regards to token. If token was not sent in cookie, but in body of response, then JavaScript should get the token from response and set    <code>headers: {'Authorization': 'Bearer ' +  accessToken}</code> in all fetch calls to api endpoints.
+      </li>If token was sent via cookie, application running in browser now has access to API until token or cookie expires. If application uses JavaScript's <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API">Fetch API</a> to access API endpoints, then <code>"credentails": "same-origin"</code> should be set in all fetch requests, otherwise there is no need for application to do anything in regards to token. If token was not sent in cookie, but in body of response, then JavaScript should get the token from response and set    <code>headers: {'Authorization': 'Bearer ' +  accessToken}</code> in all fetch calls to api endpoints.
       <li>On the server a middleware checks the requests for API endpoints and reads the token from request's cookie or authorization header. If token is not found, we return a 403 forbidden error and if token is found, but is expired we return a 401 unauthorized error. If the token exists and is valid, the request continues to reach the endpoint.</li>
     </ul>
-    <p>JWT authentication via HttpOnly Cookie:</p>
+    <p>Example of JWT authentication via HttpOnly Cookie:</p>
     <ul>
       <li><a href="https://github.com/smohadjer/jwt-cookie">Code on GitHub</a></li>
       <li><a href="https://jwt-cookie-saeid-fastmailfm.vercel.app/">Demo</a></li>
     </ul>
-    <p>JWT authentication via Bearer Authorization header:</p>
+    <p>Example of JWT authentication via Bearer Authorization header:</p>
     <ul>
       <li><a href="https://github.com/smohadjer/jwt-js">Code on GitHub</a></li>
       <li><a href="https://jwt-js-saeid-fastmailfm.vercel.app/">Demo</a></li>
