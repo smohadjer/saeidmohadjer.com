@@ -5,49 +5,22 @@
     <span>authentication</span>
   </div>
 <div class="content">
-    <p>There are two ways to secure API endpoints using JWT tokens. The workflow consists of following steps:</p>
+    <p>To secure API endpoints using access tokens (JWT), the tokens can be exchanged between client and server either via a cookie in request and response header or using authorization header of request and body of response object. The workflow is explained in following steps:</p>
     <ul>
-      <li>User authenticates himself to authorization server.</li>
-      <li>Server verifies credentials and generates an access token. The token can be sent to client either in body of the response or as a HttpOnly cookie in response header.</li>
+      <li>User authenticates himself to authorization server using a login form.</li>
+      <li>Server verifies user's credentials and generates an access token. The token is sent to client either in body of the response or as a HttpOnly cookie in response header.</li>
       </li>If token was sent via cookie, application running in browser now has access to API until token or cookie expires. If application uses JavaScript's Fetch API to access API endpoints, then <code>"credentails": "same-origin"</code> should be set in all fetch requests, otherwise there is no need for application to do anything in regards to token. If token was not sent in cookie, but in body of response, then JavaScript should get the token from response and set    <code>headers: {'Authorization': 'Bearer ' +  accessToken}</code> in all fetch calls to api endpoints.
       <li>On the server a middleware checks the requests for API endpoints and reads the token from request's cookie or authorization header. If token is not found, we return a 403 forbidden error and if token is found, but is expired we return a 401 unauthorized error. If the token exists and is valid, the request continues to reach the endpoint.</li>
     </ul>
-
-
-<p>The following code shows example of a Node.js Express middleware that implements such verification using jsonwebtoken package from npm:</p>
-<pre><code class="language-js">import jwt from 'jsonwebtoken';
-export default (req, res, next) => {
-  const authHeader = req.headers['authorization'];
-
-  if (authHeader) {
-    const token = authHeader.split(' ')[1];
-    try {
-      const decoded = jwt.verify(token, 'mySecret');
-      next();
-    } catch(err) {
-      res.sendStatus(401);
-    }
-  } else {
-    res.sendStatus(403);
-  }
-}
-</code></pre>
-<p>When a user authenticates himself by posting credentials to the server, server will generate an access token such as a JWT and send it back to user in body of the response.</p>
-<pre><code class="language-js">import jwt from 'jsonwebtoken';
-export default async (req, res) => {
-  const {username, password} = req.body;
-  if (username === 'lorem' && password === 'ipsum') {
-    const token = jwt.sign({
-      username: username
-    }, 'mySecret', {expiresIn: '8h'});
-    res.json({
-      "access_token": token
-    });
-  } else {
-    res.sendStatus(403);
-  }
-}
-</code></pre>
-<p>This token then will be fetched on client side and will be sent in authorization header of requests to the API.</p>
+    <p>JWT authentication via HttpOnly Cookie:</p>
+    <ul>
+      <li><a href="https://github.com/smohadjer/jwt-cookie">Code on GitHub</a></li>
+      <li><a href="https://jwt-cookie-saeid-fastmailfm.vercel.app/">Demo</a></li>
+    </ul>
+    <p>JWT authentication via Bearer Authorization header</p>
+    <ul>
+      <li><a href="https://github.com/smohadjer/jwt-js">Code on GitHub</a></li>
+      <li><a href="https://jwt-js-saeid-fastmailfm.vercel.app/">Demo</a></li>
+    </ul>
 </div>
 </article>
