@@ -1,12 +1,18 @@
 <article data-filter-tag="node.js authentication" data-filter-title="jwt" class="post">
   <time datetime="Thu Oct 19 2023 19:08:54 GMT+0000 (Coordinated Universal Time)">Thu Oct 19 2023</time>
-  <h1>Securing API endpoints with JWT tokens</h1>
+  <h1>JWT authentication via HttpOnly cookie or Bearer Auhtorization header</h1>
   <div class="tags">
-    <span>node.js</span>
     <span>authentication</span>
   </div>
 <div class="content">
-    <p>To secure REST API endpoints only requests with a valid access token in their authorization header should reach the endpoints. Requests without an authorization header should return 403 Forbidden error and those without a valid token should return 401 Unauthorized error. Such verification can be done in a middleware function so that API itself does not need to be touched or know anything about authentication at all.</p>
+    <p>There are two ways to secure API endpoints using JWT tokens. The workflow consists of following steps:</p>
+    <ul>
+      <li>User authenticates himself to authorization server.</li>
+      <li>Server verifies credentials and generates an access token. The token can be sent to client either in body of the response or as a HttpOnly cookie in response header.</li>
+      </li>If token was sent via cookie, application running in browser now has access to API until token or cookie expires. If application uses JavaScript's Fetch API to access API endpoints, then <code>"credentails": "same-origin"</code> should be set in all fetch requests, otherwise there is no need for application to do anything in regards to token. If token was not sent in cookie, but in body of response, then JavaScript should get the token from response and set    <code>headers: {'Authorization': 'Bearer ' +  accessToken}</code> in all fetch calls to api endpoints.
+      <li>On the server a middleware checks the requests for API endpoints and reads the token from request's cookie or authorization header. If token is not found, we return a 403 forbidden error and if token is found, but is expired we return a 401 unauthorized error. If the token exists and is valid, the request continues to reach the endpoint.</li>
+    </ul>
+
 
 <p>The following code shows example of a Node.js Express middleware that implements such verification using jsonwebtoken package from npm:</p>
 <pre><code class="language-js">import jwt from 'jsonwebtoken';
