@@ -1,163 +1,168 @@
 * {
     margin-bottom: 0;
-  }
+}
 
-  @media print {
-    .pdf {
-      display: none;
-    }
-    h3 {
-      page-break-after: avoid;
-    }
+@media print {
+  .pdf {
+    display: none;
   }
-
-  div.flex {
-    display: flex;
+  h3 {
+    page-break-after: avoid;
   }
+}
 
-  div.flex > div {
-    width: 30%;
-    padding-right: 3%;
-  }
+.flex {
+  display: flex;
+}
 
-  div.flex h4 {
-    margin-bottom: 0;
-  }
+div.flex > div {
+  width: 30%;
+  padding-right: 3%;
+}
 
-  div.flex ul {
-    margin-top: 0;
-  }
+div.flex h4 {
+  margin-bottom: 0;
+}
 
-  div.flex li span {
-    background: #eee;
-    color: #555;
-    padding: 3px 7px;
-    border-radius: 50%;
-    font-size: smaller;
-    position: relative;
-    top: -1px;
-  }
+div.flex ul {
+  margin-top: 0;
+}
 
+div.flex li span {
+  background: #eee;
+  color: #555;
+  padding: 3px 7px;
+  border-radius: 50%;
+  font-size: smaller;
+  position: relative;
+  top: -1px;
+}
+
+.flex img {
+  margin: 0 1em 1em 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  max-width: 80ch;
+  margin: 1rem;
+  line-height: 1.3;
+}
+
+@media (min-width: 1024px) {
   body {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1rem;
-    max-width: 80ch;
-    margin: 1rem;
-    line-height: 1.3;
+    font-size: 1.2rem;
   }
+}
+@media (min-width: 100ch) {
+  body {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.deprecated {
+  text-decoration: line-through;
+}
 
-  @media (min-width: 1024px) {
-    body {
-      font-size: 1.2rem;
-    }
-  }
-  @media (min-width: 100ch) {
-    body {
-      margin-left: auto;
-      margin-right: auto;
-    }
-  }
-  .deprecated {
-    text-decoration: line-through;
-  }
+.align-center {
+  text-align: center;
+}
 
-  .align-center {
-    text-align: center;
-  }
+header {
+  text-align: center;
+  margin: 2em 0;
+  padding: 1em 0;
+}
 
+@media (min-width: 768px) {
   header {
-    text-align: center;
-    margin: 2em 0;
-    padding: 1em 0;
-  }
-
-  @media (min-width: 768px) {
-    header {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    header img {
-      margin-right: 1em;
-    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   header img {
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
+    margin-right: 1em;
   }
+}
 
-  @media (min-width: 1024px) {
-    header > div {
-      width: auto;
-    }
-  }
+header img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+}
 
-  header p {
-    font-size: 16px;
-    margin-top: 0.5em;
+@media (min-width: 1024px) {
+  header > div {
+    width: auto;
   }
+}
 
-  p.lead {
-    text-align: center;
-    font-size: larger;
-  }
+header p {
+  font-size: 16px;
+  margin-top: 0.5em;
+}
 
-  *:first-child {
-    margin-top: 0;
-  }
+p.lead {
+  text-align: center;
+  font-size: larger;
+}
 
-  h1 {
-    font-size: 2rem;
-    margin: 0;
-  }
+*:first-child {
+  margin-top: 0;
+}
 
-  h1, h2 {
-    text-align: center;
-    font-weight: 500;
-  }
+h1 {
+  font-size: 2rem;
+  margin: 0;
+}
 
-  h2 {
-    font-size: 1.3rem;
-    margin-top: 0.25em;
-  }
+h1, h2 {
+  text-align: center;
+  font-weight: 500;
+}
 
-  h3 {
-    margin-top: 2rem;
-  }
+h2 {
+  font-size: 1.3rem;
+  margin-top: 0.25em;
+}
 
-  h4 {
-    font-size: 18px;
-  }
+h3 {
+  margin-top: 2rem;
+}
 
-  h3 + *,
-  h4 + * {
-    margin-top: 0.25rem;
-  }
+h3 + *,
+h4 + * {
+  margin-top: 0.25rem;
+}
 
-  ul {
-    padding-left: 15px;
-    margin-top: 0.5em;
-  }
+ul {
+  padding-left: 15px;
+  margin-top: 0.5em;
+}
 
-  ul li {
-    margin-top: 0.5rem;
-  }
+ul li {
+  margin-top: 0.5rem;
+}
 
-  dt {
-    font-weight: bold;
-  }
+dt {
+  font-weight: bold;
+}
 
-  dd {
-    margin-left: 0;
-  }
+dd {
+  margin-left: 0;
+}
 
-  dd + dt {
-    margin-top: 0.5rem;
-  }
+dd + dt {
+  margin-top: 0.5rem;
+}
 
-  #projects + ul li + li {
-    margin-top: 1rem;
-  }
+#projects + ul li + li {
+  margin-top: 1rem;
+}
+
+.no-bullet {
+  list-style-type: none;
+  padding-left: 0;
+}

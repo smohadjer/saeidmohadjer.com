@@ -57,21 +57,27 @@
 	</dl>
 
 	<h3 id="projects">Projects</h3>
-	<ul>
-		<li>
-			<h4>Tournament Organizer</h4>
-			<p>This single page app (SPA) allows tournament organizers to display and share result of their tournaments. Features include seasons, player's profile, all-time and seasonal rankings as well as individual tournament results. Data fetching is done by JavaScript from MongoDB by invoking Node.js API endpoints and then injecting then fetched data into Handlebars templates to render views on the client side. API authorization for post requests is implemented using JWT inside a middleware. App can run using Express server on a Node.js runtime as well as on the Edge runtime via Serverless functions.<br><a href="https://tournaments.myendpoint.de/">Serverless Demo</a> | <a href="https://github.com/smohadjer/pokerrangliste">GitHub</a>
-		</p></li>
-		<li>
+	<ul class="no-bullet">
+		<li class="flex">
+			<a href="https://tournaments.myendpoint.de/"></a><img width="100" height="203" src="assets/tournament.png" alt="Tournament Organizer"></a>
+			<div>
+				<h4>Tournament Organizer</h4>
+				<p>This single page app (SPA) allows tournament organizers to display and share result of their tournaments. Features include seasons, player's profile, all-time and seasonal rankings as well as individual tournament results. Data fetching is done by JavaScript from MongoDB by invoking Node.js serverless API endpoints and then injecting the fetched data into Handlebars templates to render views on the client side. API authorization for post requests is implemented using JWT inside a middleware.<br><a href="https://tournaments.myendpoint.de/">Demo</a> | <a href="https://github.com/smohadjer/pokerrangliste">GitHub</a></p>
+			</div>
+		</li>
+		<!--<li>
 			<h4>Filterlist.js</h4>
 			<p>Filterlist is a small (4kb) TypeScript library with no dependencies that allows filtering of arbitrary HTML elements via data attributes. Filtering can be triggered using URL parameters, by adding form elements to a page, or programmatically via another script.<br>
 			<a href="https://smohadjer.github.io/filterlist/demo/demo-list.html">Demo</a> |
 			<a href="https://github.com/smohadjer/filterlist">GitHub</a> |
 			<a href="https://www.npmjs.com/package/filterlist">NPM</a></p>
-		</li>
-		<li>
-			<h4>Website for Slaven Gluscevic</h4>
-			<p>Designed and built a responsive Website for my club's tennis trainer that allows online registration for training courses and tennis camps. The site's backend is implemented via serverless functions hosted on Vercel's cloud platform. While user data is stored in a MongoDB instance on the cloud, the code and all the static content are stored in a GitHub repository and auto-deployed to production via a CI/CD pipeline I wrote.<br><a href="https://slaven.de">Visit Website</a></p>
+		</li>-->
+		<li class="flex">
+			<a href="https://slaven.de/"></a><img width="100" height="203" src="assets/slaven-mobile.png" alt="Website for Slaven Gluscevic"></a>
+			<div>
+				<h4>Website for Slaven Gluscevic</h4>
+				<p>Designed and built a responsive Website for tennis trainer Slaven Gluscevic that allows online registration for training courses and tennis camps. The site's backend is implemented via serverless functions hosted on Vercel's cloud platform. While user data is stored in a MongoDB instance on the cloud, the code and all the static content are stored in a GitHub repository and auto-deployed to production via a CI/CD pipeline I wrote.<br><a href="https://slaven.de">Website</a></p>
+			</div>
 		</li>
 	</ul>
 
