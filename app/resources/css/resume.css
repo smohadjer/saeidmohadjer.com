@@ -1,9 +1,23 @@
 @media print {
+  footer,
+  .header,
+  .langs,
   .pdf {
     display: none;
   }
   h3 {
     page-break-after: avoid;
+  }
+
+
+  article,
+  header,
+  section {
+    background: none !important;
+  }
+
+  .lead {
+    padding: 0 !important;
   }
 }
 
