@@ -1,6 +1,6 @@
 <article data-filter-tag="javascript" data-filter-title="spa" class="post">
     <time datetime="Sat Dec 02 2023 09:30:49 GMT+0000 (Coordinated Universal Time)">Sat Dec 02 2023</time>
-    <h1>Converting a MPA to SPA using only a few lines of JavaScript</h1>
+    <h1>Converting a MPA to SPA using vanilla JS</h1>
     <div class="tags">
       <span>javascript</span>
     </div>
@@ -44,6 +44,20 @@ function enableSpaMode() {
 </code></pre>
 <p>Since when user lands on your app for the first time, browser automatically stores the history without a state, we need to replace that history after app has updated the state and rendered the page by calling history&#39;s replaceState method:</p>
 <pre><code>window.history.replaceState(state, &#39;&#39;, window.location.search);
+</code></pre>
+<p>There is one little problem however and that is if someone uses browser back button to navigate back to a previous page browser won't show the page in exact scrolling position that it was when user left that page. To solve this problem we need to update the state in browser history by storing scroll position there before we make render a new page. We can achieve that using this:</p>
+<pre><code>// replace existing history state with one that has scrolling position
+const scrollPosition = document.documentElement.scrollTop;
+const tempState = {...history.state, scroll: scrollPosition};
+history.replaceState(tempState, '', window.location.search);
+</code></pre>
+<p>Then when popState event fires we get the scroll position from state and scroll to that:</p>
+<pre><code>window.addEventListener("popstate", async (event) => {
+    await renderPage(event.state);
+    if (event.state.scroll) {
+        window.scrollTo(0, event.state.scroll);
+    }
+});
 </code></pre>
 <p>Full script:<br>
 <a href="https://github.com/smohadjer/pokerrangliste/blob/master/public/ts/index.ts">https://github.com/smohadjer/pokerrangliste/blob/master/public/ts/index.ts</a></p>
