@@ -30,7 +30,43 @@ article section h2 {
     margin-left: 0;
   }
 }
+
 article section ul {
   list-style: none;
   padding-left: 0;
+}
+
+.flex-layout {
+  display: flex;
+  align-items: start;
+  gap: 1em;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  & img {
+    width: 100px;
+    height: auto;
+  }
+
+  @media (min-width: 1024px) {
+    align-items: center;
+    gap: 2em;
+
+    & img {
+      width: 120px;
+    }
+  }
+}
+
+section {
+  overflow: hidden;
+}
+
+p:first-child, h3:first-child {
+  margin-top: 0;
+}
+
+section > div {
+  max-width: 980px;
+  margin: 3em auto;
 }

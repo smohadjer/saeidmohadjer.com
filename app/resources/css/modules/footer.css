@@ -1,18 +1,17 @@
 footer {
-  padding: 1rem;
-  margin: 1rem 0;
+  padding: 1em 15px;
   font-size: 0.8rem;
+  display: grid;
+  gap: 1em;
 }
 @media (min-width: 1024px) {
   footer {
-    display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2em;
     align-items: end;
+    gap: 2em;
   }
 }
 footer address {
-  margin-bottom: 1rem;
   font-style: normal;
 }
 @media (min-width: 1024px) {

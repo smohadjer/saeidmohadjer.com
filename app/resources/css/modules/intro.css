@@ -6,18 +6,6 @@
     font-display: swap;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0px);
-    }
-}
-
 @keyframes slidein {
     from {
         height: 0;
@@ -56,13 +44,17 @@
     }
 }
 
-#test {
+#intro {
     & article {
-        height: calc(100vh - 87px);
+        height: 300px;
         display: flex;
         padding: 0;
         font-family: "Noto";
         position: relative;
+
+        @media (min-width: 1024px) {
+            height: calc(100vh - 87px);
+        }
     }
 
     & .left,
@@ -84,38 +76,6 @@
         animation: slidein 1s;
         transition-timing-function: cubic-bezier(0.020, 0.345, 0.025, 0.915); /* custom */
         animation-fill-mode: both;
-
-        & .teaser {
-            display: block;
-            margin-top: 1.5em;
-            position: relative;
-            animation: fadeIn 1s 1.5s both ease-out;
-
-            & + .teaser {
-                animation-delay: 1.75s;
-            }
-
-            @media (min-width: 768px) {
-                justify-content: flex-end;
-                display: flex;
-                flex-direction: row;
-                gap: 1em;
-            }
-
-            & p {
-                margin-top: -3px;
-                font-size: 18px;
-            }
-
-            & .link {
-                width: 150px;
-                font-size: 16px;
-                color: white;
-                text-align: left;
-                display: inline-block;
-            }
-
-        }
     }
 
     & .right {
@@ -131,7 +91,7 @@
     & h1 {
         font-size: 22px;
         font-family: inherit;
-        margin-top: -30vh;
+        margin-top: -55px;
         animation: slideLeft 2s forwards;
         transition-timing-function: cubic-bezier(0.020, 0.345, 0.025, 0.915); /* custom */
         animation-fill-mode: both;
@@ -172,7 +132,7 @@
         transition-timing-function: cubic-bezier(0.020, 0.345, 0.025, 0.915); /* custom */
         animation-fill-mode: both;
         animation-delay: 0.75s;
-        margin-top: -5vh;
+        margin-top: 20px;
         max-width: 25ch;
         line-height: 1.2;
         font-weight: 500;
