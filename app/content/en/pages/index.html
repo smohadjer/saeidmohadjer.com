@@ -1,31 +1,46 @@
-<main id="test">
-	<article class="test">
-		<div class="left">
-			<div class="content">
-				<h1>Saeid Mohadjer</h1>
-				<h2>Fullstack Developer</h2>
-				<div class="teaser">
-					<p>Recent project</p>
-					<a href="https://slaven.de"><img src="assets/slaven.webp" width="150" alt="slaven.de"></a>
-				</div>
-				<div class="teaser">
-					<p>Recent blog post</p>
-					<a class="link" href="/blog?title=jwt">JWT authentication via HttpOnly cookie or Bearer Authorization header</a>
+<main>
+	<section id="test">
+		<article class="test">
+			<div class="left">
+				<div class="content">
+					<h1>Saeid Mohadjer</h1>
+					<h2>Fullstack Developer</h2>
 				</div>
 			</div>
-
-		</div>
-		<div class="right">
-			<div class="content">
-				<p><strong>Design and Development of Web Applications, Responsive Websites &amp;
-					RESTful APIs</strong>
-				</p>
-				<p>Denzlingerstr. 20<br>79018 Freiburg<br>Germany<br>
-					Tel: +49 176 8826 9966<br>
-					<a href="mailto:info@saeidmohadjer.com">info@saeidmohadjer.com</a
-				></p>
+			<div class="right">
+				<div class="content">
+					<p>Design and Development of Web Applications, Responsive Websites and RESTful APIs</p>
+				</div>
 			</div>
-
+		</article>
+	</section>
+	<section>
+		<div class="flex-layout">
+			<img style="scale: 0.75; margin-right: 1em;" width="200" height="406" src="assets/tournament.png" alt="Tournament Organizer">
+			<div>
+				<h3>Tournament Organizer</h3>
+				<p>This single page app (SPA) allows tournament organizers to display and share result of their tournaments. Features include seasons, player's profile, all-time and seasonal rankings as well as individual tournament results. Data fetching is done by JavaScript from MongoDB by invoking Node.js serverless API endpoints and then injecting the fetched data into Handlebars templates to render views on the client side. API authorization for post requests is implemented using JWT inside a middleware.<br><a href="https://tournaments.myendpoint.de/">Demo</a> | <a href="https://github.com/smohadjer/pokerrangliste">GitHub</a></p>
+			</div>
 		</div>
-	</article>
+	</section>
+	<section class="stage slaven">
+		<div class="swiper">
+			<!-- Additional required wrapper -->
+			<div class="swiper-wrapper">
+				<!-- Slides -->
+				<div class="swiper-slide">
+					<img class="responsive" src="/assets/slaven9.webp" alt="Slaven Gluščević" />
+					<div class="swiper-slide__content">
+						<p>I designed and built a full-stack responsive Website for tennis trainer Slaven Gluscevic which allows online registration for training courses and tennis camps.
+						<table>
+							<tr><td>Frontend</td><td>HTML, CSS, JavaScript</td></tr>
+							<tr><td>Backend</td><td>Node.js (Serverless), MongoDB</td></tr>
+							<tr><td>Hosting</td><td>Vercel, GitHub</td></tr>
+						</table>
+						<p><a target="_blank" href="https://slaven.de/">Visit Website</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 </main>

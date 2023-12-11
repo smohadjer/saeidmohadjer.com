@@ -56,15 +56,9 @@
     }
 }
 
-
-html.home, .home body {
-    height: 100%;
-    overflow: hidden;
-}
-
 #test {
     & article {
-        height: 100vh;
+        height: calc(100vh - 87px);
         display: flex;
         padding: 0;
         font-family: "Noto";
@@ -125,7 +119,7 @@ html.home, .home body {
     }
 
     & .right {
-        height: 100vh;
+        height: calc(100vh-87px);
         background: #eee;
         padding-left: 2vw;
         position: relative;
@@ -165,7 +159,7 @@ html.home, .home body {
 
 
         @media (min-width: 1024px) {
-            font-size: 24px;
+            font-size: 28px;
         }
     }
 
@@ -178,45 +172,15 @@ html.home, .home body {
         transition-timing-function: cubic-bezier(0.020, 0.345, 0.025, 0.915); /* custom */
         animation-fill-mode: both;
         animation-delay: 0.75s;
-
-        &:first-child {
-            margin-top: -5vh;
-            max-width: 40ch;
-        }
+        margin-top: -5vh;
+        max-width: 25ch;
+        line-height: 1.2;
+        font-weight: 500;
 
         @media (min-width: 1024px) {
-            font-size: 16px;
-
-            &:first-child {
-                margin-top: 20vh;
-            }
-        }
-
-
-
-        & strong {
-            font-weight: 500;
-            font-family:Verdana, Geneva, Tahoma, sans-serif;
-            font-size: 16px;
-
-            @media (min-width: 1024px) {
-                font-size: 18px;
-            }
-        }
-
-        + p {
-            margin-top: 1em;
-            animation-delay: 0.85s;
-
-            & a {
-                text-decoration: none;
-            }
+            font-size: 30px;
+            line-height: 1.4;
+            margin-top: 10vh;
         }
     }
 }
-
-.home footer {
-    margin: 0;
-    display: none;
-}
-

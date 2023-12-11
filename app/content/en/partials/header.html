@@ -1,8 +1,14 @@
 <header class="header">
 	<div class="logo">Saeid Mohadjer</div>
-	<div>
-		<nav data-set-max-height="true">
-			{{> en/partials/menu }}
+
+	<!-- for mobile navigation -->
+	<button aria-label="Menu" class="hamburger hamburger--spin" type="button">
+		<span class="hamburger-box">
+			<span class="hamburger-inner"></span>
+		</span>
+		<!--<span class="hamburger-label">Menu</span>-->
+	</button>
+	<nav data-set-max-height="true">
+		{{> en/partials/menu }}
 	</nav>
-	</div>
 </header>

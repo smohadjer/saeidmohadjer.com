@@ -25,10 +25,6 @@
 		{
 			"source": "app/content/de",
 			"target": "public/de"
-		},
-		{
-			"source": "app/content",
-			"target": "public"
 		}
 	]
 }

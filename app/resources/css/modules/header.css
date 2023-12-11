@@ -2,12 +2,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 10px 15px 10px;
+  margin: 10px 15px 20px;
   flex-wrap: wrap;
+  padding-top: 10px;
 }
 @media (min-width: 768px) {
   .header {
     align-items: flex-start;
+    padding-top: 0;
   }
 }
 @media (min-width: 1024px) {
@@ -19,7 +21,7 @@
 .header .logo {
   font-weight: 500;
   font-size: 1.25rem;
-  line-height: 1.4;
+  line-height: 1;
 }
 
 @media (min-width: 1024px) {

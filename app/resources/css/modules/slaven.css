@@ -1,0 +1,41 @@
+.flex-layout {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+}
+
+section {
+    overflow: hidden;
+}
+
+p:first-child, h3:first-child {
+    margin-top: 0;
+}
+
+section > div {
+    max-width: 980px;
+    margin: 3em auto;
+}
+
+@media (min-width: 768px) {
+    section.slaven {
+        margin: 0;
+
+        & .swiper {
+            padding-bottom: 1em;
+        }
+
+        & .swiper-slide img {
+            margin: 0;
+        }
+
+        & table {
+            margin: 1em 0;
+            font-size: smaller;
+            border-top: solid 1px #bbb;
+            border-bottom: solid 1px #bbb;
+            padding: 0.75em 0;
+        }
+    }
+
+}

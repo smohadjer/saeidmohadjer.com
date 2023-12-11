@@ -7,7 +7,7 @@
 }
 
 @media (min-width: 1024px) {
-  main.blog {
+  main.blog article {
       margin: 2em auto 0;
       max-width: 80ch;
   }
@@ -29,7 +29,10 @@
 
   .filters {
     margin: 0 15px 2em;
+    background: #eee;
+    padding: 2em 1em;
   }
+
   @media (min-width: 1024px) {
     .filters {
       margin: 0 0 3em;
@@ -38,9 +41,8 @@
 
   .filters select {
     padding: 5px;
-    border: solid 1px #ccc;
+    border: solid 1px white;
     font-size: 18px;
-    background: #eee;
   }
 
   .post.hidden {

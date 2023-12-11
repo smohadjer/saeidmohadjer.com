@@ -6,13 +6,9 @@
     {{> en/partials/styles }}
 	</head>
 	<body>
-    {{#if (eq this.pageId 'service') }}
-	    {{> en/partials/header pageId=this.pageId }}
-    {{/if}}
+	{{> en/partials/header pageId=this.pageId }}
 {{> content }}
-    {{#unless (eq this.pageId 'index') }}
-        {{> en/partials/footer }}
-        {{> en/partials/scripts }}
-    {{/unless}}
+    {{> en/partials/footer }}
+    {{> en/partials/scripts }}
 	</body>
 </html>

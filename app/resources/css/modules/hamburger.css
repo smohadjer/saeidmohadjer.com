@@ -1,6 +1,6 @@
 header .hamburger {
   vertical-align: middle;
-  padding: 0;
+  padding: 7px 0 0;
   touch-action: manipulation; /* to avoid zooming on iphone when double clicking menu button */
 }
 .no-js header .hamburger {
