@@ -1,19 +1,19 @@
 <main class="blog">
+	<div class="filters">
+		<label>Filter by tag:</label>
+		<select name="tag" data-ignore="all">
+			<option value="all">Show all</option>
+			<option value="authentication">authentication</option>
+			<option value="javascript">javascript</option>
+			<option value="typescript">typescript</option>
+			<option value="github">github</option>
+			<option value="mac">mac</option>
+			<option value="node.js">node.js</option>
+			<option value="tools">tools</option>
+			<option value="css">css</option>
+		</select>
+	</div>
 	<div data-filter-names="tag title">
-		<div class="filters">
-			<label>Filter by tag:</label>
-			<select name="tag" data-ignore="all">
-				<option value="all">Show all</option>
-				<option value="authentication">authentication</option>
-				<option value="javascript">javascript</option>
-				<option value="typescript">typescript</option>
-				<option value="github">github</option>
-				<option value="mac">mac</option>
-				<option value="node.js">node.js</option>
-				<option value="tools">tools</option>
-				<option value="css">css</option>
-			</select>
-		</div>
 <!-- Do NOT delete or edit the comment below as backend uses it to insert partials when a new blog post is submitted -->
 <!--insert here-->
 {{> en/partials/blog/domparser }}

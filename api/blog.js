@@ -8,8 +8,9 @@ dotenv.config();
 const uri =  process.env.development === 'true' ? process.env.db_uri_local : process.env.db_uri_remote;
 const client = new MongoClient(uri);
 
-const insertPost = async (posts, req) => {
-  const doc = {
+const insertPost = async (collection, req) => {
+  const query = {_id: req.body.post_id};
+  const document = {
     date: req.body.date,
     title: sanitize(req.body.title),
     slug: sanitize(req.body.slug),
@@ -17,11 +18,19 @@ const insertPost = async (posts, req) => {
     content: sanitize(req.body.content)
   };
 
-  const insertResponse = await posts.insertOne(doc);
+  if (req.body.post_id) {
+    await collection.replaceOne(query, document);
+    return {
+      id: req.body.post_id,
+      doc: document
+    }
+  } else {
 
-  return {
-    id: insertResponse.insertedId,
-    doc: doc
+    const insertResponse = await collection.insertOne(document);
+    return {
+      id: insertResponse.insertedId,
+      doc: document
+    }
   }
 };
 

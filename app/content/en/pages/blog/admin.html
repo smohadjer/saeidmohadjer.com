@@ -46,22 +46,26 @@
 			const form = document.querySelector('form');
 			let posts;
 			document.querySelector('#new-post').addEventListener('click', () => {
+				form.querySelector('input[type=hidden]').remove();
 				form.reset();
 			})
 			document.querySelector('select').addEventListener('change', (e) => {
 				const id = e.target.value;
 				const post = posts.find(post => post._id === id);
-				populateForm(post);
+				populateForm(post, id);
 			});
 
-			function populateForm(post) {
-				console.log(post);
-				const inputs = form.querySelectorAll('input, textarea');
-
-				inputs.forEach((input) => {
+			function populateForm(post, id) {
+				const formFields = form.querySelectorAll('input, textarea');
+				formFields.forEach((input) => {
 					input.value = post[input.getAttribute('name')];
 				});
 
+				// add a hidden input field for id
+				const input = `<input type="hidden" name="post_id" value="${id}">`
+				const inputElm = new DOMParser().parseFromString(input, 'text/html').body.firstChild;
+				console.log(inputElm);
+				form.append(inputElm);
 			}
 
 			fetch('/api/blog').then((res) => res.json()).then((json)=>{
