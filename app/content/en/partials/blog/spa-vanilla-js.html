@@ -51,12 +51,13 @@ const tempState = {...history.state, scroll: scrollPosition};
 history.replaceState(tempState, &#39;&#39;, window.location.search);
 </code></pre>
 <p>Then when popState event fires we get the scroll position from state and scroll to that:</p>
-<p>window.addEventListener(&quot;popstate&quot;, async (event) =&gt; {
+<pre><code class="language-javascript">window.addEventListener(&quot;popstate&quot;, async (event) =&gt; {
     await renderPage(event.state);
     if (event.state.scroll) {
         window.scrollTo(0, event.state.scroll);
     }
-});</p>
+});
+</code></pre>
 <p>Full script:<br><a href="https://github.com/smohadjer/pokerrangliste/blob/master/public/ts/index.ts">https://github.com/smohadjer/pokerrangliste/blob/master/public/ts/index.ts</a></p>
 <p>SPA demo:<br><a href="https://tournaments.myendpoint.de/">https://tournaments.myendpoint.de/</a></p>
 <p><a href="https://github.com/smohadjer/pokerrangliste">GitHub repository</a></p>
