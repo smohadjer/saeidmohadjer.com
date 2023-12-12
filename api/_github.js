@@ -1,6 +1,7 @@
 import { Octokit } from "@octokit/rest";
-import dotenv from 'dotenv';
 import { marked } from 'marked';
+
+import dotenv from 'dotenv';
 
 dotenv.config();
 
@@ -33,7 +34,7 @@ const includePostInBlog = async (blogPostFileName) => {
 
   const buf = new Buffer.from(data.content, 'base64');
   const oldContent = buf.toString('ascii');
-  const link = `{{> en/partials/${blogPostFileName.replace('.html', '')} }}`
+  const link = `{{> en/partials/blog/${blogPostFileName} }}`
   const newContent = oldContent.replace('<!--insert here-->', '<!--insert here-->\n' + link);
   await updateOrCreateFile('app/content/en/pages/blog/index.html', newContent, data.sha);
 };
@@ -54,15 +55,14 @@ const updateOrCreateFile = async (filePath, content, sha) => {
   });
 };
 
-const getBlogPostContent = (req) => {
-  const html = marked.parse(req.body.content);
+const getBlogPostContent = (doc, id) => {
+  const html = marked.parse(doc.content);
 
-  const date = new Date(Date.now());
-  return `<article data-filter-tag="${req.body.tag}" class="post">
-    <time datetime="${date}">${date.toDateString()}</time>
-    <h1>${req.body.title}</h1>
+  return `<article id="${id}" data-filter-tag="${doc.tag}" class="post">
+    <time datetime="${doc.date}">${doc.date}</time>
+    <h1>${doc.title}</h1>
     <div class="tags">
-      <span>${req.body.tag}</span>
+      <span>${doc.tag}</span>
     </div>
     <div class="content">
       ${html}
@@ -70,22 +70,15 @@ const getBlogPostContent = (req) => {
   </article>`;
 };
 
-export default async function handler(req, res) {
-  const blogPostPath = `app/content/en/partials/${req.body.slug}`;
-  const blogPostContent =  getBlogPostContent(req);
+export default async function (post, document_id) {
+  const blogPostPath = `app/content/en/partials/blog/${post.slug}.html`;
+  const blogPostContent =  getBlogPostContent(post, document_id);
   const blogPostSHA = await getBlogPostSHA(blogPostPath);
 
   await updateOrCreateFile(blogPostPath, blogPostContent, blogPostSHA);
 
   // include new post in blog's index page
   if (!blogPostSHA) {
-    await includePostInBlog(req.body.slug);
-  }
-
-  if (req.body) {
-    res.setHeader('Content-Type', 'text/plain')
-    res.write(`Your new post will be live at: \nhttps://saeidmohadjer.com/blog\n\n`)
-    res.write('You posted: \n')
-    res.end(JSON.stringify(req.body, null, 2))
+    await includePostInBlog(post.slug);
   }
 }

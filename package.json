@@ -7,6 +7,7 @@
 		"url": "https://github.com/smohadjer/saeidmohadjer.com"
 	},
 	"license": "MIT",
+	"type": "module",
 	"scripts": {
 		"precompile": "node node_modules/build/bin/clean.js",
 		"compile": "node node_modules/build/bin/compile.js",
@@ -31,7 +32,8 @@
 		"helpers": "git+https://github.com/smohadjer/helpers.git",
 		"marked": "^9.0.3",
 		"prismjs": "^1.29.0",
-		"swiper": "^9.4.1"
+		"swiper": "^9.4.1",
+		"mongodb": "^5.8.1"
 	},
 	"engines": {
 		"node": ">=18.15.0"
