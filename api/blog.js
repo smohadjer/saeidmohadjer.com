@@ -10,12 +10,13 @@ const client = new MongoClient(uri);
 
 const insertPost = async (collection, req) => {
   const query = {_id: req.body.post_id};
+  console.log(req.body.content);
   const document = {
     date: req.body.date,
     title: sanitize(req.body.title),
     slug: sanitize(req.body.slug),
     tag: sanitize(req.body.tag),
-    content: sanitize(req.body.content)
+    content: req.body.content
   };
 
   if (req.body.post_id) {

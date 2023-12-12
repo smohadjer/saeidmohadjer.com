@@ -1,9 +1,9 @@
 <main>
 	<article>
 		<button id="new-post">Reset Form</button>
-		Edit:
-		<select>
 
+		<select>
+			<option value="">Select post to edit...</option>
 		</select>
 
 		<p><a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#emphasis">Markdown Cheatsheet</a></p>
@@ -20,7 +20,6 @@
 			<div class="row row--two-columns">
 				<label for="tag">Tag</label>
 				<input list="tags" name="tag">
-				<span>Only one tag is allowed</span>
 				<datalist id="tags">
 					<option value="authentication">authentication</option>
 					<option value="javascript">javascript</option>
@@ -42,43 +41,56 @@
 			</div>
 			<button>Publish</button>
 		</form>
-		<script>
-			const form = document.querySelector('form');
-			let posts;
-			document.querySelector('#new-post').addEventListener('click', () => {
-				form.querySelector('input[type=hidden]').remove();
-				form.reset();
-			})
-			document.querySelector('select').addEventListener('change', (e) => {
-				const id = e.target.value;
-				const post = posts.find(post => post._id === id);
-				populateForm(post, id);
-			});
+		<script type="module">
+			try {
+				const response = await fetch('/api/blog');
+				const posts = await response.json();
+				init(posts);
+			} catch (err) {
+				console.log(err);
+			}
 
-			function populateForm(post, id) {
+			function init(posts) {
+				populateSelect(posts);
+				document.querySelector('#new-post').addEventListener('click', resetForm);
+				document.querySelector('select').addEventListener('change', (e) => {
+					const form = document.querySelector('form');
+					resetForm(form);
+					populateForm(e.target.value, form, posts);
+				});
+			}
+
+			function populateSelect(posts) {
+				let options = '';
+				posts.forEach((doc) => {
+					options += `<option value=${doc._id}>${doc.title}</option>`;
+				});
+				const optionsDOM = new DOMParser().parseFromString(options, 'text/html').body.children;
+				document.querySelector('select').append(...optionsDOM);
+			}
+
+			function resetForm(form) {
+				const hiddenField = form.querySelector('input[type=hidden]');
+				if (hiddenField) {
+					hiddenField.remove();
+				}
+				form.reset();
+			}
+
+			function populateForm(post_id, form, posts) {
+				if (post_id.length === 0) return;
+
+				const post = posts.find(post => post._id === post_id);
 				const formFields = form.querySelectorAll('input, textarea');
 				formFields.forEach((input) => {
 					input.value = post[input.getAttribute('name')];
 				});
 
 				// add a hidden input field for id
-				const input = `<input type="hidden" name="post_id" value="${id}">`
+				const input = `<input type="hidden" name="post_id" value="${post_id}">`
 				const inputElm = new DOMParser().parseFromString(input, 'text/html').body.firstChild;
-				console.log(inputElm);
 				form.append(inputElm);
 			}
-
-			fetch('/api/blog').then((res) => res.json()).then((json)=>{
-				console.log(json);
-				posts = json;
-				let options = '';
-				json.forEach((doc) => {
-					options += `<option value=${doc._id}>${doc.title}</option>`;
-				});
-				const optionsDOM = new DOMParser().parseFromString(options, 'text/html').body.children;
-				console.log(optionsDOM);
-				document.querySelector('select').append(...optionsDOM);
-			})
 		</script>
 	</article>
 
