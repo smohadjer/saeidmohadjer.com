@@ -1,0 +1,74 @@
+<article id="657972c4a82038308f8558bf" data-filter-tag="vercel" class="post">
+    <time datetime="2023-06-21">2023-06-21</time>
+    <h1>Deploy to Vercel</h1>
+    <div class="tags">
+        <span>vercel</span> 
+    </div>
+    <div class="content">
+      <p>In this example you will create a static HTML page that calls an api (Node.js serverless function) which responds by returning the word &quot;Hello World&quot; and displaying it in the browser. You can see a deployed version at: <a href="https://test-pi-tawny.vercel.app/">https://test-pi-tawny.vercel.app/</a></p>
+<p>We will deploy and host both the HTML page and the Node.js api on Vercel using Vercel&#39;s cli, so you should register for a free account at <a href="https://vercel.com">vercel.com</a> if you don&#39;t already have one and install vercel&#39;s command line via:</p>
+<pre><code>npm install -g pnpm
+pnpm i -g vercel
+</code></pre>
+<ol>
+<li>Run the following in terminal to create file and folder structure for &quot;test&quot; project:</li>
+</ol>
+<pre><code>mkdir test
+cd test
+mkdir public api
+cd api
+touch index.js
+cd ../public
+touch index.html
+cd ..
+</code></pre>
+<ol start="2">
+<li>Open index.html in your editor and paste the following snippet there:</li>
+</ol>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+       &lt;meta charset=&quot;utf-8&quot; /&gt;
+       &lt;title&gt;Hello World&lt;/title&gt;
+       &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot; /&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;p id=&quot;test&quot;&gt;&lt;/p&gt;
+        &lt;script&gt;
+        fetch(&#39;api/index.js&#39;)
+        .then((response) =&gt; response.text())
+        .then((text) =&gt; {
+            console.log(text);
+            document.getElementById(&#39;test&#39;).innerHTML = text;
+        });
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<ol start="3">
+<li>Open index.js in your editor and paste the following snippet there:</li>
+</ol>
+<pre><code>export default function handler(req, res) {
+   res.setHeader(&#39;Content-Type&#39;, &#39;text/plain&#39;)
+   res.write(&#39;Hello World&#39;)
+   res.end()
+}
+</code></pre>
+<ol start="4">
+<li>In cli/terminal run:</li>
+</ol>
+<pre><code>vercel dev
+</code></pre>
+<p>and select default answers to all questions. Vercel cli will create the test project under your existing Vercel account and start a local server at: <a href="http://localhost:3000/">http://localhost:3000/</a> where you can see your index.html and your api can be reached at: <a href="http://localhost:3000/api/">http://localhost:3000/api/</a>. If everything is working properly, you should see a &quot;Hello World&quot; message in your browser.
+5.  To deploy your project to server for preview purposes run in terminal:</p>
+<pre><code>vercel deploy
+</code></pre>
+<pre><code>And if you are happy with result and want to deploy it to production run:
+</code></pre>
+<pre><code>vercel --prod
+</code></pre>
+<pre><code>The preview and production URLs are available in your project on vercel.com under &quot;Deployment&quot; tab.
+</code></pre>
+
+    </div>
+  </article>
