@@ -1,13 +1,12 @@
-<article id="65797fb0726424629b8a31f2" data-filter-tag="" class="post">
+<article id="65797fb0726424629b8a31f2" data-filter-tag="javascript" class="post">
     <time datetime="2023-07-06">2023-07-06</time>
     <h1>Handlebars 101</h1>
     <div class="tags">
-        <span></span> 
+        <span>javascript</span> 
     </div>
     <div class="content">
-      <p>##Iterating objects in Handlebars
-It is possible to iterate objects in handlebars templates. In below example countries is an object of key:value pairs where key is letter of alphabet and value is an array of countries whose name starts with that letter. @key returns key and “this” returns value for that key. It’s possible to use “../“ to access parent properties.</p>
-<pre><code class="language-html">&lt;dl&gt;
+      <p>It is possible to iterate objects in handlebars templates. In below example countries is an object of key:value pairs where key is letter of alphabet and value is an array of countries whose name starts with that letter. @key returns key and “this” returns value for that key. It’s possible to use “../“ to access parent properties.</p>
+<pre><code>&lt;dl&gt;
     {{#each countries}}
     &lt;dt&gt;{{toUpperCase @key}}&lt;/dt&gt;
         &lt;dd&gt;
