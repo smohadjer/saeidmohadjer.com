@@ -1,6 +1,5 @@
 import dotenv from 'dotenv';
-import { MongoClient } from 'mongodb';
-import { sanitize } from './_sanitize.js';
+import { MongoClient, ObjectId } from 'mongodb';
 import github from './_github.js';
 
 dotenv.config();
@@ -9,18 +8,20 @@ const uri =  process.env.development === 'true' ? process.env.db_uri_local : pro
 const client = new MongoClient(uri);
 
 const insertPost = async (collection, req) => {
-  const query = {_id: req.body.post_id};
-  console.log(req.body.content);
+  const query = {_id: new ObjectId(req.body.post_id)};
+  console.log(req.body.post_id, req.body.date);
   const document = {
     date: req.body.date,
-    title: sanitize(req.body.title),
-    slug: sanitize(req.body.slug),
-    tag: sanitize(req.body.tag),
+    title: req.body.title.trim(),
+    slug: req.body.slug.trim().replace('.html', ''),
+    tag: req.body.tag,
     content: req.body.content
   };
 
   if (req.body.post_id) {
-    await collection.replaceOne(query, document);
+    console.log('replacing doc in db');
+    const result = await collection.replaceOne(query, document);
+    console.log(result);
     return {
       id: req.body.post_id,
       doc: document

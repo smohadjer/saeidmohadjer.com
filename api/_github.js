@@ -58,11 +58,19 @@ const updateOrCreateFile = async (filePath, content, sha) => {
 const getBlogPostContent = (doc, id) => {
   const html = marked.parse(doc.content);
 
-  return `<article id="${id}" data-filter-tag="${doc.tag}" class="post">
+  // convertings tags string to markup
+  const tagsString = doc.tag.replaceAll(' ', ''); // removing all spaces
+  const tagsArray = tagsString.split(',');
+  const tagsArrayMarkup = tagsArray.map((tag) => {
+      return `<span>${tag}</span> `;
+  });
+  const tagsMarkup = tagsArrayMarkup.join('');
+
+  return `<article id="${id}" data-filter-tag="${tagsArray.join(' ')}" class="post">
     <time datetime="${doc.date}">${doc.date}</time>
     <h1>${doc.title}</h1>
     <div class="tags">
-      <span>${doc.tag}</span>
+        ${tagsMarkup}
     </div>
     <div class="content">
       ${html}
