@@ -17,10 +17,12 @@
     border-bottom: solid 1px #ccc;
     padding: 0 0 1.5em;
     margin: 0 15px 1em;
+
+    & img {
+      max-width: 100%;
+    }
   }
-  .last {
-    border: 0;
-  }
+
   @media (min-width: 1024px) {
     .post {
       margin: 0 0 1em;

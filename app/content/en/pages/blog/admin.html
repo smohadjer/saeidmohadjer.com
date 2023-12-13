@@ -45,16 +45,18 @@
 			try {
 				const response = await fetch('/api/blog');
 				const posts = await response.json();
-				init(posts);
+				const form = document.querySelector('form');
+				init(posts, form);
 			} catch (err) {
 				console.log(err);
 			}
 
-			function init(posts) {
+			function init(posts, form) {
 				populateSelect(posts);
-				document.querySelector('#new-post').addEventListener('click', resetForm);
+				document.querySelector('#new-post').addEventListener('click', () => {
+					resetForm(form);
+				});
 				document.querySelector('select').addEventListener('change', (e) => {
-					const form = document.querySelector('form');
 					resetForm(form);
 					populateForm(e.target.value, form, posts);
 				});
