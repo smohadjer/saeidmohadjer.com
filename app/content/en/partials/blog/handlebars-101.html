@@ -5,24 +5,24 @@
         <span>javascript</span> 
     </div>
     <div class="content">
-      <p class="test">It is possible to iterate objects in handlebars templates. In below example countries is an object of key:value pairs where key is letter of alphabet and value is an array of countries whose name starts with that letter. @key returns key and “this” returns value for that key. It’s possible to use “../“ to access parent properties.</p>
-<pre><code>&lt;dl&gt;
-    {{#each countries}}
-    &lt;dt&gt;{{toUpperCase @key}}&lt;/dt&gt;
-        &lt;dd&gt;
-        &lt;ul&gt;
-        {{#each this}}
-            &lt;li&gt;&lt;a href=&quot;{{../../url}}?country={{country_name}}&quot;&gt;{{country_name}}&lt;/a&gt;&lt;/li&gt;
-            {{/each}}
-        &lt;/ul&gt;
-    &lt;/dd&gt;
-    {{/each}}
-&lt;/dl&gt;</code></pre>
-<p></p>
-<pre><code>
-Handlebars.registerHelper('toUpperCase', function(str) {
+      <p>It is possible to iterate objects in handlebars templates. In below example countries is an object of key:value pairs where key is letter of alphabet and value is an array of countries whose name starts with that letter. @key returns key and “this” returns value for that key. It’s possible to use “../“ to access parent properties.</p>
+<pre><code class="language-html">&amp;lt;dl&amp;gt;
+    &amp;#123;&amp;#123;#each countries&amp;#125;&amp;#125;
+        &amp;lt;dt&amp;gt;&amp;#123;&amp;#123;toUpperCase @key&amp;#125;&amp;#125;&amp;lt;/dt&amp;gt;
+            &amp;lt;dd&amp;gt;
+            &amp;lt;ul&amp;gt;
+            &amp;#123;&amp;#123;#each this&amp;#125;&amp;#125;
+                &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;&amp;#123;&amp;#123;../../url&amp;#125;&amp;#125;?country=&amp;#123;&amp;#123;country_name&amp;#125;&amp;#125;&amp;quot;&amp;gt;&amp;#123;&amp;#123;country_name&amp;#125;&amp;#125;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+                &amp;#123;&amp;#123;/each&amp;#125;&amp;#125;
+            &amp;lt;/ul&amp;gt;
+        &amp;lt;/dd&amp;gt;
+        &amp;#123;&amp;#123;/each&amp;#125;&amp;#125;
+&amp;lt;/dl&amp;gt;
+</code></pre>
+<pre><code class="language-javascript">Handlebars.registerHelper(&#39;toUpperCase&#39;, function(str) {
     return str.toUpperCase();
 });
 </code></pre>
+
     </div>
   </article>
