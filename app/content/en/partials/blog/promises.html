@@ -6,38 +6,38 @@
     </div>
     <div class="content">
       <p>Before promises come to JavaScript we had to rely on callback functions when we needed something to be done after an async action. Let&#39;s say we have functions first() and second() and we want them to run in sequence, however first() has some async actions happening inside it. This is how we used to run them before promises:</p>
-<pre><code>function first(callback) {
-  console.log(&quot;first starting...&quot;);
-
-  setTimeout(() =&gt; {
-    // do some stuff here...
-    callback();
-  }, 500);
+<pre><code class="language-javascript">function first(callback) {
+    console.log(&quot;first starting...&quot;);
+    
+    setTimeout(() =&gt; {
+        // do some stuff here...
+        callback();
+    }, 500);
 }
-
-function second() {
-  console.log(&quot;second starting...&quot;);
-}
-
-first(second);
+    
+    function second() {
+        console.log(&quot;second starting...&quot;);
+    }
+    
+    first(second);
 </code></pre>
 <p>Now with promises we can run these functions in sequence without using a callback:</p>
-<pre><code>function first() {
-  console.log(&quot;first starting...&quot;);
-
-  return new Promise((resolve, reject) =&gt; {
-    setTimeout(() =&gt; {
-      // do some stuff here...
-      resolve();
-    }, 500);
-  });
-}
-
-function second() {
-  console.log(&quot;second starting...&quot;);
-}
-
-first().then(second);
+<pre><code class="language-javascript">    function first() {
+        console.log(&quot;first starting...&quot;);
+    
+        return new Promise((resolve, reject) =&gt; {
+            setTimeout(() =&gt; {
+                // do some stuff here...
+                resolve();
+            }, 500);
+        });
+    }
+    
+    function second() {
+        console.log(&quot;second starting...&quot;);
+    }
+    
+    first().then(second);
 </code></pre>
 <p>In other words, promises allow us to chain functions using their .then() method which is a cleaner syntax than using callback functions, specially when more functions need to run after one another.</p>
 
