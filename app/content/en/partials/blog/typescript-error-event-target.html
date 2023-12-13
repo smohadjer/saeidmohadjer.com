@@ -1,0 +1,27 @@
+<article id="65796552775df5a44ed51ced" data-filter-tag="typescript" class="post">
+    <time datetime="2023-07-13">2023-07-13</time>
+    <h1>Fixing TypeScript error property does not exist on type EventTarget</h1>
+    <div class="tags">
+        <span>typescript</span> 
+    </div>
+    <div class="content">
+      <p>When working with event listeners in TypeScript one often runs into error that a particular property does not exist on type EventTarget. While it&#39;s relatively easy to fix this error using type &quot;any&quot; or by typecasting the event target using &quot;as&quot;, none of these solutions are optimal since they simply disable TypeScript&#39;s type checking, which is what we are using TypeScript for in the first place!</p>
+<p>The better way to fix this error is to use JavaScript&#39;s <strong>instanceof</strong> operator which you can read about at: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/instanceof">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/instanceof</a>.</p>
+<p>Example of code that throws error:</p>
+<pre><code class="language-javascript">document.querySelector(&#39;p&#39;).addEventListener(&#39;click&#39;, (event) =&gt; {
+    alert(event.target.textContent);
+});
+</code></pre>
+<p>Error:</p>
+<pre><code>Property &#39;textContent&#39; does not exist on type &#39;EventTarget&#39;.
+</code></pre>
+<p>Solution:</p>
+<pre><code class="language-javascript">document.querySelector(&#39;p&#39;).addEventListener(&#39;click&#39;, (event) =&gt; {
+    if (event.target instanceof Element) {
+      alert(event.target.textContent);
+    }
+});
+</code></pre>
+
+    </div>
+  </article>
