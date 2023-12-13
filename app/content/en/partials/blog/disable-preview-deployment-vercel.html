@@ -6,7 +6,7 @@
     </div>
     <div class="content">
       <p>If you don&#39;t want Vercel to do preview deployments for other branches of your repository you can disable preview deployments by going to your project&#39;s settings &gt; git &gt; Ignored Build Step and add the following command:</p>
-<pre><code>if \[ &quot;$VERCEL_ENV&quot; == &quot;production&quot; \]; then exit 1; else exit 0; fi
+<pre><code>if [&quot;$VERCEL_ENV&quot; == &quot;production&quot;]; then exit 1; else exit 0; fi
 </code></pre>
 <p>This is probably the easiest way. Another way would be to add a vercel.json to all branches and set &quot;deploymentEnabled&quot; to false for any branches that should not trigger deployment, like below:</p>
 <pre><code>{
