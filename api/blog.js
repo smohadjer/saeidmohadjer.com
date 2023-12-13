@@ -27,11 +27,17 @@ const insertPost = async (collection, req) => {
       doc: document
     }
   } else {
-
-    const insertResponse = await collection.insertOne(document);
-    return {
-      id: insertResponse.insertedId,
-      doc: document
+    const doc = await collection.findOne({ slug: document.slug});
+    if (doc) {
+      return {
+        error: 'A document with same slug already exists!'
+      }
+    } else {
+      const insertResponse = await collection.insertOne(document);
+      return {
+        id: insertResponse.insertedId,
+        doc: document
+      }
     }
   }
 };
@@ -60,7 +66,7 @@ export default async (req, res) => {
         } else {
           res.status(500).send({
             error: 500,
-            message: 'Invalid data!'
+            message: obj.error || 'Invalid data!'
           });
         }
       }
