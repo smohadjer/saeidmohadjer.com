@@ -56,7 +56,10 @@ const updateOrCreateFile = async (filePath, content, sha) => {
 };
 
 const getBlogPostContent = (doc, id) => {
-  const html = marked.parse(doc.content);
+
+  const html = (doc.markdown && doc.markdown === 'off')
+    ? doc.content
+    : marked.parse(doc.content);
 
   // convertings tags string to markup
   const tagsString = doc.tag.replaceAll(' ', ''); // removing all spaces
