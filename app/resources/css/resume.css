@@ -188,3 +188,7 @@ dd + dt {
   list-style-type: none;
   padding-left: 0;
 }
+
+.projects li p {
+  margin-top: 0;
+}
