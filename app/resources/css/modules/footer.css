@@ -1,24 +1,23 @@
 footer {
-  padding: 1em 15px;
+  padding: 2em 15px;
   font-size: 0.8rem;
   display: grid;
-  gap: 1em;
-}
-@media (min-width: 1024px) {
-  footer {
+  gap: 2em;
+
+  @media (min-width: 1024px) {
     grid-template-columns: repeat(3, 1fr);
-    align-items: end;
-    gap: 2em;
+    align-items: start;
   }
 }
+
 footer address {
   font-style: normal;
-}
-@media (min-width: 1024px) {
-  footer address {
+
+  @media (min-width: 1024px) {
     margin-bottom: 0;
   }
 }
+
 
 footer > div p + p {
   margin-top: 1em;
