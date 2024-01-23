@@ -12,12 +12,12 @@
         if (link.nodeName === &#39;A&#39;) {
             e.preventDefault();
             const href = link.getAttribute(&#39;href&#39;)!;
-    
+
             // Do nothing when link to current page is clicked
             if (link.search === window.location.search) {
                 return;
             }
-    
+
             // update state using queries in link
             const params = new URLSearchParams(link.search);
             if (params.size &gt; 0) {
@@ -25,15 +25,15 @@
                     state[key] = value;
                 }
             }
-    
+
             // invoke function that updates your page
             render(state);
-    
+
             // update browser history and url
             window.history.pushState(state, &#39;&#39;, href);
         }
     });
-    
+
     // add support for browser back button
     window.addEventListener(&quot;popstate&quot;, function(e) {
         render(e.state);
@@ -58,7 +58,7 @@ history.replaceState(tempState, &#39;&#39;, window.location.search);
 });
 </code></pre>
 <p>Full script:<br><a href="https://github.com/smohadjer/pokerrangliste/blob/master/public/ts/index.ts">https://github.com/smohadjer/pokerrangliste/blob/master/public/ts/index.ts</a></p>
-<p>SPA demo:<br><a href="https://tournaments.myendpoint.de/">https://tournaments.myendpoint.de/</a></p>
+<p>SPA demo:<br><a href="https://tournaments.saeidmohadjer.com/">https://tournaments.saeidmohadjer.com/</a></p>
 <p><a href="https://github.com/smohadjer/pokerrangliste">GitHub repository</a></p>
 
     </div>
