@@ -1,16 +1,14 @@
 <!-- {{this.pageId}} -->
 <!doctype html>
-<html class="no-js" lang="de">
-<head>
-{{> de/partials/meta }}
-{{> de/partials/styles }}
-</head>
-<body>
-{{#unless (eq this.pageId 'index') }}
-  {{> de/partials/header pageId=this.pageId }}
-{{/unless}}
+<html class="no-js" lang="de" {{#if (eq this.pageId 'index')}}class="home"{{/if}} >
+	<head>
+    {{> partials/meta }}
+    {{> partials/styles }}
+	</head>
+	<body>
+	{{> partials/header pageId=this.pageId }}
 {{> content }}
-{{> de/partials/footer }}
-{{> de/partials/scripts }}
-</body>
+    {{> partials/footer }}
+    {{> partials/scripts }}
+	</body>
 </html>

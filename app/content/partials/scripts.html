@@ -10,24 +10,7 @@
   <script src="/resources/js/lib/swiper-bundle.min.js"></script>
 {{/if}}
 
-{{#if (eq pageId 'blog/index')}}
-<script src="/resources/js/lib/prism.js"></script>
-{{/if}}
-
 <script type="module" src="/resources/js/bundle.js"></script>
-
-{{#if (eq pageId 'blog/index')}}
-  <script type="module">
-    import FilterList from '/resources/js/lib/filterlist.min.js';
-    const filterElement = document.querySelector('[data-filter-names]');
-    if (filterElement) {
-      const myFilter = new FilterList({
-        element: filterElement,
-        urlIsUpdatable: true
-      });
-    }
-  </script>
-{{/if}}
 
 {{#if (eq pageId 'service')}}
   <script type="module">

@@ -1,3 +1,23 @@
 <ul>
-  {{#unless (eq pageId 'index')}}<li><a href="/de">Home</a></li>{{/unless}}
+  {{#if (eq pageId 'index')}}
+    <li>Home</li>
+  {{else}}
+    <li><a href="/">Home</a></li>
+  {{/if}}
+<!--
+  <li>{{#if (eq pageId 'service')}}<span>Service</span>{{else}}<a href="/en/service.html">Service</a>{{/if}}</li>
+-->
+  <!-- {{#if (eq pageId 'blog/index')}}
+  <li>Blog</li>
+  {{else}}
+  <li><a href="/blog">Blog</a></li>
+  {{/if}} -->
+
+  {{#if (eq pageId 'resume')}}
+    <li>CV</li>
+  {{else}}
+    <li><a href="/resume">CV</a></li>
+  {{/if}}
+
+  <li><a href="https://github.com/smohadjer"><img style="vertical-align: -1px;" width="19px" src="/assets/github-mark.svg" alt="GitHub"></a></li>
 </ul>

@@ -2,13 +2,13 @@
 <!doctype html>
 <html class="no-js" lang="en" {{#if (eq this.pageId 'index')}}class="home"{{/if}} >
 	<head>
-    {{> en/partials/meta }}
-    {{> en/partials/styles }}
+    {{> partials/meta }}
+    {{> partials/styles }}
 	</head>
 	<body>
-	{{> en/partials/header pageId=this.pageId }}
+	{{> partials/header pageId=this.pageId }}
 {{> content }}
-    {{> en/partials/footer }}
-    {{> en/partials/scripts }}
+    {{> partials/footer }}
+    {{> partials/scripts }}
 	</body>
 </html>

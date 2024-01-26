@@ -15,16 +15,12 @@
 	},
 	"pages": [
 		{
-			"source": "app/content/en",
+			"source": "app/content",
 			"target": "public"
 		},
 		{
-			"source": "app/content/fa",
-			"target": "public/fa"
-		},
-		{
 			"source": "app/content/de",
-			"target": "public/de"
+			"target": "public"
 		}
 	]
 }
