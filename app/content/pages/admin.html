@@ -1,0 +1,44 @@
+<main class="admin">
+    <section>
+        <div class="edit">
+            <select disabled>
+                <option value="">Select post to edit...</option>
+            </select>
+            <span class="loading">Fetching list of blog articles...</span>
+        </div>
+        <form action="/api/blog" method="POST">
+            <div class="row row--two-columns required">
+                <label for="date">Date: *</label>
+                <input required type="date" name="date" pattern="\d{4}-\d{2}-\d{2}">
+            </div>
+            <div class="row row--two-columns required">
+                <label for="title">Title: *</label>
+                <input required name="title">
+            </div>
+            <div class="row row--two-columns required">
+                <label for="slug">Slug: *</label>
+                <input name="slug" placeholder="my-first-post">
+            </div>
+            <div class="row row--two-columns">
+                <label for="content">Summay:</label>
+                <textarea rows="5" cols="50" name="summary" placeholder="If your post is long add a summay to show on blog home page instead of the whole post."></textarea>
+            </div>
+            <div class="row row--two-columns required">
+                <label for="content">Content: *</label>
+                <textarea required rows="10" cols="50" name="content" placeholder="You can use Markdown here"></textarea>
+            </div>
+            <div class="row row--two-columns">
+                <label for="tags">Tags:</label>
+                <input list="tags" name="tags" placeholder="tag1, tag2">
+            </div>
+
+            <div class="row row--two-columns required">
+                <span></span>
+                <span>
+                    <button>Submit</button>
+                    <input type="reset">
+                </span>
+            </div>
+        </form>
+    </section>
+</main>

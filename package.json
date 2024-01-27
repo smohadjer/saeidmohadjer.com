@@ -25,15 +25,14 @@
 		"build": "git://github.com/smohadjer/build.git#semver:^2.0.5"
 	},
 	"dependencies": {
-		"@octokit/rest": "^20.0.1",
 		"dotenv": "^16.0.3",
-		"filterlist": "^3.4.4",
 		"hamburgers": "0.9.3",
 		"helpers": "git+https://github.com/smohadjer/helpers.git",
 		"marked": "^9.0.3",
 		"prismjs": "^1.29.0",
 		"swiper": "^9.4.1",
-		"mongodb": "^5.8.1"
+		"mongodb": "^5.8.1",
+		"@vercel/edge": "^1.1.0"
 	},
 	"engines": {
 		"node": ">=18.15.0"

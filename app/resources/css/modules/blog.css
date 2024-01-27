@@ -8,8 +8,7 @@
 
 @media (min-width: 1024px) {
   main.blog article {
-      margin: 2em auto 0;
-      max-width: 80ch;
+      margin: 2em 1em 0;
   }
 }
 
@@ -51,10 +50,10 @@
     display: none;
   }
 
-  .post:last-child {
+  /* .post:last-child {
     border: 0;
     padding-bottom: 0;
-  }
+  } */
 
   .post h1 {
     margin: 0;
@@ -85,6 +84,7 @@
     margin: 5px 0;
   }
 
+  .post .tags a,
   .post .tags span {
     padding: 5px 15px;
     background: #888;

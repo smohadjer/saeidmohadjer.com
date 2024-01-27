@@ -1,3 +1,17 @@
 {
+  "rewrites": [
+    {
+      "source": "/blog/:slug",
+      "destination": "/api/blog"
+    },
+    {
+      "source": "/blog/tag/:tag",
+      "destination": "/api/blog"
+    },
+    {
+      "source": "/blog",
+      "destination": "/api/blog"
+    }
+  ],
   "cleanUrls": true
 }

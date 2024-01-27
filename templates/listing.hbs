@@ -1,0 +1,18 @@
+{{#each posts}}
+    <article id="{{this._id}}" class="post">
+        {{#if this.date}}
+            <time datetime="{{this.data}}">{{this.date}}</time>
+        {{/if}}
+        <h1><a href="/blog/{{this.slug}}">{{this.title}}</a></h1>
+        {{#if this.tags}}
+            <div class="tags">
+                {{#each this.tags}}
+                    <a href="/blog/tag/{{this}}">{{this}}</a>
+                {{/each}}
+            </div>
+        {{/if}}
+        <div class="content">
+            {{{this.content}}}
+        </div>
+    </article>
+{{/each}}
