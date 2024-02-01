@@ -57,8 +57,12 @@
 
   .post h1 {
     margin: 0;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     color: black;
+  }
+
+  .post h2 {
+    font-size: 1.3rem;
   }
 
   .post .responsive {
