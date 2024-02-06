@@ -192,3 +192,16 @@ dd + dt {
 .projects li p {
   margin-top: 0;
 }
+
+.table--stack {
+  margin: 1em 0;
+  font-size: smaller;
+  border-top: solid 1px #bbb;
+  border-bottom: solid 1px #bbb;
+  padding: 0.75em 0;
+
+  tr td:first-child {
+    font-weight: 600;
+    min-width: 110px;
+  }
+}
