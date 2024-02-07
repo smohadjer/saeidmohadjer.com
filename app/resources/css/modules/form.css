@@ -65,6 +65,11 @@ form .row.row--two-columns :is(select) {
     width: auto;
     min-width: 300px;
   }
+
+  form .row.row--two-columns :is(input)[type=checkbox] {
+    width: auto;
+    min-width:unset;
+  }
 }
 form .row :is(textarea) {
   border: solid 1px #ccc;
