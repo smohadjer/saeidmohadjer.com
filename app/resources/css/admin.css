@@ -43,7 +43,7 @@
 }
 
 
-select, option, input:not([type]=checkbox), textarea {
+select, option, input:not([type=checkbox]), textarea {
   font-size: 18px;
   display: block;
   width: 100%;
