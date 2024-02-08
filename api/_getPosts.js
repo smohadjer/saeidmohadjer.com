@@ -5,7 +5,6 @@ import Handlebars from 'handlebars';
 
 function getTemplate(filename) {
     const pathHbs = path.join(process.cwd(), 'templates', filename);
-    console.log('template: ', pathHbs);
     const template = fs.readFileSync(pathHbs, 'utf8');
     const compiledTemplate = Handlebars.compile(template);
     return compiledTemplate;
@@ -21,6 +20,9 @@ export default async (req, collection) => {
         query.slug = slug;
     } else if (tag) {
         query.tags = tag;
+        if (!permission) {
+            query.permission = { $ne: 'private' }
+        }
     } else if (!permission) {
         /* if no permission parameter is sent with request we only show
         posts that are not marked as private */
@@ -57,8 +59,6 @@ export default async (req, collection) => {
             posts: data
         });
     }
-
-    console.log(markup);
 
     const blogPage = page.replace('<main class="blog"></main>', `<main class="blog">${markup}</main>`);
 
