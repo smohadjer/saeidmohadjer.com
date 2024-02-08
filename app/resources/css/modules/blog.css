@@ -88,10 +88,14 @@
     margin: 5px 0;
   }
 
+  .post .tags + .content {
+    margin-top: 1em;
+  }
+
   .post .tags a,
   .post .tags span {
-    padding: 5px 15px;
-    background: #888;
+    padding: 5px 15px 7px;
+    background: #036da8;
     border-radius: 15px;
     font-size: smaller;
     color: white;
@@ -133,6 +137,7 @@
     background: none;
     padding-left: 0;
     padding-right: 0;
+    font-size: 0.8em;
   }
 
   .post table {
