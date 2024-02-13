@@ -42,6 +42,14 @@ article {
       font-size: inherit;
       font-weight: bold;
     }
+
+    :is(dl) dl {
+      margin-left: 1.5em;
+
+      &:first-child {
+        margin-top: 1em;
+      }
+    }
   }
 }
 
