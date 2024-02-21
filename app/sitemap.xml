@@ -1,22 +1,264 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
-
+﻿<?xml version="1.0" encoding="UTF-8"?>
+		<!--	created with www.mysitemapgenerator.com	-->
+		<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-  <loc>https://saeidmohadjer.com/</loc>
-  <lastmod>2023-01-23T08:40:22+00:00</lastmod>
-  <priority>1.00</priority>
+	<loc>https://saeidmohadjer.com/</loc>
+	<lastmod>2024-02-21T15:06:21+01:00</lastmod>
+	<priority>1.0</priority>
 </url>
 <url>
-  <loc>https://saeidmohadjer.com/en/</loc>
-  <lastmod>2023-01-23T08:40:22+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://saeidmohadjer.com/blog</loc>
+	<lastmod>2024-02-21T15:06:21+01:00</lastmod>
+	<priority>1.0</priority>
 </url>
-
-
+<url>
+	<loc>https://saeidmohadjer.com/resume</loc>
+	<lastmod>2024-02-21T15:06:21+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://saeidmohadjer.com/blog/semantic-html5</loc>
+	<lastmod>2024-02-21T15:06:23+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://saeidmohadjer.com/blog/tag/html5</loc>
+	<lastmod>2024-02-21T15:06:23+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://saeidmohadjer.com/blog/change-svg-color-in-css-using-filter</loc>
+	<lastmod>2024-02-21T15:06:23+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://saeidmohadjer.com/blog/tag/css</loc>
+	<lastmod>2024-02-21T15:06:23+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://saeidmohadjer.com/blog/tag/svg</loc>
+	<lastmod>2024-02-21T15:06:23+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://saeidmohadjer.com/blog/fetch-data-angular-httpclient-or-fetch-api</loc>
+	<lastmod>2024-02-21T15:06:23+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://saeidmohadjer.com/blog/tag/angular</loc>
+	<lastmod>2024-02-21T15:06:23+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://saeidmohadjer.com/blog/tag/javascript</loc>
+	<lastmod>2024-02-21T15:06:23+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://saeidmohadjer.com/blog/tag/typescript</loc>
+	<lastmod>2024-02-21T15:06:23+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://saeidmohadjer.com/blog/typescript-support-via-esbuild</loc>
+	<lastmod>2024-02-21T15:06:23+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://saeidmohadjer.com/blog/tag/esbuild</loc>
+	<lastmod>2024-02-21T15:06:23+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://saeidmohadjer.com/blog/serving-json-file-via-serverless-function</loc>
+	<lastmod>2024-02-21T15:06:23+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://saeidmohadjer.com/blog/tag/nodejs</loc>
+	<lastmod>2024-02-21T15:06:23+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://saeidmohadjer.com/blog/tag/vercel</loc>
+	<lastmod>2024-02-21T15:06:23+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://saeidmohadjer.com/blog/tag/json</loc>
+	<lastmod>2024-02-21T15:06:23+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://saeidmohadjer.com/blog/tag/api</loc>
+	<lastmod>2024-02-21T15:06:23+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://saeidmohadjer.com/blog/securing-api-endpoints-in-nodejs</loc>
+	<lastmod>2024-02-21T15:06:23+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://saeidmohadjer.com/blog/tag/jwt</loc>
+	<lastmod>2024-02-21T15:06:23+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://saeidmohadjer.com/blog/tag/authentication</loc>
+	<lastmod>2024-02-21T15:06:23+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://saeidmohadjer.com/blog/throttle-debounce-typeScript</loc>
+	<lastmod>2024-02-21T15:06:23+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://saeidmohadjer.com/blog/date-input-field</loc>
+	<lastmod>2024-02-21T15:06:23+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://saeidmohadjer.com/blog/spa-vanilla-js</loc>
+	<lastmod>2024-02-21T15:06:23+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://saeidmohadjer.com/blog/css-animated-loader</loc>
+	<lastmod>2024-02-21T15:06:23+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://saeidmohadjer.com/blog/domparser</loc>
+	<lastmod>2024-02-21T15:06:23+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://saeidmohadjer.com/blog/promises</loc>
+	<lastmod>2024-02-21T15:06:23+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://saeidmohadjer.com/blog/tag/promise</loc>
+	<lastmod>2024-02-21T15:06:23+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://saeidmohadjer.com/blog/tips-of-day</loc>
+	<lastmod>2024-02-21T15:06:23+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://saeidmohadjer.com/blog/moving-from-rollup-to-esbuild</loc>
+	<lastmod>2024-02-21T15:06:23+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://saeidmohadjer.com/blog/basic-auth</loc>
+	<lastmod>2024-02-21T15:06:23+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://saeidmohadjer.com/blog/npm-scripts</loc>
+	<lastmod>2024-02-21T15:06:23+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://saeidmohadjer.com/blog/location-api</loc>
+	<lastmod>2024-02-21T15:06:23+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://saeidmohadjer.com/blog/deploy-to-vercel-via-github-actions</loc>
+	<lastmod>2024-02-21T15:06:23+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://saeidmohadjer.com/blog/tag/github</loc>
+	<lastmod>2024-02-21T15:06:23+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://saeidmohadjer.com/blog/javascript-best-practices</loc>
+	<lastmod>2024-02-21T15:06:23+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://saeidmohadjer.com/blog/responsive-images-max-width</loc>
+	<lastmod>2024-02-21T15:06:23+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://saeidmohadjer.com/blog/tag/responsive</loc>
+	<lastmod>2024-02-21T15:06:23+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://saeidmohadjer.com/blog/typescript-error-event-target</loc>
+	<lastmod>2024-02-21T15:06:23+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://saeidmohadjer.com/blog/handlebars-101</loc>
+	<lastmod>2024-02-21T15:06:23+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://saeidmohadjer.com/blog/tag/handlebars</loc>
+	<lastmod>2024-02-21T15:06:23+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://saeidmohadjer.com/blog/close-port-terminal</loc>
+	<lastmod>2024-02-21T15:06:23+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://saeidmohadjer.com/blog/tag/mac</loc>
+	<lastmod>2024-02-21T15:06:23+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://saeidmohadjer.com/blog/deploy-to-vercel</loc>
+	<lastmod>2024-02-21T15:06:23+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://saeidmohadjer.com/blog/tools</loc>
+	<lastmod>2024-02-21T15:06:23+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://saeidmohadjer.com/blog/tag/tools</loc>
+	<lastmod>2024-02-21T15:06:23+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://saeidmohadjer.com/blog/arbitrary-sorting-of-array-items</loc>
+	<lastmod>2024-02-21T15:06:23+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://saeidmohadjer.com/blog/disable-preview-deployment-vercel</loc>
+	<lastmod>2024-02-21T15:06:23+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://saeidmohadjer.com/blog/css-best-practices</loc>
+	<lastmod>2024-02-21T15:06:23+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://saeidmohadjer.com/assets/vi.pdf</loc>
+	<lastmod>2024-02-21T15:06:24+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://saeidmohadjer.com/lebenslauf</loc>
+	<lastmod>2024-02-21T15:06:33+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
 </urlset>
