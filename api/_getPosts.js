@@ -38,6 +38,8 @@ export default async (req, collection) => {
     const pagePath = path.join(process.cwd(), 'public', 'blog-template.html');
     const page = fs.readFileSync(pagePath, 'utf8');
     let markup = '';
+    let blogPostTitle;
+
 
     // detail page
     if (slug && slug.length > 0) {
@@ -47,6 +49,7 @@ export default async (req, collection) => {
 
         const compiledTemplate = getTemplate('detail.hbs');
         markup = compiledTemplate(data[0]);
+        blogPostTitle = data[0].title;
     // listing page
     } else {
         data.map((item) => {
@@ -60,7 +63,10 @@ export default async (req, collection) => {
         });
     }
 
-    const blogPage = page.replace('<main class="blog"></main>', `<main class="blog">${markup}</main>`);
+    const titleRegex = /<title>.*<\/title>/i;
+    const mainRegex = /<main.*<\/main>/i;
+    const blogPageWithUpdatedTitle = blogPostTitle ? page.replace(titleRegex, `<title>${blogPostTitle}</title>`) : page;
+    const blogPage = blogPageWithUpdatedTitle.replace(mainRegex, `<main class="blog">${markup}</main>`);
 
     return blogPage;
 }
