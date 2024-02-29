@@ -29,7 +29,7 @@
 }
 @media (min-width: 1024px) {
   .stage .swiper-slide__content {
-    width: 45%;
+    width: calc(50% - 1em);
     font-size: 1.1rem;
     line-height: 1.3;
     padding: 1em;

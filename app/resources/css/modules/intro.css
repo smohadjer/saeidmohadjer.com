@@ -45,7 +45,7 @@
 }
 
 #intro {
-    & article {
+    > div {
         height: 300px;
         display: flex;
         padding: 0;
