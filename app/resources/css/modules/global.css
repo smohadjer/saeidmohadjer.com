@@ -120,7 +120,7 @@ img.responsive {
   width: 100%;
   height: auto;
   /* to fix blurry downscaled images in Chrome */
-  image-rendering: -webkit-optimize-contrast;
+  /* image-rendering: -webkit-optimize-contrast; */
 }
 img.responsive--below-intrinsic-width {
   width: auto;

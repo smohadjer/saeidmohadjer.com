@@ -2,7 +2,6 @@
 	"dependencies": {
 		"css": [
 			"node_modules/hamburgers/dist/hamburgers.css",
-			"node_modules/helpers/dist/helper.css",
 			"node_modules/swiper/swiper-bundle.min.css",
 			"node_modules/prismjs/themes/prism.css"
 		],
