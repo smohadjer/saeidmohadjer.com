@@ -6,41 +6,41 @@
     font-display: swap;
 }
 
-@keyframes slidein {
+@keyframes slideDown {
     from {
-        height: 0;
+        transform: translateY(-100%);
     }
     to {
-       height: 100%;
+       transform: translateY(0);
     }
 }
 
-@keyframes slideup {
+@keyframes slideUp {
     from {
-        top: 100%;
+        transform: translateY(100%);
     }
     to {
-       top: 0
+       transform: translateY(0);
     }
 }
 
 @keyframes slideLeft {
     from {
-        right: -350px;
+        transform: translateX(350px);
     }
 
     to {
-        right: 0px;
+        transform: translateX(0);
     }
 }
 
 @keyframes slideRight {
     from {
-        left: -460px;
+        transform: translateX(-460px);
     }
 
     to {
-        left: 0px;
+        transform: translateX(0);
     }
 }
 
@@ -71,11 +71,11 @@
     }
 
     .left {
-        height: 0;
+        height: 100%;
         color: white;
         text-align: right;
         padding-right: 3vw;
-        animation: slidein 1s;
+        animation: slideDown 1s;
         animation-fill-mode: both;
         transition-timing-function: cubic-bezier(0.020, 0.345, 0.025, 0.915); /* custom */
     }
@@ -84,7 +84,7 @@
         background: #eee;
         padding-left: 3vw;
         position: relative;
-        animation: slideup 1s;
+        animation: slideUp 1s;
         animation-fill-mode: both;
         transition-timing-function: cubic-bezier(0.020, 0.345, 0.025, 0.915); /* custom */
     }
@@ -98,7 +98,8 @@
         animation-fill-mode: both;
         animation-delay: 0.65s;
         position: relative;
-
+        right: 0;
+        left: auto;
 
         @media (min-width: 1024px) {
             font-size: 38px;
@@ -117,7 +118,8 @@
         animation-delay: 0.75s;
         animation-fill-mode: both;
         position: relative;
-
+        right: 0;
+        left: auto;
 
         @media (min-width: 1024px) {
             font-size: 28px;
