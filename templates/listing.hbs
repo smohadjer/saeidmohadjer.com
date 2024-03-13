@@ -1,18 +1,31 @@
-{{#each posts}}
-    <article id="{{this._id}}" class="post">
-        {{#if this.date}}
-            <time datetime="{{this.data}}">{{this.date}}</time>
-        {{/if}}
-        <h1><a href="/blog/{{this.slug}}">{{this.title}}</a></h1>
-        {{#if this.tags}}
-            <div class="tags">
-                {{#each this.tags}}
-                    <a href="/blog/tag/{{this}}">{{this}}</a>
-                {{/each}}
-            </div>
-        {{/if}}
-        <div class="content">
-            {{{this.content}}}
+
+    <aside>
+        <h1>Filter by tags</h1>
+        <div class="tags">
+            {{#each tags}}
+                <a href="/blog/tag/{{this}}">{{this}}</a>
+            {{/each}}
         </div>
-    </article>
-{{/each}}
+    </aside>
+    <main class="blog">
+        {{#each posts}}
+            <article id="{{this._id}}" class="post">
+                {{#if this.date}}
+                    <time datetime="{{this.data}}">{{this.date}}</time>
+                {{/if}}
+                <h1><a href="/blog/{{this.slug}}">{{this.title}}</a></h1>
+                {{#if this.tags}}
+                    <div class="tags">
+                        {{#each this.tags}}
+                            <a href="/blog/tag/{{this}}">{{this}}</a>
+                        {{/each}}
+                    </div>
+                {{/if}}
+                <div class="content">
+                    {{{this.content}}}
+                </div>
+            </article>
+        {{/each}}
+    </main>
+
+

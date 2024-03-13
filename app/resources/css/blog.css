@@ -1,0 +1,198 @@
+.flex {
+  --primary-color: #036da8;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 1024px) {
+    flex-direction: unset;
+    gap: 2em;
+    margin: 0 20px;
+    justify-content: space-between;
+  }
+}
+
+main {
+  @media (min-width: 1024px) {
+    width: calc(100% - 250px - 2em);
+    border: 0;
+  }
+}
+
+aside {
+  border-bottom: solid 1px #ccc;
+  padding-bottom: 1em;
+  margin: 0 15px 20px;
+
+  @media (min-width: 1024px) {
+    width: 250px;
+    border: 0;
+    margin: 0;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 1em;
+  }
+}
+
+.blog a {
+  text-decoration: none;
+}
+
+.blog .back {
+  font-size: smaller;
+}
+
+.post {
+    border-bottom: solid 1px #ccc;
+    padding: 0 0 1.5em;
+    margin: 0 15px 1em;
+
+    @media (min-width: 1024px) {
+        margin: 0 0 1em;
+    }
+
+    & img {
+      max-width: 100%;
+    }
+}
+
+
+
+.filters {
+  margin: 0 15px 2em;
+  background: #eee;
+  padding: 2em 1em;
+}
+
+@media (min-width: 1024px) {
+  .filters {
+    margin: 0 0 3em;
+  }
+}
+
+.filters select {
+  padding: 5px;
+  border: solid 1px white;
+  font-size: 18px;
+}
+
+.post.hidden {
+  display: none;
+}
+
+/* .post:last-child {
+  border: 0;
+  padding-bottom: 0;
+} */
+
+.post h1 {
+  margin: 0;
+  font-size: 1.6rem;
+  color: black;
+}
+
+.post h2 {
+  font-size: 1.3rem;
+}
+
+.post .responsive {
+  width: 100%;
+}
+
+.post ul {
+  margin-left: 17px;
+  padding-left: 0;
+  margin-top: 0.5em;
+}
+
+.post ol {
+  padding-left: 0;
+  list-style: inside decimal;
+}
+
+.post ol li + li {
+  margin-top: 1em;
+}
+
+.post time {
+  display: inline-block;
+  font-size: smaller;
+  font-style: italic;
+}
+
+.post time::before {
+  content: "Published on ";
+}
+
+.post code {
+  background: #f0f0f0;
+  font-family: monospace;
+  font-size: 16px;
+  padding: 0.25em;
+  border-radius: 5px;
+}
+
+.post pre {
+  max-width: 100ch;
+  background: #f4f4f4;
+  color: #333;
+  page-break-inside: avoid;
+  font-family: monospace;
+  font-size: 1em;
+  line-height: 1.3;
+  margin-bottom: 1.5em;
+  overflow: auto;
+  padding: 1em;
+  display: block;
+  word-wrap: break-word;
+}
+
+.post pre code {
+  background: none;
+  padding-left: 0;
+  padding-right: 0;
+  font-size: 0.8em;
+}
+
+.post table {
+  font-size: smaller;
+  border-spacing: 0;
+  margin-top: 1em;
+}
+.post tr:nth-child(odd) {
+  background: #eee;
+}
+.post td {
+  vertical-align: top;
+  padding: 5px;
+}
+.post td:first-child {
+  padding-right: 20px;
+  min-width: 160px;
+}
+
+
+.tags {
+    margin: 5px 0;
+
+    + .content {
+      margin-top: 1em;
+    }
+
+    a {
+      padding: 3px 10px 5px;
+      background: var(--primary-color);
+      border-radius: 10px;
+      font-size: 16px;
+      color: white;
+      line-height: 2.2;
+      white-space: nowrap;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+}
+

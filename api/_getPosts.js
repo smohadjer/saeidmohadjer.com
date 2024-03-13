@@ -31,6 +31,22 @@ export default async (req, collection) => {
 
     const data = await collection.find(query).sort({'date': -1}).toArray();
 
+    const getAllTags = async() => {
+        const docs = await collection.find({}).toArray();
+        console.log(docs.length);
+        const allTags = [];
+        docs.forEach(item => {
+            if (item.tags) {
+                item.tags.forEach(tag => {
+                    if (!allTags.includes(tag)) {
+                        allTags.push(tag);
+                    }
+                })
+            }
+        });
+        return allTags;
+    }
+
     if (req.query.response === 'json') {
         return data;
     }
@@ -59,14 +75,15 @@ export default async (req, collection) => {
 
         const compiledTemplate = getTemplate('listing.hbs');
         markup = compiledTemplate({
-            posts: data
+            posts: data,
+            tags: await getAllTags()
         });
     }
 
     const titleRegex = /<title>.*<\/title>/i;
-    const mainRegex = /<main.*<\/main>/i;
+    const mainRegex = /<div class="flex"><\/div>/i;
     const blogPageWithUpdatedTitle = blogPostTitle ? page.replace(titleRegex, `<title>${blogPostTitle}</title>`) : page;
-    const blogPage = blogPageWithUpdatedTitle.replace(mainRegex, `<main class="blog">${markup}</main>`);
+    const blogPage = blogPageWithUpdatedTitle.replace(mainRegex, `<div class="flex">${markup}</div>`);
 
     return blogPage;
 }
