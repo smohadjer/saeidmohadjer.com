@@ -26,7 +26,8 @@
 
 @keyframes slideLeft {
     from {
-        transform: translateX(350px);
+        transform: translateX(150px);
+        opacity: 0;
     }
 
     to {
@@ -34,13 +35,40 @@
     }
 }
 
+@media (min-width: 1024px) {
+    @keyframes slideLeft {
+        from {
+            transform: translateX(450px);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateX(0);
+        }
+    }
+}
+
 @keyframes slideRight {
     from {
-        transform: translateX(-460px);
+        transform: translateX(-280px);
+        opacity: 0;
     }
 
     to {
         transform: translateX(0);
+    }
+}
+
+@media (min-width: 1024px) {
+    @keyframes slideRight {
+        from {
+            transform: translateX(-480px);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateX(0);
+        }
     }
 }
 
@@ -102,7 +130,7 @@
         left: auto;
 
         @media (min-width: 1024px) {
-            font-size: 38px;
+            font-size: 50px;
             margin-top: -20vh;
         }
     }
@@ -112,7 +140,6 @@
         font-size: 16px;
         font-weight: normal;
         font-family: inherit;
-        letter-spacing: 0.05em;
         animation: slideLeft 2s forwards;
         transition-timing-function: cubic-bezier(0.020, 0.345, 0.025, 0.915); /* custom */
         animation-delay: 0.75s;
@@ -122,7 +149,7 @@
         left: auto;
 
         @media (min-width: 1024px) {
-            font-size: 28px;
+            font-size: 34px;
         }
     }
 
@@ -142,8 +169,8 @@
         font-weight: 500;
 
         @media (min-width: 1024px) {
-            font-size: 30px;
-            line-height: 1.4;
+            font-size: 34px;
+            line-height: 1.5;
             margin-top: 10vh;
         }
     }
