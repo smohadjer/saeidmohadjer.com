@@ -9,33 +9,6 @@ article p.lead {
   }
 }
 
-article section h2 {
-  font-size: 1.5rem;
-  background-color: #333;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  margin-left: -1rem;
-  margin-top: 2rem;
-  clip-path: polygon(0 0, 75% 0, calc(75% - 30px) 100%, 0 100%);
-  text-transform: uppercase;
-}
-@media (min-width: 1024px) {
-  article section h2 {
-    min-width: 450px;
-    display: inline-block;
-  }
-}
-@media (min-width: 1320px) {
-  article section h2 {
-    margin-left: 0;
-  }
-}
-
-article section ul {
-  list-style: none;
-  padding-left: 0;
-}
-
 .flex-layout {
   display: flex;
   align-items: start;
@@ -56,10 +29,6 @@ article section ul {
       width: 120px;
     }
   }
-}
-
-section {
-  overflow: hidden;
 }
 
 p:first-child, h3:first-child {
