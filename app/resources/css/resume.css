@@ -9,10 +9,10 @@
     page-break-after: avoid;
   }
 
-
   article,
   header,
-  section {
+  section,
+  .section {
     background: none !important;
   }
 
@@ -29,10 +29,11 @@ article {
     background: white;
   }
 
-  & section > div {
+  & section > div,
+  & .section > div {
     max-width: 980px;
-    margin: 2em auto;
-    padding: 0 15px;
+    margin: 0 auto;
+    padding: 2em 15px;
 
     & *:first-child {
       margin-top: 0;
@@ -140,6 +141,7 @@ article {
   font-size: larger;
   padding-top: 2em;
   padding-bottom: 2em;
+  background: white;
 }
 
 h1 {
