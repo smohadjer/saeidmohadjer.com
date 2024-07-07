@@ -10,10 +10,7 @@ function getTemplate(filename) {
     return compiledTemplate;
 }
 
-export default async (req, collection) => {
-    const slug = req.query.slug;
-    const tag = req.query.tag;
-    const permission = req.query.permission;
+function setQuery(slug, tag, permission) {
     const query = {};
 
     if (slug) {
@@ -29,23 +26,30 @@ export default async (req, collection) => {
         query.permission = { $ne: 'private' }
     }
 
-    const data = await collection.find(query).sort({'date': -1}).toArray();
+    return query;
+}
 
-    const getAllTags = async() => {
-        const docs = await collection.find({ permission: { $ne: 'private' }}).toArray();
-        console.log(docs.length);
-        const allTags = [];
-        docs.forEach(item => {
-            if (item.tags) {
-                item.tags.forEach(tag => {
-                    if (!allTags.includes(tag)) {
-                        allTags.push(tag);
-                    }
-                })
-            }
-        });
-        return allTags;
-    }
+const getAllTags = async(collection) => {
+    const docs = await collection.find({ permission: { $ne: 'private' }}).toArray();
+    const allTags = [];
+    docs.forEach(item => {
+        if (item.tags) {
+            item.tags.forEach(tag => {
+                if (!allTags.includes(tag)) {
+                    allTags.push(tag);
+                }
+            })
+        }
+    });
+    return allTags;
+}
+
+export default async (req, collection) => {
+    const slug = req.query.slug;
+    const tag = req.query.tag;
+    const permission = req.query.permission;
+    const query = setQuery(slug, tag, permission);
+    const data = await collection.find(query).sort({'date': -1}).toArray();
 
     if (req.query.response === 'json') {
         return data;
@@ -76,7 +80,7 @@ export default async (req, collection) => {
         const compiledTemplate = getTemplate('listing.hbs');
         markup = compiledTemplate({
             posts: data,
-            tags: await getAllTags()
+            tags: await getAllTags(collection)
         });
     }
 
