@@ -1,11 +1,35 @@
+// get all blog posts
 GET http://localhost:3000/api/blog
 Content-Type: application/json
+
+###
+
+// get all blog posts as json data
+GET http://localhost:3000/api/blog?response=json
+
+###
+
+// get all blog posts including private posts as json data
+GET http://localhost:3000/api/blog?response=json&permission=all
+
+###
+
+// deleting a post
+DELETE http://localhost:3000/api/blog
+content-type: application/json
+
+{
+    "post_id": "66b06dac2af11d0a79b1f5fc"
+}
 
 ###
 
 POST http://localhost:3000/api/blog
 Content-Type: application/x-www-form-urlencoded
 
-
 date=2023-12-12&tag=test&slug=my-test-post&title=Test&content=my+6th+post
+
+
+
+
 
