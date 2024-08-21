@@ -1,48 +1,9 @@
 import { marked } from 'marked';
+import getTags from './_getTags.js';
+import getTemplate from './_getTemplate.js';
+import setQuery from './_setQuery.js';
 import path from 'path';
 import fs from 'fs';
-import Handlebars from 'handlebars';
-
-function getTemplate(filename) {
-    const pathHbs = path.join(process.cwd(), 'templates', filename);
-    const template = fs.readFileSync(pathHbs, 'utf8');
-    const compiledTemplate = Handlebars.compile(template);
-    return compiledTemplate;
-}
-
-function setQuery(slug, tag, permission) {
-    const query = {};
-
-    if (slug) {
-        query.slug = slug;
-    } else if (tag) {
-        query.tags = tag;
-        if (!permission) {
-            query.permission = { $ne: 'private' }
-        }
-    } else if (!permission) {
-        /* if no permission parameter is sent with request we only show
-        posts that are not marked as private */
-        query.permission = { $ne: 'private' }
-    }
-
-    return query;
-}
-
-const getAllTags = async(collection) => {
-    const docs = await collection.find({ permission: { $ne: 'private' }}).toArray();
-    const allTags = [];
-    docs.forEach(item => {
-        if (item.tags) {
-            item.tags.forEach(tag => {
-                if (!allTags.includes(tag)) {
-                    allTags.push(tag);
-                }
-            })
-        }
-    });
-    return allTags;
-}
 
 export default async (req, collection) => {
     const slug = req.query.slug;
@@ -80,7 +41,7 @@ export default async (req, collection) => {
         const compiledTemplate = getTemplate('listing.hbs');
         markup = compiledTemplate({
             posts: data,
-            tags: await getAllTags(collection)
+            tags: await getTags(collection)
         });
     }
 
