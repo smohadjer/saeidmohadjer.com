@@ -14,13 +14,10 @@ GET http://localhost:3000/api/blog?response=json&permission=all
 
 ###
 
-// deleting a post
-DELETE http://localhost:3000/api/blog
-content-type: application/json
+// deleting a blog post using post id
+DELETE http://localhost:3000/api/blog/66c6fe7051e859e751932f0e
 
-{
-    "post_id": "66b06dac2af11d0a79b1f5fc"
-}
+{}
 
 ###
 

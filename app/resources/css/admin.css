@@ -93,6 +93,12 @@ form {
     cursor: pointer;
   }
 
+  & button[disabled] {
+    background: rgba(239, 239, 239, 0.3);
+    color: rgba(16, 16, 16, 0.3);
+    cursor: default;
+  }
+
   & :is(input)[type=reset] {
     background: red;
     color: white;
