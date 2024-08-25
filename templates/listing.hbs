@@ -3,7 +3,7 @@
         <h1>Filter by tags</h1>
         <div class="tags">
             {{#each tags}}
-                <a href="/blog/tag/{{this}}">{{this}}</a>
+                <a href="/blog/tag/{{this}}">{{this.label}} ({{this.count}})</a>
             {{/each}}
         </div>
     </aside>
