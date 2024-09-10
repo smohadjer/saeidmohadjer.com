@@ -15,13 +15,16 @@
 		</div>
 	</section>
 	<section>
-		<div class="section__layout flex-layout">
-			<img width="200" height="406" src="assets/tournament_480.png" alt="Tournament Organizer">
-			<div>
-				<h1><a href="https://tournaments.saeidmohadjer.com/">Tournament Organizer</a></h1>
-				<p>This single page app (SPA) allows tournament organizers to display and share result of their tournaments. Features include seasons, player's profile, all-time and seasonal rankings as well as individual tournament results. Data fetching is done by JavaScript from MongoDB by invoking Node.js serverless API endpoints and then injecting the fetched data into Handlebars templates to render views on the client side. API authorization for post requests is implemented using JWT inside a middleware. Code on <a href="https://github.com/smohadjer/pokerrangliste">GitHub</a></p>
-			</div>
-		</div>
+        <div class="section__layout">
+            <h1><a href="https://tournaments.saeidmohadjer.com/">Tournament Organizer</a></h1>
+            <div class="flex-layout">
+                <img width="300" src="assets/tournaments1.png" alt="Tournament Organizer">
+                <img width="300" src="assets/tournaments2.png" alt="Tournament Organizer">
+                <div>
+                    <p>I created this SPA so that my friends and I could keep track of our poker tournaments. The app is built without using any frameworks or state management libraries, nevertheless it offers everything that modern web apps do including ability to bookmark every page or go back and forth in browser's history. Players can see results of each game, rankings for current and past seasons, profiles of players and so on. The frontend stack is TypeScript, HTML, and CSS and two open-source libraries: chart.js and handlebars.js. For backend I used MongoDB and Node.js. Communication between server and client is done via serverless TypeScript endpoints hosted on Vercel. Views are rendered by injecting data fetched via TypeScript into Handlebars templates. API authorization for post requests is implemented via JWT tokens inside a middleware. Code is available on <a href="https://github.com/smohadjer/pokerrangliste">GitHub</a></p>
+                </div>
+            </div>
+        </div>
 	</section>
 	<section class="stage slaven">
 		<div class="section__layout swiper">
@@ -32,12 +35,7 @@
 					<img class="responsive" src="/assets/slaven9_1027.webp" alt="Slaven Gluščević">
 					<div class="swiper-slide__content">
 						<h1><a href="https://slaven.de/">slaven.de</a></h1>
-						<p>Designed and built a responsive Website with protected admin section for tennis trainer Slaven Gluscevic that allows users to register for training courses and tennis camps.</p>
-						<table>
-							<tr><td>Frontend</td><td>TypeScript, HTML5, CSS3, Handlebars</td></tr>
-							<tr><td>Backend</td><td>Node.js, MongoDB</td></tr>
-							<tr><td>Hosting</td><td>Vercel (serverless), GitHub</td></tr>
-						</table>
+						<p>Designed and developed a responsive Website with protected admin area for tennis trainer Slaven Gluscevic. Users can register for training courses and tennis camps while admin can view and edit registration data, update his availability schedule (which is visible to users in registration pages), and so on. Content is updated on GitHub and changes in code or content trigger a deployment on Vercel which runs a build process I wrote from scratch using Node.js and NPM scripts. Backend consists exclusively of api endpoints which are serverless functions written in TypeScript that read and write to a MongoDB instance on the cloud. The full stack runs free of any costs on the cloud using free services from GitHub, Vercel, and MongoDB.</p>
 					</div>
 				</div>
 			</div>
