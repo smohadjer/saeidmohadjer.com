@@ -32,7 +32,7 @@ export default async (collection) => {
         }
     });
 
-    // sort tags based on how often they are used
-    allTags.sort((a, b) =>  b.count - a.count);
+    // sort tags alphabetically
+    allTags.sort((a, b) =>  a.label.localeCompare(b.label));
     return allTags;
 }

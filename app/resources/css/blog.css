@@ -174,20 +174,24 @@ aside {
 
 
 .tags {
-    margin: 5px 0;
+    margin: 0.5em 0  0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      margin: 0;
+
+      @media (max-width: 1023px) {
+        display: inline-block;
+      }
+    }
 
     + .content {
       margin-top: 1em;
     }
 
     :is(a) {
-      padding: 3px 10px 5px;
-      background: var(--primary-color);
-      border-radius: 10px;
-      font-size: 16px;
-      color: white;
-      line-height: 2.2;
-      white-space: nowrap;
+      font-size: 18px;
       text-decoration: none;
 
       &:hover {
