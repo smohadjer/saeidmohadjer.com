@@ -74,6 +74,7 @@
 
 #intro {
     --intro-height: calc(100vh - 85px);
+    overflow: hidden;
 
     > div {
         height: 300px;
