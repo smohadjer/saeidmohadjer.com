@@ -58,36 +58,39 @@ p {
   max-width: none;
 }
 
-.flex {
-  display: flex;
-}
+@media (min-width: 768px) {
+    .flex {
+        display: flex;
+      }
 
-div.flex > div {
-  width: 30%;
-  padding-right: 3%;
-}
+      div.flex > div {
+        width: 30%;
+        padding-right: 3%;
+      }
 
-div.flex h4 {
-  margin-bottom: 0;
-}
+      div.flex h4 {
+        margin-bottom: 0;
+      }
 
-div.flex ul {
-  margin-top: 0;
-}
+      div.flex ul {
+        margin-top: 0;
+      }
 
-div.flex li span {
+      div.flex li span {
 
-  color: #555;
-  padding: 3px 7px;
-  border-radius: 50%;
-  font-size: smaller;
-  position: relative;
-  top: -1px;
+        color: #555;
+        padding: 3px 7px;
+        border-radius: 50%;
+        font-size: smaller;
+        position: relative;
+        top: -1px;
+      }
 }
 
 .flex img {
-  margin: 0 1em 1em 0;
+    margin: 0 1em 1em 0;
 }
+
 
 .langs {
   padding-top: 1em;
