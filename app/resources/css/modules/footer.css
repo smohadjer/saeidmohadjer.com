@@ -3,6 +3,7 @@ footer {
   font-size: 0.8rem;
   display: grid;
   gap: 2em;
+  background: #eee;
 
   @media (min-width: 1024px) {
     grid-template-columns: repeat(3, 1fr);

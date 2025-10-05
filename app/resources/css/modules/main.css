@@ -17,7 +17,7 @@ article p.lead {
     width: 130px;
     height: auto;
     align-self: flex-start;
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+    /* box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2); */
     margin-top: 7px;
     margin-right: 1em;
   }
@@ -40,28 +40,32 @@ article p.lead {
 .demo-layout {
     padding-left: 15px;
     padding-right: 15px;
+    display: flex;
 
     & img {
-      width: 130px;
+      width: 100px;
       height: auto;
       align-self: flex-start;
-      box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
-      margin-top: 7px;
       margin-right: 1em;
     }
 
-
-    > div {
-        margin-top: 1em;
+    .github {
+        background: url(../../img/github.svg) left center no-repeat;
+        background-size: 20px;
+        padding-left: 25px;
+        margin-left: 10px;
     }
 
     @media (min-width: 1024px) {
       padding: 0;
 
-
       & img {
         width: 200px;
-        margin-right: 20px;
+        margin-right: 50px;
+      }
+
+      .github {
+          margin-left: 15px;
       }
     }
   }
@@ -71,11 +75,23 @@ p:first-child, h3:first-child {
   margin-top: 0;
 }
 
+section {
+  .section__layout  {
+    padding-bottom: 3em;
+    border-bottom: solid 1px #ddd;
+  }
+
+  &:last-child .section__layout  {
+    border: none;
+    padding-bottom: 0;
+  }
+}
+
 .section__layout {
   margin: 3em 0;
 
   @media (min-width: 1024px) {
-    max-width: 980px;
+    max-width: 900px;
     margin: 3em auto;
   }
 
@@ -92,3 +108,5 @@ p:first-child, h3:first-child {
     }
   }
 }
+
+
