@@ -5,35 +5,32 @@
   .pdf {
     display: none;
   }
+
   h3 {
     page-break-after: avoid;
   }
 
-  article,
-  header,
-  section,
-  .section {
+  header {
     background: none !important;
   }
 
-  .lead {
-    padding: 0 !important;
+  h1, h2, h3, h4, p, li {
+    max-width: none;
   }
 }
 
 article {
-  background: #eee;
   line-height: 1.35;
 
-  & section:nth-child(odd) {
-    background: white;
+  & section:last-child {
+    margin-bottom: 2em;
   }
 
   & section > div,
-  & .section > div {
+  & .lead > div {
     max-width: 980px;
     margin: 0 auto;
-    padding: 2em 15px;
+    padding: 1em 15px;
 
     & *:first-child {
       margin-top: 0;
@@ -58,40 +55,6 @@ p {
   max-width: none;
 }
 
-@media (min-width: 768px) {
-    .flex {
-        display: flex;
-      }
-
-      div.flex > div {
-        width: 30%;
-        padding-right: 3%;
-      }
-
-      div.flex h4 {
-        margin-bottom: 0;
-      }
-
-      div.flex ul {
-        margin-top: 0;
-      }
-
-      div.flex li span {
-
-        color: #555;
-        padding: 3px 7px;
-        border-radius: 50%;
-        font-size: smaller;
-        position: relative;
-        top: -1px;
-      }
-}
-
-.flex img {
-    margin: 0 1em 1em 0;
-}
-
-
 .langs {
   padding-top: 1em;
 }
@@ -105,26 +68,8 @@ article {
   & header {
     background: #eee;
     text-align: center;
-    margin: 2em 0;
-    padding: 1em 0;
-  }
-
-  @media (min-width: 768px) {
-    & header {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    & header img {
-      margin-right: 1em;
-    }
-  }
-
-  & header img {
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
+    margin: 2em 0 1em;
+    padding: 2em 0;
   }
 
   @media (min-width: 1024px) {
@@ -140,11 +85,8 @@ article {
 }
 
 .lead {
-  text-align: center;
   font-size: larger;
-  padding-top: 2em;
-  padding-bottom: 2em;
-  background: white;
+
 }
 
 h1 {
