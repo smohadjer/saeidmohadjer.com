@@ -43,7 +43,8 @@ export default async (req: Request, collection) => {
 
     if (req.body.tags) {
         const tagsString = req.body.tags.replaceAll(' ', '').toLowerCase();
-        document.tags = tagsString.split(',');
+        // tags should be at least two letters
+        document.tags = tagsString.split(',').filter(item => item.length > 1);
     }
 
     if (req.body.post_id) {

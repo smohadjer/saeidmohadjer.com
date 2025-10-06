@@ -1,0 +1,17 @@
+GET https://saeidmohadjer.com/blog?response=json
+
+###
+
+POST https://saeidmohadjer.com/blog
+Content-Type: application/x-www-form-urlencoded
+
+date=2025-02-13&title=Test&slug=Testslug&summary=&content=Browsers+by+blahblah&tags=javascript%2C+
+
+###
+
+POST http://localhost:3000/blog
+Content-Type: application/x-www-form-urlencoded
+
+date=2025-02-13&title=Test&slug=Testslug&summary=&content=Browsers+by+blahblah&tags=javascript%2C+
+
+
